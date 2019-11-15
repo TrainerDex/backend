@@ -86,7 +86,7 @@
             "gold": 200,
             "silver": 50
         },
-        "reversable": false,
+        "reversable": true,
         "sortable": true
     },
     "gymbadges_total": {
@@ -367,9 +367,9 @@
     },
     "travel_km": {
         "levels": {
-            "bronze": 10.00,
-            "silver": 100.00,
-            "gold": 1000.00
+            "bronze": 10,
+            "silver": 100,
+            "gold": 1000
         },
         "reversable": false,
         "sortable": true
