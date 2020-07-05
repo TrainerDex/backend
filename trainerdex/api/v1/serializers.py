@@ -74,11 +74,11 @@ v1_field_names = {
         'stardust': 'pokemon_info_stardust',
     },
     'trainer': {
-        'user': 'owner',
+        'user_ptr': 'owner',
         'start_date': 'start_date',
         'faction': 'faction',
         'country': 'leaderboard_country',
-        'verified': 'verified',
+        'is_verified': 'verified',
         'last_modified': 'last_modified',
     }
 }
@@ -203,7 +203,7 @@ class DetailedUpdateSerializer(serializers.ModelSerializer):
         return getattr(obj, 'pokedex_gen8')
 
     def get_badge_travel_km(self, obj):
-        return getattr(obj, 'travel_km')
+        return str(getattr(obj, 'travel_km'))
 
     def get_badge_capture_total(self, obj):
         return getattr(obj, 'capture_total')

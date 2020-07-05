@@ -6,7 +6,7 @@ from django.contrib import admin
 urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('admin/', admin.site.urls),
-    path('api/v1/', include('trainerdex.api.v1.urls')),
+    path('api/', include('trainerdex.api.urls')),
 ]
 
 if settings.DEBUG:
