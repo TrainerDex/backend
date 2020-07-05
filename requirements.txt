@@ -1,0 +1,14 @@
+django==3.0.8
+django-allauth==0.42
+django-cors-headers==3.4.0
+django-cors-middleware==1.5
+django-countries==6.1.2
+django-exclusivebooleanfield==0.3.0 # Not updated for Django 3
+djangorestframework==3.11
+humanize
+pendulum==2.1.0
+Pillow
+psycopg2-binary
+Pygments
+python-dateutil==2.8.1
+requests
