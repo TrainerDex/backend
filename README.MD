@@ -1,4 +1,4 @@
-![Django CI & Lint](https://github.com/TrainerDex/backend/workflows/Django%20CI%20&%20Lint/badge.svg?branch=develop)
+![Django Lint & CI (Development)](https://github.com/TrainerDex/backend/workflows/Django%20Lint%20&%20CI%20(Development)/badge.svg?branch=develop)
 
 ## Environment setup
 ```
