@@ -216,11 +216,16 @@ CORS_ORIGIN_ALLOW_ALL = True
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.TokenAuthentication',
         ),
     'DEFAULT_PERMISSION_CLASSES': (
         'config.permissions.IsAdminUserOrReadOnly',
         ),
+    'DEFAULT_VERSIONING_CLASS': 'rest_framework.versioning.NamespaceVersioning',
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+    'PAGE_SIZE': 100,
+    'COERCE_DECIMAL_TO_STRING': False,
 }
 
 # Django AllAuth

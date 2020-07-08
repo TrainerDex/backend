@@ -11,4 +11,6 @@ Pillow
 psycopg2-binary
 Pygments
 python-dateutil==2.8.1
+pyyaml
+uritemplate
 requests

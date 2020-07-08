@@ -77,16 +77,19 @@ class Faction(models.Model):
 
 class TrainerQuerySet(models.QuerySet):
     def exclude_banned(self: models.QuerySet) -> models.QuerySet:
-        return self.exclude(banned=True)
+        return self.exclude(is_banned=True)
     
-    def exclude_unverifired(self: models.QuerySet) -> models.QuerySet:
-        return self.exclude(verified=False)
+    def exclude_unverified(self: models.QuerySet) -> models.QuerySet:
+        return self.exclude(is_verified=False)
     
-    def exclude_inactive(self: models.QuerySet) -> models.QuerySet:
+    def exclude_deactived(self: models.QuerySet) -> models.QuerySet:
         return self.exclude(is_active=False)
     
     def exclude_empty(self: models.QuerySet) -> models.QuerySet:
         return self.exclude(update__isnull=True)
+    
+    def default_excludes(self: models.QuerySet) -> models.QuerySet:
+        return self.exclude_banned().exclude_unverified().exclude_deactived()
 
 
 class TrainerManager(UserManager):
@@ -97,13 +100,16 @@ class TrainerManager(UserManager):
         return self.get_queryset().exclude_banned()
     
     def exclude_unverifired(self: models.QuerySet) -> models.QuerySet:
-        return self.get_queryset().exclude_unverifired()
+        return self.get_queryset().exclude_unverified()
     
-    def exclude_inactive(self: models.QuerySet) -> models.QuerySet:
-        return self.get_queryset().exclude_inactive()
+    def exclude_deactived(self: models.QuerySet) -> models.QuerySet:
+        return self.get_queryset().exclude_deactived()
     
     def exclude_empty(self: models.QuerySet) -> models.QuerySet:
         return self.get_queryset().exclude_empty()
+    
+    def default_excludes(self: models.QuerySet) -> models.QuerySet:
+        return self.get_queryset().default_excludes()
 
 
 class Trainer(User):
@@ -268,7 +274,23 @@ class DataSource(models.Model):
         ordering = ['slug']
 
 
+class UpdateQuerySet(models.QuerySet):
+    def exclude_banned_trainers(self: models.QuerySet) -> models.QuerySet:
+        return self.exclude(trainer__is_banned=True)
+    
+    def exclude_unverified_trainers(self: models.QuerySet) -> models.QuerySet:
+        return self.exclude(trainer__is_verified=False)
+    
+    def exclude_deactived_trainers(self: models.QuerySet) -> models.QuerySet:
+        return self.exclude(trainer__is_active=False)
+    
+    def default_excludes(self: models.QuerySet) -> models.QuerySet:
+        return self.exclude_banned_trainers().exclude_unverified_trainers().exclude_deactived_trainers()
+
+
 class Update(models.Model):
+    objects = UpdateQuerySet.as_manager()
+    
     uuid = models.UUIDField(
         primary_key=True,
         default=uuid.uuid4,
