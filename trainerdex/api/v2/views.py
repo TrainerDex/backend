@@ -22,11 +22,12 @@ class TrainerViewSet(NestedViewSetMixin, ModelViewSet):
     serializer_class = TrainerSerializer
     filterset_class = TrainerFilter
 
+
 class UpdateViewSet(ModelViewSet):
     queryset = Update.objects.default_excludes()
     serializer_class = UpdateSerializer
     filterset_class = UpdateFiler
 
+
 class NestedUpdateViewSet(NestedViewSetMixin, UpdateViewSet):
     pass
-    
