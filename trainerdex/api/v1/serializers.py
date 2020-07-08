@@ -363,7 +363,7 @@ class TrainerSerializer(serializers.ModelSerializer):
     total_goal = serializers.SerializerMethodField()
     leaderboard_country = serializers.SerializerMethodField()
     leaderboard_region = serializers.SerializerMethodField()
-    update_set = BriefUpdateSerializer(read_only=True, many=True)
+    update_set = serializers.SerializerMethodField()
     prefered = serializers.SerializerMethodField()
     
     def get_user(self, obj):
@@ -401,6 +401,9 @@ class TrainerSerializer(serializers.ModelSerializer):
     
     def get_leaderboard_region(self, obj):
         return None
+    
+    def get_update_set(self, obj):
+        return BriefUpdateSerializer(obj.updates, read_only=True, many=True).data
         
     def get_prefered(self, obj):
         """This field is deprecated and will be removed in API v2"""
