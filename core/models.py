@@ -10,7 +10,7 @@ from django.contrib.auth.models import AbstractUser
 from django.db import models
 from django.db.models.signals import post_save
 from django.dispatch import receiver
-from django.utils.translation import gettext_lazy as _, ngettext, npgettext_lazy
+from django.utils.translation import gettext_lazy as _, ngettext, npgettext_lazy, pgettext_lazy
 # from django.utils import timezone
 from exclusivebooleanfield.fields import ExclusiveBooleanField
 # from pytz import common_timezones
@@ -19,17 +19,19 @@ from trainerdex.validators import PokemonGoUsernameValidator
 
 log = logging.getLogger('django.trainerdex')
 
-
 class User(AbstractUser):
     """The model used to represent a user in the database"""
     
     username = django.contrib.postgres.fields.CICharField(
+        verbose_name=pgettext_lazy("nickname__title", "nickname"),
         max_length=15,
         unique=True,
+        help_text=_('Required. 3-15 characters. Letters and digits only. Must match PokemonGo Nickname.'),
         validators=[PokemonGoUsernameValidator],
-        error_messages={'unique': _("A user with that username already exists.")},
+        error_messages={
+            'unique': _("A user with that username already exists."),
+        },
     )
-    gdpr = models.BooleanField(default=True)
 
 
 class Nickname(models.Model):
@@ -43,7 +45,7 @@ class Nickname(models.Model):
         unique=True,
         validators=[PokemonGoUsernameValidator],
         db_index=True,
-        verbose_name=npgettext_lazy("nickname__title", "nickname", "nicknames", 1),
+        verbose_name=pgettext_lazy("nickname__title", "nickname"),
     )
     active = ExclusiveBooleanField(
         on='user',

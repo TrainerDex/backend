@@ -9,6 +9,7 @@ from collections import defaultdict
 from decimal import Decimal
 from django.conf import settings
 from django.contrib.auth import get_user_model
+from django.contrib.auth.models import UserManager
 from django.contrib.contenttypes.fields import GenericForeignKey, GenericRelation
 from django.contrib.contenttypes.models import ContentType
 from django.core.exceptions import ValidationError
@@ -82,65 +83,87 @@ class TrainerQuerySet(models.QuerySet):
         return self.exclude(verified=False)
     
     def exclude_inactive(self: models.QuerySet) -> models.QuerySet:
-        return self.exclude(user__is_active=False) \
-            .exclude(user__gdpr=False)
+        return self.exclude(is_active=False)
     
     def exclude_empty(self: models.QuerySet) -> models.QuerySet:
         return self.exclude(update__isnull=True)
 
 
-class Trainer(models.Model):
+class TrainerManager(UserManager):
+    def get_queryset(self):
+        return TrainerQuerySet(self.model, using=self._db)
+    
+    def exclude_banned(self: models.QuerySet) -> models.QuerySet:
+        return self.get_queryset().exclude_banned()
+    
+    def exclude_unverifired(self: models.QuerySet) -> models.QuerySet:
+        return self.get_queryset().exclude_unverifired()
+    
+    def exclude_inactive(self: models.QuerySet) -> models.QuerySet:
+        return self.get_queryset().exclude_inactive()
+    
+    def exclude_empty(self: models.QuerySet) -> models.QuerySet:
+        return self.get_queryset().exclude_empty()
+
+
+class Trainer(User):
     """The model used to represent a users profile in the database"""
     
-    user = models.OneToOneField(
+    user_ptr = models.OneToOneField(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
         related_name='trainer',
-        verbose_name=User._meta.verbose_name,
+        parent_link=True,
         primary_key=True,
-        )
-    id = models.PositiveIntegerField(
+    )
+    old_id = models.PositiveIntegerField(
         editable=False,
         verbose_name='(Deprecated) ID',
+        help_text=_("The Trainer ID on the old TrainerDex API. This is deprecated and will be removed upon the retirement of API v1"),
         blank=True,
         null=True,
-        )
+    )
     start_date = models.DateField(
         null=True,
         blank=False,
         validators=[MinValueValidator(datetime.date(2016, 7, 5))],
         verbose_name=pgettext_lazy("profile__start_date__title", "Start Date"),
-        help_text=pgettext_lazy("profile__start_date__help", "The date you created your Pokémon Go account."),
-        )
+        help_text=pgettext_lazy("profile__start_date__help", "The date of creating of the Pokémon Go profile."),
+    )
     faction = models.ForeignKey(
         Faction,
         on_delete=models.PROTECT,
         verbose_name=Faction._meta.verbose_name,
+        help_text=pgettext_lazy("profile__faction__help", "The team of the Pokémon Go profile."),
         default=0,
-        )
+    )
     
-    country = CountryField()
+    country = CountryField(
+        null=True,
+        blank=True,
+        verbose_name=pgettext_lazy("profile__country__title", "Country"),
+        help_text=pgettext_lazy("profile__country__help", "Where this account plays the most. Used to place in localized leaderboards"),
+    )
     
-    verified = models.BooleanField(
+    is_verified = models.BooleanField(
         default=False,
         verbose_name=pgettext_lazy("profile__verified__title", "Verified"),
-        )
-    last_modified = models.DateTimeField(
-        auto_now=True,
-        verbose_name=pgettext_lazy("profile__last_modified__title", "Last Modified"),
-        )
+        help_text=pgettext_lazy("profile__verified__help", "Designates whether this user should be treated as verified."),
+    )
+    last_modified = models.DateTimeField(pgettext_lazy("profile__last_modified__title", "Last Modified"), auto_now=True)
     
     # This field `banned` needs to be replaced with a better solution.
-    banned = models.BooleanField(
+    is_banned = models.BooleanField(
         default=False,
-        verbose_name=_("Banned"),
-        )
+        verbose_name=pgettext_lazy("profile__banned__title", "Banned"),
+        help_text=pgettext_lazy("profile__banned__help", "Designates whether this user should be treated as banned. Select this instead of deleting accounts."),
+    )
     evidence = GenericRelation(
         'Evidence',
         object_id_field='object_pk',
-        )
+    )
     
-    objects = TrainerQuerySet.as_manager()
+    objects = TrainerManager()
     
     def has_evidence_been_submitted(self) -> bool:
         return self.evidence.first().images.exists()
@@ -159,9 +182,9 @@ class Trainer(models.Model):
     def leaderboard_eligibility_detail(self) -> dict:
         """Returns if a user is eligibile for the leaderboard"""
         return {
-            'verified': self.verified,
-            'gdpr': self.user.gdpr,
-            'not_banned': not self.banned,
+            'is_verified': self.is_verified,
+            'is_active': self.is_active,
+            'is_not_banned': not self.is_banned,
         }
     
     def leaderboard_eligibility(self) -> bool:
@@ -169,22 +192,12 @@ class Trainer(models.Model):
     leaderboard_eligibility.boolean = True
     
     @property
-    def profile_complete(self) -> bool:
-        # return all([self.user, self.nickname, self.submitted_picture(), self.verified, self.start_date])
-        return all([self.user, self.nickname, self.verified, self.start_date])
-    
-    @property
     def nickname(self) -> str:
-        """Gets nickname, fallback to User.username"""
+        """Gets nickname, fallback to username"""
         try:
-            return self.user.nickname_set.get(active=True).nickname
+            return self.nickname_set.get(active=True).nickname
         except Nickname.DoesNotExist:
-            return self.user.username
-    
-    @property
-    def username(self) -> str:
-        """Alias for nickname"""
-        return self.nickname
+            return self.username
     
     def __str__(self):
         return self.nickname
@@ -202,7 +215,7 @@ def create_profile(sender, instance, created, **kwargs) -> Trainer:
         return None
     
     if created:
-        return Trainer.objects.create(user=instance)
+        return Trainer.objects.create(user_ptr=instance)
 
 
 class TrainerCode(models.Model):

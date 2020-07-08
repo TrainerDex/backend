@@ -3,17 +3,14 @@
 from allauth.socialaccount.admin import SocialAccountAdmin as BaseSocialAccountAdmin
 from allauth.socialaccount.models import SocialAccount
 from django.contrib import admin
-from django.contrib.auth.admin import UserAdmin
 # from django.utils.safestring import mark_safe
 # from django.utils.translation import gettext_lazy as _
 # from pygments.formatters import HtmlFormatter
 # from pygments.lexers import JsonLexer
 # from pygments import highlight
 
-from core.models import Nickname, User
+from core.models import Nickname
 # from core.models import DiscordGuild, DiscordGuildSettings, DiscordGuildMembership, DiscordUser
-from trainerdex.admin import TrainerAdmin
-from trainerdex.models import Trainer
 
 admin.site.unregister(SocialAccount)
 
@@ -23,8 +20,8 @@ class NicknameAdmin(admin.ModelAdmin):
 
     search_fields = (
         'nickname',
-        'user__first_name',
-        'user__username',
+        'first_name',
+        'username',
         )
     list_display = (
         'nickname',
@@ -33,24 +30,11 @@ class NicknameAdmin(admin.ModelAdmin):
         )
     list_filter = ('active',)
     list_display_links = ('nickname',)
-    autocomplete_fields = ['user']
 
 
 @admin.register(SocialAccount)
 class SocialAccountAdmin(BaseSocialAccountAdmin):
     search_fields = ['user', 'uid']
-
-
-class TrainerInlineAdmin(admin.StackedInline):
-    model = Trainer
-    fieldsets = TrainerAdmin.fieldsets
-    can_delete = False
-    readonly_fields = ('id',)
-
-
-@admin.register(User)
-class CustomUserAdmin(UserAdmin):
-    inlines = [TrainerInlineAdmin]
 
 # class DiscordSettingsInline(admin.StackedInline):
 #     model = DiscordGuildSettings

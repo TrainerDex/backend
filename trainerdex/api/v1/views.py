@@ -24,7 +24,7 @@ def recent(value):
 
 class UserViewSet(ReadOnlyModelViewSet):
     serializer_class = UserSerializer
-    queryset = User.objects.exclude(is_active=False, gdpr=False)
+    queryset = User.objects.exclude(is_active=False)
 
 class TrainerListView(APIView):
     """
@@ -35,7 +35,7 @@ class TrainerListView(APIView):
     authentication_classes = (authentication.TokenAuthentication,)
     
     def get(self, request):
-        queryset = Trainer.objects.exclude(user__is_active=False)
+        queryset = Trainer.objects.exclude(is_active=False)
         if request.GET.get('q') or request.GET.get('t'):
             if request.GET.get('q'):
                 queryset = queryset.filter(nickname__nickname__iexact=request.GET.get('q'))
@@ -56,14 +56,11 @@ class TrainerDetailView(APIView):
     
     def get_object(self, pk: int) -> Trainer:
         try:
-            obj = Trainer.objects.get(id=pk)
+            obj = Trainer.objects.get(old_id=pk)
         except Trainer.DoesNotExist:
             raise Http404
         
-        if not obj.user.gdpr:
-            raise PermissionDenied
-        
-        if not obj.user.is_active:
+        if not obj.is_active:
             raise Http404
         
         return obj
@@ -86,14 +83,11 @@ class UpdateListView(APIView):
     
     def get_trainer(self, pk: int) -> Trainer:
         try:
-            obj = Trainer.objects.get(id=pk)
+            obj = Trainer.objects.get(old_id=pk)
         except Trainer.DoesNotExist:
             raise Http404
         
-        if not obj.user.gdpr:
-            raise PermissionDenied
-        
-        if not obj.user.is_active:
+        if not obj.is_active:
             raise Http404
         
         return obj
@@ -114,14 +108,11 @@ class LatestUpdateView(APIView):
     
     def get_trainer(self, pk: int) -> Trainer:
         try:
-            obj = Trainer.objects.get(id=pk)
+            obj = Trainer.objects.get(old_id=pk)
         except Trainer.DoesNotExist:
             raise Http404
         
-        if not obj.user.gdpr:
-            raise PermissionDenied
-        
-        if not obj.user.is_active:
+        if not obj.is_active:
             raise Http404
         
         return obj
@@ -150,14 +141,11 @@ class UpdateDetailView(APIView):
     
     def get_trainer(self, pk: int) -> Trainer:
         try:
-            obj = Trainer.objects.get(id=pk)
+            obj = Trainer.objects.get(old_id=pk)
         except Trainer.DoesNotExist:
             raise Http404
         
-        if not obj.user.gdpr:
-            raise PermissionDenied
-        
-        if not obj.user.is_active:
+        if not obj.is_active:
             raise Http404
         
         return obj
