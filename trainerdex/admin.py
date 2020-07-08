@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.contrib.auth.admin import UserAdmin
 from django.utils.translation import gettext_lazy as _
 
 from trainerdex.models import DataSource, Trainer, TrainerCode, Update, Evidence, EvidenceImage, Target, PresetTarget, PresetTargetGroup
@@ -20,7 +21,7 @@ class UpdateAdmin(admin.ModelAdmin):
 
     autocomplete_fields = ['trainer']
     list_display = ('trainer', 'total_xp', 'update_time', 'submission_date', 'has_modified_extra_fields')
-    search_fields = ('trainer__user__nickname__nickname', 'trainer__user__username')
+    search_fields = ('trainer__nickname__nickname', 'trainer__username')
     ordering = ('-update_time',)
     date_hierarchy = 'update_time'
 
@@ -39,49 +40,60 @@ class TargetInline(admin.TabularInline):
 
 
 @admin.register(Trainer)
-class TrainerAdmin(admin.ModelAdmin):
+class TrainerAdmin(UserAdmin):
 
-    autocomplete_fields = [
-        'user',
-        ]
     list_display = [
         'nickname',
         'faction',
-        'banned',
+        'is_banned',
         'leaderboard_eligibility',
         'awaiting_verification',
         ]
     list_filter = [
         'faction',
-        'banned',
-        'user__gdpr',
-        'verified',
+        'is_banned',
+        'is_active',
+        'is_verified',
         ]
     search_fields = [
-        'user__nickname__nickname',
-        'user__first_name',
-        'user__username',
+        'nickname__nickname',
+        'first_name',
+        'username',
         ]
     readonly_fields = [
-        'id',
+        'old_id',
         ]
-    fieldsets = [
-        (None, {
-            'fields': (
-                'user',
-                'id',
-                'faction',
-                'start_date',
-                'country',
-                ),
-        }),
-        (_('Reports'), {
-            'fields': (
-                'banned',
-                'verified',
-                ),
-        }),
-    ]
+    
+    # Get BaseUser fieldsets
+    fieldsets = UserAdmin.fieldsets
+    
+    # Main set
+    fieldsets[0][1]['fields'] += (
+        'old_id',
+        'faction',
+        'start_date',
+    )
+    
+    # Personal set
+    fieldsets[1][1]['fields'] += (
+        'country',
+    )
+    
+    # Permissions Set
+    fieldsets[2][1]['fields'] = (
+        'is_banned',
+        'is_verified',
+        ) + fieldsets[2][1]['fields']
+    
+    # Get BaseUser fieldsets
+    add_fieldsets = UserAdmin.add_fieldsets
+    
+    # Get top set
+    add_fieldsets[0][1]['fields'] += (
+        'faction',
+        'start_date',
+    )
+    
     inlines = [
         TargetInline,
         TrainerCodeInline,
@@ -89,7 +101,7 @@ class TrainerAdmin(admin.ModelAdmin):
     
     def queryset(self, request):
         qs = super(TrainerAdmin, self).queryset(request)
-        qs = qs.order_by('user__username', 'pk').distinct('pk')
+        qs = qs.order_by('username', 'pk').distinct('pk')
         return qs
 
 

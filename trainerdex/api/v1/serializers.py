@@ -94,7 +94,7 @@ class BriefUpdateSerializer(serializers.ModelSerializer):
         return getattr(obj, 'total_xp')
     
     def get_trainer(self, obj):
-        return getattr(obj, 'trainer').id
+        return getattr(obj, 'trainer').old_id
     
     def get_modified_extra_fields(self, obj):
         return [v1_field_names['update'][x] for x in obj.modified_extra_fields()]
@@ -166,7 +166,7 @@ class DetailedUpdateSerializer(serializers.ModelSerializer):
     pokemon_info_stardust = serializers.SerializerMethodField()
     
     def get_trainer(self, obj):
-        return getattr(obj, 'trainer').id
+        return getattr(obj, 'trainer').old_id
 
     def get_xp(self, obj):
         """This field is deprecated and will be removed in API v2"""
@@ -366,7 +366,7 @@ class TrainerSerializer(serializers.ModelSerializer):
     prefered = serializers.SerializerMethodField()
     
     def get_owner(self, obj):
-        return getattr(obj, 'user').id
+        return getattr(obj, 'pk')
     
     def get_username(self, obj):
         return getattr(obj, 'nickname')
@@ -378,13 +378,13 @@ class TrainerSerializer(serializers.ModelSerializer):
         return None
     
     def get_has_cheated(self, obj):
-        return getattr(obj, 'banned')
+        return getattr(obj, 'is_banned')
     
     def get_last_cheated(self, obj):
         return None
     
     def get_currently_cheats(self, obj):
-        return getattr(obj, 'banned')
+        return getattr(obj, 'is_banned')
     
     def get_daily_goal(self, obj):
         return None
@@ -423,7 +423,7 @@ class UserSerializer(serializers.ModelSerializer):
         try:
             return obj.trainer.id
         except User.trainer.RelatedObjectDoesNotExist:
-            pass
+            return None
     
     class Meta:
         model = User
