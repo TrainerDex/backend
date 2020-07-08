@@ -45,7 +45,7 @@ class Faction(models.Model):
         (INSTINCT, pgettext('faction_3__short', 'Instinct')),
     )
     
-    id = models.PositiveSmallIntegerField(choices=FACTION_CHOICES, primary_key=True)
+    id = models.PositiveSmallIntegerField(choices=FACTION_CHOICES, primary_key=True, validators=[MaxValueValidator(3)])
     
     @property
     def name_short(self):
