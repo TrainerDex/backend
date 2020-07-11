@@ -1,7 +1,10 @@
+from typing import Iterable
+
 from rest_framework import serializers
 
 from core.models import Nickname
 from trainerdex.models import Faction, Trainer, Update
+from trainerdex.models import UpdateQuerySet
 
 
 class NicknameSerializerInline(serializers.ModelSerializer):
@@ -16,7 +19,7 @@ class NicknameSerializerInline(serializers.ModelSerializer):
 
 class UpdateSerializerInlineFilteredListSerializer(serializers.ListSerializer):
     
-    def to_representation(self, data):
+    def to_representation(self, data: UpdateQuerySet):
         data = data.order_by('-update_time')[:15]
         return super().to_representation(data)
 
@@ -53,7 +56,7 @@ class TrainerSerializer(serializers.ModelSerializer):
     nicknames = NicknameSerializerInline(many=True, read_only=True)
     updates = UpdateSerializerInline(many=True, read_only=True)
     
-    def get_fields(self, *args, **kwargs):
+    def get_fields(self, *args, **kwargs) -> Iterable[str]:
         fields = super().get_fields(*args, **kwargs)
         request = self.context.get('request')
         if request is not None and not request.parser_context.get('kwargs'):

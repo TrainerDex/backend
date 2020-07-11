@@ -3,7 +3,8 @@ from typing import Iterator
 from django.db.models import Max, F, Window, Subquery
 from django.db.models.functions import DenseRank
 
-from trainerdex.models import Trainer, TrainerQuerySet, Update, UpdateQuerySet
+from trainerdex.models import Trainer, Update
+from trainerdex.models import TrainerQuerySet, UpdateQuerySet
 
 
 class LeaderboardEntry:

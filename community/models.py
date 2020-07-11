@@ -46,10 +46,10 @@ class Community(models.Model):
         blank=True,
     )
 
-    def __str__(self):
+    def __str__(self) -> str:
         return self.name
     
-    def get_absolute_url(self):
+    def get_absolute_url(self) -> str:
         return reverse('trainerdex:leaderboard', kwargs={'community': self.handle})
     
     class Meta:

@@ -2,6 +2,7 @@ import json
 import logging
 import uuid
 import os
+from typing import Dict, Iterator, List, Union
 
 import datetime
 import humanize
@@ -48,7 +49,7 @@ class Faction(models.Model):
     id = models.PositiveSmallIntegerField(choices=FACTION_CHOICES, primary_key=True, validators=[MaxValueValidator(3)])
     
     @property
-    def name_short(self):
+    def name_short(self) -> str:
         CHOICES = (
             pgettext('faction_0__short', 'Teamless'),
             pgettext('faction_1__short', 'Mystic'),
@@ -58,7 +59,7 @@ class Faction(models.Model):
         return CHOICES[self.id]
     
     @property
-    def name_long(self):
+    def name_long(self) -> str:
         CHOICES = (
             pgettext('faction_0__long', 'No Team'),
             pgettext('faction_1__long', 'Team Mystic'),
@@ -67,10 +68,10 @@ class Faction(models.Model):
         )
         return CHOICES[self.id]
     
-    def __str__(self):
+    def __str__(self) -> str:
         return self.name_short
     
-    def __repr__(self):
+    def __repr__(self) -> str:
         return self.name_long
     
     class Meta:
@@ -99,19 +100,19 @@ class TrainerManager(UserManager):
     def get_queryset(self):
         return TrainerQuerySet(self.model, using=self._db)
     
-    def exclude_banned(self: models.QuerySet) -> models.QuerySet:
+    def exclude_banned(self) -> models.QuerySet:
         return self.get_queryset().exclude_banned()
     
-    def exclude_unverifired(self: models.QuerySet) -> models.QuerySet:
+    def exclude_unverifired(self) -> models.QuerySet:
         return self.get_queryset().exclude_unverified()
     
-    def exclude_deactived(self: models.QuerySet) -> models.QuerySet:
+    def exclude_deactived(self) -> models.QuerySet:
         return self.get_queryset().exclude_deactived()
     
-    def exclude_empty(self: models.QuerySet) -> models.QuerySet:
+    def exclude_empty(self) -> models.QuerySet:
         return self.get_queryset().exclude_empty()
     
-    def default_excludes(self: models.QuerySet) -> models.QuerySet:
+    def default_excludes(self) -> models.QuerySet:
         return self.get_queryset().default_excludes()
 
 
@@ -188,7 +189,7 @@ class Trainer(User):
     awaiting_verification.short_description = pgettext_lazy("profile__awaiting_verification__description", "Ready to be verified!")
     
     @property
-    def leaderboard_eligibility_detail(self) -> dict:
+    def leaderboard_eligibility_detail(self) -> Dict[str, bool]:
         """Returns if a user is eligibile for the leaderboard"""
         return {
             'is_verified': self.is_verified,
@@ -208,10 +209,10 @@ class Trainer(User):
         except Nickname.DoesNotExist:
             return self.username
     
-    def __str__(self):
+    def __str__(self) -> str:
         return self.nickname
     
-    def __repr__(self):
+    def __repr__(self) -> str:
         return f'pk: {self.pk} nickname: {self.username} faction: {self.faction}'
     
     def get_absolute_url(self) -> str:
@@ -222,7 +223,7 @@ class Trainer(User):
         verbose_name_plural = npgettext_lazy("trainer__title", "trainer", "trainers", 2)
 
 @receiver(post_save, sender=User)
-def create_profile(sender, instance, created, **kwargs) -> Trainer:
+def create_profile(sender, instance: User, created: bool, **kwargs) -> Trainer:
     if kwargs.get('raw'):
         return None
     
@@ -251,7 +252,7 @@ class TrainerCode(models.Model):
         verbose_name=npgettext_lazy("trainer_code__title", "Trainer Code", "Trainer Codes", 1),
         )
     
-    def __str__(self):
+    def __str__(self) -> str:
         return str(self.trainer)
     
     class Meta:
@@ -268,10 +269,10 @@ class DataSource(models.Model):
     slug = models.SlugField()
     verbose_name = models.CharField(max_length=100)
     
-    def __repr__(self):
-        return f"DataSource(slug='{self.slug}')"
+    def __repr__(self) -> str:
+        return f"slug: '{self.slug}'"
     
-    def __str__(self):
+    def __str__(self) -> str:
         return f"{self.verbose_name} ({self.slug})"
     
     class Meta:
@@ -711,10 +712,10 @@ class Update(models.Model):
         verbose_name=pgettext_lazy("stardust__title", "Stardust"),
     )
     
-    def __str__(self):
+    def __str__(self) -> str:
         return f"{type(self).__name__}({self.__repr__()})"
     
-    def __repr__(self):
+    def __repr__(self) -> str:
         return f"trainer: {self.trainer} update_time: {self.update_time}"
     
     def has_modified_extra_fields(self) -> bool:
@@ -722,7 +723,7 @@ class Update(models.Model):
     has_modified_extra_fields.boolean = True
     
     @classmethod
-    def field_metadata(self, reversable: bool = None, sortable: bool = None):
+    def field_metadata(self, reversable: bool = None, sortable: bool = None) -> Dict[str, Union[Dict[str, Union[int, float, Decimal]], bool]]:
         with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'update_fields_metadata.json'), 'r') as file:
             metadata = json.load(file)
         
@@ -734,19 +735,19 @@ class Update(models.Model):
         
         return metadata
     
-    def modified_fields(self):
+    def modified_fields(self) -> Iterator[str]:
         fields = list(self.field_metadata().keys())
         
         for x in fields:
             if getattr(self, x):
                 yield x
     
-    def modified_extra_fields(self):
+    def modified_extra_fields(self) -> Iterator[str]:
         for x in self.modified_fields():
             if x != 'total_xp':
                 yield x
     
-    def clean(self):
+    def clean(self) -> None:
         errors = defaultdict(list)
             
         for field in Update._meta.get_fields():
@@ -816,7 +817,7 @@ class Update(models.Model):
         if errors:
             raise ValidationError(errors)
     
-    def check_values(self, raise_: bool = False):
+    def check_values(self, raise_: bool = False) -> Dict[str, List[ValidationError]]:
         """Checks values for anything ary
         
         Parameters
@@ -1087,10 +1088,10 @@ class Evidence(models.Model):
             return self.content_object.trainer
         return None
     
-    def __str__(self):
+    def __str__(self) -> str:
         return _("Evidence for {evidence_type} and {trainer}").format(evidence_type=self.content_field, trainer=self.trainer)
     
-    def clean(self):
+    def clean(self) -> None:
         # Checking the content_field is a valid field in the model for content_type
         print(self.content_field, self.content_type.model)
         if self.content_field.split('.')[0] != self.content_type.model:
@@ -1107,7 +1108,7 @@ class Evidence(models.Model):
         verbose_name_plural = npgettext_lazy("evidence__title", "evidence", "evidence", 2)
 
 @receiver(post_save, sender=Trainer)
-def create_evidence(sender, instance, created, **kwargs) -> Evidence:
+def create_evidence(sender, instance: Trainer, created: bool, **kwargs) -> Evidence:
     if kwargs.get('raw'):
         return None
 
@@ -1145,21 +1146,21 @@ class BaseTarget(models.Model):
         verbose_name=npgettext_lazy("target__title", "target", "targets", 1),
     )
     
-    def target():
-        def fget(self):
+    def target() -> Dict:
+        def fget(self) -> Union[int, Decimal]:
             return Update._meta.get_field(self.stat).to_python(self._target)
-        def fset(self, value):
+        def fset(self, value: Union[int, Decimal]) -> str:
             value = Update._meta.get_field(self.stat).get_prep_value(value)
             self._target = str(value)
-        def fdel(self):
+        def fdel(self) -> None:
             pass
         return locals()
     target = property(**target())
     
-    def __str__(self):
+    def __str__(self) -> str:
         return f"{self.name} ({self.stat}: {humanize.intcomma(self.target)})"
     
-    def clean(self):
+    def clean(self) -> None:
         self.target = self._target
     
     class Meta:
@@ -1169,10 +1170,18 @@ class BaseTarget(models.Model):
         ordering = ['stat', '_target']
 
 
+class Target(BaseTarget):
+    trainer = models.ForeignKey(
+        Trainer,
+        on_delete=models.CASCADE,
+        verbose_name=Trainer._meta.verbose_name,
+        )
+
+
 class PresetTarget(BaseTarget):
     name = models.CharField(max_length=200, null=False, blank=False)
     
-    def add_to_trainer(self, trainer: Trainer):
+    def add_to_trainer(self, trainer: Trainer) -> List[Target, bool]:
         return Target.objects.get_or_create(trainer=trainer, stat=self.stat, _target=self._target)
     
     class Meta:
@@ -1187,17 +1196,9 @@ class PresetTargetGroup(models.Model):
     
     children = models.ManyToManyField(PresetTarget)
     
-    def __str__(self):
+    def __str__(self) -> str:
         return self.name
     
     class Meta:
         verbose_name = npgettext_lazy("target__title", "target group", "target groups", 1)
         verbose_name_plural = npgettext_lazy("target__title", "target group", "target groups", 2)
-
-
-class Target(BaseTarget):
-    trainer = models.ForeignKey(
-        Trainer,
-        on_delete=models.CASCADE,
-        verbose_name=Trainer._meta.verbose_name,
-        )

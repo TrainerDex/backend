@@ -3,6 +3,7 @@ from django.contrib.auth.admin import UserAdmin
 from django.utils.translation import gettext_lazy as _
 
 from trainerdex.models import DataSource, Trainer, TrainerCode, Update, Evidence, EvidenceImage, Target, PresetTarget, PresetTargetGroup
+from trainerdex.models import TrainerQuerySet
 
 admin.site.register(PresetTargetGroup)
 admin.site.register(DataSource)
@@ -99,8 +100,8 @@ class TrainerAdmin(UserAdmin):
         TrainerCodeInline,
     ]
     
-    def queryset(self, request):
-        qs = super(TrainerAdmin, self).queryset(request)
+    def queryset(self, request) -> TrainerQuerySet:
+        qs = super().queryset(request)
         qs = qs.order_by('username', 'pk').distinct('pk')
         return qs
 

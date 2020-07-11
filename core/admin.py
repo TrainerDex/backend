@@ -17,7 +17,6 @@ admin.site.unregister(SocialAccount)
 
 @admin.register(Nickname)
 class NicknameAdmin(admin.ModelAdmin):
-
     search_fields = (
         'nickname',
         'first_name',

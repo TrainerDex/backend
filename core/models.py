@@ -1,4 +1,5 @@
 # import datetime
+# from typing import Dict, List, Union
 import logging
 
 # import requests
@@ -52,7 +53,7 @@ class Nickname(models.Model):
         on='user',
     )
     
-    def __str__(self):
+    def __str__(self) -> str:
         return self.nickname
         
     class Meta:
@@ -61,7 +62,7 @@ class Nickname(models.Model):
         verbose_name_plural = npgettext_lazy("nickname__title", "nickname", "nicknames", 2)
 
 @receiver(post_save, sender=User)
-def create_nickname(sender, instance, created, **kwargs) -> Nickname:
+def create_nickname(sender, instance: User, created: bool, **kwargs) -> Nickname:
     if kwargs.get('raw'):
         return None
     
@@ -69,7 +70,7 @@ def create_nickname(sender, instance, created, **kwargs) -> Nickname:
         return Nickname.objects.create(user=instance, nickname=instance.username, active=True)
 
 @receiver(post_save, sender=Nickname)
-def update_username(sender, instance, created, **kwargs):
+def update_username(sender, instance: Nickname, created: bool, **kwargs) -> None:
     if kwargs.get('raw'):
         return None
     
@@ -79,7 +80,7 @@ def update_username(sender, instance, created, **kwargs):
         # TODO: Generate an email or notice for the user alerting them of this change.
 
 
-# def get_guild_info(guild_id: int):
+# def get_guild_info(guild_id: int) -> Dict[str, Union[str, int]]:
 #     base_url = 'https://discordapp.com/api/v{version_number}'.format(version_number=6)
 #     r = requests.get(f"{base_url}/guilds/{guild_id}", headers={'Authorization': f"Bot {settings.DISCORD_TOKEN}"})
 #     try:
@@ -88,7 +89,7 @@ def update_username(sender, instance, created, **kwargs):
 #         return r.status_code
 #     return r.json()
 #
-# def get_guild_members(guild_id: int, limit=1000):
+# def get_guild_members(guild_id: int, limit: int = 1000) -> Dict[str, Union[str, int]]:
 #     base_url = 'https://discordapp.com/api/v{version_number}'.format(version_number=6)
 #     previous = None
 #     more = True
@@ -102,19 +103,19 @@ def update_username(sender, instance, created, **kwargs):
 #             previous = result[-1]['user']['id']
 #     return result
 #
-# def get_guild_member(guild_id: int, user_id: int):
+# def get_guild_member(guild_id: int, user_id: int) -> Dict[str, Union[str, int]]:
 #     base_url = 'https://discordapp.com/api/v{version_number}'.format(version_number=6)
 #     r = requests.get(f"{base_url}/guilds/{guild_id}/members/{user_id}", headers={'Authorization': f"Bot {settings.DISCORD_TOKEN}"})
 #     r.raise_for_status()
 #     return r.json()
 #
-# def get_guild_channels(guild_id: int):
+# def get_guild_channels(guild_id: int) -> Dict[str, Union[str, int]]:
 #     base_url = 'https://discordapp.com/api/v{version_number}'.format(version_number=6)
 #     r = requests.get(f"{base_url}/guilds/{guild_id}/channels", headers={'Authorization': f"Bot {settings.DISCORD_TOKEN}"})
 #     r.raise_for_status()
 #     return r.json()
 #
-# def get_channel(channel_id: int):
+# def get_channel(channel_id: int) -> Dict[str, Union[str, int]]:
 #     base_url = 'https://discordapp.com/api/v{version_number}'.format(version_number=6)
 #     r = requests.get(f"{base_url}/channels/{channel_id}", headers={'Authorization': f"Bot {settings.DISCORD_TOKEN}"})
 #     r.raise_for_status()
@@ -138,22 +139,22 @@ def update_username(sender, instance, created, **kwargs):
 #         through_fields=('guild', 'user'),
 #     )
 #
-#     def _outdated(self):
+#     def _outdated(self) -> bool:
 #         return (timezone.now()-self.cached_date) > datetime.timedelta(hours=1)
 #     _outdated.boolean = True
 #     outdated = property(_outdated)
 #
-#     def has_data(self):
+#     def has_data(self) -> bool:
 #         return bool(self.data)
 #     has_data.boolean = True
 #     has_data.short_description = _('got data')
 #
 #     @property
-#     def name(self):
+#     def name(self) -> str:
 #         return self.data.get('name')
 #
 #     @property
-#     def owner(self):
+#     def owner(self) -> Union[DiscordUser, str, int]:
 #         if self.data:
 #             if 'owner_id' in self.data:
 #                 try:
@@ -162,13 +163,13 @@ def update_username(sender, instance, created, **kwargs):
 #                     pass
 #             return self.data['owner_id']
 #
-#     def __str__(self):
+#     def __str__(self) -> str:
 #         try:
 #             return str(self.name)
 #         except requests.exceptions.HTTPError:
 #             return f"Discord Guild with ID {self.id}"
 #
-#     def refresh_from_api(self):
+#     def refresh_from_api(self) -> None:
 #         logging.info(f"Updating {self}")
 #         try:
 #             data_or_code = get_guild_info(self.id)
@@ -184,7 +185,7 @@ def update_username(sender, instance, created, **kwargs):
 #                 self.sync_roles()
 #             self.save()
 #
-#     def sync_members(self):
+#     def sync_members(self) -> Dict[str, List[str]]:
 #         try:
 #             guild_api_members = get_guild_members(self.id)
 #         except requests.exceptions.HTTPError:
@@ -230,7 +231,7 @@ def update_username(sender, instance, created, **kwargs):
 #                         ).format(count=inactive_members.count(), guild=self)
 #                 ]}
 #
-#     def clean(self):
+#     def clean(self) -> None:
 #         self.refresh_from_api()
 #
 #     class Meta:
@@ -275,25 +276,25 @@ def update_username(sender, instance, created, **kwargs):
 #
 # class DiscordUserManager(models.Manager):
 #     def get_queryset(self):
-#         return super(DiscordUserManager, self).get_queryset().filter(provider='discord')
+#         return super().get_queryset().filter(provider='discord')
 #
 #     def create(self, **kwargs):
 #         kwargs.update({'provider': 'discord'})
-#         return super(DiscordUserManager, self).create(**kwargs)
+#         return super().create(**kwargs)
 #
 #
 # class DiscordUser(SocialAccount):
 #     objects = DiscordUserManager()
 #
 #     @property
-#     def username(self):
+#     def username(self) -> str:
 #         return self.extra_data.get('username')
 #
 #     @property
-#     def discriminator(self):
+#     def discriminator(self) -> Union[str, int]:
 #         return self.extra_data.get('discriminator')
 #
-#     def __str__(self):
+#     def __str__(self) -> str:
 #         if self.username and self.discriminator:
 #             return f"{self.username}#{self.discriminator}"
 #         else:
@@ -332,12 +333,12 @@ def update_username(sender, instance, created, **kwargs):
 #         blank=True,
 #     )
 #
-#     def _outdated(self):
+#     def _outdated(self) -> bool:
 #         return (timezone.now()-self.cached_date) > datetime.timedelta(days=1)
 #     _outdated.boolean = True
 #     outdated = property(_outdated)
 #
-#     def _change_nick(self, nick: str):
+#     def _change_nick(self, nick: str) -> None:
 #         base_url = 'https://discordapp.com/api/v{version_number}'.format(version_number=6)
 #         if len(nick) > 32:
 #             raise ValidationError('nick too long')
@@ -349,34 +350,34 @@ def update_username(sender, instance, created, **kwargs):
 #
 #
 #     @property
-#     def nick(self):
+#     def nick(self) -> str:
 #         return self.data.get('nick')
 #
 #     @property
-#     def display_name(self):
+#     def display_name(self) -> str:
 #         if self.nick:
 #             return self.nick
 #         else:
 #             return self.user
 #
 #     @property
-#     def roles(self):
+#     def roles(self) -> None:
 #         pass
 #
-#     def _deaf(self):
+#     def _deaf(self) -> bool:
 #         return self.data.get('deaf')
 #     _deaf.boolean = True
 #     deaf = property(_deaf)
 #
-#     def _mute(self):
+#     def _mute(self) -> bool:
 #         return self.data.get('mute')
 #     _mute.boolean = True
 #     mute = property(_mute)
 #
-#     def __str__(self):
+#     def __str__(self) -> str:
 #         return f"{self.display_name} in {self.guild}"
 #
-#     def refresh_from_api(self):
+#     def refresh_from_api(self) -> None:
 #         log.info(f"Updating {self}")
 #         try:
 #             self.data = get_guild_member(self.guild.id, self.user.uid)
@@ -387,7 +388,7 @@ def update_username(sender, instance, created, **kwargs):
 #         except requests.exceptions.HTTPError:
 #             log.exception("Failed to get server information from Discord")
 #
-#     def clean(self):
+#     def clean(self) -> None:
 #         if self.user.provider != 'discord':
 #             raise ValidationError(_("{} is not of type 'discord'").format(self.user))
 #

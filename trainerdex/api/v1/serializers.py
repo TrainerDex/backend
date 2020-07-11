@@ -1,4 +1,6 @@
-﻿from allauth.socialaccount.models import SocialAccount
+﻿from typing import Dict, List, Union
+
+from allauth.socialaccount.models import SocialAccount
 from rest_framework import serializers
 from django.contrib.auth import get_user_model
 
@@ -89,14 +91,14 @@ class BriefUpdateSerializer(serializers.ModelSerializer):
     trainer = serializers.SerializerMethodField()
     modified_extra_fields = serializers.SerializerMethodField()
     
-    def get_xp(self, obj):
+    def get_xp(self, obj: Update) -> int:
         """This field is deprecated and will be removed in API v2"""
         return getattr(obj, 'total_xp')
     
-    def get_trainer(self, obj):
+    def get_trainer(self, obj: Update) -> int:
         return getattr(obj, 'trainer').old_id
     
-    def get_modified_extra_fields(self, obj):
+    def get_modified_extra_fields(self, obj: Update) -> List[str]:
         return [v1_field_names['update'][x] for x in obj.modified_extra_fields()]
     
     class Meta:
@@ -165,185 +167,185 @@ class DetailedUpdateSerializer(serializers.ModelSerializer):
     gymbadges_gold = serializers.SerializerMethodField()
     pokemon_info_stardust = serializers.SerializerMethodField()
     
-    def get_trainer(self, obj):
+    def get_trainer(self, obj: Update) -> int:
         return getattr(obj, 'trainer').old_id
 
-    def get_xp(self, obj):
+    def get_xp(self, obj: Update) -> int:
         """This field is deprecated and will be removed in API v2"""
         return getattr(obj, 'total_xp')
 
-    def get_pokedex_caught(self, obj):
+    def get_pokedex_caught(self, obj: Update) -> int:
         return getattr(obj, 'pokedex_total_caught')
 
-    def get_pokedex_seen(self, obj):
+    def get_pokedex_seen(self, obj: Update) -> int:
         return getattr(obj, 'pokedex_total_seen')
 
-    def get_badge_pokedex_entries(self, obj):
+    def get_badge_pokedex_entries(self, obj: Update) -> int:
         return getattr(obj, 'pokedex_gen1')
 
-    def get_badge_pokedex_entries_gen2(self, obj):
+    def get_badge_pokedex_entries_gen2(self, obj: Update) -> int:
         return getattr(obj, 'pokedex_gen2')
 
-    def get_badge_pokedex_entries_gen3(self, obj):
+    def get_badge_pokedex_entries_gen3(self, obj: Update) -> int:
         return getattr(obj, 'pokedex_gen3')
 
-    def get_badge_pokedex_entries_gen4(self, obj):
+    def get_badge_pokedex_entries_gen4(self, obj: Update) -> int:
         return getattr(obj, 'pokedex_gen4')
 
-    def get_badge_pokedex_entries_gen5(self, obj):
+    def get_badge_pokedex_entries_gen5(self, obj: Update) -> int:
         return getattr(obj, 'pokedex_gen5')
 
-    def get_badge_pokedex_entries_gen6(self, obj):
+    def get_badge_pokedex_entries_gen6(self, obj: Update) -> int:
         return getattr(obj, 'pokedex_gen6')
 
-    def get_badge_pokedex_entries_gen7(self, obj):
+    def get_badge_pokedex_entries_gen7(self, obj: Update) -> int:
         return getattr(obj, 'pokedex_gen7')
 
-    def get_badge_pokedex_entries_gen8(self, obj):
+    def get_badge_pokedex_entries_gen8(self, obj: Update) -> int:
         return getattr(obj, 'pokedex_gen8')
 
-    def get_badge_travel_km(self, obj):
+    def get_badge_travel_km(self, obj: Update) -> str:
         return str(getattr(obj, 'travel_km'))
 
-    def get_badge_capture_total(self, obj):
+    def get_badge_capture_total(self, obj: Update) -> int:
         return getattr(obj, 'capture_total')
 
-    def get_badge_evolved_total(self, obj):
+    def get_badge_evolved_total(self, obj: Update) -> int:
         return getattr(obj, 'evolved_total')
 
-    def get_badge_hatched_total(self, obj):
+    def get_badge_hatched_total(self, obj: Update) -> int:
         return getattr(obj, 'hatched_total')
 
-    def get_badge_pokestops_visited(self, obj):
+    def get_badge_pokestops_visited(self, obj: Update) -> int:
         return getattr(obj, 'pokestops_visited')
 
-    def get_badge_big_magikarp(self, obj):
+    def get_badge_big_magikarp(self, obj: Update) -> int:
         return getattr(obj, 'big_magikarp')
 
-    def get_badge_battle_attack_won(self, obj):
+    def get_badge_battle_attack_won(self, obj: Update) -> int:
         return getattr(obj, 'battle_attack_won')
 
-    def get_badge_battle_training_won(self, obj):
+    def get_badge_battle_training_won(self, obj: Update) -> int:
         return getattr(obj, 'battle_training_won')
 
-    def get_badge_small_rattata(self, obj):
+    def get_badge_small_rattata(self, obj: Update) -> int:
         return getattr(obj, 'small_rattata')
 
-    def get_badge_pikachu(self, obj):
+    def get_badge_pikachu(self, obj: Update) -> int:
         return getattr(obj, 'pikachu')
 
-    def get_badge_unown(self, obj):
+    def get_badge_unown(self, obj: Update) -> int:
         return getattr(obj, 'unown')
 
-    def get_badge_raid_battle_won(self, obj):
+    def get_badge_raid_battle_won(self, obj: Update) -> int:
         return getattr(obj, 'raid_battle_won')
 
-    def get_badge_legendary_battle_won(self, obj):
+    def get_badge_legendary_battle_won(self, obj: Update) -> int:
         return getattr(obj, 'legendary_battle_won')
 
-    def get_badge_berries_fed(self, obj):
+    def get_badge_berries_fed(self, obj: Update) -> int:
         return getattr(obj, 'berries_fed')
 
-    def get_badge_hours_defended(self, obj):
+    def get_badge_hours_defended(self, obj: Update) -> int:
         return getattr(obj, 'hours_defended')
 
-    def get_badge_challenge_quests(self, obj):
+    def get_badge_challenge_quests(self, obj: Update) -> int:
         return getattr(obj, 'challenge_quests')
 
-    def get_badge_max_level_friends(self, obj):
+    def get_badge_max_level_friends(self, obj: Update) -> int:
         return getattr(obj, 'max_level_friends')
 
-    def get_badge_trading(self, obj):
+    def get_badge_trading(self, obj: Update) -> int:
         return getattr(obj, 'trading')
 
-    def get_badge_trading_distance(self, obj):
+    def get_badge_trading_distance(self, obj: Update) -> int:
         return getattr(obj, 'trading_distance')
 
-    def get_badge_great_league(self, obj):
+    def get_badge_great_league(self, obj: Update) -> int:
         return getattr(obj, 'great_league')
 
-    def get_badge_ultra_league(self, obj):
+    def get_badge_ultra_league(self, obj: Update) -> int:
         return getattr(obj, 'ultra_league')
 
-    def get_badge_master_league(self, obj):
+    def get_badge_master_league(self, obj: Update) -> int:
         return getattr(obj, 'master_league')
 
-    def get_badge_photobomb(self, obj):
+    def get_badge_photobomb(self, obj: Update) -> int:
         return getattr(obj, 'photobomb')
 
-    def get_badge_pokemon_purified(self, obj):
+    def get_badge_pokemon_purified(self, obj: Update) -> int:
         return getattr(obj, 'pokemon_purified')
 
-    def get_badge_rocket_grunts_defeated(self, obj):
+    def get_badge_rocket_grunts_defeated(self, obj: Update) -> int:
         return getattr(obj, 'rocket_grunts_defeated')
 
-    def get_badge_buddy_best(self, obj):
+    def get_badge_buddy_best(self, obj: Update) -> int:
         return getattr(obj, 'buddy_best')
 
-    def get_badge_wayfarer(self, obj):
+    def get_badge_wayfarer(self, obj: Update) -> int:
         return getattr(obj, 'wayfarer')
 
-    def get_badge_type_normal(self, obj):
+    def get_badge_type_normal(self, obj: Update) -> int:
         return getattr(obj, 'type_normal')
 
-    def get_badge_type_fighting(self, obj):
+    def get_badge_type_fighting(self, obj: Update) -> int:
         return getattr(obj, 'type_fighting')
 
-    def get_badge_type_flying(self, obj):
+    def get_badge_type_flying(self, obj: Update) -> int:
         return getattr(obj, 'type_flying')
 
-    def get_badge_type_poison(self, obj):
+    def get_badge_type_poison(self, obj: Update) -> int:
         return getattr(obj, 'type_poison')
 
-    def get_badge_type_ground(self, obj):
+    def get_badge_type_ground(self, obj: Update) -> int:
         return getattr(obj, 'type_ground')
 
-    def get_badge_type_rock(self, obj):
+    def get_badge_type_rock(self, obj: Update) -> int:
         return getattr(obj, 'type_rock')
 
-    def get_badge_type_bug(self, obj):
+    def get_badge_type_bug(self, obj: Update) -> int:
         return getattr(obj, 'type_bug')
 
-    def get_badge_type_ghost(self, obj):
+    def get_badge_type_ghost(self, obj: Update) -> int:
         return getattr(obj, 'type_ghost')
 
-    def get_badge_type_steel(self, obj):
+    def get_badge_type_steel(self, obj: Update) -> int:
         return getattr(obj, 'type_steel')
 
-    def get_badge_type_fire(self, obj):
+    def get_badge_type_fire(self, obj: Update) -> int:
         return getattr(obj, 'type_fire')
 
-    def get_badge_type_water(self, obj):
+    def get_badge_type_water(self, obj: Update) -> int:
         return getattr(obj, 'type_water')
 
-    def get_badge_type_grass(self, obj):
+    def get_badge_type_grass(self, obj: Update) -> int:
         return getattr(obj, 'type_grass')
 
-    def get_badge_type_electric(self, obj):
+    def get_badge_type_electric(self, obj: Update) -> int:
         return getattr(obj, 'type_electric')
 
-    def get_badge_type_psychic(self, obj):
+    def get_badge_type_psychic(self, obj: Update) -> int:
         return getattr(obj, 'type_psychic')
 
-    def get_badge_type_ice(self, obj):
+    def get_badge_type_ice(self, obj: Update) -> int:
         return getattr(obj, 'type_ice')
 
-    def get_badge_type_dragon(self, obj):
+    def get_badge_type_dragon(self, obj: Update) -> int:
         return getattr(obj, 'type_dragon')
 
-    def get_badge_type_dark(self, obj):
+    def get_badge_type_dark(self, obj: Update) -> int:
         return getattr(obj, 'type_dark')
 
-    def get_badge_type_fairy(self, obj):
+    def get_badge_type_fairy(self, obj: Update) -> int:
         return getattr(obj, 'type_fairy')
 
-    def get_gymbadges_total(self, obj):
+    def get_gymbadges_total(self, obj: Update) -> int:
         return getattr(obj, 'gymbadges_total')
 
-    def get_gymbadges_gold(self, obj):
+    def get_gymbadges_gold(self, obj: Update) -> int:
         return getattr(obj, 'gymbadges_gold')
 
-    def get_pokemon_info_stardust(self, obj):
+    def get_pokemon_info_stardust(self, obj: Update) -> int:
         return getattr(obj, 'stardust')
     
     class Meta:
@@ -366,46 +368,46 @@ class TrainerSerializer(serializers.ModelSerializer):
     update_set = serializers.SerializerMethodField()
     prefered = serializers.SerializerMethodField()
     
-    def get_user(self, obj):
+    def get_user(self, obj: Trainer) -> int:
         return getattr(obj, 'pk')
     
-    def get_owner(self, obj):
+    def get_owner(self, obj: Trainer) -> int:
         return getattr(obj, 'pk')
     
-    def get_username(self, obj):
+    def get_username(self, obj: Trainer) -> str:
         return getattr(obj, 'nickname')
     
-    def get_trainer_code(self, obj):
+    def get_trainer_code(self, obj: Trainer) -> str:
         if obj.has_perm('trainerdex.share_trainer_code_to_api'):
             if hasattr(obj, 'trainer_code'):
                 return obj.trainer_code.code
         return None
     
-    def get_has_cheated(self, obj):
+    def get_has_cheated(self, obj: Trainer) -> bool:
         return getattr(obj, 'is_banned')
     
-    def get_last_cheated(self, obj):
+    def get_last_cheated(self, obj: Trainer) -> None:
         return None
     
-    def get_currently_cheats(self, obj):
+    def get_currently_cheats(self, obj: Trainer) -> bool:
         return getattr(obj, 'is_banned')
     
-    def get_daily_goal(self, obj):
+    def get_daily_goal(self, obj: Trainer) -> None:
         return None
     
-    def get_total_goal(self, obj):
+    def get_total_goal(self, obj: Trainer) -> None:
         return None
     
-    def get_leaderboard_country(self, obj):
+    def get_leaderboard_country(self, obj: Trainer) -> str:
         return getattr(obj, 'country').code
     
-    def get_leaderboard_region(self, obj):
+    def get_leaderboard_region(self, obj: Trainer) -> None:
         return None
     
-    def get_update_set(self, obj):
+    def get_update_set(self, obj: Trainer) -> Dict[str, Union[str, int]]:
         return BriefUpdateSerializer(obj.updates, read_only=True, many=True).data
         
-    def get_prefered(self, obj):
+    def get_prefered(self, obj: Trainer) -> bool:
         """This field is deprecated and will be removed in API v2"""
         return True
     
@@ -418,14 +420,14 @@ class UserSerializer(serializers.ModelSerializer):
     profiles = serializers.SerializerMethodField()
     trainer = serializers.SerializerMethodField()
     
-    def get_profiles(self, obj):
+    def get_profiles(self, obj: User) -> List[int]:
         """This field is deprecated and will be removed in API v2"""
         try:
             return [obj.trainer.id]
         except User.trainer.RelatedObjectDoesNotExist:
             return []
     
-    def get_trainer(self, obj):
+    def get_trainer(self, obj: User) -> int:
         """This field is deprecated and will be removed in API v2"""
         try:
             return obj.trainer.id
@@ -441,7 +443,7 @@ class SocialAllAuthSerializer(serializers.ModelSerializer):
     
     trainer = serializers.SerializerMethodField()
     
-    def get_trainer(self, obj):
+    def get_trainer(self, obj: SocialAccount) -> int:
         return obj.user.trainer.pk
     
     class Meta:

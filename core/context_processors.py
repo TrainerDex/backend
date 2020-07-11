@@ -1,6 +1,8 @@
-﻿from django.conf import settings
+from typing import Dict
 
-def google_analytics(request):
+from django.conf import settings
+
+def google_analytics(request) -> Dict[str, str]:
     """
     Use the variables returned in this function to
     render your Google Analytics tracking code template.

@@ -8,22 +8,26 @@ from django.http import Http404
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from rest_framework.viewsets import ReadOnlyModelViewSet
+from rest_framework.serializers import SerializerMetaclass
 from rest_framework import status
 
 from trainerdex.api.v1.serializers import BriefUpdateSerializer, DetailedUpdateSerializer, SocialAllAuthSerializer, TrainerSerializer, UserSerializer
 from trainerdex.models import Trainer, Update
+from trainerdex.models import TrainerQuerySet, UpdateQuerySet
 
 log = logging.getLogger('django.trainerdex')
 User = get_user_model()
+
 
 class UserViewSet(ReadOnlyModelViewSet):
     serializer_class = UserSerializer
     queryset = User.objects.exclude(is_active=False)
 
+
 class TrainerViewSet(ReadOnlyModelViewSet):
     serializer_class = TrainerSerializer
     
-    def get_queryset(self):
+    def get_queryset(self) -> TrainerQuerySet:
         """
         Optionally restricts the returned trainers by name or team,
         by filtering against a `q` or `t` query parameter in the URL,
@@ -42,7 +46,7 @@ class TrainerViewSet(ReadOnlyModelViewSet):
 class UpdateViewSet(ReadOnlyModelViewSet):
     queryset = Update.objects.default_excludes()
     
-    def get_serializer_class(self):
+    def get_serializer_class(self) -> SerializerMetaclass:
         if self.action == 'list' or not self.request.query_params.get('detail', True):
             return BriefUpdateSerializer
         return DetailedUpdateSerializer
