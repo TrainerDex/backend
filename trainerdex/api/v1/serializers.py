@@ -352,6 +352,7 @@ class DetailedUpdateSerializer(serializers.ModelSerializer):
 
 
 class TrainerSerializer(serializers.ModelSerializer):
+    user = serializers.SerializerMethodField()
     owner = serializers.SerializerMethodField()
     username = serializers.SerializerMethodField()
     trainer_code = serializers.SerializerMethodField()
@@ -362,8 +363,11 @@ class TrainerSerializer(serializers.ModelSerializer):
     total_goal = serializers.SerializerMethodField()
     leaderboard_country = serializers.SerializerMethodField()
     leaderboard_region = serializers.SerializerMethodField()
-    update_set = BriefUpdateSerializer(read_only=True, many=True)
+    update_set = serializers.SerializerMethodField()
     prefered = serializers.SerializerMethodField()
+    
+    def get_user(self, obj):
+        return getattr(obj, 'pk')
     
     def get_owner(self, obj):
         return getattr(obj, 'pk')
@@ -372,7 +376,7 @@ class TrainerSerializer(serializers.ModelSerializer):
         return getattr(obj, 'nickname')
     
     def get_trainer_code(self, obj):
-        if obj.user.has_perm('trainerdex.share_trainer_code_to_api'):
+        if obj.has_perm('trainerdex.share_trainer_code_to_api'):
             if hasattr(obj, 'trainer_code'):
                 return obj.trainer_code.code
         return None
@@ -397,6 +401,9 @@ class TrainerSerializer(serializers.ModelSerializer):
     
     def get_leaderboard_region(self, obj):
         return None
+    
+    def get_update_set(self, obj):
+        return BriefUpdateSerializer(obj.updates, read_only=True, many=True).data
         
     def get_prefered(self, obj):
         """This field is deprecated and will be removed in API v2"""

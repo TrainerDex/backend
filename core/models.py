@@ -39,6 +39,7 @@ class Nickname(models.Model):
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
         verbose_name=User._meta.verbose_name,
+        related_name='nicknames',
     )
     nickname = django.contrib.postgres.fields.CICharField(
         max_length=15,

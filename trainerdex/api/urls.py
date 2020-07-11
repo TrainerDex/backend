@@ -6,9 +6,9 @@ urlpatterns = [
         'openapi',
         get_schema_view(
             title="TrainerDex",
-            version="1.99",
-            url="https://trainerdex.app/api/v1/",
-            urlconf='trainerdex.api.v1.urls',
+            version="2.0",
+            url="https://trainerdex.app/api/v2/",
+            urlconf='trainerdex.api.v2.urls',
         ),
         name="openapi-schema",
     ),

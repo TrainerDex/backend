@@ -45,7 +45,7 @@ class Faction(models.Model):
         (INSTINCT, pgettext('faction_3__short', 'Instinct')),
     )
     
-    id = models.PositiveSmallIntegerField(choices=FACTION_CHOICES, primary_key=True)
+    id = models.PositiveSmallIntegerField(choices=FACTION_CHOICES, primary_key=True, validators=[MaxValueValidator(3)])
     
     @property
     def name_short(self):
@@ -201,7 +201,7 @@ class Trainer(User):
     def nickname(self) -> str:
         """Gets nickname, fallback to username"""
         try:
-            return self.nickname_set.get(active=True).nickname
+            return self.nicknames.get(active=True).nickname
         except Nickname.DoesNotExist:
             return self.username
     
@@ -221,7 +221,7 @@ def create_profile(sender, instance, created, **kwargs) -> Trainer:
         return None
     
     if created:
-        return Trainer.objects.create(user_ptr=instance)
+        return Trainer.objects.get_or_create(user_ptr=instance)[0]
 
 
 class TrainerCode(models.Model):
@@ -300,6 +300,7 @@ class Update(models.Model):
         Trainer,
         on_delete=models.CASCADE,
         verbose_name=Trainer._meta.verbose_name,
+        related_name='updates',
     )
     update_time = models.DateTimeField(
         default=timezone.now,
@@ -748,7 +749,7 @@ class Update(models.Model):
                 continue
             
             # Get latest update with that field present, only get the important fields.
-            last_update = self.trainer.update_set.filter(update_time__lt=self.update_time) \
+            last_update = self.trainer.updates.filter(update_time__lt=self.update_time) \
                 .exclude(uuid=self.uuid) \
                 .exclude(**{field.name: None}) \
                 .order_by('-update_time') \
@@ -964,7 +965,7 @@ class Update(models.Model):
                 continue # Nothing to check!
             
             # Get latest update with that field present, only get the important fields.
-            last_update = self.trainer.update_set.filter(update_time__lt=self.update_time) \
+            last_update = self.trainer.updates.filter(update_time__lt=self.update_time) \
                 .exclude(uuid=self.uuid) \
                 .exclude(**{field.name: None}) \
                 .order_by('-update_time') \
