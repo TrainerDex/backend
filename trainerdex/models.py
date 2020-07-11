@@ -70,6 +70,9 @@ class Faction(models.Model):
     def __str__(self):
         return self.name_short
     
+    def __repr__(self):
+        return self.name_long
+    
     class Meta:
         verbose_name = npgettext_lazy("faction__title", "team", "teams", 1)
         verbose_name = npgettext_lazy("faction__title", "team", "teams", 3)
@@ -207,6 +210,9 @@ class Trainer(User):
     
     def __str__(self):
         return self.nickname
+    
+    def __repr__(self):
+        return f'pk: {self.pk} nickname: {self.username} faction: {self.faction}'
     
     def get_absolute_url(self) -> str:
         return reverse('trainerdex:profile_nickname', kwargs={'nickname': self.nickname})
@@ -706,11 +712,10 @@ class Update(models.Model):
     )
     
     def __str__(self):
-        return "Update(trainer: {trainer}, update_time: {time}, {stats})".format(
-            trainer=self.trainer,
-            time=self.update_time,
-            stats=','.join([f'{x}: {getattr(self, x)}' for x in self.modified_fields()]),
-        )
+        return f"{type(self).__name__}({self.__repr__()})"
+    
+    def __repr__(self):
+        return f"trainer: {self.trainer} update_time: {self.update_time}"
     
     def has_modified_extra_fields(self) -> bool:
         return bool(list(self.modified_extra_fields()))
