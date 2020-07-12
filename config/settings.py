@@ -22,18 +22,8 @@ ADMINS = local_settings.ADMINS
 
 # Application definition
 
-# django-cors-headers
-# https://pypi.org/project/django-cors-headers/
-# I read somewhere this has to be before django.contrib.sites
-
 INSTALLED_APPS = [
     'corsheaders',
-]
-
-# django apps
-# https://docs.djangoproject.com/en/3.0/
-
-INSTALLED_APPS += [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -44,28 +34,11 @@ INSTALLED_APPS += [
     'django.contrib.sites',
     'django.contrib.sitemaps',
     'django.contrib.gis',
-]
-
-# django-rest-framework
-# https://www.django-rest-framework.org/#installation
-
-INSTALLED_APPS += [
     'rest_framework',
     'rest_framework.authtoken',
-]
-
-# first-party apps
-
-INSTALLED_APPS += [
     # 'community',
     'core',
     'trainerdex',
-]
-
-# django-allauth
-# https://django-allauth.readthedocs.io/en/stable/installation.html
-
-INSTALLED_APPS += [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -73,11 +46,6 @@ INSTALLED_APPS += [
     'allauth.socialaccount.providers.facebook',
     'allauth.socialaccount.providers.google',
     'allauth.socialaccount.providers.twitter',
-    ]
-
-# other third-party apps
-
-INSTALLED_APPS += [
     'django_filters',
     'django_countries',
     ]

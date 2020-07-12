@@ -1181,7 +1181,7 @@ class Target(BaseTarget):
 class PresetTarget(BaseTarget):
     name = models.CharField(max_length=200, null=False, blank=False)
     
-    def add_to_trainer(self, trainer: Trainer) -> List[Target, bool]:
+    def add_to_trainer(self, trainer: Trainer) -> List[Union[Target, bool]]:
         return Target.objects.get_or_create(trainer=trainer, stat=self.stat, _target=self._target)
     
     class Meta:

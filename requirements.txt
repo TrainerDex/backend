@@ -5,6 +5,7 @@ django-cors-middleware==1.5
 django-countries==6.1.2
 django-exclusivebooleanfield==0.3.0 # Not updated for Django 3
 django-filter==2.3.0
+django-lifecycle==0.7.6
 djangorestframework==3.11
 drf-extensions==0.6.0
 humanize
@@ -14,5 +15,5 @@ psycopg2-binary
 Pygments
 python-dateutil==2.8.1
 pyyaml
-uritemplate
 requests
+uritemplate

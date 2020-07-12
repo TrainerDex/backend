@@ -1,5 +1,5 @@
 # import datetime
-# from typing import Dict, List, Union
+from typing import Dict, List, Union
 import logging
 
 # import requests
@@ -13,6 +13,7 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 from django.utils.translation import gettext_lazy as _, ngettext, npgettext_lazy, pgettext_lazy
 # from django.utils import timezone
+from django_lifecycle import LifecycleModelMixin, hook
 from exclusivebooleanfield.fields import ExclusiveBooleanField
 # from pytz import common_timezones
 
@@ -20,7 +21,7 @@ from trainerdex.validators import PokemonGoUsernameValidator
 
 log = logging.getLogger('django.trainerdex')
 
-class User(AbstractUser):
+class User(LifecycleModelMixin, AbstractUser):
     """The model used to represent a user in the database"""
     
     username = django.contrib.postgres.fields.CICharField(
@@ -33,9 +34,14 @@ class User(AbstractUser):
             'unique': _("A user with that username already exists."),
         },
     )
+    
+    @hook('after_update', when='username', has_changed=True)
+    def email_user_about_name_change(self):
+        # TODO: Actually email the user
+        pass
 
 
-class Nickname(models.Model):
+class Nickname(LifecycleModelMixin, models.Model):
     user = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
@@ -55,7 +61,12 @@ class Nickname(models.Model):
     
     def __str__(self) -> str:
         return self.nickname
-        
+    
+    @hook('after_save', when='active', is_now=True)
+    def on_active_set_username_on_user(self) -> None:
+        self.user.username = self.nickname
+        self.user.save(update_fields=['username'])
+    
     class Meta:
         ordering = ['nickname']
         verbose_name = npgettext_lazy("nickname__title", "nickname", "nicknames", 1)
@@ -69,60 +80,8 @@ def create_nickname(sender, instance: User, created: bool, **kwargs) -> Nickname
     if created:
         return Nickname.objects.create(user=instance, nickname=instance.username, active=True)
 
-@receiver(post_save, sender=Nickname)
-def update_username(sender, instance: Nickname, created: bool, **kwargs) -> None:
-    if kwargs.get('raw'):
-        return None
-    
-    if instance.active and instance.user.username != instance.nickname:
-        instance.user.username = instance.nickname
-        instance.user.save(update_fields=['username'])
-        # TODO: Generate an email or notice for the user alerting them of this change.
 
-
-# def get_guild_info(guild_id: int) -> Dict[str, Union[str, int]]:
-#     base_url = 'https://discordapp.com/api/v{version_number}'.format(version_number=6)
-#     r = requests.get(f"{base_url}/guilds/{guild_id}", headers={'Authorization': f"Bot {settings.DISCORD_TOKEN}"})
-#     try:
-#         r.raise_for_status()
-#     except requests.exceptions.HTTPError:
-#         return r.status_code
-#     return r.json()
-#
-# def get_guild_members(guild_id: int, limit: int = 1000) -> Dict[str, Union[str, int]]:
-#     base_url = 'https://discordapp.com/api/v{version_number}'.format(version_number=6)
-#     previous = None
-#     more = True
-#     result = []
-#     while more:
-#         r = requests.get(f"{base_url}/guilds/{guild_id}/members", headers={'Authorization': f"Bot {settings.DISCORD_TOKEN}"}, params={'limit': limit, 'after': previous})
-#         r.raise_for_status()
-#         more = bool(r.json())
-#         if more:
-#             result += r.json()
-#             previous = result[-1]['user']['id']
-#     return result
-#
-# def get_guild_member(guild_id: int, user_id: int) -> Dict[str, Union[str, int]]:
-#     base_url = 'https://discordapp.com/api/v{version_number}'.format(version_number=6)
-#     r = requests.get(f"{base_url}/guilds/{guild_id}/members/{user_id}", headers={'Authorization': f"Bot {settings.DISCORD_TOKEN}"})
-#     r.raise_for_status()
-#     return r.json()
-#
-# def get_guild_channels(guild_id: int) -> Dict[str, Union[str, int]]:
-#     base_url = 'https://discordapp.com/api/v{version_number}'.format(version_number=6)
-#     r = requests.get(f"{base_url}/guilds/{guild_id}/channels", headers={'Authorization': f"Bot {settings.DISCORD_TOKEN}"})
-#     r.raise_for_status()
-#     return r.json()
-#
-# def get_channel(channel_id: int) -> Dict[str, Union[str, int]]:
-#     base_url = 'https://discordapp.com/api/v{version_number}'.format(version_number=6)
-#     r = requests.get(f"{base_url}/channels/{channel_id}", headers={'Authorization': f"Bot {settings.DISCORD_TOKEN}"})
-#     r.raise_for_status()
-#     return r.json()
-#
-#
-# class DiscordGuild(models.Model):
+# class DiscordGuild(LifecycleModelMixin, models.Model):
 #     id = models.BigIntegerField(
 #         primary_key=True,
 #         verbose_name="ID",
@@ -139,106 +98,6 @@ def update_username(sender, instance: Nickname, created: bool, **kwargs) -> None
 #         through_fields=('guild', 'user'),
 #     )
 #
-#     def _outdated(self) -> bool:
-#         return (timezone.now()-self.cached_date) > datetime.timedelta(hours=1)
-#     _outdated.boolean = True
-#     outdated = property(_outdated)
-#
-#     def has_data(self) -> bool:
-#         return bool(self.data)
-#     has_data.boolean = True
-#     has_data.short_description = _('got data')
-#
-#     @property
-#     def name(self) -> str:
-#         return self.data.get('name')
-#
-#     @property
-#     def owner(self) -> Union[DiscordUser, str, int]:
-#         if self.data:
-#             if 'owner_id' in self.data:
-#                 try:
-#                     return DiscordUser.objects.get(uid=self.data['owner_id'])
-#                 except SocialAccount.DoesNotExist:
-#                     pass
-#             return self.data['owner_id']
-#
-#     def __str__(self) -> str:
-#         try:
-#             return str(self.name)
-#         except requests.exceptions.HTTPError:
-#             return f"Discord Guild with ID {self.id}"
-#
-#     def refresh_from_api(self) -> None:
-#         logging.info(f"Updating {self}")
-#         try:
-#             data_or_code = get_guild_info(self.id)
-#         except requests.exceptions.HTTPError:
-#             log.exception("Failed to get server information from Discord")
-#         else:
-#             if type(data_or_code) == int:
-#                 self.has_access = False
-#             else:
-#                 self.data = data_or_code
-#                 self.has_access = True
-#                 self.cached_date = timezone.now()
-#                 self.sync_roles()
-#             self.save()
-#
-#     def sync_members(self) -> Dict[str, List[str]]:
-#         try:
-#             guild_api_members = get_guild_members(self.id)
-#         except requests.exceptions.HTTPError:
-#             log.exception("Failed to get server information from Discord")
-#             return {'warning': ["Failed to get server information from Discord"]}
-#
-#         # Replace with a update_or_create() loop
-#
-#         new_members = [DiscordGuildMembership(
-#                 guild=self,
-#                 user=SocialAccount.objects.get(provider='discord', uid=x["user"]["id"]),
-#                 active=True,
-#                 data=x,
-#                 cached_date=timezone.now(),
-#                 ) for x in guild_api_members if SocialAccount.objects.filter(provider='discord', uid=x["user"]["id"]).exists() and not DiscordGuildMembership.objects.filter(
-#                     guild=self,
-#                     user=SocialAccount.objects.get(provider='discord', uid=x["user"]["id"]),
-#                 ).exists()]
-#
-#
-#         bulk = DiscordGuildMembership.objects.bulk_create(new_members)
-#
-#         reactivate_members = DiscordGuildMembership.objects.filter(guild=self, active=False, user__uid__in=[x["user"]["id"] for x in guild_api_members])
-#         reactivate_members.update(active=True)
-#
-#         inactive_members = DiscordGuildMembership.objects.filter(guild=self, active=True).exclude(user__uid__in=[x["user"]["id"] for x in guild_api_members])
-#         inactive_members.update(active=False)
-#
-#         return {'success': [
-#                     ngettext(
-#                         "Succesfully imported {success} of {total} ({real_total}) new member to {guild}",
-#                         "Succesfully imported {success} of {total} ({real_total}) new members to {guild}", len(new_members)
-#                         ).format(success=len(bulk), total=len(new_members), real_total=len(guild_api_members), guild=self),
-#                     ngettext(
-#                         "Succesfully added {count} member back into {guild}",
-#                         "Succesfully added {count} members back into {guild}", len(guild_api_members)
-#                         ).format(count=reactivate_members.count(), guild=self)
-#                 ],
-#                 'warning': [
-#                     ngettext(
-#                         "{count} member left {guild}",
-#                         "{count} members left {guild}", inactive_members.count()
-#                         ).format(count=inactive_members.count(), guild=self)
-#                 ]}
-#
-#     def clean(self) -> None:
-#         self.refresh_from_api()
-#
-#     class Meta:
-#         verbose_name = _("Discord Guild")
-#         verbose_name_plural = _("Discord Guilds")
-#
-# class DiscordGuildSettings(DiscordGuild):
 #     # Localization settings
 #     language = models.CharField(default=settings.LANGUAGE_CODE, choices=settings.LANGUAGES, max_length=len(max(settings.LANGUAGES, key=lambda x: len(x[0]))[0]))
 #     timezone = models.CharField(default=settings.TIME_ZONE, choices=((x, x) for x in common_timezones), max_length=len(max(common_timezones, key=len)))
@@ -265,13 +124,112 @@ def update_username(sender, instance: Nickname, created: bool, **kwargs) -> None
 #             ],
 #     )
 #
+#     def _outdated(self) -> bool:
+#         return (timezone.now()-self.cached_date) > datetime.timedelta(hours=1)
+#     _outdated.boolean = True
+#     outdated = property(_outdated)
 #
-# class DiscordChannel(models.Model):
-#     pass
+#     def has_data(self) -> bool:
+#         return bool(self.data)
+#     has_data.boolean = True
+#     has_data.short_description = _('got data')
 #
+#     def __str__(self) -> str:
+#         return self.data.get('name', self.id)
 #
-# class DiscordRole(models.Model):
-#     pass
+#     @hook('before_save')
+#     def refresh_from_api(self) -> None:
+#         logging.info(f"Updating DiscordGuild {self.id}")
+#         try:
+#             base_url = 'https://discordapp.com/api/v{version_number}'.format(version_number=6)
+#             r = requests.get(f"{base_url}/guilds/{guild_id}", headers={'Authorization': f"Bot {settings.DISCORD_TOKEN}"})
+#             r.raise_for_status()
+#         except requests.exceptions.HTTPError:
+#             log.exception("Failed to get server information from Discord")
+#             self.data = {}
+#             self.has_access = False
+#         else:
+#             self.data = r.json()
+#             self.has_access = True
+#         finally:
+#             self.cached_date = timezone.now()
+#
+#     @hook('after_save')
+#     @transaction.atomic
+#     def sync_members(self) -> Dict[str, List[str]]:
+#         try:
+#             def get_guild_members(guild_id: int, limit: int = 1000) -> Dict[str, Union[str, int]]:
+#                 base_url = 'https://discordapp.com/api/v{version_number}'.format(version_number=6)
+#                 previous = None
+#                 more = True
+#                 result = []
+#                 while more:
+#                     r = requests.get(f"{base_url}/guilds/{guild_id}/members", headers={'Authorization': f"Bot {settings.DISCORD_TOKEN}"}, params={'limit': limit, 'after': previous})
+#                     r.raise_for_status()
+#                     more = bool(r.json())
+#                     if more:
+#                         result += r.json()
+#                         previous = result[-1]['user']['id']
+#                 return result
+#             guild_api_members = get_guild_members(self.id)
+#         except requests.exceptions.HTTPError:
+#             log.exception("Failed to get server information from Discord")
+#             return {'warning': ["Failed to get server information from Discord"]}
+#
+#         # Replace with a update_or_create() loop
+#
+#         active_members = []
+#         created = 0
+#         updated = 0
+#
+#         for x in guild_api_members:
+#             if SocialAccount.objects.filter(provider='discord', uid=x["user"]["id"]).exists():
+#                 x, y = DiscordGuildMembership.objects.update_or_create(
+#                     guild=self,
+#                     user=SocialAccount.objects.get(provider='discord', uid=x["user"]["id"]),
+#                     defaults={
+#                         'active': True,
+#                         'data': x,
+#                         'cached_date': timezone.now(),
+#                     },
+#                 )
+#                 active_members.append(x)
+#                 if y:
+#                     created += 1
+#                 else:
+#                     updated += 1
+#
+#         inactive_members = DiscordGuildMembership.objects.filter(guild=self, active=True).exclude(user__uid__in=[x["user"]["id"] for x in guild_api_members]).update(active=False)
+#
+#         return {
+#             'success': [
+#                 ngettext(
+#                     "Imported {success} of {total} valid member to {guild} ({created} added, {updated} updated)",
+#                     "Imported {success} of {total} valid members to {guild} ({created} added, {updated} updated)",
+#                     total,
+#                 ).format(
+#                     success=len(active_members),
+#                     total=len(guild_api_members),
+#                     guild=self,
+#                     created=created,
+#                     updated=updated,
+#                 ),
+#             ],
+#             'warning': [
+#                 ngettext(
+#                     "{count} member left {guild}",
+#                     "{count} members left {guild}",
+#                     inactive_members,
+#                 ).format(
+#                     count=inactive_members,
+#                     guild=self
+#                 ),
+#             ],
+#         }
+#
+#     class Meta:
+#         verbose_name = _("Discord Guild")
+#         verbose_name_plural = _("Discord Guilds")
 #
 #
 # class DiscordUserManager(models.Manager):
@@ -360,39 +318,28 @@ def update_username(sender, instance: Nickname, created: bool, **kwargs) -> None
 #         else:
 #             return self.user
 #
-#     @property
-#     def roles(self) -> None:
-#         pass
-#
-#     def _deaf(self) -> bool:
-#         return self.data.get('deaf')
-#     _deaf.boolean = True
-#     deaf = property(_deaf)
-#
-#     def _mute(self) -> bool:
-#         return self.data.get('mute')
-#     _mute.boolean = True
-#     mute = property(_mute)
-#
 #     def __str__(self) -> str:
 #         return f"{self.display_name} in {self.guild}"
 #
+#     @hook('before_save')
 #     def refresh_from_api(self) -> None:
 #         log.info(f"Updating {self}")
 #         try:
-#             self.data = get_guild_member(self.guild.id, self.user.uid)
-#             if not self.user.extra_data:
-#                 self.user.extra_data = self.data['user']
-#                 self.user.save()
-#             self.cached_date = timezone.now()
+#             base_url = 'https://discordapp.com/api/v{version_number}'.format(version_number=6)
+#             r = requests.get(f"{base_url}/guilds/{self.guild.id}/members/{self.user.uid}", headers={'Authorization': f"Bot {settings.DISCORD_TOKEN}"})
+#             r.raise_for_status()
 #         except requests.exceptions.HTTPError:
 #             log.exception("Failed to get server information from Discord")
+#         else:
+#             self.data = r.json()
+#             if not self.user.extra_data:
+#                 self.user.extra_data = self.data['user']
+#                 self.user.save(update_fields=['extra_data'])
+#             self.cached_date = timezone.now()
 #
 #     def clean(self) -> None:
 #         if self.user.provider != 'discord':
 #             raise ValidationError(_("{} is not of type 'discord'").format(self.user))
-#
-#         self.refresh_from_api()
 #
 #     class Meta:
 #         verbose_name = _("Discord Member")
