@@ -724,7 +724,7 @@ class Update(models.Model):
     
     @classmethod
     def field_metadata(self, reversable: bool = None, sortable: bool = None) -> Dict[str, Union[Dict[str, Union[int, float, Decimal]], bool]]:
-        with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'update_fields_metadata.json'), 'r') as file:
+        with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data/update_fields_metadata.json'), 'r') as file:
             metadata = json.load(file)
         
         if reversable is not None:
