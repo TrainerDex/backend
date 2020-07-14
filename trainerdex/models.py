@@ -1,15 +1,12 @@
+import datetime
 import json
 import logging
 import uuid
 import os
 from typing import Dict, Iterator, List, Union
 
-import datetime
-import humanize
-from collections import defaultdict
-from decimal import Decimal
+import django.contrib.postgres.fields
 from django.conf import settings
-from django.contrib.auth import get_user_model
 from django.contrib.auth.models import UserManager
 from django.contrib.contenttypes.fields import GenericForeignKey, GenericRelation
 from django.contrib.contenttypes.models import ContentType
@@ -22,13 +19,18 @@ from django.dispatch import receiver
 from django.urls import reverse
 from django.utils import timezone
 from django.utils.translation import gettext_lazy as _, pgettext_lazy, pgettext, npgettext_lazy
-from django_countries.fields import CountryField
 
-from core.models import Nickname
-from trainerdex.validators import TrainerCodeValidator
+import humanize
+from collections import defaultdict
+from decimal import Decimal
+from django_countries.fields import CountryField
+from django_lifecycle import LifecycleModelMixin, hook
+from exclusivebooleanfield.fields import ExclusiveBooleanField
+
+from core.abstract import AbstractUser
+from trainerdex.validators import TrainerCodeValidator, PokemonGoUsernameValidator
 
 log = logging.getLogger('django.trainerdex')
-User = get_user_model()
 
 
 class Faction(models.Model):
@@ -116,16 +118,9 @@ class TrainerManager(UserManager):
         return self.get_queryset().default_excludes()
 
 
-class Trainer(User):
+class Trainer(AbstractUser):
     """The model used to represent a users profile in the database"""
     
-    user_ptr = models.OneToOneField(
-        settings.AUTH_USER_MODEL,
-        on_delete=models.CASCADE,
-        related_name='trainer',
-        parent_link=True,
-        primary_key=True,
-    )
     old_id = models.PositiveIntegerField(
         editable=False,
         verbose_name='(Deprecated) ID',
@@ -218,17 +213,48 @@ class Trainer(User):
     def get_absolute_url(self) -> str:
         return reverse('trainerdex:profile_nickname', kwargs={'nickname': self.nickname})
     
-    class Meta:
+    class Meta(AbstractUser.Meta):
         verbose_name = npgettext_lazy("trainer__title", "trainer", "trainers", 1)
         verbose_name_plural = npgettext_lazy("trainer__title", "trainer", "trainers", 2)
 
-@receiver(post_save, sender=User)
-def create_profile(sender, instance: User, created: bool, **kwargs) -> Trainer:
+class Nickname(LifecycleModelMixin, models.Model):
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        verbose_name=Trainer._meta.verbose_name,
+        related_name='nicknames',
+    )
+    nickname = django.contrib.postgres.fields.CICharField(
+        max_length=15,
+        unique=True,
+        validators=[PokemonGoUsernameValidator],
+        db_index=True,
+        verbose_name=pgettext_lazy("nickname__title", "nickname"),
+    )
+    active = ExclusiveBooleanField(
+        on='user',
+    )
+    
+    def __str__(self) -> str:
+        return self.nickname
+    
+    @hook('after_save', when='active', is_now=True)
+    def on_active_set_username_on_user(self) -> None:
+        self.user.username = self.nickname
+        self.user.save(update_fields=['username'])
+    
+    class Meta:
+        ordering = ['nickname']
+        verbose_name = npgettext_lazy("nickname__title", "nickname", "nicknames", 1)
+        verbose_name_plural = npgettext_lazy("nickname__title", "nickname", "nicknames", 2)
+
+@receiver(post_save, sender=Trainer)
+def create_nickname(sender, instance: Trainer, created: bool, **kwargs) -> Nickname:
     if kwargs.get('raw'):
         return None
     
     if created:
-        return Trainer.objects.get_or_create(user_ptr=instance)[0]
+        return Nickname.objects.create(user=instance, nickname=instance.username, active=True)
 
 
 class TrainerCode(models.Model):

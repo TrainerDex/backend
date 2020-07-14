@@ -2,8 +2,7 @@ from typing import Iterable
 
 from rest_framework import serializers
 
-from core.models import Nickname
-from trainerdex.models import Faction, Trainer, Update
+from trainerdex.models import Faction, Nickname, Trainer, Update
 from trainerdex.models import UpdateQuerySet
 
 

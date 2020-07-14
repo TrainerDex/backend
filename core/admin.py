@@ -9,26 +9,9 @@ from django.contrib import admin
 # from pygments.lexers import JsonLexer
 # from pygments import highlight
 
-from core.models import Nickname
 # from core.models import DiscordGuild, DiscordGuildSettings, DiscordGuildMembership, DiscordUser
 
 admin.site.unregister(SocialAccount)
-
-
-@admin.register(Nickname)
-class NicknameAdmin(admin.ModelAdmin):
-    search_fields = (
-        'nickname',
-        'first_name',
-        'username',
-        )
-    list_display = (
-        'nickname',
-        'user',
-        'active',
-        )
-    list_filter = ('active',)
-    list_display_links = ('nickname',)
 
 
 @admin.register(SocialAccount)

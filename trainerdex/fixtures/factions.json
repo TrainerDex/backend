@@ -1,0 +1,22 @@
+[
+    {
+        "model": "trainerdex.faction",
+        "pk": 0,
+        "fields": {}
+    },
+    {
+        "model": "trainerdex.faction",
+        "pk": 1,
+        "fields": {}
+    },
+    {
+        "model": "trainerdex.faction",
+        "pk": 2,
+        "fields": {}
+    },
+    {
+        "model": "trainerdex.faction",
+        "pk": 3,
+        "fields": {}
+    }
+]
