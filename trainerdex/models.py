@@ -23,7 +23,6 @@ from django.utils.translation import gettext_lazy as _, pgettext_lazy, pgettext,
 import humanize
 from collections import defaultdict
 from decimal import Decimal
-from django_countries.fields import CountryField
 from django_lifecycle import LifecycleModelMixin, hook
 from exclusivebooleanfield.fields import ExclusiveBooleanField
 
@@ -143,26 +142,12 @@ class Trainer(AbstractUser):
         default=0,
     )
     
-    country = CountryField(
-        null=True,
-        blank=True,
-        verbose_name=pgettext_lazy("profile__country__title", "Country"),
-        help_text=pgettext_lazy("profile__country__help", "Where this account plays the most. Used to place in localized leaderboards"),
-    )
-    
     is_verified = models.BooleanField(
         default=False,
         verbose_name=pgettext_lazy("profile__verified__title", "Verified"),
         help_text=pgettext_lazy("profile__verified__help", "Designates whether this user should be treated as verified."),
     )
-    last_modified = models.DateTimeField(pgettext_lazy("profile__last_modified__title", "Last Modified"), auto_now=True)
     
-    # This field `banned` needs to be replaced with a better solution.
-    is_banned = models.BooleanField(
-        default=False,
-        verbose_name=pgettext_lazy("profile__banned__title", "Banned"),
-        help_text=pgettext_lazy("profile__banned__help", "Designates whether this user should be treated as banned. Select this instead of deleting accounts."),
-    )
     evidence = GenericRelation(
         'Evidence',
         object_id_field='object_pk',
