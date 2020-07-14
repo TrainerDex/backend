@@ -2,11 +2,27 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.utils.translation import gettext_lazy as _
 
-from trainerdex.models import DataSource, Trainer, TrainerCode, Update, Evidence, EvidenceImage, Target, PresetTarget, PresetTargetGroup
+from trainerdex.models import DataSource, Evidence, EvidenceImage, Nickname, PresetTarget, PresetTargetGroup, Target, Trainer, TrainerCode, Update
 from trainerdex.models import TrainerQuerySet
 
 admin.site.register(PresetTargetGroup)
 admin.site.register(DataSource)
+
+
+@admin.register(Nickname)
+class NicknameAdmin(admin.ModelAdmin):
+    search_fields = (
+        'nickname',
+        'first_name',
+        'username',
+        )
+    list_display = (
+        'nickname',
+        'user',
+        'active',
+        )
+    list_filter = ('active',)
+    list_display_links = ('nickname',)
 
 
 @admin.register(PresetTarget)

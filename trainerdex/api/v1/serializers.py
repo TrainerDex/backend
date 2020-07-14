@@ -2,11 +2,8 @@
 
 from allauth.socialaccount.models import SocialAccount
 from rest_framework import serializers
-from django.contrib.auth import get_user_model
 
 from trainerdex.models import Trainer, Update
-
-User = get_user_model()
 
 v1_field_names = {
     'update': {
@@ -420,22 +417,20 @@ class UserSerializer(serializers.ModelSerializer):
     profiles = serializers.SerializerMethodField()
     trainer = serializers.SerializerMethodField()
     
-    def get_profiles(self, obj: User) -> List[int]:
+    def get_trainer(self, obj: Trainer) -> int:
         """This field is deprecated and will be removed in API v2"""
-        try:
-            return [obj.trainer.id]
-        except User.trainer.RelatedObjectDoesNotExist:
+        return obj.old_id
+            
+    def get_profiles(self, obj: Trainer) -> List[int]:
+        """This field is deprecated and will be removed in API v2"""
+        trainer = self.get_trainer(obj)
+        if trainer:
+            return [trainer]
+        else:
             return []
     
-    def get_trainer(self, obj: User) -> int:
-        """This field is deprecated and will be removed in API v2"""
-        try:
-            return obj.trainer.id
-        except User.trainer.RelatedObjectDoesNotExist:
-            return None
-    
     class Meta:
-        model = User
+        model = Trainer
         fields = ('id', 'username', 'first_name', 'last_name', 'profiles', 'trainer')
 
 

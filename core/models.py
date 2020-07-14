@@ -1,86 +1,20 @@
 # import datetime
-from typing import Dict, List, Union
-import logging
-
+# from typing import Dict, List, Union
+# import logging
+#
 # import requests
-import django.contrib.postgres.fields
 # from allauth.socialaccount.models import SocialAccount
-from django.conf import settings
-from django.contrib.auth.models import AbstractUser
+# from django.conf import settings
 # from django.core.exceptions import ValidationError
-from django.db import models
-from django.db.models.signals import post_save
-from django.dispatch import receiver
-from django.utils.translation import gettext_lazy as _, ngettext, npgettext_lazy, pgettext_lazy
+# from django.db import models
+# from django.utils.translation import gettext_lazy as _, ngettext
 # from django.utils import timezone
-from django_lifecycle import LifecycleModelMixin, hook
-from exclusivebooleanfield.fields import ExclusiveBooleanField
+# from django_lifecycle import LifecycleModelMixin, hook
 # from pytz import common_timezones
-
-from trainerdex.validators import PokemonGoUsernameValidator
-
-log = logging.getLogger('django.trainerdex')
-
-class User(LifecycleModelMixin, AbstractUser):
-    """The model used to represent a user in the database"""
-    
-    username = django.contrib.postgres.fields.CICharField(
-        verbose_name=pgettext_lazy("nickname__title", "nickname"),
-        max_length=15,
-        unique=True,
-        help_text=_('Required. 3-15 characters. Letters and digits only. Must match PokemonGo Nickname.'),
-        validators=[PokemonGoUsernameValidator],
-        error_messages={
-            'unique': _("A user with that username already exists."),
-        },
-    )
-    
-    @hook('after_update', when='username', has_changed=True)
-    def email_user_about_name_change(self):
-        # TODO: Actually email the user
-        pass
-
-
-class Nickname(LifecycleModelMixin, models.Model):
-    user = models.ForeignKey(
-        settings.AUTH_USER_MODEL,
-        on_delete=models.CASCADE,
-        verbose_name=User._meta.verbose_name,
-        related_name='nicknames',
-    )
-    nickname = django.contrib.postgres.fields.CICharField(
-        max_length=15,
-        unique=True,
-        validators=[PokemonGoUsernameValidator],
-        db_index=True,
-        verbose_name=pgettext_lazy("nickname__title", "nickname"),
-    )
-    active = ExclusiveBooleanField(
-        on='user',
-    )
-    
-    def __str__(self) -> str:
-        return self.nickname
-    
-    @hook('after_save', when='active', is_now=True)
-    def on_active_set_username_on_user(self) -> None:
-        self.user.username = self.nickname
-        self.user.save(update_fields=['username'])
-    
-    class Meta:
-        ordering = ['nickname']
-        verbose_name = npgettext_lazy("nickname__title", "nickname", "nicknames", 1)
-        verbose_name_plural = npgettext_lazy("nickname__title", "nickname", "nicknames", 2)
-
-@receiver(post_save, sender=User)
-def create_nickname(sender, instance: User, created: bool, **kwargs) -> Nickname:
-    if kwargs.get('raw'):
-        return None
-    
-    if created:
-        return Nickname.objects.create(user=instance, nickname=instance.username, active=True)
-
-
+#
+# log = logging.getLogger('django.trainerdex')
+#
+#
 # class DiscordGuild(LifecycleModelMixin, models.Model):
 #     id = models.BigIntegerField(
 #         primary_key=True,

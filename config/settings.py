@@ -139,7 +139,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Custom user ModelBackend
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-user-model
 
-AUTH_USER_MODEL = 'core.User'
+AUTH_USER_MODEL = 'trainerdex.Trainer'
 
 
 # Internationalization

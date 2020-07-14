@@ -2,7 +2,6 @@ import datetime
 import logging
 
 from allauth.socialaccount.models import SocialAccount
-from django.contrib.auth import get_user_model
 from django.core.exceptions import PermissionDenied
 from django.http import Http404
 from rest_framework.decorators import action
@@ -16,12 +15,11 @@ from trainerdex.models import Trainer, Update
 from trainerdex.models import TrainerQuerySet, UpdateQuerySet
 
 log = logging.getLogger('django.trainerdex')
-User = get_user_model()
 
 
 class UserViewSet(ReadOnlyModelViewSet):
     serializer_class = UserSerializer
-    queryset = User.objects.exclude(is_active=False)
+    queryset = Trainer.objects.default_excludes().exclude(old_id__isnull=True)
 
 
 class TrainerViewSet(ReadOnlyModelViewSet):
