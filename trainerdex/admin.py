@@ -44,7 +44,7 @@ class TargetAdmin(admin.ModelAdmin):
 
     list_display = ('trainer', 'stat', 'name', 'target_str', 'has_reached', 'date_reached')
     list_filter = ('stat', 'has_reached')
-    search_fields = ('trainer', 'stat', 'name')
+    search_fields = ('trainer__nicknames__nickname', 'trainer__username', 'stat', 'name')
     actions = [force_check_target]
 
 
@@ -53,7 +53,7 @@ class UpdateAdmin(admin.ModelAdmin):
 
     autocomplete_fields = ['trainer']
     list_display = ('trainer', 'total_xp', 'update_time', 'submission_date', 'has_modified_extra_fields')
-    search_fields = ('trainer__nickname__nickname', 'trainer__username')
+    search_fields = ('trainer__nicknames__nickname', 'trainer__username')
     ordering = ('-update_time',)
     date_hierarchy = 'update_time'
 

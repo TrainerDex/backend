@@ -1218,15 +1218,14 @@ class Target(LifecycleModelMixin, BaseTarget):
             self.date_reached = None
     
     def __str__(self) -> str:
-        orig_str = super().__str__()
-        return f"{'✅' if self.has_reached else '❌'} {orig_str}"
+        return f"{'✅' if self.has_reached else '❌'} {super().__str__()}"
 
 
 class PresetTarget(BaseTarget):
     name = models.CharField(max_length=200, null=False, blank=False)
     
     def add_to_trainer(self, trainer: Trainer) -> List[Union[Target, bool]]:
-        return Target.objects.update_or_create(trainer=trainer, name=self.name, stat=self.stat, _target=self._target)
+        return Target.objects.update_or_create(trainer=trainer, stat=self.stat, _target=self._target, defaults={'name': self.name})
     
     class Meta:
         abstract = False
@@ -1239,6 +1238,9 @@ class PresetTargetGroup(models.Model):
     name = models.CharField(max_length=200)
     
     children = models.ManyToManyField(PresetTarget)
+    
+    def add_to_trainer(self, trainer: Trainer) -> List[List[Union[Target, bool]]]:
+        return [x.add_to_trainer(trainer) for x in self.children.all()]
     
     def __str__(self) -> str:
         return self.name
