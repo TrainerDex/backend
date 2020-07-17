@@ -6,7 +6,7 @@ from trainerdex.models import Faction, Nickname, Trainer, TrainerCode, Update
 from trainerdex.models import UpdateQuerySet
 
 
-class NicknameSerializerInline(serializers.ModelSerializer):
+class NicknameSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = Nickname
@@ -53,7 +53,7 @@ class TrainerSerializer(serializers.ModelSerializer):
     country = serializers.CharField()
     faction = FactionInline(many=False, read_only=True)
     leaderboard_eligibility = serializers.BooleanField(read_only=True)
-    nicknames = NicknameSerializerInline(many=True, read_only=True)
+    nicknames = NicknameSerializer(many=True, read_only=True)
     updates = UpdateSerializerInline(many=True, read_only=True)
     
     def get_fields(self, *args, **kwargs) -> Iterable[str]:
@@ -80,17 +80,6 @@ class TrainerSerializer(serializers.ModelSerializer):
             'leaderboard_eligibility',
             'nicknames',
             'updates',
-        )
-
-
-class NicknameSerializerInline(serializers.ModelSerializer):
-    
-    class Meta:
-        model = Nickname
-        fields = (
-            'user',
-            'nickname',
-            'active',
         )
 
 

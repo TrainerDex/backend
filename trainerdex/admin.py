@@ -13,8 +13,7 @@ admin.site.register(DataSource)
 class NicknameAdmin(admin.ModelAdmin):
     search_fields = (
         'nickname',
-        'first_name',
-        'username',
+        'user__username',
         )
     list_display = (
         'nickname',
@@ -132,6 +131,11 @@ class TrainerAdmin(UserAdmin):
         TargetInline,
         TrainerCodeInline,
     ]
+    
+    def get_readonly_fields(self, request, obj=None):
+        if obj: # editing an existing object
+            return self.readonly_fields + ['username']
+        return self.readonly_fields
     
     def get_queryset(self, request) -> TrainerQuerySet:
         return super().get_queryset(request).prefetch_related('targets').prefetch_related('trainer_code')
