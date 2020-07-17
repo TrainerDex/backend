@@ -3,12 +3,15 @@ import logging
 from django.db.utils import IntegrityError
 from rest_framework import status
 from rest_framework.decorators import action
-from rest_framework.viewsets import ModelViewSet
+from rest_framework.generics import ListAPIView
+from rest_framework.viewsets import ModelViewSet, ReadOnlyModelViewSet
+from rest_framework.pagination import LimitOffsetPagination
 from rest_framework.response import Response
 from rest_framework_extensions.mixins import NestedViewSetMixin
 
 from trainerdex.api.v2.filters import TrainerFilter, TrainerCodeFilter, UpdateFilter
-from trainerdex.api.v2.serializers import TrainerSerializer, TrainerCodeSerializer, UpdateSerializer, NicknameSerializer
+from trainerdex.api.v2.serializers import TrainerSerializer, TrainerCodeSerializer, UpdateSerializer, NicknameSerializer, LeaderboardSerializer, LeaderboardSerializerLegacy
+from trainerdex.leaderboard import Leaderboard
 from trainerdex.models import Trainer, TrainerCode, Update
 
 log = logging.getLogger('django.trainerdex')
@@ -53,3 +56,23 @@ class TrainerCodeViewSet(ModelViewSet):
     queryset = TrainerCode.objects.all()
     serializer_class = TrainerCodeSerializer
     filterset_class = TrainerCodeFilter
+
+
+class LeaderboardView(ListAPIView):
+    """View the leaderboard, init"""
+    
+    @property
+    def get_serializer(self):
+        if self.request.query_params.get('legacy', False):
+            return LeaderboardSerializerLegacy
+        return LeaderboardSerializer
+    
+    def get_queryset(self):
+        leaderboard = Leaderboard(
+            legacy_mode=self.request.query_params.get('legacy', False),
+            order_by=self.request.query_params.get('o', 'total_xp'),
+        )
+        return leaderboard.objects()
+    
+    def get(self, request):
+        return self.list(request)

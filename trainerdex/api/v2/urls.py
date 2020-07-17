@@ -1,6 +1,7 @@
+from django.urls import path
 from rest_framework_extensions import routers
 
-from trainerdex.api.v2.views import TrainerViewSet, UpdateViewSet, NestedUpdateViewSet, TrainerCodeViewSet
+from trainerdex.api.v2.views import TrainerViewSet, UpdateViewSet, NestedUpdateViewSet, TrainerCodeViewSet, LeaderboardView
 
 app_name = 'trainerdex.api:v2'
 
@@ -15,4 +16,8 @@ router.register(r'trainers', TrainerViewSet, basename='trainer').register(
 router.register(r'trainer-code', TrainerCodeViewSet)
 router.register(r'updates', UpdateViewSet)
 
-urlpatterns = router.urls
+urlpatterns = [
+    path('leaderboard/', LeaderboardView.as_view()),
+]
+
+urlpatterns += router.urls

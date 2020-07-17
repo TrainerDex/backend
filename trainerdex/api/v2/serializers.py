@@ -119,3 +119,37 @@ class TrainerCodeSerializer(serializers.ModelSerializer):
     class Meta:
         model = TrainerCode
         fields = '__all__'
+
+
+class LeaderboardSerializer(serializers.ModelSerializer):
+    trainer = TrainerSerializerInline(many=False, read_only=True)
+    value = serializers.SerializerMethodField()
+    datetime = serializers.DateTimeField()
+    rank = serializers.IntegerField(max_value=0)
+    extra_fields = serializers.SerializerMethodField()
+    
+    def get_value(self, obj):
+        return obj.value
+    
+    def get_extra_fields(self, obj):
+        extra = UpdateSerializerInline(obj, many=False, read_only=True).data
+        return {k: v for k, v in extra.items() if v is not None}
+    
+    class Meta:
+        model = Update
+        fields = ('trainer', 'value', 'datetime', 'rank', 'extra_fields')
+
+
+class LeaderboardSerializerLegacy(LeaderboardSerializer):
+    trainer = serializers.SerializerMethodField()
+    
+    def get_trainer(self, obj):
+        return TrainerSerializerInline(obj, many=False, read_only=True).data
+    
+    def get_extra_fields(self, obj):
+        extra =  {x.replace('extra_max__', ''): getattr(obj, x) for x in dir(obj) if x.startswith('extra_max__')}
+        return {k: v for k, v in extra.items() if v is not None}
+        
+    class Meta:
+        model = Trainer
+        fields = ('trainer', 'value', 'datetime', 'rank', 'extra_fields')
