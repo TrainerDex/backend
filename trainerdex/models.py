@@ -13,7 +13,7 @@ from django.contrib.contenttypes.models import ContentType
 from django.core.exceptions import ValidationError
 from django.core.validators import MaxValueValidator, MinValueValidator, MaxLengthValidator, MinLengthValidator
 from django.db import models
-from django.db.models import Q
+from django.db.models import F, Q
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 from django.urls import reverse
@@ -157,16 +157,12 @@ class Trainer(AbstractUser):
     
     def has_evidence_been_submitted(self) -> bool:
         return self.evidence.first().images.exists()
-    has_evidence_been_submitted.boolean = True
     
     def has_evidence_been_approved(self) -> bool:
         return self.evidence.first().approval
-    has_evidence_been_approved.boolean = True
     
     def awaiting_verification(self) -> bool:
         return (self.has_evidence_been_submitted() and not any(self.verified, self.has_evidence_been_approved()))
-    awaiting_verification.boolean = True
-    awaiting_verification.short_description = pgettext_lazy("profile__awaiting_verification__description", "Ready to be verified!")
     
     @property
     def leaderboard_eligibility_detail(self) -> Dict[str, bool]:
@@ -183,14 +179,10 @@ class Trainer(AbstractUser):
     
     @property
     def nickname(self) -> str:
-        """Gets nickname, fallback to username"""
-        try:
-            return self.nicknames.get(active=True).nickname
-        except Nickname.DoesNotExist:
-            return self.username
+        return self.username
     
     def __str__(self) -> str:
-        return self.nickname
+        return self.username
     
     def __repr__(self) -> str:
         return f'pk: {self.pk} nickname: {self.username} faction: {self.faction}'
@@ -1191,12 +1183,39 @@ class BaseTarget(models.Model):
         ordering = ['stat', '_target']
 
 
-class Target(BaseTarget):
+class Target(LifecycleModelMixin, BaseTarget):
     trainer = models.ForeignKey(
         Trainer,
         on_delete=models.CASCADE,
         verbose_name=Trainer._meta.verbose_name,
+        related_name='targets',
         )
+    has_reached = models.BooleanField(
+        default=False,
+        verbose_name=pgettext_lazy("target__is_reached__name", "reached"),
+        help_text=pgettext_lazy("target__is_reached__help", "Designates whether this target has been reached."),
+    )
+    date_reached = models.DateTimeField(
+        blank=True,
+        null=True,
+        verbose_name=pgettext_lazy("target__date_reached__name", "date reached"),
+        help_text=pgettext_lazy("target__date_reached__help", "The date the target was reached, if known."),
+    )
+    
+    @hook('before_create')
+    def check_reached(self):
+        qs = self.trainer.updates.annotate(value=F(self.stat)).exclude(value__isnull=True).exclude(value__lt=self.target).order_by('value')
+        
+        log.debug(f"Checking {self.stat} @ {self.target}\n{qs}")
+        if qs.exists():
+            log.debug(f"{qs.first().value} >= {self.target}: {qs.first().value >= self.target}")
+            
+        if qs.exists() and qs.first().value >= self.target:
+            self.has_reached = True
+            self.date_reached = qs.first().update_time
+        else:
+            self.has_reached = False
+            self.date_reached = None
 
 
 class PresetTarget(BaseTarget):

@@ -29,8 +29,23 @@ class NicknameAdmin(admin.ModelAdmin):
 class PresetTargetAdmin(admin.ModelAdmin):
 
     list_display = ('stat', 'name', 'target_str')
-    list_filter = ('stat', 'name')
+    list_filter = ('stat',)
     search_fields = ('stat', 'name')
+
+
+def force_check_target(modeladmin, request, queryset):
+    for x in queryset:
+        x.check_reached()
+        x.save(update_fields=['has_reached', 'date_reached'])
+force_check_target.short_description = "Check if this target has been reached"
+
+@admin.register(Target)
+class TargetAdmin(admin.ModelAdmin):
+
+    list_display = ('trainer', 'stat', 'name', 'target_str', 'has_reached', 'date_reached')
+    list_filter = ('stat', 'has_reached')
+    search_fields = ('trainer', 'stat', 'name')
+    actions = [force_check_target]
 
 
 @admin.register(Update)
@@ -54,6 +69,9 @@ class TrainerCodeInline(admin.TabularInline):
 class TargetInline(admin.TabularInline):
     model = Target
     min_num = 0
+    
+    def get_queryset(self, request):
+        return super().get_queryset(request).filter(has_reached=False)
 
 
 @admin.register(Trainer)
@@ -64,7 +82,6 @@ class TrainerAdmin(UserAdmin):
         'faction',
         'is_banned',
         'leaderboard_eligibility',
-        'awaiting_verification',
         ]
     list_filter = [
         'faction',
@@ -116,10 +133,8 @@ class TrainerAdmin(UserAdmin):
         TrainerCodeInline,
     ]
     
-    def queryset(self, request) -> TrainerQuerySet:
-        qs = super().queryset(request)
-        qs = qs.order_by('username', 'pk').distinct('pk')
-        return qs
+    def get_queryset(self, request) -> TrainerQuerySet:
+        return super().get_queryset(request).prefetch_related('targets').prefetch_related('trainer_code')
 
 
 class EvidenceImageInline(admin.TabularInline):
