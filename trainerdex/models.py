@@ -1216,6 +1216,10 @@ class Target(LifecycleModelMixin, BaseTarget):
         else:
             self.has_reached = False
             self.date_reached = None
+    
+    def __str__(self) -> str:
+        orig_str = super().__str__()
+        return f"{'✅' if self.has_reached else '❌'} {orig_str}"
 
 
 class PresetTarget(BaseTarget):
