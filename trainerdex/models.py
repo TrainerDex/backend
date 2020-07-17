@@ -1168,6 +1168,16 @@ class BaseTarget(models.Model):
         return locals()
     target = property(**target())
     
+    @property
+    def unit(self):
+        return Update.field_metadata().get(self.stat).get('unit', '')
+        
+    def __target_str_(self) -> str:
+        return f"{self.target:0,}{self.unit}"
+    __target_str_.short_description = _target.verbose_name
+    
+    target_str = property(__target_str_)
+    
     def __str__(self) -> str:
         return f"{self.name} ({self.stat}: {humanize.intcomma(self.target)})"
     
@@ -1193,7 +1203,7 @@ class PresetTarget(BaseTarget):
     name = models.CharField(max_length=200, null=False, blank=False)
     
     def add_to_trainer(self, trainer: Trainer) -> List[Union[Target, bool]]:
-        return Target.objects.get_or_create(trainer=trainer, stat=self.stat, _target=self._target)
+        return Target.objects.update_or_create(trainer=trainer, name=self.name, stat=self.stat, _target=self._target)
     
     class Meta:
         abstract = False

@@ -28,9 +28,9 @@ class NicknameAdmin(admin.ModelAdmin):
 @admin.register(PresetTarget)
 class PresetTargetAdmin(admin.ModelAdmin):
 
-    list_display = ('name', 'stat', 'target')
-    list_filter = ('stat',)
-    search_fields = ('name', 'stat')
+    list_display = ('stat', 'name', 'target_str')
+    list_filter = ('stat', 'name')
+    search_fields = ('stat', 'name')
 
 
 @admin.register(Update)
@@ -73,7 +73,7 @@ class TrainerAdmin(UserAdmin):
         'is_verified',
         ]
     search_fields = [
-        'nickname__nickname',
+        'nicknames__nickname',
         'first_name',
         'username',
         ]

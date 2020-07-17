@@ -1,0 +1,106 @@
+[
+    {
+        "model": "trainerdex.datasource",
+        "pk": 1,
+        "fields": {
+            "slug": "com.discord",
+            "verbose_name": "Discord"
+        }
+    },
+    {
+        "model": "trainerdex.datasource",
+        "pk": 2,
+        "fields": {
+            "slug": "com.discord:register",
+            "verbose_name": "Discord (Registration)"
+        }
+    },
+    {
+        "model": "trainerdex.datasource",
+        "pk": 3,
+        "fields": {
+            "slug": "com.facebook",
+            "verbose_name": "Facebook"
+        }
+    },
+    {
+        "model": "trainerdex.datasource",
+        "pk": 4,
+        "fields": {
+            "slug": "com.nianticlabs.pokemongo.social",
+            "verbose_name": "Niantic Social"
+        }
+    },
+    {
+        "model": "trainerdex.datasource",
+        "pk": 5,
+        "fields": {
+            "slug": "com.pkmngots:import",
+            "verbose_name": "Third Saturday"
+        }
+    },
+    {
+        "model": "trainerdex.datasource",
+        "pk": 6,
+        "fields": {
+            "slug": "com.pokeassistant.trainerstats",
+            "verbose_name": "Poké Assistant"
+        }
+    },
+    {
+        "model": "trainerdex.datasource",
+        "pk": 7,
+        "fields": {
+            "slug": "com.pokenavbot.profiles",
+            "verbose_name": "PokeNav"
+        }
+    },
+    {
+        "model": "trainerdex.datasource",
+        "pk": 8,
+        "fields": {
+            "slug": "com.tl40data",
+            "verbose_name": "TL40 Data Team"
+        }
+    },
+    {
+        "model": "trainerdex.datasource",
+        "pk": 9,
+        "fields": {
+            "slug": "com.tl40data:legacy",
+            "verbose_name": "TL40 Data Team (Legacy)"
+        }
+    },
+    {
+        "model": "trainerdex.datasource",
+        "pk": 10,
+        "fields": {
+            "slug": "com.trainerdex:web",
+            "verbose_name": "Website"
+        }
+    },
+    {
+        "model": "trainerdex.datasource",
+        "pk": 11,
+        "fields": {
+            "slug": "com.trainerdex:web:register",
+            "verbose_name": "Registration"
+        }
+    },
+    {
+        "model": "trainerdex.datasource",
+        "pk": 12,
+        "fields": {
+            "slug": "com.twitter",
+            "verbose_name": "Twitter"
+        }
+    },
+    {
+        "model": "trainerdex.datasource",
+        "pk": 13,
+        "fields": {
+            "slug": "com.youtube",
+            "verbose_name": "YouTube"
+        }
+    }
+]
