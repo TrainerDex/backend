@@ -73,7 +73,7 @@ v1_field_names = {
         'stardust': 'pokemon_info_stardust',
     },
     'trainer': {
-        'user_ptr': 'owner',
+        'id': 'owner',
         'start_date': 'start_date',
         'faction': 'faction',
         'country': 'leaderboard_country',
