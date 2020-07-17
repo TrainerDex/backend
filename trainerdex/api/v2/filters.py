@@ -1,6 +1,6 @@
 import django_filters as filters
 
-from trainerdex.models import Trainer, Update
+from trainerdex.models import Trainer, TrainerCode, Update
 
 
 class TrainerFilter(filters.FilterSet):
@@ -14,8 +14,19 @@ class TrainerFilter(filters.FilterSet):
             'country',
         ]
 
+class TrainerCodeFilter(filters.FilterSet):
+    trainer__nickname = filters.CharFilter(field_name='trainer__nicknames__nickname')
+    
+    class Meta:
+        model = TrainerCode
+        fields = [
+            'trainer__nickname',
+            'trainer__faction',
+            'trainer__country',
+        ]
 
-class UpdateFiler(filters.FilterSet):
+
+class UpdateFilter(filters.FilterSet):
     update_time = filters.IsoDateTimeFromToRangeFilter()
     
     o = filters.OrderingFilter(

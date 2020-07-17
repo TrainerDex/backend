@@ -3,6 +3,7 @@ import json
 import logging
 import uuid
 import os
+import re
 from typing import Dict, Iterator, List, Union
 
 import django.contrib.postgres.fields
@@ -234,7 +235,7 @@ def create_nickname(sender, instance: Trainer, created: bool, **kwargs) -> Nickn
         return Nickname.objects.create(user=instance, nickname=instance.username, active=True)
 
 
-class TrainerCode(models.Model):
+class TrainerCode(LifecycleModelMixin, models.Model):
     
     trainer = models.OneToOneField(
         Trainer,
@@ -257,6 +258,11 @@ class TrainerCode(models.Model):
     
     def __str__(self) -> str:
         return str(self.trainer)
+    
+    @hook('before_save')
+    def format_code(self):
+        self.code = re.sub(r'\D', '', self.code)
+    
     
     class Meta:
         verbose_name = npgettext_lazy("trainer_code__title", "Trainer Code", "Trainer Codes", 1)

@@ -2,7 +2,7 @@ from typing import Iterable
 
 from rest_framework import serializers
 
-from trainerdex.models import Faction, Nickname, Trainer, Update
+from trainerdex.models import Faction, Nickname, Trainer, TrainerCode, Update
 from trainerdex.models import UpdateQuerySet
 
 
@@ -50,6 +50,7 @@ class FactionInline(serializers.ModelSerializer):
 
 
 class TrainerSerializer(serializers.ModelSerializer):
+    country = serializers.CharField()
     faction = FactionInline(many=False, read_only=True)
     leaderboard_eligibility = serializers.BooleanField(read_only=True)
     nicknames = NicknameSerializerInline(many=True, read_only=True)
@@ -107,3 +108,25 @@ class UpdateSerializer(serializers.ModelSerializer):
             'data_source',
             'data_source_notes'
         ]+[x for x in Update.field_metadata().keys()]
+
+
+class TrainerSerializerInline(serializers.ModelSerializer):
+    country = serializers.CharField()
+    faction = FactionInline(many=False, read_only=True)
+    
+    class Meta:
+        model = Trainer
+        fields = (
+            'id',
+            'nickname',
+            'faction',
+            'country',
+        )
+
+
+class TrainerCodeSerializer(serializers.ModelSerializer):
+    trainer = TrainerSerializerInline(many=False, read_only=True)
+    
+    class Meta:
+        model = TrainerCode
+        fields = '__all__'

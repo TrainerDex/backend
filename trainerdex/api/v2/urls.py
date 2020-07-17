@@ -1,6 +1,6 @@
 from rest_framework_extensions import routers
 
-from trainerdex.api.v2.views import TrainerViewSet, UpdateViewSet, NestedUpdateViewSet
+from trainerdex.api.v2.views import TrainerViewSet, UpdateViewSet, NestedUpdateViewSet, TrainerCodeViewSet
 
 app_name = 'trainerdex.api:v2'
 
@@ -11,6 +11,8 @@ router.register(r'trainers', TrainerViewSet, basename='trainer').register(
     basename='trainers-update',
     parents_query_lookups=['trainer']
     )
+
+router.register(r'trainer-code', TrainerCodeViewSet)
 router.register(r'updates', UpdateViewSet)
 
 urlpatterns = router.urls
