@@ -1,6 +1,6 @@
 from typing import Union
 
-from django.db.models import Max, F, Window, Subquery
+from django.db.models import F, Max, Subquery, Window
 from django.db.models.functions import DenseRank
 
 from trainerdex.models import Trainer, Update

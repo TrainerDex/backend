@@ -2,14 +2,15 @@
 # from typing import Dict, List, Union
 # import logging
 #
-# import requests
-# from allauth.socialaccount.models import SocialAccount
 # from django.conf import settings
 # from django.core.exceptions import ValidationError
 # from django.db import models
 # from django.utils.translation import gettext_lazy as _, ngettext
 # from django.utils import timezone
-# from django_lifecycle import LifecycleModelMixin, hook
+#
+# import requests
+# from allauth.socialaccount.models import SocialAccount
+# from django_lifecycle import hook, LifecycleModelMixin
 # from pytz import common_timezones
 #
 # log = logging.getLogger('django.trainerdex')

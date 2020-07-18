@@ -1,8 +1,8 @@
 from django.contrib import admin
 from django.utils.translation import gettext_lazy as _
 
-from core.mixins import AddFieldsetsMixin
 from community.models import Community
+from core.mixins import AddFieldsetsMixin
 
 
 @admin.register(Community)

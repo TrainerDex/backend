@@ -1,7 +1,8 @@
 from django.urls import path
+
 from rest_framework_extensions import routers
 
-from trainerdex.api.v2.views import TrainerViewSet, UpdateViewSet, NestedUpdateViewSet, TrainerCodeViewSet, LeaderboardView
+from trainerdex.api.v2.views import LeaderboardView, NestedUpdateViewSet, TrainerCodeViewSet, TrainerViewSet, UpdateViewSet
 
 app_name = 'trainerdex.api:v2'
 

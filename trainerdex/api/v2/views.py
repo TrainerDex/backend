@@ -8,11 +8,12 @@ from django.urls import reverse
 from rest_framework import status
 from rest_framework.decorators import action
 from rest_framework.generics import ListAPIView
-from rest_framework.viewsets import ModelViewSet, ReadOnlyModelViewSet
 from rest_framework.pagination import LimitOffsetPagination
 from rest_framework.response import Response
-from rest_framework.utils.urls import remove_query_param, replace_query_param
 from rest_framework.settings import api_settings
+from rest_framework.utils.urls import remove_query_param, replace_query_param
+from rest_framework.viewsets import ModelViewSet, ReadOnlyModelViewSet
+
 from rest_framework_extensions.mixins import NestedViewSetMixin
 
 from trainerdex.api.v2.filters import LeaderboardFilter, TrainerCodeFilter, TrainerFilter, UpdateFilter

@@ -12,7 +12,7 @@ from django.contrib.auth.models import UserManager
 from django.contrib.contenttypes.fields import GenericForeignKey, GenericRelation
 from django.contrib.contenttypes.models import ContentType
 from django.core.exceptions import ValidationError
-from django.core.validators import MaxValueValidator, MinValueValidator, MaxLengthValidator, MinLengthValidator
+from django.core.validators import MaxLengthValidator, MaxValueValidator, MinLengthValidator, MinValueValidator
 from django.db import models
 from django.db.models import F, Q
 from django.db.models.signals import post_save
@@ -20,12 +20,12 @@ from django.dispatch import receiver
 from django.templatetags.static import static
 from django.urls import reverse
 from django.utils import timezone
-from django.utils.translation import gettext_lazy as _, pgettext_lazy, pgettext, npgettext_lazy
+from django.utils.translation import gettext_lazy as _, npgettext_lazy, pgettext, pgettext_lazy
 
 import humanize
 from collections import defaultdict
 from decimal import Decimal
-from django_lifecycle import LifecycleModelMixin, hook
+from django_lifecycle import hook, LifecycleModelMixin
 from exclusivebooleanfield.fields import ExclusiveBooleanField
 
 from core.abstract import AbstractUser

@@ -1,15 +1,16 @@
 # import json
 
-from allauth.socialaccount.admin import SocialAccountAdmin as BaseSocialAccountAdmin
-from allauth.socialaccount.models import SocialAccount
 from django.contrib import admin
 # from django.utils.safestring import mark_safe
 # from django.utils.translation import gettext_lazy as _
+
+from allauth.socialaccount.admin import SocialAccountAdmin as BaseSocialAccountAdmin
+from allauth.socialaccount.models import SocialAccount
+# from pygments import highlight
 # from pygments.formatters import HtmlFormatter
 # from pygments.lexers import JsonLexer
-# from pygments import highlight
 
-# from core.models import DiscordGuild, DiscordGuildSettings, DiscordGuildMembership, DiscordUser
+# from core.models import DiscordGuild, DiscordGuildMembership, DiscordGuildSettings, DiscordUser
 
 admin.site.unregister(SocialAccount)
 @admin.register(SocialAccount)
