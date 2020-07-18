@@ -15,11 +15,22 @@ class Leaderboard:
         self.queryset = queryset
         self._query = self.__manager.get_queryset(o=self.order_by, q=self.queryset)
     
+    @property
     def objects(self) -> Union[UpdateQuerySet, TrainerQuerySet]:
         if self.legacy:
             return self._query.annotate(trainer=F('pk'))
         else:
             return self._query
+    
+    def __str__(self) -> str:
+        if self.legacy:
+            mode = 'Legacy '
+        else:
+            mode = ''
+        return f"{mode}Leaderboard with {self.objects.count()} entries"
+    
+    def __repr__(self) -> str:
+        return self.__str__()
 
 
 class LeaderboardManager:

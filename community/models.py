@@ -68,7 +68,7 @@ class Community(models.Model):
     country_flag.short_description = country.verbose_name
     
     def get_leaderboard(self, legacy_mode: bool = False, order_by: str = 'total_xp'):
-        return Leaderboard(legacy_mode=legacy, order_by=order_by, queryset=self.members)
+        return self.members.default_excludes().get_leaderboard(legacy_mode, order_by)
     
     def __str__(self) -> str:
         return self.name

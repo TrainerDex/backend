@@ -101,6 +101,10 @@ class TrainerQuerySet(models.QuerySet):
     
     def default_excludes(self: models.QuerySet) -> models.QuerySet:
         return self.exclude_banned().exclude_unverified().exclude_deactived()
+    
+    def get_leaderboard(self, legacy_mode: bool = False, order_by: str = 'total_xp') -> models.QuerySet:
+        from trainerdex.leaderboard import Leaderboard
+        return Leaderboard(legacy_mode, order_by, queryset=self).objects
 
 
 class TrainerManager(UserManager):
@@ -121,6 +125,9 @@ class TrainerManager(UserManager):
     
     def default_excludes(self) -> models.QuerySet:
         return self.get_queryset().default_excludes()
+    
+    def get_leaderboard(self, legacy_mode: bool = False, order_by: str = 'total_xp') -> models.QuerySet:
+        return self.get_queryset().get_leaderboard()
 
 
 class Trainer(AbstractUser):

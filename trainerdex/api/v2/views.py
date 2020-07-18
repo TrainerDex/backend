@@ -12,7 +12,7 @@ from rest_framework_extensions.mixins import NestedViewSetMixin
 from trainerdex.api.v2.filters import TrainerFilter, TrainerCodeFilter, UpdateFilter
 from trainerdex.api.v2.serializers import TrainerSerializer, TrainerCodeSerializer, UpdateSerializer, NicknameSerializer, LeaderboardSerializer, LeaderboardSerializerLegacy
 from trainerdex.leaderboard import Leaderboard
-from trainerdex.models import Trainer, TrainerCode, Update
+from trainerdex.models import Trainer, TrainerCode, Update, Target, PresetTarget
 
 log = logging.getLogger('django.trainerdex')
 
@@ -60,6 +60,7 @@ class TrainerCodeViewSet(ModelViewSet):
 
 class LeaderboardView(ListAPIView):
     """View the leaderboard, init"""
+    queryset = Trainer.objects.default_excludes()
     
     @property
     def get_serializer(self):
@@ -67,12 +68,20 @@ class LeaderboardView(ListAPIView):
             return LeaderboardSerializerLegacy
         return LeaderboardSerializer
     
-    def get_queryset(self):
-        leaderboard = Leaderboard(
+    def list(self, request, *args, **kwargs):
+        queryset = self.filter_queryset(self.get_queryset())
+        leaderboard = queryset.get_leaderboard(
             legacy_mode=self.request.query_params.get('legacy', False),
             order_by=self.request.query_params.get('o', 'total_xp'),
         )
-        return leaderboard.objects()
+        
+        page = self.paginate_queryset(leaderboard)
+        if page is not None:
+            serializer = self.get_serializer(page, many=True)
+            return self.get_paginated_response(serializer.data)
+        
+        serializer = self.get_serializer(queryset, many=True)
+        return Response(serializer.data)
     
     def get(self, request):
         return self.list(request)
