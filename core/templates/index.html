@@ -1,7 +1,9 @@
 {% load static %}
+{% load analytical %}
 <!DOCTYPE html>
 <html lang="en" charset="utf-8">
     <head>
+        {% analytical_head_top %}
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>TrainerDex</title>
@@ -18,11 +20,14 @@
         <meta name="msvalidate.01" content="E7E20ABA1E037AC0B7E0116E01E3337A" />
         
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic|Material+Icons">
+        {% analytical_head_bottom %}
     </head>
     <body>
         <noscript>
             <strong>We're sorry but TrainerDex doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
         </noscript>
+        {% analytical_body_top %}
         
+        {% analytical_body_bottom %}
     </body>
 </html>
