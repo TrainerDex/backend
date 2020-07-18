@@ -4,6 +4,7 @@ from distutils.util import strtobool
 
 from django.db.utils import IntegrityError
 from django.shortcuts import redirect
+from django.urls import reverse
 from rest_framework import status
 from rest_framework.decorators import action
 from rest_framework.generics import ListAPIView
@@ -14,10 +15,10 @@ from rest_framework.utils.urls import remove_query_param, replace_query_param
 from rest_framework.settings import api_settings
 from rest_framework_extensions.mixins import NestedViewSetMixin
 
-from trainerdex.api.v2.filters import TrainerFilter, TrainerCodeFilter, UpdateFilter
-from trainerdex.api.v2.serializers import TrainerSerializer, TrainerCodeSerializer, UpdateSerializer, NicknameSerializer, LeaderboardSerializer, LeaderboardSerializerLegacy
+from trainerdex.api.v2.filters import LeaderboardFilter, TrainerCodeFilter, TrainerFilter, UpdateFilter
+from trainerdex.api.v2.serializers import LeaderboardSerializer, LeaderboardSerializerLegacy, NicknameSerializer, TrainerCodeSerializer, TrainerSerializer, UpdateSerializer
 from trainerdex.leaderboard import Leaderboard
-from trainerdex.models import Trainer, TrainerCode, Update, Target, PresetTarget
+from trainerdex.models import PresetTarget, Target, Trainer, TrainerCode, Update
 from trainerdex.models import TrainerQuerySet, UpdateQuerySet
 
 log = logging.getLogger('django.trainerdex')
@@ -67,6 +68,7 @@ class TrainerCodeViewSet(ModelViewSet):
 class LeaderboardView(ListAPIView):
     """View the leaderboard, init"""
     queryset = Trainer.objects.default_excludes()
+    filterset_class = LeaderboardFilter
     
     @property
     def get_serializer(self):
@@ -83,13 +85,20 @@ class LeaderboardView(ListAPIView):
         
         focus = self.request.query_params.get('focus', '')
         if focus.isnumeric():
-            NOT_FOUND_ERROR = Response({'status': f'trainer with id {focus} not found'}, status=status.HTTP_400_BAD_REQUEST)
+            try:
+                trnr_focus = Trainer.objects.get(pk=int(focus))
+            except Trainer.DoesNotExist:
+                return Response({'status': f'Unable to find a trainer with the ID of {focus}'}, status=status.HTTP_404_NOT_FOUND)
+            
+            
+            
+            TRAINER_NOT_IN_SET = Response({'status': f'Trainer with id {focus} ({trnr_focus}) is not in this leaderboard.', 'profile-url': request.build_absolute_uri(reverse('v2:trainer-detail', args=[trnr_focus.pk]))}, status=status.HTTP_400_BAD_REQUEST)
             if isinstance(leaderboard, TrainerQuerySet):
-                if not leaderboard.filter(pk=int(focus)).exists():
-                    return NOT_FOUND_ERROR
+                if not leaderboard.filter(pk=trnr_focus.pk).exists():
+                    return TRAINER_NOT_IN_SET
             elif isinstance(leaderboard, UpdateQuerySet):
-                if not leaderboard.filter(trainer__pk=int(focus)).exists():
-                    return NOT_FOUND_ERROR
+                if not leaderboard.filter(trainer=trnr_focus).exists():
+                    return TRAINER_NOT_IN_SET
             
             for index, item in enumerate(leaderboard):
                 if isinstance(item, Trainer):

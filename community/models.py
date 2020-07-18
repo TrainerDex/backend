@@ -61,6 +61,7 @@ class Community(models.Model):
     members = models.ManyToManyField(
         Trainer,
         blank=True,
+        related_query_name='communities',
     )
     
     def country_flag(self):

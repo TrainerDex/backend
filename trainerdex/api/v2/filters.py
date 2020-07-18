@@ -38,3 +38,16 @@ class UpdateFilter(filters.FilterSet):
     class Meta:
         model = Update
         fields = ['trainer', 'update_time']+[x for x, y in Update.field_metadata().items() if y.get('sortable') == True]
+
+
+class LeaderboardFilter(filters.FilterSet):
+    nickname = filters.CharFilter(field_name='nicknames__nickname')
+    
+    class Meta:
+        model = Trainer
+        fields = [
+            'nickname',
+            'faction',
+            'country',
+            'communities'
+        ]
