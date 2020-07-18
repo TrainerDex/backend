@@ -365,6 +365,7 @@ class Update(models.Model):
     
     total_xp = models.PositiveIntegerField(
         null=True,
+        blank=True,
         verbose_name=pgettext_lazy("total_xp__title", "Total XP"),
     )
     
@@ -773,8 +774,13 @@ class Update(models.Model):
                 yield x
     
     def clean(self) -> None:
+        super().clean()
         errors = defaultdict(list)
-            
+        
+        if not any([(getattr(self, x) is not None) for x in Update.field_metadata().keys()]):
+            csv_fields = ', '.join([str(x.verbose_name) for x in Update._meta.get_fields() if x.name in Update.field_metadata().keys()])
+            raise ValidationError(_("You must fill in at least one of the following fields:\n{csv_fields}").format(csv_fields=csv_fields), code="nodata")
+        
         for field in Update._meta.get_fields():
             if getattr(self, field.name) is None:
                 continue
