@@ -5,7 +5,9 @@
         "fields": {
             "stat": "battle_attack_won",
             "_target": "10",
-            "name": "Bronze"
+            "name": "Bronze",
+            "group": "battle_attack_won",
+            "_order": 0
         }
     },
     {
@@ -14,7 +16,9 @@
         "fields": {
             "stat": "battle_attack_won",
             "_target": "100",
-            "name": "Silver"
+            "name": "Silver",
+            "group": "battle_attack_won",
+            "_order": 1
         }
     },
     {
@@ -23,7 +27,9 @@
         "fields": {
             "stat": "battle_attack_won",
             "_target": "1000",
-            "name": "Gold"
+            "name": "Gold",
+            "group": "battle_attack_won",
+            "_order": 2
         }
     },
     {
@@ -32,7 +38,9 @@
         "fields": {
             "stat": "battle_training_won",
             "_target": "10",
-            "name": "Bronze"
+            "name": "Bronze",
+            "group": "battle_training_won",
+            "_order": 0
         }
     },
     {
@@ -41,7 +49,9 @@
         "fields": {
             "stat": "battle_training_won",
             "_target": "100",
-            "name": "Silver"
+            "name": "Silver",
+            "group": "battle_training_won",
+            "_order": 1
         }
     },
     {
@@ -50,7 +60,9 @@
         "fields": {
             "stat": "battle_training_won",
             "_target": "1000",
-            "name": "Gold"
+            "name": "Gold",
+            "group": "battle_training_won",
+            "_order": 2
         }
     },
     {
@@ -59,7 +71,9 @@
         "fields": {
             "stat": "berries_fed",
             "_target": "10",
-            "name": "Bronze"
+            "name": "Bronze",
+            "group": "berries_fed",
+            "_order": 0
         }
     },
     {
@@ -68,7 +82,9 @@
         "fields": {
             "stat": "berries_fed",
             "_target": "100",
-            "name": "Silver"
+            "name": "Silver",
+            "group": "berries_fed",
+            "_order": 1
         }
     },
     {
@@ -77,7 +93,9 @@
         "fields": {
             "stat": "berries_fed",
             "_target": "1000",
-            "name": "Gold"
+            "name": "Gold",
+            "group": "berries_fed",
+            "_order": 2
         }
     },
     {
@@ -86,7 +104,9 @@
         "fields": {
             "stat": "big_magikarp",
             "_target": "3",
-            "name": "Bronze"
+            "name": "Bronze",
+            "group": "big_magikarp",
+            "_order": 0
         }
     },
     {
@@ -95,7 +115,9 @@
         "fields": {
             "stat": "big_magikarp",
             "_target": "50",
-            "name": "Silver"
+            "name": "Silver",
+            "group": "big_magikarp",
+            "_order": 1
         }
     },
     {
@@ -104,7 +126,9 @@
         "fields": {
             "stat": "big_magikarp",
             "_target": "300",
-            "name": "Gold"
+            "name": "Gold",
+            "group": "big_magikarp",
+            "_order": 2
         }
     },
     {
@@ -113,7 +137,9 @@
         "fields": {
             "stat": "buddy_best",
             "_target": "1",
-            "name": "Bronze"
+            "name": "Bronze",
+            "group": "buddy_best",
+            "_order": 0
         }
     },
     {
@@ -122,7 +148,9 @@
         "fields": {
             "stat": "buddy_best",
             "_target": "10",
-            "name": "Silver"
+            "name": "Silver",
+            "group": "buddy_best",
+            "_order": 1
         }
     },
     {
@@ -131,7 +159,9 @@
         "fields": {
             "stat": "buddy_best",
             "_target": "100",
-            "name": "Gold"
+            "name": "Gold",
+            "group": "buddy_best",
+            "_order": 2
         }
     },
     {
@@ -140,7 +170,9 @@
         "fields": {
             "stat": "capture_total",
             "_target": "30",
-            "name": "Bronze"
+            "name": "Bronze",
+            "group": "capture_total",
+            "_order": 0
         }
     },
     {
@@ -149,7 +181,9 @@
         "fields": {
             "stat": "capture_total",
             "_target": "500",
-            "name": "Silver"
+            "name": "Silver",
+            "group": "capture_total",
+            "_order": 1
         }
     },
     {
@@ -158,7 +192,9 @@
         "fields": {
             "stat": "capture_total",
             "_target": "2000",
-            "name": "Gold"
+            "name": "Gold",
+            "group": "capture_total",
+            "_order": 2
         }
     },
     {
@@ -167,7 +203,9 @@
         "fields": {
             "stat": "challenge_quests",
             "_target": "10",
-            "name": "Bronze"
+            "name": "Bronze",
+            "group": "challenge_quests",
+            "_order": 0
         }
     },
     {
@@ -176,7 +214,9 @@
         "fields": {
             "stat": "challenge_quests",
             "_target": "100",
-            "name": "Silver"
+            "name": "Silver",
+            "group": "challenge_quests",
+            "_order": 1
         }
     },
     {
@@ -185,7 +225,9 @@
         "fields": {
             "stat": "challenge_quests",
             "_target": "1000",
-            "name": "Gold"
+            "name": "Gold",
+            "group": "challenge_quests",
+            "_order": 2
         }
     },
     {
@@ -194,7 +236,9 @@
         "fields": {
             "stat": "evolved_total",
             "_target": "3",
-            "name": "Bronze"
+            "name": "Bronze",
+            "group": "evolved_total",
+            "_order": 0
         }
     },
     {
@@ -203,7 +247,9 @@
         "fields": {
             "stat": "evolved_total",
             "_target": "20",
-            "name": "Silver"
+            "name": "Silver",
+            "group": "evolved_total",
+            "_order": 1
         }
     },
     {
@@ -212,7 +258,9 @@
         "fields": {
             "stat": "evolved_total",
             "_target": "200",
-            "name": "Gold"
+            "name": "Gold",
+            "group": "evolved_total",
+            "_order": 2
         }
     },
     {
@@ -221,7 +269,9 @@
         "fields": {
             "stat": "great_league",
             "_target": "5",
-            "name": "Bronze"
+            "name": "Bronze",
+            "group": "great_league",
+            "_order": 0
         }
     },
     {
@@ -230,7 +280,9 @@
         "fields": {
             "stat": "great_league",
             "_target": "50",
-            "name": "Silver"
+            "name": "Silver",
+            "group": "great_league",
+            "_order": 1
         }
     },
     {
@@ -239,7 +291,9 @@
         "fields": {
             "stat": "great_league",
             "_target": "200",
-            "name": "Gold"
+            "name": "Gold",
+            "group": "great_league",
+            "_order": 2
         }
     },
     {
@@ -248,7 +302,9 @@
         "fields": {
             "stat": "gymbadges_total",
             "_target": "10",
-            "name": "Bronze"
+            "name": "Bronze",
+            "group": "gymbadges_total",
+            "_order": 0
         }
     },
     {
@@ -257,7 +313,9 @@
         "fields": {
             "stat": "gymbadges_total",
             "_target": "200",
-            "name": "Gold"
+            "name": "Gold",
+            "group": "gymbadges_total",
+            "_order": 2
         }
     },
     {
@@ -266,7 +324,9 @@
         "fields": {
             "stat": "gymbadges_total",
             "_target": "50",
-            "name": "Silver"
+            "name": "Silver",
+            "group": "gymbadges_total",
+            "_order": 1
         }
     },
     {
@@ -275,7 +335,9 @@
         "fields": {
             "stat": "hatched_total",
             "_target": "10",
-            "name": "Bronze"
+            "name": "Bronze",
+            "group": "hatched_total",
+            "_order": 0
         }
     },
     {
@@ -284,7 +346,9 @@
         "fields": {
             "stat": "hatched_total",
             "_target": "100",
-            "name": "Silver"
+            "name": "Silver",
+            "group": "hatched_total",
+            "_order": 1
         }
     },
     {
@@ -293,7 +357,9 @@
         "fields": {
             "stat": "hatched_total",
             "_target": "500",
-            "name": "Gold"
+            "name": "Gold",
+            "group": "hatched_total",
+            "_order": 2
         }
     },
     {
@@ -302,7 +368,9 @@
         "fields": {
             "stat": "hours_defended",
             "_target": "10",
-            "name": "Bronze"
+            "name": "Bronze",
+            "group": "hours_defended",
+            "_order": 0
         }
     },
     {
@@ -311,7 +379,9 @@
         "fields": {
             "stat": "hours_defended",
             "_target": "100",
-            "name": "Silver"
+            "name": "Silver",
+            "group": "hours_defended",
+            "_order": 1
         }
     },
     {
@@ -320,7 +390,9 @@
         "fields": {
             "stat": "hours_defended",
             "_target": "1000",
-            "name": "Gold"
+            "name": "Gold",
+            "group": "hours_defended",
+            "_order": 2
         }
     },
     {
@@ -329,7 +401,9 @@
         "fields": {
             "stat": "legendary_battle_won",
             "_target": "10",
-            "name": "Bronze"
+            "name": "Bronze",
+            "group": "legendary_battle_won",
+            "_order": 0
         }
     },
     {
@@ -338,7 +412,9 @@
         "fields": {
             "stat": "legendary_battle_won",
             "_target": "100",
-            "name": "Silver"
+            "name": "Silver",
+            "group": "legendary_battle_won",
+            "_order": 1
         }
     },
     {
@@ -347,7 +423,9 @@
         "fields": {
             "stat": "legendary_battle_won",
             "_target": "1000",
-            "name": "Gold"
+            "name": "Gold",
+            "group": "legendary_battle_won",
+            "_order": 2
         }
     },
     {
@@ -356,7 +434,9 @@
         "fields": {
             "stat": "master_league",
             "_target": "5",
-            "name": "Bronze"
+            "name": "Bronze",
+            "group": "master_league",
+            "_order": 0
         }
     },
     {
@@ -365,7 +445,9 @@
         "fields": {
             "stat": "master_league",
             "_target": "50",
-            "name": "Silver"
+            "name": "Silver",
+            "group": "master_league",
+            "_order": 1
         }
     },
     {
@@ -374,7 +456,9 @@
         "fields": {
             "stat": "master_league",
             "_target": "200",
-            "name": "Gold"
+            "name": "Gold",
+            "group": "master_league",
+            "_order": 2
         }
     },
     {
@@ -383,7 +467,9 @@
         "fields": {
             "stat": "max_level_friends",
             "_target": "1",
-            "name": "Bronze"
+            "name": "Bronze",
+            "group": "max_level_friends",
+            "_order": 0
         }
     },
     {
@@ -392,7 +478,9 @@
         "fields": {
             "stat": "max_level_friends",
             "_target": "2",
-            "name": "Silver"
+            "name": "Silver",
+            "group": "max_level_friends",
+            "_order": 1
         }
     },
     {
@@ -401,7 +489,9 @@
         "fields": {
             "stat": "max_level_friends",
             "_target": "3",
-            "name": "Gold"
+            "name": "Gold",
+            "group": "max_level_friends",
+            "_order": 2
         }
     },
     {
@@ -410,7 +500,9 @@
         "fields": {
             "stat": "photobomb",
             "_target": "10",
-            "name": "Bronze"
+            "name": "Bronze",
+            "group": "photobomb",
+            "_order": 0
         }
     },
     {
@@ -419,7 +511,9 @@
         "fields": {
             "stat": "photobomb",
             "_target": "50",
-            "name": "Silver"
+            "name": "Silver",
+            "group": "photobomb",
+            "_order": 1
         }
     },
     {
@@ -428,7 +522,9 @@
         "fields": {
             "stat": "photobomb",
             "_target": "200",
-            "name": "Gold"
+            "name": "Gold",
+            "group": "photobomb",
+            "_order": 2
         }
     },
     {
@@ -437,7 +533,9 @@
         "fields": {
             "stat": "pikachu",
             "_target": "3",
-            "name": "Bronze"
+            "name": "Bronze",
+            "group": "pikachu",
+            "_order": 0
         }
     },
     {
@@ -446,7 +544,9 @@
         "fields": {
             "stat": "pikachu",
             "_target": "50",
-            "name": "Silver"
+            "name": "Silver",
+            "group": "pikachu",
+            "_order": 1
         }
     },
     {
@@ -455,7 +555,9 @@
         "fields": {
             "stat": "pikachu",
             "_target": "300",
-            "name": "Gold"
+            "name": "Gold",
+            "group": "pikachu",
+            "_order": 2
         }
     },
     {
@@ -464,7 +566,9 @@
         "fields": {
             "stat": "pokedex_gen1",
             "_target": "10",
-            "name": "Bronze"
+            "name": "Bronze",
+            "group": "pokedex_gen1",
+            "_order": 0
         }
     },
     {
@@ -473,7 +577,9 @@
         "fields": {
             "stat": "pokedex_gen1",
             "_target": "200",
-            "name": "Gold"
+            "name": "Gold",
+            "group": "pokedex_gen1",
+            "_order": 2
         }
     },
     {
@@ -482,7 +588,9 @@
         "fields": {
             "stat": "pokedex_gen1",
             "_target": "50",
-            "name": "Silver"
+            "name": "Silver",
+            "group": "pokedex_gen1",
+            "_order": 1
         }
     },
     {
@@ -491,7 +599,9 @@
         "fields": {
             "stat": "pokedex_gen2",
             "_target": "10",
-            "name": "Bronze"
+            "name": "Bronze",
+            "group": "pokedex_gen2",
+            "_order": 0
         }
     },
     {
@@ -500,7 +610,9 @@
         "fields": {
             "stat": "pokedex_gen2",
             "_target": "200",
-            "name": "Gold"
+            "name": "Gold",
+            "group": "pokedex_gen2",
+            "_order": 2
         }
     },
     {
@@ -509,7 +621,9 @@
         "fields": {
             "stat": "pokedex_gen2",
             "_target": "50",
-            "name": "Silver"
+            "name": "Silver",
+            "group": "pokedex_gen2",
+            "_order": 1
         }
     },
     {
@@ -518,7 +632,9 @@
         "fields": {
             "stat": "pokedex_gen3",
             "_target": "10",
-            "name": "Bronze"
+            "name": "Bronze",
+            "group": "pokedex_gen3",
+            "_order": 0
         }
     },
     {
@@ -527,7 +643,9 @@
         "fields": {
             "stat": "pokedex_gen3",
             "_target": "200",
-            "name": "Gold"
+            "name": "Gold",
+            "group": "pokedex_gen3",
+            "_order": 2
         }
     },
     {
@@ -536,7 +654,9 @@
         "fields": {
             "stat": "pokedex_gen3",
             "_target": "50",
-            "name": "Silver"
+            "name": "Silver",
+            "group": "pokedex_gen3",
+            "_order": 1
         }
     },
     {
@@ -545,7 +665,9 @@
         "fields": {
             "stat": "pokedex_gen4",
             "_target": "10",
-            "name": "Bronze"
+            "name": "Bronze",
+            "group": "pokedex_gen4",
+            "_order": 0
         }
     },
     {
@@ -554,7 +676,9 @@
         "fields": {
             "stat": "pokedex_gen4",
             "_target": "200",
-            "name": "Gold"
+            "name": "Gold",
+            "group": "pokedex_gen4",
+            "_order": 2
         }
     },
     {
@@ -563,7 +687,9 @@
         "fields": {
             "stat": "pokedex_gen4",
             "_target": "50",
-            "name": "Silver"
+            "name": "Silver",
+            "group": "pokedex_gen4",
+            "_order": 1
         }
     },
     {
@@ -572,7 +698,9 @@
         "fields": {
             "stat": "pokedex_gen5",
             "_target": "10",
-            "name": "Bronze"
+            "name": "Bronze",
+            "group": "pokedex_gen5",
+            "_order": 0
         }
     },
     {
@@ -581,7 +709,9 @@
         "fields": {
             "stat": "pokedex_gen5",
             "_target": "200",
-            "name": "Gold"
+            "name": "Gold",
+            "group": "pokedex_gen5",
+            "_order": 2
         }
     },
     {
@@ -590,7 +720,9 @@
         "fields": {
             "stat": "pokedex_gen5",
             "_target": "50",
-            "name": "Silver"
+            "name": "Silver",
+            "group": "pokedex_gen5",
+            "_order": 1
         }
     },
     {
@@ -599,7 +731,9 @@
         "fields": {
             "stat": "pokedex_gen6",
             "_target": "10",
-            "name": "Bronze"
+            "name": "Bronze",
+            "group": "pokedex_gen6",
+            "_order": 0
         }
     },
     {
@@ -608,7 +742,9 @@
         "fields": {
             "stat": "pokedex_gen6",
             "_target": "200",
-            "name": "Gold"
+            "name": "Gold",
+            "group": "pokedex_gen6",
+            "_order": 2
         }
     },
     {
@@ -617,7 +753,9 @@
         "fields": {
             "stat": "pokedex_gen6",
             "_target": "50",
-            "name": "Silver"
+            "name": "Silver",
+            "group": "pokedex_gen6",
+            "_order": 1
         }
     },
     {
@@ -626,7 +764,9 @@
         "fields": {
             "stat": "pokedex_gen7",
             "_target": "10",
-            "name": "Bronze"
+            "name": "Bronze",
+            "group": "pokedex_gen7",
+            "_order": 0
         }
     },
     {
@@ -635,7 +775,9 @@
         "fields": {
             "stat": "pokedex_gen7",
             "_target": "200",
-            "name": "Gold"
+            "name": "Gold",
+            "group": "pokedex_gen7",
+            "_order": 2
         }
     },
     {
@@ -644,7 +786,9 @@
         "fields": {
             "stat": "pokedex_gen7",
             "_target": "50",
-            "name": "Silver"
+            "name": "Silver",
+            "group": "pokedex_gen7",
+            "_order": 1
         }
     },
     {
@@ -653,7 +797,9 @@
         "fields": {
             "stat": "pokedex_gen8",
             "_target": "10",
-            "name": "Bronze"
+            "name": "Bronze",
+            "group": "pokedex_gen8",
+            "_order": 0
         }
     },
     {
@@ -662,7 +808,9 @@
         "fields": {
             "stat": "pokedex_gen8",
             "_target": "200",
-            "name": "Gold"
+            "name": "Gold",
+            "group": "pokedex_gen8",
+            "_order": 2
         }
     },
     {
@@ -671,7 +819,9 @@
         "fields": {
             "stat": "pokedex_gen8",
             "_target": "50",
-            "name": "Silver"
+            "name": "Silver",
+            "group": "pokedex_gen8",
+            "_order": 1
         }
     },
     {
@@ -680,7 +830,9 @@
         "fields": {
             "stat": "pokedex_total_caught",
             "_target": "10",
-            "name": "Bronze"
+            "name": "Bronze",
+            "group": "pokedex_total_caught",
+            "_order": 0
         }
     },
     {
@@ -689,7 +841,9 @@
         "fields": {
             "stat": "pokedex_total_caught",
             "_target": "200",
-            "name": "Gold"
+            "name": "Gold",
+            "group": "pokedex_total_caught",
+            "_order": 2
         }
     },
     {
@@ -698,7 +852,9 @@
         "fields": {
             "stat": "pokedex_total_caught",
             "_target": "50",
-            "name": "Silver"
+            "name": "Silver",
+            "group": "pokedex_total_caught",
+            "_order": 1
         }
     },
     {
@@ -707,7 +863,9 @@
         "fields": {
             "stat": "pokedex_total_seen",
             "_target": "10",
-            "name": "Bronze"
+            "name": "Bronze",
+            "group": "pokedex_total_seen",
+            "_order": 0
         }
     },
     {
@@ -716,7 +874,9 @@
         "fields": {
             "stat": "pokedex_total_seen",
             "_target": "200",
-            "name": "Gold"
+            "name": "Gold",
+            "group": "pokedex_total_seen",
+            "_order": 2
         }
     },
     {
@@ -725,7 +885,9 @@
         "fields": {
             "stat": "pokedex_total_seen",
             "_target": "50",
-            "name": "Silver"
+            "name": "Silver",
+            "group": "pokedex_total_seen",
+            "_order": 1
         }
     },
     {
@@ -734,7 +896,9 @@
         "fields": {
             "stat": "pokemon_purified",
             "_target": "5",
-            "name": "Bronze"
+            "name": "Bronze",
+            "group": "pokemon_purified",
+            "_order": 0
         }
     },
     {
@@ -743,7 +907,9 @@
         "fields": {
             "stat": "pokemon_purified",
             "_target": "50",
-            "name": "Silver"
+            "name": "Silver",
+            "group": "pokemon_purified",
+            "_order": 1
         }
     },
     {
@@ -752,7 +918,9 @@
         "fields": {
             "stat": "pokemon_purified",
             "_target": "500",
-            "name": "Gold"
+            "name": "Gold",
+            "group": "pokemon_purified",
+            "_order": 2
         }
     },
     {
@@ -761,7 +929,9 @@
         "fields": {
             "stat": "pokestops_visited",
             "_target": "100",
-            "name": "Bronze"
+            "name": "Bronze",
+            "group": "pokestops_visited",
+            "_order": 0
         }
     },
     {
@@ -770,7 +940,9 @@
         "fields": {
             "stat": "pokestops_visited",
             "_target": "1000",
-            "name": "Silver"
+            "name": "Silver",
+            "group": "pokestops_visited",
+            "_order": 1
         }
     },
     {
@@ -779,7 +951,9 @@
         "fields": {
             "stat": "pokestops_visited",
             "_target": "2000",
-            "name": "Gold"
+            "name": "Gold",
+            "group": "pokestops_visited",
+            "_order": 2
         }
     },
     {
@@ -788,7 +962,9 @@
         "fields": {
             "stat": "raid_battle_won",
             "_target": "10",
-            "name": "Bronze"
+            "name": "Bronze",
+            "group": "raid_battle_won",
+            "_order": 0
         }
     },
     {
@@ -797,7 +973,9 @@
         "fields": {
             "stat": "raid_battle_won",
             "_target": "100",
-            "name": "Silver"
+            "name": "Silver",
+            "group": "raid_battle_won",
+            "_order": 1
         }
     },
     {
@@ -806,7 +984,9 @@
         "fields": {
             "stat": "raid_battle_won",
             "_target": "1000",
-            "name": "Gold"
+            "name": "Gold",
+            "group": "raid_battle_won",
+            "_order": 2
         }
     },
     {
@@ -815,7 +995,9 @@
         "fields": {
             "stat": "rocket_grunts_defeated",
             "_target": "10",
-            "name": "Bronze"
+            "name": "Bronze",
+            "group": "rocket_grunts_defeated",
+            "_order": 0
         }
     },
     {
@@ -824,7 +1006,9 @@
         "fields": {
             "stat": "rocket_grunts_defeated",
             "_target": "100",
-            "name": "Gold"
+            "name": "Gold",
+            "group": "rocket_grunts_defeated",
+            "_order": 2
         }
     },
     {
@@ -833,7 +1017,9 @@
         "fields": {
             "stat": "rocket_grunts_defeated",
             "_target": "1000",
-            "name": "Silver"
+            "name": "Silver",
+            "group": "rocket_grunts_defeated",
+            "_order": 1
         }
     },
     {
@@ -842,7 +1028,9 @@
         "fields": {
             "stat": "small_rattata",
             "_target": "3",
-            "name": "Bronze"
+            "name": "Bronze",
+            "group": "small_rattata",
+            "_order": 0
         }
     },
     {
@@ -851,7 +1039,9 @@
         "fields": {
             "stat": "small_rattata",
             "_target": "50",
-            "name": "Silver"
+            "name": "Silver",
+            "group": "small_rattata",
+            "_order": 1
         }
     },
     {
@@ -860,7 +1050,9 @@
         "fields": {
             "stat": "small_rattata",
             "_target": "300",
-            "name": "Gold"
+            "name": "Gold",
+            "group": "small_rattata",
+            "_order": 2
         }
     },
     {
@@ -869,7 +1061,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "1000",
-            "name": "TL2"
+            "name": "TL2",
+            "group": "total_xp",
+            "_order": 1000
         }
     },
     {
@@ -878,7 +1072,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "3000",
-            "name": "TL3"
+            "name": "TL3",
+            "group": "total_xp",
+            "_order": 3000
         }
     },
     {
@@ -887,7 +1083,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "6000",
-            "name": "TL4"
+            "name": "TL4",
+            "group": "total_xp",
+            "_order": 6000
         }
     },
     {
@@ -896,7 +1094,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "10000",
-            "name": "TL5"
+            "name": "TL5",
+            "group": "total_xp",
+            "_order": 10000
         }
     },
     {
@@ -905,7 +1105,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "15000",
-            "name": "TL6"
+            "name": "TL6",
+            "group": "total_xp",
+            "_order": 15000
         }
     },
     {
@@ -914,7 +1116,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "21000",
-            "name": "TL7"
+            "name": "TL7",
+            "group": "total_xp",
+            "_order": 21000
         }
     },
     {
@@ -923,7 +1127,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "28000",
-            "name": "TL8"
+            "name": "TL8",
+            "group": "total_xp",
+            "_order": 28000
         }
     },
     {
@@ -932,7 +1138,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "36000",
-            "name": "TL9"
+            "name": "TL9",
+            "group": "total_xp",
+            "_order": 36000
         }
     },
     {
@@ -941,7 +1149,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "45000",
-            "name": "TL10"
+            "name": "TL10",
+            "group": "total_xp",
+            "_order": 45000
         }
     },
     {
@@ -950,7 +1160,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "55000",
-            "name": "TL11"
+            "name": "TL11",
+            "group": "total_xp",
+            "_order": 55000
         }
     },
     {
@@ -959,7 +1171,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "65000",
-            "name": "TL12"
+            "name": "TL12",
+            "group": "total_xp",
+            "_order": 65000
         }
     },
     {
@@ -968,7 +1182,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "75000",
-            "name": "TL13"
+            "name": "TL13",
+            "group": "total_xp",
+            "_order": 75000
         }
     },
     {
@@ -977,7 +1193,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "85000",
-            "name": "TL14"
+            "name": "TL14",
+            "group": "total_xp",
+            "_order": 85000
         }
     },
     {
@@ -986,7 +1204,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "100000",
-            "name": "TL15"
+            "name": "TL15",
+            "group": "total_xp",
+            "_order": 100000
         }
     },
     {
@@ -995,7 +1215,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "120000",
-            "name": "TL16"
+            "name": "TL16",
+            "group": "total_xp",
+            "_order": 120000
         }
     },
     {
@@ -1004,7 +1226,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "140000",
-            "name": "TL17"
+            "name": "TL17",
+            "group": "total_xp",
+            "_order": 140000
         }
     },
     {
@@ -1013,7 +1237,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "160000",
-            "name": "TL18"
+            "name": "TL18",
+            "group": "total_xp",
+            "_order": 160000
         }
     },
     {
@@ -1022,7 +1248,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "185000",
-            "name": "TL19"
+            "name": "TL19",
+            "group": "total_xp",
+            "_order": 185000
         }
     },
     {
@@ -1031,7 +1259,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "210000",
-            "name": "TL20"
+            "name": "TL20",
+            "group": "total_xp",
+            "_order": 210000
         }
     },
     {
@@ -1040,7 +1270,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "260000",
-            "name": "TL21"
+            "name": "TL21",
+            "group": "total_xp",
+            "_order": 260000
         }
     },
     {
@@ -1049,7 +1281,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "335000",
-            "name": "TL22"
+            "name": "TL22",
+            "group": "total_xp",
+            "_order": 335000
         }
     },
     {
@@ -1058,7 +1292,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "435000",
-            "name": "TL23"
+            "name": "TL23",
+            "group": "total_xp",
+            "_order": 435000
         }
     },
     {
@@ -1067,7 +1303,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "560000",
-            "name": "TL24"
+            "name": "TL24",
+            "group": "total_xp",
+            "_order": 560000
         }
     },
     {
@@ -1076,7 +1314,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "710000",
-            "name": "TL25"
+            "name": "TL25",
+            "group": "total_xp",
+            "_order": 710000
         }
     },
     {
@@ -1085,7 +1325,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "900000",
-            "name": "TL26"
+            "name": "TL26",
+            "group": "total_xp",
+            "_order": 900000
         }
     },
     {
@@ -1094,7 +1336,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "1100000",
-            "name": "TL27"
+            "name": "TL27",
+            "group": "total_xp",
+            "_order": 1100000
         }
     },
     {
@@ -1103,7 +1347,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "1350000",
-            "name": "TL28"
+            "name": "TL28",
+            "group": "total_xp",
+            "_order": 1350000
         }
     },
     {
@@ -1112,7 +1358,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "1650000",
-            "name": "TL29"
+            "name": "TL29",
+            "group": "total_xp",
+            "_order": 1650000
         }
     },
     {
@@ -1121,7 +1369,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "2000000",
-            "name": "TL30"
+            "name": "TL30",
+            "group": "total_xp",
+            "_order": 2000000
         }
     },
     {
@@ -1130,7 +1380,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "2500000",
-            "name": "TL31"
+            "name": "TL31",
+            "group": "total_xp",
+            "_order": 2500000
         }
     },
     {
@@ -1139,7 +1391,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "3000000",
-            "name": "TL32"
+            "name": "TL32",
+            "group": "total_xp",
+            "_order": 3000000
         }
     },
     {
@@ -1148,7 +1402,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "3750000",
-            "name": "TL33"
+            "name": "TL33",
+            "group": "total_xp",
+            "_order": 3750000
         }
     },
     {
@@ -1157,7 +1413,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "4750000",
-            "name": "TL34"
+            "name": "TL34",
+            "group": "total_xp",
+            "_order": 4750000
         }
     },
     {
@@ -1166,7 +1424,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "6000000",
-            "name": "TL35"
+            "name": "TL35",
+            "group": "total_xp",
+            "_order": 6000000
         }
     },
     {
@@ -1175,7 +1435,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "7500000",
-            "name": "TL36"
+            "name": "TL36",
+            "group": "total_xp",
+            "_order": 7500000
         }
     },
     {
@@ -1184,7 +1446,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "9500000",
-            "name": "TL37"
+            "name": "TL37",
+            "group": "total_xp",
+            "_order": 9500000
         }
     },
     {
@@ -1193,7 +1457,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "12000000",
-            "name": "TL38"
+            "name": "TL38",
+            "group": "total_xp",
+            "_order": 12000000
         }
     },
     {
@@ -1202,7 +1468,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "15000000",
-            "name": "TL39"
+            "name": "TL39",
+            "group": "total_xp",
+            "_order": 15000000
         }
     },
     {
@@ -1211,7 +1479,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "20000000",
-            "name": "TL40"
+            "name": "TL40",
+            "group": "total_xp",
+            "_order": 20000000
         }
     },
     {
@@ -1220,7 +1490,9 @@
         "fields": {
             "stat": "trading",
             "_target": "10",
-            "name": "Bronze"
+            "name": "Bronze",
+            "group": "trading",
+            "_order": 0
         }
     },
     {
@@ -1229,7 +1501,9 @@
         "fields": {
             "stat": "trading",
             "_target": "100",
-            "name": "Silver"
+            "name": "Silver",
+            "group": "trading",
+            "_order": 1
         }
     },
     {
@@ -1238,7 +1512,9 @@
         "fields": {
             "stat": "trading",
             "_target": "1000",
-            "name": "Gold"
+            "name": "Gold",
+            "group": "trading",
+            "_order": 2
         }
     },
     {
@@ -1247,7 +1523,9 @@
         "fields": {
             "stat": "trading_distance",
             "_target": "1000",
-            "name": "Bronze"
+            "name": "Bronze",
+            "group": "trading_distance",
+            "_order": 0
         }
     },
     {
@@ -1256,7 +1534,9 @@
         "fields": {
             "stat": "trading_distance",
             "_target": "10000",
-            "name": "Silver"
+            "name": "Silver",
+            "group": "trading_distance",
+            "_order": 1
         }
     },
     {
@@ -1265,7 +1545,9 @@
         "fields": {
             "stat": "trading_distance",
             "_target": "1000000",
-            "name": "Gold"
+            "name": "Gold",
+            "group": "trading_distance",
+            "_order": 2
         }
     },
     {
@@ -1274,7 +1556,9 @@
         "fields": {
             "stat": "travel_km",
             "_target": "10.0",
-            "name": "Bronze"
+            "name": "Bronze",
+            "group": "travel_km",
+            "_order": 0
         }
     },
     {
@@ -1283,7 +1567,9 @@
         "fields": {
             "stat": "travel_km",
             "_target": "100.0",
-            "name": "Silver"
+            "name": "Silver",
+            "group": "travel_km",
+            "_order": 1
         }
     },
     {
@@ -1292,7 +1578,9 @@
         "fields": {
             "stat": "travel_km",
             "_target": "1000.0",
-            "name": "Gold"
+            "name": "Gold",
+            "group": "travel_km",
+            "_order": 2
         }
     },
     {
@@ -1301,7 +1589,9 @@
         "fields": {
             "stat": "type_bug",
             "_target": "10",
-            "name": "Bronze"
+            "name": "Bronze",
+            "group": "type_bug",
+            "_order": 0
         }
     },
     {
@@ -1310,7 +1600,9 @@
         "fields": {
             "stat": "type_bug",
             "_target": "50",
-            "name": "Silver"
+            "name": "Silver",
+            "group": "type_bug",
+            "_order": 1
         }
     },
     {
@@ -1319,7 +1611,9 @@
         "fields": {
             "stat": "type_bug",
             "_target": "200",
-            "name": "Gold"
+            "name": "Gold",
+            "group": "type_bug",
+            "_order": 2
         }
     },
     {
@@ -1328,7 +1622,9 @@
         "fields": {
             "stat": "type_dark",
             "_target": "10",
-            "name": "Bronze"
+            "name": "Bronze",
+            "group": "type_dark",
+            "_order": 0
         }
     },
     {
@@ -1337,7 +1633,9 @@
         "fields": {
             "stat": "type_dark",
             "_target": "50",
-            "name": "Silver"
+            "name": "Silver",
+            "group": "type_dark",
+            "_order": 1
         }
     },
     {
@@ -1346,7 +1644,9 @@
         "fields": {
             "stat": "type_dark",
             "_target": "200",
-            "name": "Gold"
+            "name": "Gold",
+            "group": "type_dark",
+            "_order": 2
         }
     },
     {
@@ -1355,7 +1655,9 @@
         "fields": {
             "stat": "type_dragon",
             "_target": "10",
-            "name": "Bronze"
+            "name": "Bronze",
+            "group": "type_dragon",
+            "_order": 0
         }
     },
     {
@@ -1364,7 +1666,9 @@
         "fields": {
             "stat": "type_dragon",
             "_target": "50",
-            "name": "Silver"
+            "name": "Silver",
+            "group": "type_dragon",
+            "_order": 1
         }
     },
     {
@@ -1373,7 +1677,9 @@
         "fields": {
             "stat": "type_dragon",
             "_target": "200",
-            "name": "Gold"
+            "name": "Gold",
+            "group": "type_dragon",
+            "_order": 2
         }
     },
     {
@@ -1382,7 +1688,9 @@
         "fields": {
             "stat": "type_electric",
             "_target": "10",
-            "name": "Bronze"
+            "name": "Bronze",
+            "group": "type_electric",
+            "_order": 0
         }
     },
     {
@@ -1391,7 +1699,9 @@
         "fields": {
             "stat": "type_electric",
             "_target": "50",
-            "name": "Silver"
+            "name": "Silver",
+            "group": "type_electric",
+            "_order": 1
         }
     },
     {
@@ -1400,7 +1710,9 @@
         "fields": {
             "stat": "type_electric",
             "_target": "200",
-            "name": "Gold"
+            "name": "Gold",
+            "group": "type_electric",
+            "_order": 2
         }
     },
     {
@@ -1409,7 +1721,9 @@
         "fields": {
             "stat": "type_fairy",
             "_target": "10",
-            "name": "Bronze"
+            "name": "Bronze",
+            "group": "type_fairy",
+            "_order": 0
         }
     },
     {
@@ -1418,7 +1732,9 @@
         "fields": {
             "stat": "type_fairy",
             "_target": "50",
-            "name": "Silver"
+            "name": "Silver",
+            "group": "type_fairy",
+            "_order": 1
         }
     },
     {
@@ -1427,7 +1743,9 @@
         "fields": {
             "stat": "type_fairy",
             "_target": "200",
-            "name": "Gold"
+            "name": "Gold",
+            "group": "type_fairy",
+            "_order": 2
         }
     },
     {
@@ -1436,7 +1754,9 @@
         "fields": {
             "stat": "type_fighting",
             "_target": "10",
-            "name": "Bronze"
+            "name": "Bronze",
+            "group": "type_fighting",
+            "_order": 0
         }
     },
     {
@@ -1445,7 +1765,9 @@
         "fields": {
             "stat": "type_fighting",
             "_target": "50",
-            "name": "Silver"
+            "name": "Silver",
+            "group": "type_fighting",
+            "_order": 1
         }
     },
     {
@@ -1454,7 +1776,9 @@
         "fields": {
             "stat": "type_fighting",
             "_target": "200",
-            "name": "Gold"
+            "name": "Gold",
+            "group": "type_fighting",
+            "_order": 2
         }
     },
     {
@@ -1463,7 +1787,9 @@
         "fields": {
             "stat": "type_fire",
             "_target": "10",
-            "name": "Bronze"
+            "name": "Bronze",
+            "group": "type_fire",
+            "_order": 0
         }
     },
     {
@@ -1472,7 +1798,9 @@
         "fields": {
             "stat": "type_fire",
             "_target": "50",
-            "name": "Silver"
+            "name": "Silver",
+            "group": "type_fire",
+            "_order": 1
         }
     },
     {
@@ -1481,7 +1809,9 @@
         "fields": {
             "stat": "type_fire",
             "_target": "200",
-            "name": "Gold"
+            "name": "Gold",
+            "group": "type_fire",
+            "_order": 2
         }
     },
     {
@@ -1490,7 +1820,9 @@
         "fields": {
             "stat": "type_flying",
             "_target": "10",
-            "name": "Bronze"
+            "name": "Bronze",
+            "group": "type_flying",
+            "_order": 0
         }
     },
     {
@@ -1499,7 +1831,9 @@
         "fields": {
             "stat": "type_flying",
             "_target": "50",
-            "name": "Silver"
+            "name": "Silver",
+            "group": "type_flying",
+            "_order": 1
         }
     },
     {
@@ -1508,7 +1842,9 @@
         "fields": {
             "stat": "type_flying",
             "_target": "200",
-            "name": "Gold"
+            "name": "Gold",
+            "group": "type_flying",
+            "_order": 2
         }
     },
     {
@@ -1517,7 +1853,9 @@
         "fields": {
             "stat": "type_ghost",
             "_target": "10",
-            "name": "Bronze"
+            "name": "Bronze",
+            "group": "type_ghost",
+            "_order": 0
         }
     },
     {
@@ -1526,7 +1864,9 @@
         "fields": {
             "stat": "type_ghost",
             "_target": "50",
-            "name": "Silver"
+            "name": "Silver",
+            "group": "type_ghost",
+            "_order": 1
         }
     },
     {
@@ -1535,7 +1875,9 @@
         "fields": {
             "stat": "type_ghost",
             "_target": "200",
-            "name": "Gold"
+            "name": "Gold",
+            "group": "type_ghost",
+            "_order": 2
         }
     },
     {
@@ -1544,7 +1886,9 @@
         "fields": {
             "stat": "type_grass",
             "_target": "10",
-            "name": "Bronze"
+            "name": "Bronze",
+            "group": "type_grass",
+            "_order": 0
         }
     },
     {
@@ -1553,7 +1897,9 @@
         "fields": {
             "stat": "type_grass",
             "_target": "50",
-            "name": "Silver"
+            "name": "Silver",
+            "group": "type_grass",
+            "_order": 1
         }
     },
     {
@@ -1562,7 +1908,9 @@
         "fields": {
             "stat": "type_grass",
             "_target": "200",
-            "name": "Gold"
+            "name": "Gold",
+            "group": "type_grass",
+            "_order": 2
         }
     },
     {
@@ -1571,7 +1919,9 @@
         "fields": {
             "stat": "type_ground",
             "_target": "10",
-            "name": "Bronze"
+            "name": "Bronze",
+            "group": "type_ground",
+            "_order": 0
         }
     },
     {
@@ -1580,7 +1930,9 @@
         "fields": {
             "stat": "type_ground",
             "_target": "50",
-            "name": "Silver"
+            "name": "Silver",
+            "group": "type_ground",
+            "_order": 1
         }
     },
     {
@@ -1589,7 +1941,9 @@
         "fields": {
             "stat": "type_ground",
             "_target": "200",
-            "name": "Gold"
+            "name": "Gold",
+            "group": "type_ground",
+            "_order": 2
         }
     },
     {
@@ -1598,7 +1952,9 @@
         "fields": {
             "stat": "type_ice",
             "_target": "10",
-            "name": "Bronze"
+            "name": "Bronze",
+            "group": "type_ice",
+            "_order": 0
         }
     },
     {
@@ -1607,7 +1963,9 @@
         "fields": {
             "stat": "type_ice",
             "_target": "50",
-            "name": "Silver"
+            "name": "Silver",
+            "group": "type_ice",
+            "_order": 1
         }
     },
     {
@@ -1616,7 +1974,9 @@
         "fields": {
             "stat": "type_ice",
             "_target": "200",
-            "name": "Gold"
+            "name": "Gold",
+            "group": "type_ice",
+            "_order": 2
         }
     },
     {
@@ -1625,7 +1985,9 @@
         "fields": {
             "stat": "type_normal",
             "_target": "10",
-            "name": "Bronze"
+            "name": "Bronze",
+            "group": "type_normal",
+            "_order": 0
         }
     },
     {
@@ -1634,7 +1996,9 @@
         "fields": {
             "stat": "type_normal",
             "_target": "50",
-            "name": "Silver"
+            "name": "Silver",
+            "group": "type_normal",
+            "_order": 1
         }
     },
     {
@@ -1643,7 +2007,9 @@
         "fields": {
             "stat": "type_normal",
             "_target": "200",
-            "name": "Gold"
+            "name": "Gold",
+            "group": "type_normal",
+            "_order": 2
         }
     },
     {
@@ -1652,7 +2018,9 @@
         "fields": {
             "stat": "type_poison",
             "_target": "10",
-            "name": "Bronze"
+            "name": "Bronze",
+            "group": "type_poison",
+            "_order": 0
         }
     },
     {
@@ -1661,7 +2029,9 @@
         "fields": {
             "stat": "type_poison",
             "_target": "50",
-            "name": "Silver"
+            "name": "Silver",
+            "group": "type_poison",
+            "_order": 1
         }
     },
     {
@@ -1670,7 +2040,9 @@
         "fields": {
             "stat": "type_poison",
             "_target": "200",
-            "name": "Gold"
+            "name": "Gold",
+            "group": "type_poison",
+            "_order": 2
         }
     },
     {
@@ -1679,7 +2051,9 @@
         "fields": {
             "stat": "type_psychic",
             "_target": "10",
-            "name": "Bronze"
+            "name": "Bronze",
+            "group": "type_psychic",
+            "_order": 0
         }
     },
     {
@@ -1688,7 +2062,9 @@
         "fields": {
             "stat": "type_psychic",
             "_target": "50",
-            "name": "Silver"
+            "name": "Silver",
+            "group": "type_psychic",
+            "_order": 1
         }
     },
     {
@@ -1697,7 +2073,9 @@
         "fields": {
             "stat": "type_psychic",
             "_target": "200",
-            "name": "Gold"
+            "name": "Gold",
+            "group": "type_psychic",
+            "_order": 2
         }
     },
     {
@@ -1706,7 +2084,9 @@
         "fields": {
             "stat": "type_rock",
             "_target": "10",
-            "name": "Bronze"
+            "name": "Bronze",
+            "group": "type_rock",
+            "_order": 0
         }
     },
     {
@@ -1715,7 +2095,9 @@
         "fields": {
             "stat": "type_rock",
             "_target": "50",
-            "name": "Silver"
+            "name": "Silver",
+            "group": "type_rock",
+            "_order": 1
         }
     },
     {
@@ -1724,7 +2106,9 @@
         "fields": {
             "stat": "type_rock",
             "_target": "200",
-            "name": "Gold"
+            "name": "Gold",
+            "group": "type_rock",
+            "_order": 2
         }
     },
     {
@@ -1733,7 +2117,9 @@
         "fields": {
             "stat": "type_steel",
             "_target": "10",
-            "name": "Bronze"
+            "name": "Bronze",
+            "group": "type_steel",
+            "_order": 0
         }
     },
     {
@@ -1742,7 +2128,9 @@
         "fields": {
             "stat": "type_steel",
             "_target": "50",
-            "name": "Silver"
+            "name": "Silver",
+            "group": "type_steel",
+            "_order": 1
         }
     },
     {
@@ -1751,7 +2139,9 @@
         "fields": {
             "stat": "type_steel",
             "_target": "200",
-            "name": "Gold"
+            "name": "Gold",
+            "group": "type_steel",
+            "_order": 2
         }
     },
     {
@@ -1760,7 +2150,9 @@
         "fields": {
             "stat": "type_water",
             "_target": "10",
-            "name": "Bronze"
+            "name": "Bronze",
+            "group": "type_water",
+            "_order": 0
         }
     },
     {
@@ -1769,7 +2161,9 @@
         "fields": {
             "stat": "type_water",
             "_target": "50",
-            "name": "Silver"
+            "name": "Silver",
+            "group": "type_water",
+            "_order": 1
         }
     },
     {
@@ -1778,7 +2172,9 @@
         "fields": {
             "stat": "type_water",
             "_target": "200",
-            "name": "Gold"
+            "name": "Gold",
+            "group": "type_water",
+            "_order": 2
         }
     },
     {
@@ -1787,7 +2183,9 @@
         "fields": {
             "stat": "ultra_league",
             "_target": "5",
-            "name": "Bronze"
+            "name": "Bronze",
+            "group": "ultra_league",
+            "_order": 0
         }
     },
     {
@@ -1796,7 +2194,9 @@
         "fields": {
             "stat": "ultra_league",
             "_target": "50",
-            "name": "Silver"
+            "name": "Silver",
+            "group": "ultra_league",
+            "_order": 1
         }
     },
     {
@@ -1805,7 +2205,9 @@
         "fields": {
             "stat": "ultra_league",
             "_target": "200",
-            "name": "Gold"
+            "name": "Gold",
+            "group": "ultra_league",
+            "_order": 2
         }
     },
     {
@@ -1814,7 +2216,9 @@
         "fields": {
             "stat": "unown",
             "_target": "5",
-            "name": "Bronze"
+            "name": "Bronze",
+            "group": "unown",
+            "_order": 0
         }
     },
     {
@@ -1823,7 +2227,9 @@
         "fields": {
             "stat": "unown",
             "_target": "30",
-            "name": "Silver"
+            "name": "Silver",
+            "group": "unown",
+            "_order": 1
         }
     },
     {
@@ -1832,7 +2238,9 @@
         "fields": {
             "stat": "unown",
             "_target": "70",
-            "name": "Gold"
+            "name": "Gold",
+            "group": "unown",
+            "_order": 2
         }
     },
     {
@@ -1841,7 +2249,9 @@
         "fields": {
             "stat": "wayfarer",
             "_target": "50",
-            "name": "Bronze"
+            "name": "Bronze",
+            "group": "wayfarer",
+            "_order": 0
         }
     },
     {
@@ -1850,7 +2260,9 @@
         "fields": {
             "stat": "wayfarer",
             "_target": "1000",
-            "name": "Gold"
+            "name": "Gold",
+            "group": "wayfarer",
+            "_order": 2
         }
     },
     {
@@ -1859,7 +2271,9 @@
         "fields": {
             "stat": "wayfarer",
             "_target": "184",
-            "name": "Silver"
+            "name": "Silver",
+            "group": "wayfarer",
+            "_order": 1
         }
     },
     {
@@ -1868,7 +2282,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "40000000",
-            "name": "TL40×2"
+            "name": "TL40×2",
+            "group": "total_xp_extended",
+            "_order": 40000000
         }
     },
     {
@@ -1877,7 +2293,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "60000000",
-            "name": "TL40×3"
+            "name": "TL40×3",
+            "group": "total_xp_extended",
+            "_order": 60000000
         }
     },
     {
@@ -1886,7 +2304,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "80000000",
-            "name": "TL40×4"
+            "name": "TL40×4",
+            "group": "total_xp_extended",
+            "_order": 80000000
         }
     },
     {
@@ -1895,7 +2315,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "100000000",
-            "name": "TL40×5"
+            "name": "TL40×5",
+            "group": "total_xp_extended",
+            "_order": 100000000
         }
     },
     {
@@ -1904,7 +2326,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "120000000",
-            "name": "TL40×6"
+            "name": "TL40×6",
+            "group": "total_xp_extended",
+            "_order": 120000000
         }
     },
     {
@@ -1913,7 +2337,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "140000000",
-            "name": "TL40×7"
+            "name": "TL40×7",
+            "group": "total_xp_extended",
+            "_order": 140000000
         }
     },
     {
@@ -1922,7 +2348,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "160000000",
-            "name": "TL40×8"
+            "name": "TL40×8",
+            "group": "total_xp_extended",
+            "_order": 160000000
         }
     },
     {
@@ -1931,7 +2359,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "180000000",
-            "name": "TL40×9"
+            "name": "TL40×9",
+            "group": "total_xp_extended",
+            "_order": 180000000
         }
     },
     {
@@ -1940,7 +2370,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "200000000",
-            "name": "TL40×10"
+            "name": "TL40×10",
+            "group": "total_xp_extended",
+            "_order": 200000000
         }
     },
     {
@@ -1949,7 +2381,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "220000000",
-            "name": "TL40×11"
+            "name": "TL40×11",
+            "group": "total_xp_extended",
+            "_order": 220000000
         }
     },
     {
@@ -1958,7 +2392,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "240000000",
-            "name": "TL40×12"
+            "name": "TL40×12",
+            "group": "total_xp_extended",
+            "_order": 240000000
         }
     },
     {
@@ -1967,7 +2403,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "260000000",
-            "name": "TL40×13"
+            "name": "TL40×13",
+            "group": "total_xp_extended",
+            "_order": 260000000
         }
     },
     {
@@ -1976,7 +2414,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "280000000",
-            "name": "TL40×14"
+            "name": "TL40×14",
+            "group": "total_xp_extended",
+            "_order": 280000000
         }
     },
     {
@@ -1985,7 +2425,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "300000000",
-            "name": "TL40×15"
+            "name": "TL40×15",
+            "group": "total_xp_extended",
+            "_order": 300000000
         }
     },
     {
@@ -1994,7 +2436,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "320000000",
-            "name": "TL40×16"
+            "name": "TL40×16",
+            "group": "total_xp_extended",
+            "_order": 320000000
         }
     },
     {
@@ -2003,7 +2447,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "340000000",
-            "name": "TL40×17"
+            "name": "TL40×17",
+            "group": "total_xp_extended",
+            "_order": 340000000
         }
     },
     {
@@ -2012,7 +2458,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "360000000",
-            "name": "TL40×18"
+            "name": "TL40×18",
+            "group": "total_xp_extended",
+            "_order": 360000000
         }
     },
     {
@@ -2021,7 +2469,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "380000000",
-            "name": "TL40×19"
+            "name": "TL40×19",
+            "group": "total_xp_extended",
+            "_order": 380000000
         }
     },
     {
@@ -2030,7 +2480,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "400000000",
-            "name": "TL40×20"
+            "name": "TL40×20",
+            "group": "total_xp_extended",
+            "_order": 400000000
         }
     },
     {
@@ -2039,7 +2491,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "420000000",
-            "name": "TL40×21"
+            "name": "TL40×21",
+            "group": "total_xp_extended",
+            "_order": 420000000
         }
     },
     {
@@ -2048,7 +2502,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "440000000",
-            "name": "TL40×22"
+            "name": "TL40×22",
+            "group": "total_xp_extended",
+            "_order": 440000000
         }
     },
     {
@@ -2057,7 +2513,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "460000000",
-            "name": "TL40×23"
+            "name": "TL40×23",
+            "group": "total_xp_extended",
+            "_order": 460000000
         }
     },
     {
@@ -2066,7 +2524,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "480000000",
-            "name": "TL40×24"
+            "name": "TL40×24",
+            "group": "total_xp_extended",
+            "_order": 480000000
         }
     },
     {
@@ -2075,7 +2535,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "500000000",
-            "name": "TL40×25"
+            "name": "TL40×25",
+            "group": "total_xp_extended",
+            "_order": 500000000
         }
     },
     {
@@ -2084,7 +2546,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "520000000",
-            "name": "TL40×26"
+            "name": "TL40×26",
+            "group": "total_xp_extended",
+            "_order": 520000000
         }
     },
     {
@@ -2093,7 +2557,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "540000000",
-            "name": "TL40×27"
+            "name": "TL40×27",
+            "group": "total_xp_extended",
+            "_order": 540000000
         }
     },
     {
@@ -2102,7 +2568,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "560000000",
-            "name": "TL40×28"
+            "name": "TL40×28",
+            "group": "total_xp_extended",
+            "_order": 560000000
         }
     },
     {
@@ -2111,7 +2579,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "580000000",
-            "name": "TL40×29"
+            "name": "TL40×29",
+            "group": "total_xp_extended",
+            "_order": 580000000
         }
     },
     {
@@ -2120,7 +2590,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "600000000",
-            "name": "TL40×30"
+            "name": "TL40×30",
+            "group": "total_xp_extended",
+            "_order": 600000000
         }
     },
     {
@@ -2129,7 +2601,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "620000000",
-            "name": "TL40×31"
+            "name": "TL40×31",
+            "group": "total_xp_extended",
+            "_order": 620000000
         }
     },
     {
@@ -2138,7 +2612,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "640000000",
-            "name": "TL40×32"
+            "name": "TL40×32",
+            "group": "total_xp_extended",
+            "_order": 640000000
         }
     },
     {
@@ -2147,7 +2623,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "660000000",
-            "name": "TL40×33"
+            "name": "TL40×33",
+            "group": "total_xp_extended",
+            "_order": 660000000
         }
     },
     {
@@ -2156,7 +2634,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "680000000",
-            "name": "TL40×34"
+            "name": "TL40×34",
+            "group": "total_xp_extended",
+            "_order": 680000000
         }
     },
     {
@@ -2165,7 +2645,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "700000000",
-            "name": "TL40×35"
+            "name": "TL40×35",
+            "group": "total_xp_extended",
+            "_order": 700000000
         }
     },
     {
@@ -2174,7 +2656,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "720000000",
-            "name": "TL40×36"
+            "name": "TL40×36",
+            "group": "total_xp_extended",
+            "_order": 720000000
         }
     },
     {
@@ -2183,7 +2667,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "740000000",
-            "name": "TL40×37"
+            "name": "TL40×37",
+            "group": "total_xp_extended",
+            "_order": 740000000
         }
     },
     {
@@ -2192,7 +2678,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "760000000",
-            "name": "TL40×38"
+            "name": "TL40×38",
+            "group": "total_xp_extended",
+            "_order": 760000000
         }
     },
     {
@@ -2201,7 +2689,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "780000000",
-            "name": "TL40×39"
+            "name": "TL40×39",
+            "group": "total_xp_extended",
+            "_order": 780000000
         }
     },
     {
@@ -2210,7 +2700,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "800000000",
-            "name": "TL40×40"
+            "name": "TL40×40",
+            "group": "total_xp_extended",
+            "_order": 800000000
         }
     },
     {
@@ -2219,7 +2711,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "820000000",
-            "name": "TL40×41"
+            "name": "TL40×41",
+            "group": "total_xp_extended",
+            "_order": 820000000
         }
     },
     {
@@ -2228,7 +2722,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "840000000",
-            "name": "TL40×42"
+            "name": "TL40×42",
+            "group": "total_xp_extended",
+            "_order": 840000000
         }
     },
     {
@@ -2237,7 +2733,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "860000000",
-            "name": "TL40×43"
+            "name": "TL40×43",
+            "group": "total_xp_extended",
+            "_order": 860000000
         }
     },
     {
@@ -2246,7 +2744,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "880000000",
-            "name": "TL40×44"
+            "name": "TL40×44",
+            "group": "total_xp_extended",
+            "_order": 880000000
         }
     },
     {
@@ -2255,7 +2755,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "900000000",
-            "name": "TL40×45"
+            "name": "TL40×45",
+            "group": "total_xp_extended",
+            "_order": 900000000
         }
     },
     {
@@ -2264,7 +2766,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "920000000",
-            "name": "TL40×46"
+            "name": "TL40×46",
+            "group": "total_xp_extended",
+            "_order": 920000000
         }
     },
     {
@@ -2273,7 +2777,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "940000000",
-            "name": "TL40×47"
+            "name": "TL40×47",
+            "group": "total_xp_extended",
+            "_order": 940000000
         }
     },
     {
@@ -2282,7 +2788,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "960000000",
-            "name": "TL40×48"
+            "name": "TL40×48",
+            "group": "total_xp_extended",
+            "_order": 960000000
         }
     },
     {
@@ -2291,7 +2799,9 @@
         "fields": {
             "stat": "total_xp",
             "_target": "980000000",
-            "name": "TL40×49"
+            "name": "TL40×49",
+            "group": "total_xp_extended",
+            "_order": 980000000
         }
     },
     {
@@ -2300,786 +2810,415 @@
         "fields": {
             "stat": "total_xp",
             "_target": "1000000000",
-            "name": "TL40×50"
+            "name": "TL40×50",
+            "group": "total_xp_extended",
+            "_order": 1000000000
         }
     },
     {
         "model": "trainerdex.presettargetgroup",
         "pk": "battle_attack_won",
         "fields": {
-            "name": "Default Levels: Battle Girl",
-            "children": [
-                3,
-                4,
-                5
-            ]
+            "name": "Default Levels: Battle Girl"
         }
     },
     {
         "model": "trainerdex.presettargetgroup",
         "pk": "battle_training_won",
         "fields": {
-            "name": "Default Levels: Ace Trainer",
-            "children": [
-                6,
-                7,
-                8
-            ]
+            "name": "Default Levels: Ace Trainer"
         }
     },
     {
         "model": "trainerdex.presettargetgroup",
         "pk": "berries_fed",
         "fields": {
-            "name": "Default Levels: Berry Master",
-            "children": [
-                9,
-                10,
-                11
-            ]
+            "name": "Default Levels: Berry Master"
         }
     },
     {
         "model": "trainerdex.presettargetgroup",
         "pk": "big_magikarp",
         "fields": {
-            "name": "Default Levels: Fisherman",
-            "children": [
-                12,
-                13,
-                14
-            ]
+            "name": "Default Levels: Fisherman"
         }
     },
     {
         "model": "trainerdex.presettargetgroup",
         "pk": "buddy_best",
         "fields": {
-            "name": "Default Levels: Best Buddy",
-            "children": [
-                15,
-                16,
-                17
-            ]
+            "name": "Default Levels: Best Buddy"
         }
     },
     {
         "model": "trainerdex.presettargetgroup",
         "pk": "capture_total",
         "fields": {
-            "name": "Default Levels: Collector | Pokémon Caught",
-            "children": [
-                18,
-                19,
-                20
-            ]
+            "name": "Default Levels: Collector | Pokémon Caught"
         }
     },
     {
         "model": "trainerdex.presettargetgroup",
         "pk": "challenge_quests",
         "fields": {
-            "name": "Default Levels: Pokémon Ranger",
-            "children": [
-                21,
-                22,
-                23
-            ]
+            "name": "Default Levels: Pokémon Ranger"
         }
     },
     {
         "model": "trainerdex.presettargetgroup",
         "pk": "evolved_total",
         "fields": {
-            "name": "Default Levels: Scientist",
-            "children": [
-                24,
-                25,
-                26
-            ]
+            "name": "Default Levels: Scientist"
         }
     },
     {
         "model": "trainerdex.presettargetgroup",
         "pk": "great_league",
         "fields": {
-            "name": "Default Levels: Great League Veteran",
-            "children": [
-                27,
-                28,
-                29
-            ]
+            "name": "Default Levels: Great League Veteran"
         }
     },
     {
         "model": "trainerdex.presettargetgroup",
         "pk": "gymbadges_total",
         "fields": {
-            "name": "Default Levels: Gym Badges",
-            "children": [
-                30,
-                31,
-                32
-            ]
+            "name": "Default Levels: Gym Badges"
         }
     },
     {
         "model": "trainerdex.presettargetgroup",
         "pk": "hatched_total",
         "fields": {
-            "name": "Default Levels: Breeder",
-            "children": [
-                33,
-                34,
-                35
-            ]
+            "name": "Default Levels: Breeder"
         }
     },
     {
         "model": "trainerdex.presettargetgroup",
         "pk": "hours_defended",
         "fields": {
-            "name": "Default Levels: Gym Leader",
-            "children": [
-                36,
-                37,
-                38
-            ]
+            "name": "Default Levels: Gym Leader"
         }
     },
     {
         "model": "trainerdex.presettargetgroup",
         "pk": "legendary_battle_won",
         "fields": {
-            "name": "Default Levels: Battle Legend",
-            "children": [
-                39,
-                40,
-                41
-            ]
+            "name": "Default Levels: Battle Legend"
         }
     },
     {
         "model": "trainerdex.presettargetgroup",
         "pk": "master_league",
         "fields": {
-            "name": "Default Levels: Master League Veteran",
-            "children": [
-                42,
-                43,
-                44
-            ]
+            "name": "Default Levels: Master League Veteran"
         }
     },
     {
         "model": "trainerdex.presettargetgroup",
         "pk": "max_level_friends",
         "fields": {
-            "name": "Default Levels: Idol",
-            "children": [
-                45,
-                46,
-                47
-            ]
+            "name": "Default Levels: Idol"
         }
     },
     {
         "model": "trainerdex.presettargetgroup",
         "pk": "photobomb",
         "fields": {
-            "name": "Default Levels: Cameraman",
-            "children": [
-                48,
-                49,
-                50
-            ]
+            "name": "Default Levels: Cameraman"
         }
     },
     {
         "model": "trainerdex.presettargetgroup",
         "pk": "pikachu",
         "fields": {
-            "name": "Default Levels: Pikachu Fan",
-            "children": [
-                51,
-                52,
-                53
-            ]
+            "name": "Default Levels: Pikachu Fan"
         }
     },
     {
         "model": "trainerdex.presettargetgroup",
         "pk": "pokedex_gen1",
         "fields": {
-            "name": "Default Levels: Kanto",
-            "children": [
-                54,
-                55,
-                56
-            ]
+            "name": "Default Levels: Kanto"
         }
     },
     {
         "model": "trainerdex.presettargetgroup",
         "pk": "pokedex_gen2",
         "fields": {
-            "name": "Default Levels: Johto",
-            "children": [
-                57,
-                58,
-                59
-            ]
+            "name": "Default Levels: Johto"
         }
     },
     {
         "model": "trainerdex.presettargetgroup",
         "pk": "pokedex_gen3",
         "fields": {
-            "name": "Default Levels: Hoenn",
-            "children": [
-                60,
-                61,
-                62
-            ]
+            "name": "Default Levels: Hoenn"
         }
     },
     {
         "model": "trainerdex.presettargetgroup",
         "pk": "pokedex_gen4",
         "fields": {
-            "name": "Default Levels: Sinnoh",
-            "children": [
-                63,
-                64,
-                65
-            ]
+            "name": "Default Levels: Sinnoh"
         }
     },
     {
         "model": "trainerdex.presettargetgroup",
         "pk": "pokedex_gen5",
         "fields": {
-            "name": "Default Levels: Unova",
-            "children": [
-                66,
-                67,
-                68
-            ]
+            "name": "Default Levels: Unova"
         }
     },
     {
         "model": "trainerdex.presettargetgroup",
         "pk": "pokedex_gen6",
         "fields": {
-            "name": "Default Levels: Kalos",
-            "children": [
-                69,
-                70,
-                71
-            ]
+            "name": "Default Levels: Kalos"
         }
     },
     {
         "model": "trainerdex.presettargetgroup",
         "pk": "pokedex_gen7",
         "fields": {
-            "name": "Default Levels: Alola",
-            "children": [
-                72,
-                73,
-                74
-            ]
+            "name": "Default Levels: Alola"
         }
     },
     {
         "model": "trainerdex.presettargetgroup",
         "pk": "pokedex_gen8",
         "fields": {
-            "name": "Default Levels: Galar",
-            "children": [
-                75,
-                76,
-                77
-            ]
+            "name": "Default Levels: Galar"
         }
     },
     {
         "model": "trainerdex.presettargetgroup",
         "pk": "pokedex_total_caught",
         "fields": {
-            "name": "Default Levels: Unique Species Caught",
-            "children": [
-                78,
-                79,
-                80
-            ]
+            "name": "Default Levels: Unique Species Caught"
         }
     },
     {
         "model": "trainerdex.presettargetgroup",
         "pk": "pokedex_total_seen",
         "fields": {
-            "name": "Default Levels: Unique Species Seen",
-            "children": [
-                81,
-                82,
-                83
-            ]
+            "name": "Default Levels: Unique Species Seen"
         }
     },
     {
         "model": "trainerdex.presettargetgroup",
         "pk": "pokemon_purified",
         "fields": {
-            "name": "Default Levels: Purifier",
-            "children": [
-                84,
-                85,
-                86
-            ]
+            "name": "Default Levels: Purifier"
         }
     },
     {
         "model": "trainerdex.presettargetgroup",
         "pk": "pokestops_visited",
         "fields": {
-            "name": "Default Levels: Backpacker | PokéStops Visited",
-            "children": [
-                87,
-                88,
-                89
-            ]
+            "name": "Default Levels: Backpacker | PokéStops Visited"
         }
     },
     {
         "model": "trainerdex.presettargetgroup",
         "pk": "raid_battle_won",
         "fields": {
-            "name": "Default Levels: Champion",
-            "children": [
-                90,
-                91,
-                92
-            ]
+            "name": "Default Levels: Champion"
         }
     },
     {
         "model": "trainerdex.presettargetgroup",
         "pk": "rocket_grunts_defeated",
         "fields": {
-            "name": "Default Levels: Hero",
-            "children": [
-                93,
-                94,
-                95
-            ]
+            "name": "Default Levels: Hero"
         }
     },
     {
         "model": "trainerdex.presettargetgroup",
         "pk": "small_rattata",
         "fields": {
-            "name": "Default Levels: Youngster",
-            "children": [
-                96,
-                97,
-                98
-            ]
+            "name": "Default Levels: Youngster"
         }
     },
     {
         "model": "trainerdex.presettargetgroup",
         "pk": "total_xp",
         "fields": {
-            "name": "Default Levels: Total XP",
-            "children": [
-                99,
-                100,
-                101,
-                102,
-                103,
-                104,
-                105,
-                106,
-                107,
-                108,
-                109,
-                110,
-                111,
-                112,
-                113,
-                114,
-                115,
-                116,
-                117,
-                118,
-                119,
-                120,
-                121,
-                122,
-                123,
-                124,
-                125,
-                126,
-                127,
-                128,
-                129,
-                130,
-                131,
-                132,
-                133,
-                134,
-                135,
-                136,
-                137,
-                138
-            ]
+            "name": "Default Levels: Total XP"
         }
     },
     {
         "model": "trainerdex.presettargetgroup",
         "pk": "total_xp_extended",
         "fields": {
-            "name": "Extended Levels: Total XP",
-            "children": [
-                256,
-                257,
-                258,
-                259,
-                211,
-                212,
-                213,
-                214,
-                215,
-                216,
-                217,
-                218,
-                219,
-                220,
-                221,
-                222,
-                223,
-                224,
-                225,
-                226,
-                227,
-                228,
-                229,
-                230,
-                231,
-                232,
-                233,
-                234,
-                235,
-                236,
-                237,
-                238,
-                239,
-                240,
-                241,
-                242,
-                243,
-                244,
-                245,
-                246,
-                247,
-                248,
-                249,
-                250,
-                251,
-                252,
-                253,
-                254,
-                255
-            ]
+            "name": "Extended Levels: Total XP"
         }
     },
     {
         "model": "trainerdex.presettargetgroup",
         "pk": "trading",
         "fields": {
-            "name": "Default Levels: Gentleman",
-            "children": [
-                139,
-                140,
-                141
-            ]
+            "name": "Default Levels: Gentleman"
         }
     },
     {
         "model": "trainerdex.presettargetgroup",
         "pk": "trading_distance",
         "fields": {
-            "name": "Default Levels: Pilot",
-            "children": [
-                142,
-                143,
-                144
-            ]
+            "name": "Default Levels: Pilot"
         }
     },
     {
         "model": "trainerdex.presettargetgroup",
         "pk": "travel_km",
         "fields": {
-            "name": "Default Levels: Jogger | Distance Walked",
-            "children": [
-                145,
-                146,
-                147
-            ]
+            "name": "Default Levels: Jogger | Distance Walked"
         }
     },
     {
         "model": "trainerdex.presettargetgroup",
         "pk": "type_bug",
         "fields": {
-            "name": "Default Levels: Bug Catcher",
-            "children": [
-                148,
-                149,
-                150
-            ]
+            "name": "Default Levels: Bug Catcher"
         }
     },
     {
         "model": "trainerdex.presettargetgroup",
         "pk": "type_dark",
         "fields": {
-            "name": "Default Levels: Delinquent",
-            "children": [
-                151,
-                152,
-                153
-            ]
+            "name": "Default Levels: Delinquent"
         }
     },
     {
         "model": "trainerdex.presettargetgroup",
         "pk": "type_dragon",
         "fields": {
-            "name": "Default Levels: Dragon Tamer",
-            "children": [
-                154,
-                155,
-                156
-            ]
+            "name": "Default Levels: Dragon Tamer"
         }
     },
     {
         "model": "trainerdex.presettargetgroup",
         "pk": "type_electric",
         "fields": {
-            "name": "Default Levels: Rocker",
-            "children": [
-                157,
-                158,
-                159
-            ]
+            "name": "Default Levels: Rocker"
         }
     },
     {
         "model": "trainerdex.presettargetgroup",
         "pk": "type_fairy",
         "fields": {
-            "name": "Default Levels: Fairy Tale Girl",
-            "children": [
-                160,
-                161,
-                162
-            ]
+            "name": "Default Levels: Fairy Tale Girl"
         }
     },
     {
         "model": "trainerdex.presettargetgroup",
         "pk": "type_fighting",
         "fields": {
-            "name": "Default Levels: Black Belt",
-            "children": [
-                163,
-                164,
-                165
-            ]
+            "name": "Default Levels: Black Belt"
         }
     },
     {
         "model": "trainerdex.presettargetgroup",
         "pk": "type_fire",
         "fields": {
-            "name": "Default Levels: Kindler",
-            "children": [
-                166,
-                167,
-                168
-            ]
+            "name": "Default Levels: Kindler"
         }
     },
     {
         "model": "trainerdex.presettargetgroup",
         "pk": "type_flying",
         "fields": {
-            "name": "Default Levels: Bird Keeper",
-            "children": [
-                169,
-                170,
-                171
-            ]
+            "name": "Default Levels: Bird Keeper"
         }
     },
     {
         "model": "trainerdex.presettargetgroup",
         "pk": "type_ghost",
         "fields": {
-            "name": "Default Levels: Hex Maniac",
-            "children": [
-                172,
-                173,
-                174
-            ]
+            "name": "Default Levels: Hex Maniac"
         }
     },
     {
         "model": "trainerdex.presettargetgroup",
         "pk": "type_grass",
         "fields": {
-            "name": "Default Levels: Gardener",
-            "children": [
-                175,
-                176,
-                177
-            ]
+            "name": "Default Levels: Gardener"
         }
     },
     {
         "model": "trainerdex.presettargetgroup",
         "pk": "type_ground",
         "fields": {
-            "name": "Default Levels: Ruin Maniac",
-            "children": [
-                178,
-                179,
-                180
-            ]
+            "name": "Default Levels: Ruin Maniac"
         }
     },
     {
         "model": "trainerdex.presettargetgroup",
         "pk": "type_ice",
         "fields": {
-            "name": "Default Levels: Skier",
-            "children": [
-                181,
-                182,
-                183
-            ]
+            "name": "Default Levels: Skier"
         }
     },
     {
         "model": "trainerdex.presettargetgroup",
         "pk": "type_normal",
         "fields": {
-            "name": "Default Levels: Schoolkid",
-            "children": [
-                184,
-                185,
-                186
-            ]
+            "name": "Default Levels: Schoolkid"
         }
     },
     {
         "model": "trainerdex.presettargetgroup",
         "pk": "type_poison",
         "fields": {
-            "name": "Default Levels: Punk Girl",
-            "children": [
-                187,
-                188,
-                189
-            ]
+            "name": "Default Levels: Punk Girl"
         }
     },
     {
         "model": "trainerdex.presettargetgroup",
         "pk": "type_psychic",
         "fields": {
-            "name": "Default Levels: Psychic",
-            "children": [
-                190,
-                191,
-                192
-            ]
+            "name": "Default Levels: Psychic"
         }
     },
     {
         "model": "trainerdex.presettargetgroup",
         "pk": "type_rock",
         "fields": {
-            "name": "Default Levels: Hiker",
-            "children": [
-                193,
-                194,
-                195
-            ]
+            "name": "Default Levels: Hiker"
         }
     },
     {
         "model": "trainerdex.presettargetgroup",
         "pk": "type_steel",
         "fields": {
-            "name": "Default Levels: Depot Agent",
-            "children": [
-                196,
-                197,
-                198
-            ]
+            "name": "Default Levels: Depot Agent"
         }
     },
     {
         "model": "trainerdex.presettargetgroup",
         "pk": "type_water",
         "fields": {
-            "name": "Default Levels: Swimmer",
-            "children": [
-                199,
-                200,
-                201
-            ]
+            "name": "Default Levels: Swimmer"
         }
     },
     {
         "model": "trainerdex.presettargetgroup",
         "pk": "ultra_league",
         "fields": {
-            "name": "Default Levels: Ultra League Veteran",
-            "children": [
-                202,
-                203,
-                204
-            ]
+            "name": "Default Levels: Ultra League Veteran"
         }
     },
     {
         "model": "trainerdex.presettargetgroup",
         "pk": "unown",
         "fields": {
-            "name": "Default Levels: Unown",
-            "children": [
-                205,
-                206,
-                207
-            ]
+            "name": "Default Levels: Unown"
         }
     },
     {
         "model": "trainerdex.presettargetgroup",
         "pk": "wayfarer",
         "fields": {
-            "name": "Default Levels: Wayfarer",
-            "children": [
-                208,
-                209,
-                210
-            ]
+            "name": "Default Levels: Wayfarer"
         }
     }
 ]

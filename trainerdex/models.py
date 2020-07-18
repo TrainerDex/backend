@@ -1247,28 +1247,40 @@ class Target(LifecycleModelMixin, BaseTarget):
     
     def __str__(self) -> str:
         return f"{'✅' if self.has_reached else '❌'} {super().__str__()}"
+    
+    class Meta(BaseTarget.Meta):
+        constraints = [
+            models.UniqueConstraint(
+                fields=['stat', '_target', 'trainer'],
+                name='unique_target'
+            ),
+        ]
 
 
 class PresetTarget(BaseTarget):
     name = models.CharField(max_length=200, null=False, blank=False)
+    group = models.ForeignKey(
+        'PresetTargetGroup',
+        on_delete=models.CASCADE,
+        related_name='targets',
+        )
     
     def add_to_trainer(self, trainer: Trainer) -> List[Union[Target, bool]]:
         return Target.objects.update_or_create(trainer=trainer, stat=self.stat, _target=self._target, defaults={'name': self.name})
     
-    class Meta:
-        abstract = False
-        verbose_name = npgettext_lazy("target__title", "target", "targets", 1) + " (Preset)"
-        verbose_name_plural = npgettext_lazy("target__title", "target", "targets", 1) + " (Preset)"
+    class Meta(BaseTarget.Meta):
+        verbose_name = BaseTarget.Meta.verbose_name + " (Preset)"
+        verbose_name_plural = BaseTarget.Meta.verbose_name_plural + " (Preset)"
+        ordering = None
+        order_with_respect_to = 'group'
 
 
 class PresetTargetGroup(models.Model):
     slug = models.SlugField(primary_key=True)
     name = models.CharField(max_length=200)
     
-    children = models.ManyToManyField(PresetTarget)
-    
     def add_to_trainer(self, trainer: Trainer) -> List[List[Union[Target, bool]]]:
-        return [x.add_to_trainer(trainer) for x in self.children.all()]
+        return [x.add_to_trainer(trainer) for x in self.targets.all()]
     
     def __str__(self) -> str:
         return self.name
