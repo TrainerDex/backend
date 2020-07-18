@@ -338,6 +338,10 @@ class Update(models.Model):
         auto_now_add=True,
         verbose_name=_("Date Submitted"),
     )
+    last_modified = models.DateTimeField(
+        auto_now=True,
+        verbose_name=_("Last Modified"),
+    )
     
     comment = models.TextField(
         max_length=240,

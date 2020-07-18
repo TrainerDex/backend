@@ -12,8 +12,6 @@ from django.contrib import admin
 # from core.models import DiscordGuild, DiscordGuildSettings, DiscordGuildMembership, DiscordUser
 
 admin.site.unregister(SocialAccount)
-
-
 @admin.register(SocialAccount)
 class SocialAccountAdmin(BaseSocialAccountAdmin):
     search_fields = ['user', 'uid']
