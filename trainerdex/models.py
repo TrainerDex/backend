@@ -17,6 +17,7 @@ from django.db import models
 from django.db.models import F, Q
 from django.db.models.signals import post_save
 from django.dispatch import receiver
+from django.templatetags.static import static
 from django.urls import reverse
 from django.utils import timezone
 from django.utils.translation import gettext_lazy as _, pgettext_lazy, pgettext, npgettext_lazy
@@ -69,6 +70,10 @@ class Faction(models.Model):
             pgettext('faction_3__long', 'Team Instinct'),
         )
         return CHOICES[self.id]
+    
+    @property
+    def avatar(self) -> str:
+        return static(f'img/faction/{self.id}.png')
     
     def __str__(self) -> str:
         return self.name_short
@@ -181,6 +186,13 @@ class Trainer(AbstractUser):
     @property
     def nickname(self) -> str:
         return self.username
+        
+    @property
+    def avatar(self) -> str:
+        class Avatar:
+            def __init__(self, url):
+                self.url = url
+        return Avatar(self.faction.avatar)
     
     def __str__(self) -> str:
         return self.username

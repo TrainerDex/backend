@@ -95,36 +95,25 @@ class TrainerAdmin(UserAdmin):
         ]
     readonly_fields = [
         'old_id',
+        'last_login',
+        'date_joined',
+        'last_modified',
         ]
+    date_hierarchy = 'start_date'
     
-    # Get BaseUser fieldsets
-    fieldsets = UserAdmin.fieldsets
-    
-    # Main set
-    fieldsets[0][1]['fields'] += (
-        'old_id',
-        'faction',
-        'start_date',
+    fieldsets = (
+        (_('Authentication'), {'fields': ('username', 'password', 'email', 'old_id')}),
+        (_('Trainer info'), {'fields': ('first_name', 'last_name', 'faction', 'country')}),
+        (_('Permissions'), {
+            'fields': ('is_active', 'is_banned', 'is_verified', 'is_staff', 'is_superuser', 'groups', 'user_permissions'),
+        }),
+        (_('Important dates'), {'fields': ('start_date', 'last_login', 'date_joined', 'last_modified')}),
     )
-    
-    # Personal set
-    fieldsets[1][1]['fields'] += (
-        'country',
-    )
-    
-    # Permissions Set
-    fieldsets[2][1]['fields'] = (
-        'is_banned',
-        'is_verified',
-        ) + fieldsets[2][1]['fields']
-    
-    # Get BaseUser fieldsets
-    add_fieldsets = UserAdmin.add_fieldsets
-    
-    # Get top set
-    add_fieldsets[0][1]['fields'] += (
-        'faction',
-        'start_date',
+    add_fieldsets = (
+        (None, {
+            'classes': ('wide',),
+            'fields': ('username', 'password1', 'password2', 'faction', 'country', 'start_date'),
+        })
     )
     
     inlines = [

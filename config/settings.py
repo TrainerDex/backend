@@ -24,6 +24,7 @@ ADMINS = local_settings.ADMINS
 
 INSTALLED_APPS = [
     'corsheaders',
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -267,3 +268,67 @@ DEFAULT_FROM_EMAIL = local_settings.DEFAULT_FROM_EMAIL
 SERVER_EMAIL = DEFAULT_FROM_EMAIL
 
 FILE_UPLOAD_PERMISSIONS = 0x775
+
+# Jazzmin
+# https://django-jazzmin.readthedocs.io/configuration/
+
+JAZZMIN_SETTINGS = {
+    'site_title': 'TrainerDex Admin',
+    'site_header': 'TrainerDex',
+    'site_logo': 'img/trainerdex-icon.png',
+    'copyright': 'TurnrDev',
+    'search_model': AUTH_USER_MODEL,
+    'user_avatar': 'avatar',
+    'topmenu_links': [
+        {'name': 'Home',  'url': 'admin:index', 'permissions': ['auth.view_user']},
+        {'model': AUTH_USER_MODEL},
+        {'app': 'trainerdex'},
+        {'name': 'GitHub', 'url': 'https://github.com/TrainerDex/backend/issues', 'new_window': True},
+        {'name': 'Discord', 'url': 'https://discord.trainerdex.co.uk', 'new_window': True},
+    ],
+    'navigation_expanded': False,
+    'hide_apps': ['sites', 'account', 'authtoken'],
+    'custom_links': {
+        'socialaccount': [{'model': 'account.emailaddress'}],
+        'auth': [
+            {'model': 'trainerdex.trainer'},
+            {'model': 'authtoken.token'}
+        ]
+    },
+    'icons': {
+        'auth': 'fa-users-cog',
+        'auth.Group': 'fa-users',
+        'trainerdex': 'fa-cog',
+        'trainerdex.trainer': 'fa-user',
+        'trainerdex.datasource': 'fa-database',
+        'trainerdex.evidence': 'fa-images',
+        'trainerdex.nickname': 'fa-signature',
+        'trainerdex.target': 'fa-bullseye',
+        'trainerdex.presettarget': 'fa-bullseye',
+        'trainerdex.presettargetgroup': 'fa-bullseye',
+        'trainerdex.update': 'fa-table',
+        'socialaccount': 'fa-users',
+        'socialaccount.socialaccount': 'fa-user',
+        'socialaccount.socialtoken': 'fa-user-secret',
+        'socialaccount.socialapp': 'fa-key',
+        'account.emailaddress': 'fa-at',
+        'authtoken.token': 'fa-key',
+    },
+}
+JAZZMIN_UI_TWEAKS = {
+    "navbar_small_text": False,
+    "footer_small_text": True,
+    "body_small_text": False,
+    "brand_small_text": False,
+    "brand_colour": "navbar-danger",
+    "accent": "accent-primary",
+    "navbar": "navbar-white navbar-light",
+    "no_navbar_border": False,
+    "sidebar": "sidebar-dark-primary",
+    "sidebar_nav_small_text": False,
+    "sidebar_disable_expand": False,
+    "sidebar_nav_child_indent": True,
+    "sidebar_nav_compact_style": False,
+    "sidebar_nav_legacy_style": False,
+    "sidebar_nav_flat_style": True
+}
