@@ -4,7 +4,7 @@ from django.urls import reverse
 from django.utils.translation import gettext_lazy as _, npgettext_lazy, pgettext_lazy
 
 from django_countries.fields import CountryField
-from pytz import common_timezones
+from timezone_field import TimeZoneField
 
 from trainerdex.leaderboard import Leaderboard
 from trainerdex.models import Trainer
@@ -22,10 +22,8 @@ class Community(models.Model):
         max_length=len(max(dict(settings.LANGUAGES).keys(), key=len)),
         verbose_name=_("language"),
     )
-    timezone = models.CharField(
+    timezone = TimeZoneField(
         default=settings.TIME_ZONE,
-        choices=((x, x) for x in common_timezones),
-        max_length=len(max(common_timezones, key=len)),
         verbose_name=_("timezone")
     )
     country = CountryField(

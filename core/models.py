@@ -11,7 +11,7 @@
 # import requests
 # from allauth.socialaccount.models import SocialAccount
 # from django_lifecycle import hook, LifecycleModelMixin
-# from pytz import common_timezones
+# from timezone_field import TimeZoneField
 #
 # log = logging.getLogger('django.trainerdex')
 #
@@ -35,7 +35,7 @@
 #
 #     # Localization settings
 #     language = models.CharField(default=settings.LANGUAGE_CODE, choices=settings.LANGUAGES, max_length=len(max(settings.LANGUAGES, key=lambda x: len(x[0]))[0]))
-#     timezone = models.CharField(default=settings.TIME_ZONE, choices=((x, x) for x in common_timezones), max_length=len(max(common_timezones, key=len)))
+#     timezone = TimeZoneField(default=settings.TIME_ZONE)
 #
 #     # Needed for automatic renaming features
 #     rename_users_on_join = models.BooleanField(

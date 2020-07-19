@@ -1,4 +1,4 @@
-﻿import os
+import os
 
 from django.utils.translation import gettext_lazy as _
 from config import local_settings
@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'analytical',
     'django_filters',
     'django_countries',
+    'timezone_field',
     ]
 
 MIDDLEWARE = [
