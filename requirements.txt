@@ -6,7 +6,7 @@ django-cors-middleware==1.5
 django-countries==6.1.2
 django-exclusivebooleanfield==0.3.0 # Not updated for Django 3
 django-filter==2.3.0
-django-jazzmin==2.1.5
+django-jazzmin==2.2.5
 django-lifecycle==0.7.6
 django-timezone-field==4.0
 djangorestframework==3.11
