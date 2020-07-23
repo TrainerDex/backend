@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2020.06.23\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-23 12:56+0000\n"
+"POT-Creation-Date: 2020-07-23 13:09+0000\n"
 "PO-Revision-Date: 2019-02-18 14:56+0000\n"
 "Last-Translator: b'Jay Turner <jaynicholasturner@gmail.com>'\n"
 "Language-Team: Chinese <i18n_zh@trainerdex.co.uk>\n"
@@ -1091,33 +1091,37 @@ msgid "English"
 msgstr "英语"
 
 #: config/settings.py:153
+msgid "English (United Kingdom)"
+msgstr ""
+
+#: config/settings.py:154
 msgid "German"
 msgstr "德"
 
-#: config/settings.py:154
+#: config/settings.py:155
 msgid "Spanish"
 msgstr "西班牙语"
 
-#: config/settings.py:155
+#: config/settings.py:156
 msgid "French"
 msgstr "法语"
 
-#: config/settings.py:156
+#: config/settings.py:157
 msgid "Italian"
 msgstr "意大利语"
 
-#: config/settings.py:157
+#: config/settings.py:158
 msgid "Japanese"
 msgstr "日本"
 
-#: config/settings.py:158
+#: config/settings.py:159
 msgid "Korean"
 msgstr "韩国"
 
-#: config/settings.py:159
+#: config/settings.py:160
 msgid "Brazilian Portuguese"
 msgstr "巴西葡萄牙语"
 
-#: config/settings.py:160
+#: config/settings.py:161
 msgid "Traditional Chinese"
 msgstr "中国传统"

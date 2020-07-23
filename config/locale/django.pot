@@ -1,22 +1,22 @@
-# Trainerdex
-# Copyright (C) 2020 Jay Turner
-# This file is distributed under the same license as the TrainerDex package.
-# Jay Turner <jay@trainerdex.co.uk>, 2019.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: 2020.06.23\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-07-23 13:09+0000\n"
-"PO-Revision-Date: 2019-02-18 14:56+0000\n"
-"Last-Translator: b'Jay Turner <jaynicholasturner@gmail.com>'\n"
-"Language-Team: Korean <i18n_ko@trainerdex.co.uk>\n"
-"Language: ko\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
 #: community/admin.py:18 community/admin.py:23
 msgid "Details"
@@ -55,10 +55,9 @@ msgid "Where your community is based"
 msgstr ""
 
 #: community/models.py:38
-#, fuzzy
 msgctxt "community__name__title"
 msgid "name"
-msgstr "닉네임"
+msgstr ""
 
 #: community/models.py:39
 msgctxt "community__name__help"
@@ -108,13 +107,11 @@ msgstr[1] ""
 
 #: core/abstract.py:16 trainerdex/models.py:229 trainerdex/models.py:245
 #: trainerdex/models.py:246
-#, fuzzy
-#| msgid "Nickname"
 msgctxt "nickname__title"
 msgid "nickname"
 msgid_plural "nicknames"
-msgstr[0] "닉네임"
-msgstr[1] "닉네임"
+msgstr[0] ""
+msgstr[1] ""
 
 #: core/abstract.py:19
 msgid "Required. 3-15 characters. Letters and digits only. Must match PokemonGo Nickname."
@@ -185,68 +182,44 @@ msgid "Object"
 msgstr ""
 
 #: trainerdex/models.py:46 trainerdex/models.py:57
-#, fuzzy
-#| msgctxt "faction"
-#| msgid "Team"
 msgctxt "faction_0__short"
 msgid "Teamless"
-msgstr "파티"
+msgstr ""
 
 #: trainerdex/models.py:47 trainerdex/models.py:58
-#, fuzzy
-#| msgctxt "team_name_team1"
-#| msgid "Team Mystic"
 msgctxt "faction_1__short"
 msgid "Mystic"
-msgstr "팀 미스틱"
+msgstr ""
 
 #: trainerdex/models.py:48 trainerdex/models.py:59
-#, fuzzy
-#| msgctxt "team_name_team2"
-#| msgid "Team Valor"
 msgctxt "faction_2__short"
 msgid "Valor"
-msgstr "팀 발로"
+msgstr ""
 
 #: trainerdex/models.py:49 trainerdex/models.py:60
-#, fuzzy
-#| msgctxt "team_name_team3"
-#| msgid "Team Instinct"
 msgctxt "faction_3__short"
 msgid "Instinct"
-msgstr "팀 인스팅트"
+msgstr ""
 
 #: trainerdex/models.py:67
-#, fuzzy
-#| msgctxt "team_name_team0"
-#| msgid "No Team"
 msgctxt "faction_0__long"
 msgid "No Team"
-msgstr "소속없음"
+msgstr ""
 
 #: trainerdex/models.py:68
-#, fuzzy
-#| msgctxt "team_name_team1"
-#| msgid "Team Mystic"
 msgctxt "faction_1__long"
 msgid "Team Mystic"
-msgstr "팀 미스틱"
+msgstr ""
 
 #: trainerdex/models.py:69
-#, fuzzy
-#| msgctxt "team_name_team2"
-#| msgid "Team Valor"
 msgctxt "faction_2__long"
 msgid "Team Valor"
-msgstr "팀 발로"
+msgstr ""
 
 #: trainerdex/models.py:70
-#, fuzzy
-#| msgctxt "team_name_team3"
-#| msgid "Team Instinct"
 msgctxt "faction_3__long"
 msgid "Team Instinct"
-msgstr "팀 인스팅트"
+msgstr ""
 
 #: trainerdex/models.py:85 trainerdex/models.py:86
 msgctxt "faction__title"
@@ -315,6 +288,7 @@ msgctxt "data_source__title"
 msgid "Data Source"
 msgid_plural "Data Souces"
 msgstr[0] ""
+msgstr[1] ""
 
 #: trainerdex/models.py:342
 msgid "Time Updated"
@@ -337,11 +311,9 @@ msgid "Source"
 msgstr ""
 
 #: trainerdex/models.py:376
-#, fuzzy
-#| msgid "Total XP"
 msgctxt "total_xp__title"
 msgid "Total XP"
-msgstr "Total XP"
+msgstr ""
 
 #: trainerdex/models.py:382
 msgctxt "pokedex_total_caught__title"
@@ -621,10 +593,9 @@ msgid "Defend Gyms for {0} hours."
 msgstr ""
 
 #: trainerdex/models.py:552
-#, fuzzy
 msgctxt "challenge_quests__title"
 msgid "Pokémon Ranger"
-msgstr "Pokémon GO Special Weekend"
+msgstr ""
 
 #: trainerdex/models.py:553
 #, python-brace-format
@@ -1031,9 +1002,8 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: trainerdex/models.py:1176
-#, fuzzy
 msgid "name"
-msgstr "닉네임"
+msgstr ""
 
 #: trainerdex/models.py:1180
 msgid "stat"
@@ -1072,6 +1042,7 @@ msgctxt "target__title"
 msgid "target group"
 msgid_plural "target groups"
 msgstr[0] ""
+msgstr[1] ""
 
 #: trainerdex/validators.py:6
 msgctxt "onboard_name_invalid_characters_error"
@@ -1121,21 +1092,3 @@ msgstr ""
 #: config/settings.py:161
 msgid "Traditional Chinese"
 msgstr ""
-
-#~ msgid "Leaderboard"
-#~ msgstr "리더 보드"
-
-#, fuzzy
-#~| msgid "TL"
-#~ msgctxt "Short form of Trainer Level"
-#~ msgid "TL"
-#~ msgstr "레벨"
-
-#, fuzzy
-#~| msgid "XP"
-#~ msgctxt "Short form of XP"
-#~ msgid "XP"
-#~ msgstr "XP"
-
-#~ msgid "TL"
-#~ msgstr "레벨"
