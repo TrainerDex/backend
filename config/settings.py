@@ -157,8 +157,8 @@ LANGUAGES = [
     ('it', _('Italian')),
     ('ja', _('Japanese')),
     ('ko', _('Korean')),
-    ('pt-br', _('Brazilian Portuguese')),
-    ('zh-hant', _('Traditional Chinese')),
+    ('pt-BR', _('Brazilian Portuguese')),
+    ('zh-TW', _('Traditional Chinese')),
 ]
 
 TIME_ZONE = 'UTC'
