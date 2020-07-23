@@ -1,0 +1,1411 @@
+# Trainerdex
+# Copyright (C) 2020 Jay Turner
+# This file is distributed under the same license as the TrainerDex package.
+# Jay Turner <jay@trainerdex.co.uk>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: 2020.06.23\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-07-23 12:56+0000\n"
+"PO-Revision-Date: 2019-02-18 14:56+0000\n"
+"Last-Translator: b'Jay Turner <jaynicholasturner@gmail.com>'\n"
+"Language-Team: Japanese <i18n_ja@trainerdex.co.uk>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: community/admin.py:18 community/admin.py:23
+msgid "Details"
+msgstr ""
+
+#: community/admin.py:19
+msgid "Members"
+msgstr ""
+
+#: community/models.py:16
+#, fuzzy
+#| msgctxt "badge_type_fire_title"
+#| msgid "Kindler"
+msgctxt "community__handle__title"
+msgid "Handle"
+msgstr "キャンプファイヤー"
+
+#: community/models.py:17
+msgctxt "community__handle__help"
+msgid "Once you set this, it cannot be changed. Pick carefully as this will be the identifier to find your community leaderboard."
+msgstr ""
+
+#: community/models.py:23
+msgid "language"
+msgstr ""
+
+#: community/models.py:27
+msgid "timezone"
+msgstr ""
+
+#: community/models.py:32
+msgctxt "community__country__title"
+msgid "country"
+msgstr ""
+
+#: community/models.py:33
+msgctxt "community__country__help"
+msgid "Where your community is based"
+msgstr ""
+
+#: community/models.py:38
+#, fuzzy
+msgctxt "community__name__title"
+msgid "name"
+msgstr "ニックネーム"
+
+#: community/models.py:39
+msgctxt "community__name__help"
+msgid "Max 70 characters"
+msgstr ""
+
+#: community/models.py:44
+msgctxt "community__description__title"
+msgid "description"
+msgstr ""
+
+#: community/models.py:45
+msgctxt "community__description__help"
+msgid "What makes your community unique? What are you about?"
+msgstr ""
+
+#: community/models.py:50
+msgctxt "community__can_see__title"
+msgid "Publicly Viewable"
+msgstr ""
+
+#: community/models.py:51
+msgctxt "community__can_see__help"
+msgid ""
+"Default: False\n"
+"Turn this on to share your community with the world."
+msgstr ""
+
+#: community/models.py:55
+msgctxt "community__can_join__title"
+msgid "Publicly Joinable"
+msgstr ""
+
+#: community/models.py:56
+msgctxt "community__can_join__title"
+msgid ""
+"Default: False\n"
+"Turn this on to make your community free to join. No invites required."
+msgstr ""
+
+#: community/models.py:76 community/models.py:77
+msgctxt "community__title"
+msgid "community"
+msgid_plural "communities"
+msgstr[0] ""
+msgstr[1] ""
+
+#: core/abstract.py:16 trainerdex/models.py:229 trainerdex/models.py:245
+#: trainerdex/models.py:246
+#, fuzzy
+#| msgctxt "onboard_enter_name_hint"
+#| msgid "Nickname"
+msgctxt "nickname__title"
+msgid "nickname"
+msgid_plural "nicknames"
+msgstr[0] "ニックネーム"
+msgstr[1] "ニックネーム"
+
+#: core/abstract.py:19
+msgid "Required. 3-15 characters. Letters and digits only. Must match PokemonGo Nickname."
+msgstr ""
+
+#: core/abstract.py:22
+msgid "A user with that username already exists."
+msgstr ""
+
+#: core/abstract.py:26
+#, fuzzy
+#| msgid "Last Updated"
+msgid "last modified"
+msgstr "最終更新"
+
+#: core/abstract.py:31
+msgctxt "profile__country__title"
+msgid "country"
+msgstr ""
+
+#: core/abstract.py:32
+msgctxt "profile__country__help"
+msgid "Where this account plays the most. Used to place in localized leaderboards"
+msgstr ""
+
+#: core/abstract.py:37
+msgctxt "profile__banned__title"
+msgid "banned"
+msgstr ""
+
+#: core/abstract.py:38
+msgctxt "profile__banned__help"
+msgid "Designates whether this user should be treated as banned. Select this instead of deleting accounts."
+msgstr ""
+
+#: trainerdex/admin.py:62
+msgid "Basic Info"
+msgstr ""
+
+#: trainerdex/admin.py:63
+msgid "Medals"
+msgstr ""
+
+#: trainerdex/admin.py:64
+msgid "Type Medals"
+msgstr ""
+
+#: trainerdex/admin.py:65
+msgid "Pokédex"
+msgstr ""
+
+#: trainerdex/admin.py:112
+msgid "Authentication"
+msgstr ""
+
+#: trainerdex/admin.py:113
+#, fuzzy
+#| msgctxt "friend_code_title"
+#| msgid "Trainer Code"
+msgid "Trainer info"
+msgstr "トレーナーコード"
+
+#: trainerdex/admin.py:114
+msgid "Permissions"
+msgstr ""
+
+#: trainerdex/admin.py:115
+msgid "Important dates"
+msgstr ""
+
+#: trainerdex/admin.py:161 trainerdex/admin.py:167
+msgid "Object"
+msgstr ""
+
+#: trainerdex/models.py:46 trainerdex/models.py:57
+#, fuzzy
+#| msgid "Teams"
+msgctxt "faction_0__short"
+msgid "Teamless"
+msgstr "所属"
+
+#: trainerdex/models.py:47 trainerdex/models.py:58
+#, fuzzy
+#| msgctxt "team_name_team1"
+#| msgid "Team Mystic"
+msgctxt "faction_1__short"
+msgid "Mystic"
+msgstr "チーム ミスティック"
+
+#: trainerdex/models.py:48 trainerdex/models.py:59
+#, fuzzy
+#| msgid "Valor"
+msgctxt "faction_2__short"
+msgid "Valor"
+msgstr "チーム ヴァーラー"
+
+#: trainerdex/models.py:49 trainerdex/models.py:60
+#, fuzzy
+#| msgctxt "team_name_team3"
+#| msgid "Team Instinct"
+msgctxt "faction_3__short"
+msgid "Instinct"
+msgstr "チーム インスティンクト"
+
+#: trainerdex/models.py:67
+#, fuzzy
+#| msgctxt "team_name_team0"
+#| msgid "No Team"
+msgctxt "faction_0__long"
+msgid "No Team"
+msgstr "所属なし"
+
+#: trainerdex/models.py:68
+#, fuzzy
+#| msgctxt "team_name_team1"
+#| msgid "Team Mystic"
+msgctxt "faction_1__long"
+msgid "Team Mystic"
+msgstr "チーム ミスティック"
+
+#: trainerdex/models.py:69
+#, fuzzy
+#| msgctxt "team_name_team2"
+#| msgid "Team Valor"
+msgctxt "faction_2__long"
+msgid "Team Valor"
+msgstr "チームリーダー"
+
+#: trainerdex/models.py:70
+#, fuzzy
+#| msgctxt "team_name_team3"
+#| msgid "Team Instinct"
+msgctxt "faction_3__long"
+msgid "Team Instinct"
+msgstr "チーム インスティンクト"
+
+#: trainerdex/models.py:85 trainerdex/models.py:86
+msgctxt "faction__title"
+msgid "team"
+msgid_plural "teams"
+msgstr[0] ""
+msgstr[1] ""
+
+#: trainerdex/models.py:139
+msgid "The Trainer ID on the old TrainerDex API. This is deprecated and will be removed upon the retirement of API v1"
+msgstr ""
+
+#: trainerdex/models.py:147
+#, fuzzy
+#| msgctxt "profile_start_date"
+#| msgid "Start Date"
+msgctxt "profile__start_date__title"
+msgid "Start Date"
+msgstr "始めた日"
+
+#: trainerdex/models.py:148
+#, fuzzy
+#| msgid "The date you created your Pokémon Go account."
+msgctxt "profile__start_date__help"
+msgid "The date of creating of the Pokémon Go profile."
+msgstr "ポケモンゴーアカウントを作成した日付。"
+
+#: trainerdex/models.py:154
+#, fuzzy
+#| msgid "The date you created your Pokémon Go account."
+msgctxt "profile__faction__help"
+msgid "The team of the Pokémon Go profile."
+msgstr "ポケモンゴーアカウントを作成した日付。"
+
+#: trainerdex/models.py:160
+#, fuzzy
+#| msgid "Verified"
+msgctxt "profile__verified__title"
+msgid "Verified"
+msgstr "検証済み"
+
+#: trainerdex/models.py:161
+msgctxt "profile__verified__help"
+msgid "Designates whether this user should be treated as verified."
+msgstr ""
+
+#: trainerdex/models.py:214 trainerdex/models.py:215
+#, fuzzy
+#| msgid "Trainer"
+msgctxt "trainer__title"
+msgid "trainer"
+msgid_plural "trainers"
+msgstr[0] "トレーナー"
+msgstr[1] "トレーナー"
+
+#: trainerdex/models.py:275 trainerdex/models.py:287 trainerdex/models.py:288
+#, fuzzy
+#| msgctxt "friend_code_title"
+#| msgid "Trainer Code"
+msgctxt "trainer_code__title"
+msgid "Trainer Code"
+msgid_plural "Trainer Codes"
+msgstr[0] "トレーナーコード"
+msgstr[1] "トレーナーコード"
+
+#: trainerdex/models.py:290
+msgid "Trainer Code can be seen by users of groups they're in"
+msgstr ""
+
+#: trainerdex/models.py:291
+msgid "Trainer Code can be seen on the web, publicly"
+msgstr ""
+
+#: trainerdex/models.py:292
+msgid "Trainer Code can be on the API"
+msgstr ""
+
+#: trainerdex/models.py:307 trainerdex/models.py:308
+#, fuzzy
+#| msgid "Source"
+msgctxt "data_source__title"
+msgid "Data Source"
+msgid_plural "Data Souces"
+msgstr[0] "情報元"
+
+#: trainerdex/models.py:342
+msgid "Time Updated"
+msgstr ""
+
+#: trainerdex/models.py:346
+msgid "Date Submitted"
+msgstr ""
+
+#: trainerdex/models.py:350
+#, fuzzy
+#| msgid "Last Updated"
+msgid "Last Modified"
+msgstr "最終更新"
+
+#: trainerdex/models.py:355
+msgid "Comment"
+msgstr ""
+
+#: trainerdex/models.py:363
+msgid "Source"
+msgstr "情報元"
+
+#: trainerdex/models.py:376
+#, fuzzy
+#| msgctxt "PROFILE_TOTAL_XP"
+#| msgid "Total XP"
+msgctxt "total_xp__title"
+msgid "Total XP"
+msgstr "TOTAL XP"
+
+#: trainerdex/models.py:382
+msgctxt "pokedex_total_caught__title"
+msgid "Unique Species Caught"
+msgstr ""
+
+#: trainerdex/models.py:387
+msgctxt "pokedex_total_seen__title"
+msgid "Unique Species Seen"
+msgstr ""
+
+#: trainerdex/models.py:392
+#, fuzzy
+#| msgctxt "badge_pokedex_entries_title"
+#| msgid "Kanto"
+msgctxt "pokedex_gen1__title"
+msgid "Kanto"
+msgstr "カントー"
+
+#: trainerdex/models.py:393
+#, fuzzy, python-brace-format
+#| msgctxt "badge_pokedex_entries"
+#| msgid "Register {0} Kanto region Pokémon in the Pokédex."
+msgctxt "pokedex_gen1__help"
+msgid "Register {0} Kanto region Pokémon in the Pokédex."
+msgstr "ポケモン図鑑に{0}匹登録できた！"
+
+#: trainerdex/models.py:399
+#, fuzzy
+#| msgctxt "badge_pokedex_entries_gen2_title"
+#| msgid "Johto"
+msgctxt "pokedex_gen2__title"
+msgid "Johto"
+msgstr "ジョウト"
+
+#: trainerdex/models.py:400
+#, fuzzy, python-brace-format
+#| msgctxt "badge_pokedex_entries_gen2"
+#| msgid "Register {0} Pokémon first discovered in the Johto region to the Pokédex."
+msgctxt "pokedex_gen2__help"
+msgid "Register {0} Pokémon first discovered in the Johto region to the Pokédex."
+msgstr "ジョウト地方で発見されたポケモンを{0}匹ポケモン図鑑に登録できた！"
+
+#: trainerdex/models.py:406
+#, fuzzy
+#| msgctxt "badge_pokedex_entries_gen3_title"
+#| msgid "Hoenn"
+msgctxt "pokedex_gen3_title"
+msgid "Hoenn"
+msgstr "ジョウト"
+
+#: trainerdex/models.py:407
+#, fuzzy, python-brace-format
+#| msgctxt "badge_pokedex_entries_gen3"
+#| msgid "Register {0} Pokémon first discovered in the Hoenn region to the Pokédex."
+msgctxt "pokedex_gen3"
+msgid "Register {0} Pokémon first discovered in the Hoenn region to the Pokédex."
+msgstr "ジョウト地方で発見されたポケモンを{0}匹ポケモン図鑑に登録できた！"
+
+#: trainerdex/models.py:413
+msgctxt "pokedex_gen4__title"
+msgid "Sinnoh"
+msgstr ""
+
+#: trainerdex/models.py:414
+#, fuzzy, python-brace-format
+#| msgctxt "badge_pokedex_entries_gen2"
+#| msgid "Register {0} Pokémon first discovered in the Johto region to the Pokédex."
+msgctxt "pokedex_gen4__help"
+msgid "Register {0} Pokémon first discovered in the Sinnoh region to the Pokédex."
+msgstr "ジョウト地方で発見されたポケモンを{0}匹ポケモン図鑑に登録できた！"
+
+#: trainerdex/models.py:420
+msgctxt "pokedex_gen5__title"
+msgid "Unova"
+msgstr ""
+
+#: trainerdex/models.py:421
+#, fuzzy, python-brace-format
+#| msgctxt "badge_pokedex_entries_gen2"
+#| msgid "Register {0} Pokémon first discovered in the Johto region to the Pokédex."
+msgctxt "pokedex_gen5__help"
+msgid "Register {0} Pokémon first discovered in the Unova region to the Pokédex."
+msgstr "ジョウト地方で発見されたポケモンを{0}匹ポケモン図鑑に登録できた！"
+
+#: trainerdex/models.py:427
+msgctxt "pokedex_gen6__title"
+msgid "Kalos"
+msgstr ""
+
+#: trainerdex/models.py:428
+#, fuzzy, python-brace-format
+#| msgctxt "badge_pokedex_entries_gen2"
+#| msgid "Register {0} Pokémon first discovered in the Johto region to the Pokédex."
+msgctxt "pokedex_gen6__help"
+msgid "Register {0} Pokémon first discovered in the Kalos region to the Pokédex."
+msgstr "ジョウト地方で発見されたポケモンを{0}匹ポケモン図鑑に登録できた！"
+
+#: trainerdex/models.py:434
+msgctxt "pokedex_gen7__title"
+msgid "Alola"
+msgstr ""
+
+#: trainerdex/models.py:435
+#, fuzzy, python-brace-format
+#| msgctxt "badge_pokedex_entries_gen2"
+#| msgid "Register {0} Pokémon first discovered in the Johto region to the Pokédex."
+msgctxt "pokedex_gen7__help"
+msgid "Register {0} Pokémon first discovered in the Alola region to the Pokédex."
+msgstr "ジョウト地方で発見されたポケモンを{0}匹ポケモン図鑑に登録できた！"
+
+#: trainerdex/models.py:441
+msgctxt "pokedex_gen8__title"
+msgid "Galar"
+msgstr ""
+
+#: trainerdex/models.py:442
+#, fuzzy, python-brace-format
+#| msgctxt "badge_pokedex_entries_gen2"
+#| msgid "Register {0} Pokémon first discovered in the Johto region to the Pokédex."
+msgctxt "pokedex_gen8__help"
+msgid "Register {0} Pokémon first discovered in the Galar region to the Pokédex."
+msgstr "ジョウト地方で発見されたポケモンを{0}匹ポケモン図鑑に登録できた！"
+
+#: trainerdex/models.py:453
+#, fuzzy
+#| msgctxt "badge_travel_km_title"
+#| msgid "Jogger"
+msgctxt "travel_km__title"
+msgid "Jogger"
+msgstr "ジョギング"
+
+#: trainerdex/models.py:454
+msgctxt "travel_km__title_alt"
+msgid "Distance Walked"
+msgstr ""
+
+#: trainerdex/models.py:456
+#, fuzzy
+#| msgctxt "badge_travel_km"
+#| msgid "Walk {0:0,g} km"
+msgctxt "travel_km__help"
+msgid "Walk {0:0,g} km"
+msgstr "{0:0,g}km 歩いた！"
+
+#: trainerdex/models.py:462
+#, fuzzy
+#| msgctxt "badge_capture_total_title"
+#| msgid "Collector"
+msgctxt "capture_total__title"
+msgid "Collector"
+msgstr "コレクター"
+
+#: trainerdex/models.py:463
+#, fuzzy
+#| msgctxt "badge_challenge_quests_title"
+#| msgid "Pokémon Ranger"
+msgctxt "capture_total__title_alt"
+msgid "Pokémon Caught"
+msgstr "ポケモンレンジャー"
+
+#: trainerdex/models.py:465
+#, fuzzy, python-brace-format
+#| msgctxt "badge_capture_total"
+#| msgid "Catch {0} Pokémon."
+msgctxt "capture_total__help"
+msgid "Catch {0} Pokémon."
+msgstr "ポケモンを {0} 匹捕まえた！"
+
+#: trainerdex/models.py:470
+#, fuzzy
+#| msgctxt "badge_evolved_total_title"
+#| msgid "Scientist"
+msgctxt "evolved_total__title"
+msgid "Scientist"
+msgstr "けんきゅういん"
+
+#: trainerdex/models.py:471
+#, fuzzy, python-brace-format
+#| msgctxt "badge_evolved_total"
+#| msgid "Evolve {0} Pokémon."
+msgctxt "evolved_total__help"
+msgid "Evolve {0} Pokémon."
+msgstr "ポケモンを {0} 匹進化できた！"
+
+#: trainerdex/models.py:476
+#, fuzzy
+#| msgctxt "badge_hatched_total_title"
+#| msgid "Breeder"
+msgctxt "hatched_total__title"
+msgid "Breeder"
+msgstr "ブリーダー"
+
+#: trainerdex/models.py:477
+#, fuzzy, python-brace-format
+#| msgctxt "badge_hatched_total"
+#| msgid "Hatch {0} eggs."
+msgctxt "hatched_total__help"
+msgid "Hatch {0} eggs."
+msgstr "タマゴを {0} 個かえした！"
+
+#: trainerdex/models.py:483
+#, fuzzy
+#| msgctxt "badge_pokestops_visited_title"
+#| msgid "Backpacker"
+msgctxt "pokestops_visited__title"
+msgid "Backpacker"
+msgstr "バックパッカー"
+
+#: trainerdex/models.py:484
+msgctxt "pokestops_visited__title_alt"
+msgid "PokéStops Visited"
+msgstr ""
+
+#: trainerdex/models.py:486
+#, fuzzy, python-brace-format
+#| msgctxt "badge_pokestops_visited"
+#| msgid "Visit {0} PokéStops."
+msgctxt "pokestops_visited__help"
+msgid "Visit {0} PokéStops."
+msgstr "ポケストップを {0} 回訪れた！"
+
+#: trainerdex/models.py:491
+#, fuzzy
+#| msgctxt "badge_big_magikarp_title"
+#| msgid "Fisherman"
+msgctxt "big_magikarp__title"
+msgid "Fisherman"
+msgstr "つりびと"
+
+#: trainerdex/models.py:492
+#, fuzzy, python-brace-format
+#| msgctxt "badge_big_magikarp"
+#| msgid "Catch {0} big Magikarp."
+msgctxt "big_magikarp__help"
+msgid "Catch {0} big Magikarp."
+msgstr "巨大なコイキングを {0} 匹捕まえた！"
+
+#: trainerdex/models.py:497
+#, fuzzy
+#| msgctxt "badge_battle_attack_won_title"
+#| msgid "Battle Girl"
+msgctxt "battle_attack_won__title"
+msgid "Battle Girl"
+msgstr "バトルガール"
+
+#: trainerdex/models.py:498
+#, fuzzy, python-brace-format
+#| msgctxt "badge_battle_attack_won"
+#| msgid "Win {0} Gym battles."
+msgctxt "battle_attack_won__help"
+msgid "Win {0} Gym battles."
+msgstr "ジムで {0} 回バトルに勝った！"
+
+#: trainerdex/models.py:503
+#, fuzzy
+#| msgctxt "badge_battle_training_won_title"
+#| msgid "Ace Trainer"
+msgctxt "battle_training_won__title"
+msgid "Ace Trainer"
+msgstr "エリートトレーナー"
+
+#: trainerdex/models.py:504
+#, fuzzy, python-brace-format
+#| msgctxt "badge_battle_training_won"
+#| msgid "Train {0} times."
+msgctxt "battle_training_won__help"
+msgid "Train {0} times."
+msgstr "ポケモンを {0} 匹トレーニングした！"
+
+#: trainerdex/models.py:509
+#, fuzzy
+#| msgctxt "badge_small_rattata_title"
+#| msgid "Youngster"
+msgctxt "small_rattata__title"
+msgid "Youngster"
+msgstr "たんパンこぞう"
+
+#: trainerdex/models.py:510
+#, fuzzy, python-brace-format
+#| msgctxt "badge_small_rattata"
+#| msgid "Catch {0} tiny Rattata."
+msgctxt "small_rattata__help"
+msgid "Catch {0} tiny Rattata."
+msgstr "小さいサイズのコラッタを {0} 匹捕まえた！"
+
+#: trainerdex/models.py:515
+#, fuzzy
+#| msgctxt "badge_pikachu_title"
+#| msgid "Pikachu Fan"
+msgctxt "pikachu__title"
+msgid "Pikachu Fan"
+msgstr "ピカチュウ だいすきクラブ"
+
+#: trainerdex/models.py:516
+#, fuzzy, python-brace-format
+#| msgctxt "badge_pikachu"
+#| msgid "Catch {0} Pikachu."
+msgctxt "pikachu__help"
+msgid "Catch {0} Pikachu."
+msgstr "ピカチュウを {0} 匹捕まえた！"
+
+#: trainerdex/models.py:521
+#, fuzzy
+#| msgctxt "badge_unown_title"
+#| msgid "Unown"
+msgctxt "unown__title"
+msgid "Unown"
+msgstr "アンノーン"
+
+#: trainerdex/models.py:522
+#, fuzzy, python-brace-format
+#| msgctxt "badge_unown"
+#| msgid "Catch {0} Unown."
+msgctxt "unown__help"
+msgid "Catch {0} Unown."
+msgstr "アンノーンを{0}種類捕まえた！"
+
+#: trainerdex/models.py:528
+#, fuzzy
+#| msgctxt "badge_raid_battle_won_title"
+#| msgid "Champion"
+msgctxt "raid_battle_won__title"
+msgid "Champion"
+msgstr "チャンピオン"
+
+#: trainerdex/models.py:529
+#, fuzzy, python-brace-format
+#| msgctxt "badge_raid_battle_won"
+#| msgid "Win {0} Raids."
+msgctxt "raid_battle_won__help"
+msgid "Win {0} Raids."
+msgstr "レイドバトルで {0} 回勝利した！"
+
+#: trainerdex/models.py:534
+#, fuzzy
+#| msgctxt "badge_legendary_battle_won_title"
+#| msgid "Battle Legend"
+msgctxt "legendary_battle_won__title"
+msgid "Battle Legend"
+msgstr "バトルレジェンド"
+
+#: trainerdex/models.py:535
+#, fuzzy, python-brace-format
+#| msgctxt "badge_legendary_battle_won"
+#| msgid "Win {0} Legendary Raids."
+msgctxt "legendary_battle_won__help"
+msgid "Win {0} Legendary Raids."
+msgstr "ジムで {0} 回伝説レイドバトルに勝った！"
+
+#: trainerdex/models.py:540
+#, fuzzy
+#| msgctxt "badge_berries_fed_title"
+#| msgid "Berry Master"
+msgctxt "berries_fed__title"
+msgid "Berry Master"
+msgstr "きのみ名人"
+
+#: trainerdex/models.py:541
+#, fuzzy, python-brace-format
+#| msgctxt "badge_berries_fed"
+#| msgid "Feed {0} Berries at Gyms."
+msgctxt "berries_fed__help"
+msgid "Feed {0} Berries at Gyms."
+msgstr "ポケモンに {0} 個きのみをあげた！"
+
+#: trainerdex/models.py:546
+#, fuzzy
+#| msgctxt "badge_hours_defended_title"
+#| msgid "Gym Leader"
+msgctxt "hours_defended__title"
+msgid "Gym Leader"
+msgstr "ジムリーダー"
+
+#: trainerdex/models.py:547
+#, fuzzy, python-brace-format
+#| msgctxt "badge_hours_defended"
+#| msgid "Defend Gyms for {0} hours."
+msgctxt "hours_defended__help"
+msgid "Defend Gyms for {0} hours."
+msgstr "ジムを {0} 時間防衛した！"
+
+#: trainerdex/models.py:552
+#, fuzzy
+#| msgctxt "badge_challenge_quests_title"
+#| msgid "Pokémon Ranger"
+msgctxt "challenge_quests__title"
+msgid "Pokémon Ranger"
+msgstr "ポケモンレンジャー"
+
+#: trainerdex/models.py:553
+#, fuzzy, python-brace-format
+#| msgctxt "badge_challenge_quests"
+#| msgid "Complete {0} Field Research tasks."
+msgctxt "challenge_quests__help"
+msgid "Complete {0} Field Research tasks."
+msgstr "フィールドリサーチを{0}回達成した！"
+
+#: trainerdex/models.py:558
+#, fuzzy
+#| msgctxt "badge_max_level_friends_title"
+#| msgid "Idol"
+msgctxt "max_level_friends__title"
+msgid "Idol"
+msgstr "アイドル"
+
+#: trainerdex/models.py:559
+#, fuzzy, python-brace-format
+#| msgctxt "badge_max_level_friends"
+#| msgid "Become Best Friends with {0} Trainers."
+msgctxt "max_level_friends__help"
+msgid "Become Best Friends with {0} Trainers."
+msgstr "トレーナー{0}人と「大親友」になれた！"
+
+#: trainerdex/models.py:564
+#, fuzzy
+#| msgctxt "badge_trading_title"
+#| msgid "Gentleman"
+msgctxt "trading__title"
+msgid "Gentleman"
+msgstr "ジェントルマン"
+
+#: trainerdex/models.py:565
+#, fuzzy, python-brace-format
+#| msgctxt "badge_trading"
+#| msgid "Trade {0} Pokémon."
+msgctxt "trading__help"
+msgid "Trade {0} Pokémon."
+msgstr "{0} 匹交換できた！"
+
+#: trainerdex/models.py:570
+#, fuzzy
+#| msgctxt "badge_trading_distance_title"
+#| msgid "Pilot"
+msgctxt "trading_distance__title"
+msgid "Pilot"
+msgstr "パイロット"
+
+#: trainerdex/models.py:571
+#, fuzzy, python-brace-format
+#| msgctxt "badge_trading_distance"
+#| msgid "Earn {0} km across the distance of all Pokémon trades."
+msgctxt "trading_distance__help"
+msgid "Earn {0} km across the distance of all Pokémon trades."
+msgstr "交換したポケモン同士の距離が {0} km になった！"
+
+#: trainerdex/models.py:576
+msgctxt "great_league__title"
+msgid "Great League Veteran"
+msgstr ""
+
+#: trainerdex/models.py:577
+msgctxt "great_league__help"
+msgid "Win {} Trainer Battles in the Great League."
+msgstr ""
+
+#: trainerdex/models.py:582
+msgctxt "ultra_league__title"
+msgid "Ultra League Veteran"
+msgstr ""
+
+#: trainerdex/models.py:583
+msgctxt "ultra_league__help"
+msgid "Win {} Trainer Battles in the Ultra League."
+msgstr ""
+
+#: trainerdex/models.py:588
+msgctxt "master_league__title"
+msgid "Master League Veteran"
+msgstr ""
+
+#: trainerdex/models.py:589
+msgctxt "master_league__help"
+msgid "Win {} Trainer Battles in the Master League."
+msgstr ""
+
+#: trainerdex/models.py:594
+msgctxt "photobomb__title"
+msgid "Cameraman"
+msgstr ""
+
+#: trainerdex/models.py:595
+#, python-brace-format
+msgctxt "photobomb__help"
+msgid "Have {0} surprise encounters in AR Snapshot."
+msgstr ""
+
+#: trainerdex/models.py:600
+#, fuzzy
+#| msgid "Verified"
+msgctxt "pokemon_purified__title"
+msgid "Purifier"
+msgstr "検証済み"
+
+#: trainerdex/models.py:601
+#, fuzzy, python-brace-format
+#| msgctxt "badge_trading"
+#| msgid "Trade {0} Pokémon."
+msgctxt "pokemon_purified__help"
+msgid "Purify {0} Shadow Pokémon."
+msgstr "{0} 匹交換できた！"
+
+#: trainerdex/models.py:606
+msgctxt "rocket_grunts_defeated__title"
+msgid "Hero"
+msgstr ""
+
+#: trainerdex/models.py:607
+#, python-brace-format
+msgctxt "rocket_grunts_defeated__help"
+msgid "Defeat {0} Team GO Rocket Grunts."
+msgstr ""
+
+#: trainerdex/models.py:612
+msgctxt "buddy_best__title"
+msgid "Best Buddy"
+msgstr ""
+
+#: trainerdex/models.py:613
+#, python-brace-format
+msgctxt "buddy_best__help"
+msgid "Have {0} Best Buddies."
+msgstr ""
+
+#: trainerdex/models.py:618
+msgctxt "wayfarer__title"
+msgid "Wayfarer"
+msgstr ""
+
+#: trainerdex/models.py:619
+#, python-brace-format
+msgctxt "wayfarer__help"
+msgid "Earn {0} Wayfarer Agreements"
+msgstr ""
+
+#: trainerdex/models.py:625
+#, fuzzy
+#| msgctxt "badge_type_normal_title"
+#| msgid "Schoolkid"
+msgctxt "type_normal__title"
+msgid "Schoolkid"
+msgstr "じゅくがえり"
+
+#: trainerdex/models.py:626
+#, fuzzy, python-brace-format
+#| msgctxt "badge_type_normal"
+#| msgid "Catch {0} Normal-type Pokémon"
+msgctxt "type_normal__help"
+msgid "Catch {0} Normal-type Pokémon"
+msgstr "ノーマルタイプのポケモンを {0} 匹捕まえた！"
+
+#: trainerdex/models.py:631
+#, fuzzy
+#| msgctxt "badge_type_fighting_title"
+#| msgid "Black Belt"
+msgctxt "type_fighting__title"
+msgid "Black Belt"
+msgstr "カラテおう"
+
+#: trainerdex/models.py:632
+#, fuzzy, python-brace-format
+#| msgctxt "badge_type_fighting"
+#| msgid "Catch {0} Fighting-type Pokémon"
+msgctxt "type_fighting__help"
+msgid "Catch {0} Fighting-type Pokémon"
+msgstr "かくとうタイプのポケモンを {0} 匹捕まえた！"
+
+#: trainerdex/models.py:637
+#, fuzzy
+#| msgctxt "badge_type_flying_title"
+#| msgid "Bird Keeper"
+msgctxt "type_flying__title"
+msgid "Bird Keeper"
+msgstr "とりつかい"
+
+#: trainerdex/models.py:638
+#, fuzzy, python-brace-format
+#| msgctxt "badge_type_flying"
+#| msgid "Catch {0} Flying-type Pokémon"
+msgctxt "type_flying__help"
+msgid "Catch {0} Flying-type Pokémon"
+msgstr "ひこうタイプのポケモンを {0} 匹捕まえた！"
+
+#: trainerdex/models.py:643
+#, fuzzy
+#| msgctxt "badge_type_poison_title"
+#| msgid "Punk Girl"
+msgctxt "type_poison__title"
+msgid "Punk Girl"
+msgstr "バッドガール"
+
+#: trainerdex/models.py:644
+#, fuzzy, python-brace-format
+#| msgctxt "badge_type_poison"
+#| msgid "Catch {0} Poison-type Pokémon"
+msgctxt "type_poison__help"
+msgid "Catch {0} Poison-type Pokémon"
+msgstr "どくタイプのポケモンを {0} 匹捕まえた！"
+
+#: trainerdex/models.py:649
+#, fuzzy
+#| msgctxt "badge_type_ground_title"
+#| msgid "Ruin Maniac"
+msgctxt "type_ground__title"
+msgid "Ruin Maniac"
+msgstr "いせきマニア"
+
+#: trainerdex/models.py:650
+#, fuzzy, python-brace-format
+#| msgctxt "badge_type_ground"
+#| msgid "Catch {0} Ground-type Pokémon"
+msgctxt "type_ground__help"
+msgid "Catch {0} Ground-type Pokémon"
+msgstr "じめんタイプのポケモンを {0} 匹捕まえた！"
+
+#: trainerdex/models.py:655
+#, fuzzy
+#| msgctxt "badge_type_rock_title"
+#| msgid "Hiker"
+msgctxt "type_rock__title"
+msgid "Hiker"
+msgstr "やまおとこ"
+
+#: trainerdex/models.py:656
+#, fuzzy, python-brace-format
+#| msgctxt "badge_type_rock"
+#| msgid "Catch {0} Rock-type Pokémon"
+msgctxt "type_rock__help"
+msgid "Catch {0} Rock-type Pokémon"
+msgstr "いわタイプのポケモンを {0} 匹捕まえた！"
+
+#: trainerdex/models.py:661
+#, fuzzy
+#| msgctxt "badge_type_bug_title"
+#| msgid "Bug Catcher"
+msgctxt "type_bug__title"
+msgid "Bug Catcher"
+msgstr "むしとりしょうねん"
+
+#: trainerdex/models.py:662
+#, fuzzy, python-brace-format
+#| msgctxt "badge_type_bug"
+#| msgid "Catch {0} Bug-type Pokémon"
+msgctxt "type_bug__help"
+msgid "Catch {0} Bug-type Pokémon"
+msgstr "むしタイプのポケモンを {0} 匹捕まえた！"
+
+#: trainerdex/models.py:667
+#, fuzzy
+#| msgctxt "badge_type_ghost_title"
+#| msgid "Hex Maniac"
+msgctxt "type_ghost__title"
+msgid "Hex Maniac"
+msgstr "オカルトマニア"
+
+#: trainerdex/models.py:668
+#, fuzzy, python-brace-format
+#| msgctxt "badge_type_ghost"
+#| msgid "Catch {0} Ghost-type Pokémon"
+msgctxt "type_ghost__help"
+msgid "Catch {0} Ghost-type Pokémon"
+msgstr "ゴーストタイプのポケモンを {0} 匹捕まえた！"
+
+#: trainerdex/models.py:673
+#, fuzzy
+#| msgctxt "badge_type_steel_title"
+#| msgid "Depot Agent"
+msgctxt "type_steel__title"
+msgid "Depot Agent"
+msgstr "てつどういん"
+
+#: trainerdex/models.py:674
+#, fuzzy, python-brace-format
+#| msgctxt "badge_type_steel"
+#| msgid "Catch {0} Steel-type Pokémon"
+msgctxt "type_steel__help"
+msgid "Catch {0} Steel-type Pokémon"
+msgstr "はがねタイプのポケモンを {0} 匹捕まえた！"
+
+#: trainerdex/models.py:679
+#, fuzzy
+#| msgctxt "badge_type_fire_title"
+#| msgid "Kindler"
+msgctxt "type_fire__title"
+msgid "Kindler"
+msgstr "キャンプファイヤー"
+
+#: trainerdex/models.py:680
+#, fuzzy, python-brace-format
+#| msgctxt "badge_type_fire"
+#| msgid "Catch {0} Fire-type Pokémon"
+msgctxt "type_fire__help"
+msgid "Catch {0} Fire-type Pokémon"
+msgstr "ほのおタイプのポケモンを {0} 匹捕まえた！"
+
+#: trainerdex/models.py:685
+#, fuzzy
+#| msgctxt "badge_type_water_title"
+#| msgid "Swimmer"
+msgctxt "type_water__title"
+msgid "Swimmer"
+msgstr "かいパンやろう"
+
+#: trainerdex/models.py:686
+#, fuzzy, python-brace-format
+#| msgctxt "badge_type_water"
+#| msgid "Catch {0} Water-type Pokémon"
+msgctxt "type_water__help"
+msgid "Catch {0} Water-type Pokémon"
+msgstr "みずタイプのポケモンを {0} 匹捕まえた！"
+
+#: trainerdex/models.py:691
+#, fuzzy
+#| msgctxt "badge_type_grass_title"
+#| msgid "Gardener"
+msgctxt "type_grass__title"
+msgid "Gardener"
+msgstr "にわし"
+
+#: trainerdex/models.py:692
+#, fuzzy, python-brace-format
+#| msgctxt "badge_type_grass"
+#| msgid "Catch {0} Grass-type Pokémon"
+msgctxt "type_grass__help"
+msgid "Catch {0} Grass-type Pokémon"
+msgstr "くさタイプのポケモンを {0} 匹捕まえた！"
+
+#: trainerdex/models.py:697
+#, fuzzy
+#| msgctxt "badge_type_electric_title"
+#| msgid "Rocker"
+msgctxt "type_electric__title"
+msgid "Rocker"
+msgstr "でんきグループ"
+
+#: trainerdex/models.py:698
+#, fuzzy, python-brace-format
+#| msgctxt "badge_type_electric"
+#| msgid "Catch {0} Electric-type Pokémon"
+msgctxt "type_electric__help"
+msgid "Catch {0} Electric-type Pokémon"
+msgstr "でんきタイプのポケモンを {0} 匹捕まえた！"
+
+#: trainerdex/models.py:703
+#, fuzzy
+#| msgctxt "badge_type_psychic_title"
+#| msgid "Psychic"
+msgctxt "type_psychic__title"
+msgid "Psychic"
+msgstr "サイキッカー"
+
+#: trainerdex/models.py:704
+#, fuzzy, python-brace-format
+#| msgctxt "badge_type_psychic"
+#| msgid "Catch {0} Pychic-type Pokémon"
+msgctxt "type_psychic__help"
+msgid "Catch {0} Pychic-type Pokémon"
+msgstr "エスパータイプのポケモンを {0} 匹捕まえた！"
+
+#: trainerdex/models.py:709
+#, fuzzy
+#| msgctxt "badge_type_ice_title"
+#| msgid "Skier"
+msgctxt "type_ice__title"
+msgid "Skier"
+msgstr "スキーヤー"
+
+#: trainerdex/models.py:710
+#, fuzzy, python-brace-format
+#| msgctxt "badge_type_ice"
+#| msgid "Catch {0} Ice-type Pokémon"
+msgctxt "type_ice__help"
+msgid "Catch {0} Ice-type Pokémon"
+msgstr "こおりタイプのポケモンを {0} 匹捕まえた！"
+
+#: trainerdex/models.py:715
+#, fuzzy
+#| msgctxt "badge_type_dragon_title"
+#| msgid "Dragon Tamer"
+msgctxt "type_dragon__title"
+msgid "Dragon Tamer"
+msgstr "ドラゴンつかい"
+
+#: trainerdex/models.py:716
+#, fuzzy, python-brace-format
+#| msgctxt "badge_type_dragon"
+#| msgid "Catch {0} Dragon-type Pokémon"
+msgctxt "type_dragon__help"
+msgid "Catch {0} Dragon-type Pokémon"
+msgstr "ドラゴンタイプのポケモンを {0} 匹捕まえた！"
+
+#: trainerdex/models.py:721
+#, fuzzy
+#| msgctxt "badge_type_dark_title"
+#| msgid "Delinquent"
+msgctxt "type_dark__title"
+msgid "Delinquent"
+msgstr "こわいおねえさん"
+
+#: trainerdex/models.py:722
+#, fuzzy, python-brace-format
+#| msgctxt "badge_type_dark"
+#| msgid "Catch {0} Dark-type Pokémon"
+msgctxt "type_dark__help"
+msgid "Catch {0} Dark-type Pokémon"
+msgstr "あくタイプのポケモンを {0} 匹捕まえた！"
+
+#: trainerdex/models.py:727
+#, fuzzy
+#| msgctxt "badge_type_fairy_title"
+#| msgid "Fairy Tale Girl"
+msgctxt "type_fairy__title"
+msgid "Fairy Tale Girl"
+msgstr "メルヘンしょうじょ"
+
+#: trainerdex/models.py:728
+#, fuzzy, python-brace-format
+#| msgctxt "badge_type_fairy"
+#| msgid "Catch {0} Fairy-type Pokémon"
+msgctxt "type_fairy__help"
+msgid "Catch {0} Fairy-type Pokémon"
+msgstr "フェアリータイプのポケモンを {0} 匹捕まえた！"
+
+#: trainerdex/models.py:734
+#, fuzzy
+#| msgid "Gym Leader"
+msgctxt "gymbadges_total__title"
+msgid "Gym Badges"
+msgstr "ジムバッジの数"
+
+#: trainerdex/models.py:740
+#, fuzzy
+#| msgid "Gym Leader"
+msgctxt "gymbadges_gold__title"
+msgid "Gold Gym Badges"
+msgstr "ゴールドジムバッジの数"
+
+#: trainerdex/models.py:745
+#, fuzzy
+#| msgctxt "pokemon_info_stardust_label"
+#| msgid "Stardust"
+msgctxt "stardust__title"
+msgid "Stardust"
+msgstr "ほしのすな"
+
+#: trainerdex/models.py:789
+#, python-brace-format
+msgid ""
+"You must fill in at least one of the following fields:\n"
+"{csv_fields}"
+msgstr ""
+
+#: trainerdex/models.py:810
+#, fuzzy
+#| msgid "This value has previously been entered at a higher value. Please try again, ensuring you enter your Total XP."
+msgid "This value has previously been entered at a higher value. Please try again ensuring the value you entered was correct."
+msgstr "この値は以前より高い値で入力されています。 最新の情報を入力してください。"
+
+#: trainerdex/models.py:830 trainerdex/models.py:850
+#, python-brace-format
+msgid "This is required since you provided data for {badge}."
+msgstr ""
+
+#: trainerdex/models.py:837
+#, python-brace-format
+msgid "Stat too high. Must be less than {badge}."
+msgstr ""
+
+#: trainerdex/models.py:1041
+msgid ""
+"This value is high. Your daily average is above the threshold of {threshold:,}. Please check you haven't made a mistake.\n"
+"\n"
+"Your daily average between {earlier_date} and {later_date} is {average:,}"
+msgstr ""
+
+#: trainerdex/models.py:1059
+msgid "The {badge} you entered is too high. Please check for typos and other mistakes. You can't have more gold gyms than gyms in Total. {value:,}/{expected:,}"
+msgstr ""
+
+#: trainerdex/models.py:1061 trainerdex/models.py:1084
+#, python-brace-format
+msgid "You must fill in {other_badge} if filling in {this_badge}."
+msgstr ""
+
+#: trainerdex/models.py:1076
+msgid ""
+"This value is high. Your distance per trade average is above the threshold of {threshold:,}/trade. Please check you haven't made a mistake.\n"
+"\n"
+"Your average is {average:,}/trade"
+msgstr ""
+
+#: trainerdex/models.py:1094 trainerdex/models.py:1095
+#, fuzzy
+#| msgid "Update"
+msgctxt "update__title"
+msgid "update"
+msgid_plural "updates"
+msgstr[0] "統計情報の更新"
+msgstr[1] "統計情報の更新"
+
+#: trainerdex/models.py:1130
+#, python-brace-format
+msgid "Evidence for {evidence_type} and {trainer}"
+msgstr ""
+
+#: trainerdex/models.py:1136
+msgid "Content Field doesn't match Content Object"
+msgstr ""
+
+#: trainerdex/models.py:1145 trainerdex/models.py:1146
+msgctxt "evidence__title"
+msgid "evidence"
+msgid_plural "evidence"
+msgstr[0] ""
+msgstr[1] ""
+
+#: trainerdex/models.py:1176
+#, fuzzy
+msgid "name"
+msgstr "ニックネーム"
+
+#: trainerdex/models.py:1180
+msgid "stat"
+msgstr ""
+
+#: trainerdex/models.py:1184 trainerdex/models.py:1216
+#: trainerdex/models.py:1217
+msgctxt "target__title"
+msgid "target"
+msgid_plural "targets"
+msgstr[0] ""
+msgstr[1] ""
+
+#: trainerdex/models.py:1230
+msgctxt "target__is_reached__name"
+msgid "reached"
+msgstr ""
+
+#: trainerdex/models.py:1231
+msgctxt "target__is_reached__help"
+msgid "Designates whether this target has been reached."
+msgstr ""
+
+#: trainerdex/models.py:1236
+msgctxt "target__date_reached__name"
+msgid "date reached"
+msgstr ""
+
+#: trainerdex/models.py:1237
+msgctxt "target__date_reached__help"
+msgid "The date the target was reached, if known."
+msgstr ""
+
+#: trainerdex/models.py:1296 trainerdex/models.py:1297
+msgctxt "target__title"
+msgid "target group"
+msgid_plural "target groups"
+msgstr[0] ""
+
+#: trainerdex/validators.py:6
+msgctxt "onboard_name_invalid_characters_error"
+msgid "Only letters and numbers are allowed."
+msgstr ""
+
+#: trainerdex/validators.py:12
+msgid "Trainer Code must be 12 digits long and contain only numbers and whitespace."
+msgstr "トレーナーコードは12桁の長さで、数字と空白のみを含む必要があります。"
+
+#: config/settings.py:152
+msgid "English"
+msgstr "英語"
+
+#: config/settings.py:153
+msgid "German"
+msgstr "ドイツ語"
+
+#: config/settings.py:154
+msgid "Spanish"
+msgstr "スペイン語"
+
+#: config/settings.py:155
+msgid "French"
+msgstr "フランス語"
+
+#: config/settings.py:156
+msgid "Italian"
+msgstr "イタリア語"
+
+#: config/settings.py:157
+msgid "Japanese"
+msgstr "日本語"
+
+#: config/settings.py:158
+msgid "Korean"
+msgstr "韓国語"
+
+#: config/settings.py:159
+msgid "Brazilian Portuguese"
+msgstr "ブラジルポルトガル語"
+
+#: config/settings.py:160
+msgid "Traditional Chinese"
+msgstr "繁体字中国語"
+
+#~ msgid "Reports"
+#~ msgstr "レポート"
+
+#~ msgid "Account Inactive"
+#~ msgstr "アカウント非アクティブ"
+
+# msgctxt "asterisk"
+#~ msgid "*"
+#~ msgstr "※"
+
+#, fuzzy, python-format
+#~ msgid "All fields marked with %(asterisk)s are required."
+#~ msgstr "%(asterisk)s※が付いている欄はすべて必須です。"
+
+#~ msgctxt "Total XP of all Trainers on leaderboard"
+#~ msgid "Total XP"
+#~ msgstr "TOTAL XP"
+
+#~ msgctxt "Short form of Trainer Level"
+#~ msgid "TL"
+#~ msgstr "TL"
+
+#~ msgctxt "Short form of XP"
+#~ msgid "XP"
+#~ msgstr "XP"
+
+#~ msgid "This account is inactive."
+#~ msgstr "このアカウントは非アクティブです。"
+
+#~ msgid "About"
+#~ msgstr "私たちに関しては"
+
+#~ msgid "Privacy &amp; Terms"
+#~ msgstr "プライバシーと利用規約"
+
+#~ msgid "TL"
+#~ msgstr "レベル"
