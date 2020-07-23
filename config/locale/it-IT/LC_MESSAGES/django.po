@@ -1,0 +1,1087 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: trainerdex\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-07-23 13:18+0000\n"
+"PO-Revision-Date: 2020-07-23 13:25\n"
+"Last-Translator: \n"
+"Language-Team: Italian\n"
+"Language: it_IT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-Project: trainerdex\n"
+"X-Crowdin-Project-ID: 413192\n"
+"X-Crowdin-Language: it\n"
+"X-Crowdin-File: /production/config/locale/django.pot\n"
+"X-Crowdin-File-ID: 24\n"
+
+#: community/admin.py:18 community/admin.py:23
+msgid "Details"
+msgstr ""
+
+#: community/admin.py:19
+msgid "Members"
+msgstr ""
+
+#: community/models.py:16
+msgctxt "community__handle__title"
+msgid "Handle"
+msgstr ""
+
+#: community/models.py:17
+msgctxt "community__handle__help"
+msgid "Once you set this, it cannot be changed. Pick carefully as this will be the identifier to find your community leaderboard."
+msgstr ""
+
+#: community/models.py:23
+msgid "language"
+msgstr ""
+
+#: community/models.py:27
+msgid "timezone"
+msgstr ""
+
+#: community/models.py:32
+msgctxt "community__country__title"
+msgid "country"
+msgstr ""
+
+#: community/models.py:33
+msgctxt "community__country__help"
+msgid "Where your community is based"
+msgstr ""
+
+#: community/models.py:38
+msgctxt "community__name__title"
+msgid "name"
+msgstr ""
+
+#: community/models.py:39
+msgctxt "community__name__help"
+msgid "Max 70 characters"
+msgstr ""
+
+#: community/models.py:44
+msgctxt "community__description__title"
+msgid "description"
+msgstr ""
+
+#: community/models.py:45
+msgctxt "community__description__help"
+msgid "What makes your community unique? What are you about?"
+msgstr ""
+
+#: community/models.py:50
+msgctxt "community__can_see__title"
+msgid "Publicly Viewable"
+msgstr ""
+
+#: community/models.py:51
+msgctxt "community__can_see__help"
+msgid "Default: False\n"
+"Turn this on to share your community with the world."
+msgstr ""
+
+#: community/models.py:55
+msgctxt "community__can_join__title"
+msgid "Publicly Joinable"
+msgstr ""
+
+#: community/models.py:56
+msgctxt "community__can_join__title"
+msgid "Default: False\n"
+"Turn this on to make your community free to join. No invites required."
+msgstr ""
+
+#: community/models.py:76 community/models.py:77
+msgctxt "community__title"
+msgid "community"
+msgid_plural "communities"
+msgstr[0] ""
+msgstr[1] ""
+
+#: core/abstract.py:16 trainerdex/models.py:229 trainerdex/models.py:245
+#: trainerdex/models.py:246
+msgctxt "nickname__title"
+msgid "nickname"
+msgid_plural "nicknames"
+msgstr[0] ""
+msgstr[1] ""
+
+#: core/abstract.py:19
+msgid "Required. 3-15 characters. Letters and digits only. Must match PokemonGo Nickname."
+msgstr ""
+
+#: core/abstract.py:22
+msgid "A user with that username already exists."
+msgstr ""
+
+#: core/abstract.py:26
+msgid "last modified"
+msgstr ""
+
+#: core/abstract.py:31
+msgctxt "profile__country__title"
+msgid "country"
+msgstr ""
+
+#: core/abstract.py:32
+msgctxt "profile__country__help"
+msgid "Where this account plays the most. Used to place in localized leaderboards"
+msgstr ""
+
+#: core/abstract.py:37
+msgctxt "profile__banned__title"
+msgid "banned"
+msgstr ""
+
+#: core/abstract.py:38
+msgctxt "profile__banned__help"
+msgid "Designates whether this user should be treated as banned. Select this instead of deleting accounts."
+msgstr ""
+
+#: trainerdex/admin.py:62
+msgid "Basic Info"
+msgstr ""
+
+#: trainerdex/admin.py:63
+msgid "Medals"
+msgstr ""
+
+#: trainerdex/admin.py:64
+msgid "Type Medals"
+msgstr ""
+
+#: trainerdex/admin.py:65
+msgid "Pokédex"
+msgstr ""
+
+#: trainerdex/admin.py:112
+msgid "Authentication"
+msgstr ""
+
+#: trainerdex/admin.py:113
+msgid "Trainer info"
+msgstr ""
+
+#: trainerdex/admin.py:114
+msgid "Permissions"
+msgstr ""
+
+#: trainerdex/admin.py:115
+msgid "Important dates"
+msgstr ""
+
+#: trainerdex/admin.py:161 trainerdex/admin.py:167
+msgid "Object"
+msgstr ""
+
+#: trainerdex/models.py:46 trainerdex/models.py:57
+msgctxt "faction_0__short"
+msgid "Teamless"
+msgstr ""
+
+#: trainerdex/models.py:47 trainerdex/models.py:58
+msgctxt "faction_1__short"
+msgid "Mystic"
+msgstr ""
+
+#: trainerdex/models.py:48 trainerdex/models.py:59
+msgctxt "faction_2__short"
+msgid "Valor"
+msgstr ""
+
+#: trainerdex/models.py:49 trainerdex/models.py:60
+msgctxt "faction_3__short"
+msgid "Instinct"
+msgstr ""
+
+#: trainerdex/models.py:67
+msgctxt "faction_0__long"
+msgid "No Team"
+msgstr ""
+
+#: trainerdex/models.py:68
+msgctxt "faction_1__long"
+msgid "Team Mystic"
+msgstr ""
+
+#: trainerdex/models.py:69
+msgctxt "faction_2__long"
+msgid "Team Valor"
+msgstr ""
+
+#: trainerdex/models.py:70
+msgctxt "faction_3__long"
+msgid "Team Instinct"
+msgstr ""
+
+#: trainerdex/models.py:85 trainerdex/models.py:86
+msgctxt "faction__title"
+msgid "team"
+msgid_plural "teams"
+msgstr[0] ""
+msgstr[1] ""
+
+#: trainerdex/models.py:139
+msgid "The Trainer ID on the old TrainerDex API. This is deprecated and will be removed upon the retirement of API v1"
+msgstr ""
+
+#: trainerdex/models.py:147
+msgctxt "profile__start_date__title"
+msgid "Start Date"
+msgstr ""
+
+#: trainerdex/models.py:148
+msgctxt "profile__start_date__help"
+msgid "The date of creating of the Pokémon Go profile."
+msgstr ""
+
+#: trainerdex/models.py:154
+msgctxt "profile__faction__help"
+msgid "The team of the Pokémon Go profile."
+msgstr ""
+
+#: trainerdex/models.py:160
+msgctxt "profile__verified__title"
+msgid "Verified"
+msgstr ""
+
+#: trainerdex/models.py:161
+msgctxt "profile__verified__help"
+msgid "Designates whether this user should be treated as verified."
+msgstr ""
+
+#: trainerdex/models.py:214 trainerdex/models.py:215
+msgctxt "trainer__title"
+msgid "trainer"
+msgid_plural "trainers"
+msgstr[0] ""
+msgstr[1] ""
+
+#: trainerdex/models.py:275 trainerdex/models.py:287 trainerdex/models.py:288
+msgctxt "trainer_code__title"
+msgid "Trainer Code"
+msgid_plural "Trainer Codes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: trainerdex/models.py:290
+msgid "Trainer Code can be seen by users of groups they're in"
+msgstr ""
+
+#: trainerdex/models.py:291
+msgid "Trainer Code can be seen on the web, publicly"
+msgstr ""
+
+#: trainerdex/models.py:292
+msgid "Trainer Code can be on the API"
+msgstr ""
+
+#: trainerdex/models.py:307 trainerdex/models.py:308
+msgctxt "data_source__title"
+msgid "Data Source"
+msgid_plural "Data Souces"
+msgstr[0] ""
+msgstr[1] ""
+
+#: trainerdex/models.py:342
+msgid "Time Updated"
+msgstr ""
+
+#: trainerdex/models.py:346
+msgid "Date Submitted"
+msgstr ""
+
+#: trainerdex/models.py:350
+msgid "Last Modified"
+msgstr ""
+
+#: trainerdex/models.py:355
+msgid "Comment"
+msgstr ""
+
+#: trainerdex/models.py:363
+msgid "Source"
+msgstr ""
+
+#: trainerdex/models.py:376
+msgctxt "total_xp__title"
+msgid "Total XP"
+msgstr ""
+
+#: trainerdex/models.py:382
+msgctxt "pokedex_total_caught__title"
+msgid "Unique Species Caught"
+msgstr ""
+
+#: trainerdex/models.py:387
+msgctxt "pokedex_total_seen__title"
+msgid "Unique Species Seen"
+msgstr ""
+
+#: trainerdex/models.py:392
+msgctxt "pokedex_gen1__title"
+msgid "Kanto"
+msgstr ""
+
+#: trainerdex/models.py:393
+#, python-brace-format
+msgctxt "pokedex_gen1__help"
+msgid "Register {0} Kanto region Pokémon in the Pokédex."
+msgstr ""
+
+#: trainerdex/models.py:399
+msgctxt "pokedex_gen2__title"
+msgid "Johto"
+msgstr ""
+
+#: trainerdex/models.py:400
+#, python-brace-format
+msgctxt "pokedex_gen2__help"
+msgid "Register {0} Pokémon first discovered in the Johto region to the Pokédex."
+msgstr ""
+
+#: trainerdex/models.py:406
+msgctxt "pokedex_gen3_title"
+msgid "Hoenn"
+msgstr ""
+
+#: trainerdex/models.py:407
+#, python-brace-format
+msgctxt "pokedex_gen3"
+msgid "Register {0} Pokémon first discovered in the Hoenn region to the Pokédex."
+msgstr ""
+
+#: trainerdex/models.py:413
+msgctxt "pokedex_gen4__title"
+msgid "Sinnoh"
+msgstr ""
+
+#: trainerdex/models.py:414
+#, python-brace-format
+msgctxt "pokedex_gen4__help"
+msgid "Register {0} Pokémon first discovered in the Sinnoh region to the Pokédex."
+msgstr ""
+
+#: trainerdex/models.py:420
+msgctxt "pokedex_gen5__title"
+msgid "Unova"
+msgstr ""
+
+#: trainerdex/models.py:421
+#, python-brace-format
+msgctxt "pokedex_gen5__help"
+msgid "Register {0} Pokémon first discovered in the Unova region to the Pokédex."
+msgstr ""
+
+#: trainerdex/models.py:427
+msgctxt "pokedex_gen6__title"
+msgid "Kalos"
+msgstr ""
+
+#: trainerdex/models.py:428
+#, python-brace-format
+msgctxt "pokedex_gen6__help"
+msgid "Register {0} Pokémon first discovered in the Kalos region to the Pokédex."
+msgstr ""
+
+#: trainerdex/models.py:434
+msgctxt "pokedex_gen7__title"
+msgid "Alola"
+msgstr ""
+
+#: trainerdex/models.py:435
+#, python-brace-format
+msgctxt "pokedex_gen7__help"
+msgid "Register {0} Pokémon first discovered in the Alola region to the Pokédex."
+msgstr ""
+
+#: trainerdex/models.py:441
+msgctxt "pokedex_gen8__title"
+msgid "Galar"
+msgstr ""
+
+#: trainerdex/models.py:442
+#, python-brace-format
+msgctxt "pokedex_gen8__help"
+msgid "Register {0} Pokémon first discovered in the Galar region to the Pokédex."
+msgstr ""
+
+#: trainerdex/models.py:453
+msgctxt "travel_km__title"
+msgid "Jogger"
+msgstr ""
+
+#: trainerdex/models.py:454
+msgctxt "travel_km__title_alt"
+msgid "Distance Walked"
+msgstr ""
+
+#: trainerdex/models.py:456
+msgctxt "travel_km__help"
+msgid "Walk {0:0,g} km"
+msgstr ""
+
+#: trainerdex/models.py:462
+msgctxt "capture_total__title"
+msgid "Collector"
+msgstr ""
+
+#: trainerdex/models.py:463
+msgctxt "capture_total__title_alt"
+msgid "Pokémon Caught"
+msgstr ""
+
+#: trainerdex/models.py:465
+#, python-brace-format
+msgctxt "capture_total__help"
+msgid "Catch {0} Pokémon."
+msgstr ""
+
+#: trainerdex/models.py:470
+msgctxt "evolved_total__title"
+msgid "Scientist"
+msgstr ""
+
+#: trainerdex/models.py:471
+#, python-brace-format
+msgctxt "evolved_total__help"
+msgid "Evolve {0} Pokémon."
+msgstr ""
+
+#: trainerdex/models.py:476
+msgctxt "hatched_total__title"
+msgid "Breeder"
+msgstr ""
+
+#: trainerdex/models.py:477
+#, python-brace-format
+msgctxt "hatched_total__help"
+msgid "Hatch {0} eggs."
+msgstr ""
+
+#: trainerdex/models.py:483
+msgctxt "pokestops_visited__title"
+msgid "Backpacker"
+msgstr ""
+
+#: trainerdex/models.py:484
+msgctxt "pokestops_visited__title_alt"
+msgid "PokéStops Visited"
+msgstr ""
+
+#: trainerdex/models.py:486
+#, python-brace-format
+msgctxt "pokestops_visited__help"
+msgid "Visit {0} PokéStops."
+msgstr ""
+
+#: trainerdex/models.py:491
+msgctxt "big_magikarp__title"
+msgid "Fisherman"
+msgstr ""
+
+#: trainerdex/models.py:492
+#, python-brace-format
+msgctxt "big_magikarp__help"
+msgid "Catch {0} big Magikarp."
+msgstr ""
+
+#: trainerdex/models.py:497
+msgctxt "battle_attack_won__title"
+msgid "Battle Girl"
+msgstr ""
+
+#: trainerdex/models.py:498
+#, python-brace-format
+msgctxt "battle_attack_won__help"
+msgid "Win {0} Gym battles."
+msgstr ""
+
+#: trainerdex/models.py:503
+msgctxt "battle_training_won__title"
+msgid "Ace Trainer"
+msgstr ""
+
+#: trainerdex/models.py:504
+#, python-brace-format
+msgctxt "battle_training_won__help"
+msgid "Train {0} times."
+msgstr ""
+
+#: trainerdex/models.py:509
+msgctxt "small_rattata__title"
+msgid "Youngster"
+msgstr ""
+
+#: trainerdex/models.py:510
+#, python-brace-format
+msgctxt "small_rattata__help"
+msgid "Catch {0} tiny Rattata."
+msgstr ""
+
+#: trainerdex/models.py:515
+msgctxt "pikachu__title"
+msgid "Pikachu Fan"
+msgstr ""
+
+#: trainerdex/models.py:516
+#, python-brace-format
+msgctxt "pikachu__help"
+msgid "Catch {0} Pikachu."
+msgstr ""
+
+#: trainerdex/models.py:521
+msgctxt "unown__title"
+msgid "Unown"
+msgstr ""
+
+#: trainerdex/models.py:522
+#, python-brace-format
+msgctxt "unown__help"
+msgid "Catch {0} Unown."
+msgstr ""
+
+#: trainerdex/models.py:528
+msgctxt "raid_battle_won__title"
+msgid "Champion"
+msgstr ""
+
+#: trainerdex/models.py:529
+#, python-brace-format
+msgctxt "raid_battle_won__help"
+msgid "Win {0} Raids."
+msgstr ""
+
+#: trainerdex/models.py:534
+msgctxt "legendary_battle_won__title"
+msgid "Battle Legend"
+msgstr ""
+
+#: trainerdex/models.py:535
+#, python-brace-format
+msgctxt "legendary_battle_won__help"
+msgid "Win {0} Legendary Raids."
+msgstr ""
+
+#: trainerdex/models.py:540
+msgctxt "berries_fed__title"
+msgid "Berry Master"
+msgstr ""
+
+#: trainerdex/models.py:541
+#, python-brace-format
+msgctxt "berries_fed__help"
+msgid "Feed {0} Berries at Gyms."
+msgstr ""
+
+#: trainerdex/models.py:546
+msgctxt "hours_defended__title"
+msgid "Gym Leader"
+msgstr ""
+
+#: trainerdex/models.py:547
+#, python-brace-format
+msgctxt "hours_defended__help"
+msgid "Defend Gyms for {0} hours."
+msgstr ""
+
+#: trainerdex/models.py:552
+msgctxt "challenge_quests__title"
+msgid "Pokémon Ranger"
+msgstr ""
+
+#: trainerdex/models.py:553
+#, python-brace-format
+msgctxt "challenge_quests__help"
+msgid "Complete {0} Field Research tasks."
+msgstr ""
+
+#: trainerdex/models.py:558
+msgctxt "max_level_friends__title"
+msgid "Idol"
+msgstr ""
+
+#: trainerdex/models.py:559
+#, python-brace-format
+msgctxt "max_level_friends__help"
+msgid "Become Best Friends with {0} Trainers."
+msgstr ""
+
+#: trainerdex/models.py:564
+msgctxt "trading__title"
+msgid "Gentleman"
+msgstr ""
+
+#: trainerdex/models.py:565
+#, python-brace-format
+msgctxt "trading__help"
+msgid "Trade {0} Pokémon."
+msgstr ""
+
+#: trainerdex/models.py:570
+msgctxt "trading_distance__title"
+msgid "Pilot"
+msgstr ""
+
+#: trainerdex/models.py:571
+#, python-brace-format
+msgctxt "trading_distance__help"
+msgid "Earn {0} km across the distance of all Pokémon trades."
+msgstr ""
+
+#: trainerdex/models.py:576
+msgctxt "great_league__title"
+msgid "Great League Veteran"
+msgstr ""
+
+#: trainerdex/models.py:577
+msgctxt "great_league__help"
+msgid "Win {} Trainer Battles in the Great League."
+msgstr ""
+
+#: trainerdex/models.py:582
+msgctxt "ultra_league__title"
+msgid "Ultra League Veteran"
+msgstr ""
+
+#: trainerdex/models.py:583
+msgctxt "ultra_league__help"
+msgid "Win {} Trainer Battles in the Ultra League."
+msgstr ""
+
+#: trainerdex/models.py:588
+msgctxt "master_league__title"
+msgid "Master League Veteran"
+msgstr ""
+
+#: trainerdex/models.py:589
+msgctxt "master_league__help"
+msgid "Win {} Trainer Battles in the Master League."
+msgstr ""
+
+#: trainerdex/models.py:594
+msgctxt "photobomb__title"
+msgid "Cameraman"
+msgstr ""
+
+#: trainerdex/models.py:595
+#, python-brace-format
+msgctxt "photobomb__help"
+msgid "Have {0} surprise encounters in AR Snapshot."
+msgstr ""
+
+#: trainerdex/models.py:600
+msgctxt "pokemon_purified__title"
+msgid "Purifier"
+msgstr ""
+
+#: trainerdex/models.py:601
+#, python-brace-format
+msgctxt "pokemon_purified__help"
+msgid "Purify {0} Shadow Pokémon."
+msgstr ""
+
+#: trainerdex/models.py:606
+msgctxt "rocket_grunts_defeated__title"
+msgid "Hero"
+msgstr ""
+
+#: trainerdex/models.py:607
+#, python-brace-format
+msgctxt "rocket_grunts_defeated__help"
+msgid "Defeat {0} Team GO Rocket Grunts."
+msgstr ""
+
+#: trainerdex/models.py:612
+msgctxt "buddy_best__title"
+msgid "Best Buddy"
+msgstr ""
+
+#: trainerdex/models.py:613
+#, python-brace-format
+msgctxt "buddy_best__help"
+msgid "Have {0} Best Buddies."
+msgstr ""
+
+#: trainerdex/models.py:618
+msgctxt "wayfarer__title"
+msgid "Wayfarer"
+msgstr ""
+
+#: trainerdex/models.py:619
+#, python-brace-format
+msgctxt "wayfarer__help"
+msgid "Earn {0} Wayfarer Agreements"
+msgstr ""
+
+#: trainerdex/models.py:625
+msgctxt "type_normal__title"
+msgid "Schoolkid"
+msgstr ""
+
+#: trainerdex/models.py:626
+#, python-brace-format
+msgctxt "type_normal__help"
+msgid "Catch {0} Normal-type Pokémon"
+msgstr ""
+
+#: trainerdex/models.py:631
+msgctxt "type_fighting__title"
+msgid "Black Belt"
+msgstr ""
+
+#: trainerdex/models.py:632
+#, python-brace-format
+msgctxt "type_fighting__help"
+msgid "Catch {0} Fighting-type Pokémon"
+msgstr ""
+
+#: trainerdex/models.py:637
+msgctxt "type_flying__title"
+msgid "Bird Keeper"
+msgstr ""
+
+#: trainerdex/models.py:638
+#, python-brace-format
+msgctxt "type_flying__help"
+msgid "Catch {0} Flying-type Pokémon"
+msgstr ""
+
+#: trainerdex/models.py:643
+msgctxt "type_poison__title"
+msgid "Punk Girl"
+msgstr ""
+
+#: trainerdex/models.py:644
+#, python-brace-format
+msgctxt "type_poison__help"
+msgid "Catch {0} Poison-type Pokémon"
+msgstr ""
+
+#: trainerdex/models.py:649
+msgctxt "type_ground__title"
+msgid "Ruin Maniac"
+msgstr ""
+
+#: trainerdex/models.py:650
+#, python-brace-format
+msgctxt "type_ground__help"
+msgid "Catch {0} Ground-type Pokémon"
+msgstr ""
+
+#: trainerdex/models.py:655
+msgctxt "type_rock__title"
+msgid "Hiker"
+msgstr ""
+
+#: trainerdex/models.py:656
+#, python-brace-format
+msgctxt "type_rock__help"
+msgid "Catch {0} Rock-type Pokémon"
+msgstr ""
+
+#: trainerdex/models.py:661
+msgctxt "type_bug__title"
+msgid "Bug Catcher"
+msgstr ""
+
+#: trainerdex/models.py:662
+#, python-brace-format
+msgctxt "type_bug__help"
+msgid "Catch {0} Bug-type Pokémon"
+msgstr ""
+
+#: trainerdex/models.py:667
+msgctxt "type_ghost__title"
+msgid "Hex Maniac"
+msgstr ""
+
+#: trainerdex/models.py:668
+#, python-brace-format
+msgctxt "type_ghost__help"
+msgid "Catch {0} Ghost-type Pokémon"
+msgstr ""
+
+#: trainerdex/models.py:673
+msgctxt "type_steel__title"
+msgid "Depot Agent"
+msgstr ""
+
+#: trainerdex/models.py:674
+#, python-brace-format
+msgctxt "type_steel__help"
+msgid "Catch {0} Steel-type Pokémon"
+msgstr ""
+
+#: trainerdex/models.py:679
+msgctxt "type_fire__title"
+msgid "Kindler"
+msgstr ""
+
+#: trainerdex/models.py:680
+#, python-brace-format
+msgctxt "type_fire__help"
+msgid "Catch {0} Fire-type Pokémon"
+msgstr ""
+
+#: trainerdex/models.py:685
+msgctxt "type_water__title"
+msgid "Swimmer"
+msgstr ""
+
+#: trainerdex/models.py:686
+#, python-brace-format
+msgctxt "type_water__help"
+msgid "Catch {0} Water-type Pokémon"
+msgstr ""
+
+#: trainerdex/models.py:691
+msgctxt "type_grass__title"
+msgid "Gardener"
+msgstr ""
+
+#: trainerdex/models.py:692
+#, python-brace-format
+msgctxt "type_grass__help"
+msgid "Catch {0} Grass-type Pokémon"
+msgstr ""
+
+#: trainerdex/models.py:697
+msgctxt "type_electric__title"
+msgid "Rocker"
+msgstr ""
+
+#: trainerdex/models.py:698
+#, python-brace-format
+msgctxt "type_electric__help"
+msgid "Catch {0} Electric-type Pokémon"
+msgstr ""
+
+#: trainerdex/models.py:703
+msgctxt "type_psychic__title"
+msgid "Psychic"
+msgstr ""
+
+#: trainerdex/models.py:704
+#, python-brace-format
+msgctxt "type_psychic__help"
+msgid "Catch {0} Pychic-type Pokémon"
+msgstr ""
+
+#: trainerdex/models.py:709
+msgctxt "type_ice__title"
+msgid "Skier"
+msgstr ""
+
+#: trainerdex/models.py:710
+#, python-brace-format
+msgctxt "type_ice__help"
+msgid "Catch {0} Ice-type Pokémon"
+msgstr ""
+
+#: trainerdex/models.py:715
+msgctxt "type_dragon__title"
+msgid "Dragon Tamer"
+msgstr ""
+
+#: trainerdex/models.py:716
+#, python-brace-format
+msgctxt "type_dragon__help"
+msgid "Catch {0} Dragon-type Pokémon"
+msgstr ""
+
+#: trainerdex/models.py:721
+msgctxt "type_dark__title"
+msgid "Delinquent"
+msgstr ""
+
+#: trainerdex/models.py:722
+#, python-brace-format
+msgctxt "type_dark__help"
+msgid "Catch {0} Dark-type Pokémon"
+msgstr ""
+
+#: trainerdex/models.py:727
+msgctxt "type_fairy__title"
+msgid "Fairy Tale Girl"
+msgstr ""
+
+#: trainerdex/models.py:728
+#, python-brace-format
+msgctxt "type_fairy__help"
+msgid "Catch {0} Fairy-type Pokémon"
+msgstr ""
+
+#: trainerdex/models.py:734
+msgctxt "gymbadges_total__title"
+msgid "Gym Badges"
+msgstr ""
+
+#: trainerdex/models.py:740
+msgctxt "gymbadges_gold__title"
+msgid "Gold Gym Badges"
+msgstr ""
+
+#: trainerdex/models.py:745
+msgctxt "stardust__title"
+msgid "Stardust"
+msgstr ""
+
+#: trainerdex/models.py:789
+#, python-brace-format
+msgid "You must fill in at least one of the following fields:\n"
+"{csv_fields}"
+msgstr ""
+
+#: trainerdex/models.py:810
+msgid "This value has previously been entered at a higher value. Please try again ensuring the value you entered was correct."
+msgstr ""
+
+#: trainerdex/models.py:830 trainerdex/models.py:850
+#, python-brace-format
+msgid "This is required since you provided data for {badge}."
+msgstr ""
+
+#: trainerdex/models.py:837
+#, python-brace-format
+msgid "Stat too high. Must be less than {badge}."
+msgstr ""
+
+#: trainerdex/models.py:1041
+msgid "This value is high. Your daily average is above the threshold of {threshold:,}. Please check you haven't made a mistake.\n\n"
+"Your daily average between {earlier_date} and {later_date} is {average:,}"
+msgstr ""
+
+#: trainerdex/models.py:1059
+msgid "The {badge} you entered is too high. Please check for typos and other mistakes. You can't have more gold gyms than gyms in Total. {value:,}/{expected:,}"
+msgstr ""
+
+#: trainerdex/models.py:1061 trainerdex/models.py:1084
+#, python-brace-format
+msgid "You must fill in {other_badge} if filling in {this_badge}."
+msgstr ""
+
+#: trainerdex/models.py:1076
+msgid "This value is high. Your distance per trade average is above the threshold of {threshold:,}/trade. Please check you haven't made a mistake.\n\n"
+"Your average is {average:,}/trade"
+msgstr ""
+
+#: trainerdex/models.py:1094 trainerdex/models.py:1095
+msgctxt "update__title"
+msgid "update"
+msgid_plural "updates"
+msgstr[0] ""
+msgstr[1] ""
+
+#: trainerdex/models.py:1130
+#, python-brace-format
+msgid "Evidence for {evidence_type} and {trainer}"
+msgstr ""
+
+#: trainerdex/models.py:1136
+msgid "Content Field doesn't match Content Object"
+msgstr ""
+
+#: trainerdex/models.py:1145 trainerdex/models.py:1146
+msgctxt "evidence__title"
+msgid "evidence"
+msgid_plural "evidence"
+msgstr[0] ""
+msgstr[1] ""
+
+#: trainerdex/models.py:1176
+msgid "name"
+msgstr ""
+
+#: trainerdex/models.py:1180
+msgid "stat"
+msgstr ""
+
+#: trainerdex/models.py:1184 trainerdex/models.py:1216
+#: trainerdex/models.py:1217
+msgctxt "target__title"
+msgid "target"
+msgid_plural "targets"
+msgstr[0] ""
+msgstr[1] ""
+
+#: trainerdex/models.py:1230
+msgctxt "target__is_reached__name"
+msgid "reached"
+msgstr ""
+
+#: trainerdex/models.py:1231
+msgctxt "target__is_reached__help"
+msgid "Designates whether this target has been reached."
+msgstr ""
+
+#: trainerdex/models.py:1236
+msgctxt "target__date_reached__name"
+msgid "date reached"
+msgstr ""
+
+#: trainerdex/models.py:1237
+msgctxt "target__date_reached__help"
+msgid "The date the target was reached, if known."
+msgstr ""
+
+#: trainerdex/models.py:1296 trainerdex/models.py:1297
+msgctxt "target__title"
+msgid "target group"
+msgid_plural "target groups"
+msgstr[0] ""
+msgstr[1] ""
+
+#: trainerdex/validators.py:6
+msgctxt "onboard_name_invalid_characters_error"
+msgid "Only letters and numbers are allowed."
+msgstr ""
+
+#: trainerdex/validators.py:12
+msgid "Trainer Code must be 12 digits long and contain only numbers and whitespace."
+msgstr ""
+
+#: config/settings.py:152
+msgid "English"
+msgstr ""
+
+#: config/settings.py:153
+msgid "English (United Kingdom)"
+msgstr ""
+
+#: config/settings.py:154
+msgid "German"
+msgstr ""
+
+#: config/settings.py:155
+msgid "Spanish"
+msgstr ""
+
+#: config/settings.py:156
+msgid "French"
+msgstr ""
+
+#: config/settings.py:157
+msgid "Italian"
+msgstr ""
+
+#: config/settings.py:158
+msgid "Japanese"
+msgstr ""
+
+#: config/settings.py:159
+msgid "Korean"
+msgstr ""
+
+#: config/settings.py:160
+msgid "Brazilian Portuguese"
+msgstr ""
+
+#: config/settings.py:161
+msgid "Traditional Chinese"
+msgstr ""
+
