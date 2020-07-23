@@ -1,21 +1,21 @@
-# Trainerdex
-# Copyright (C) 2020 Jay Turner
-# This file is distributed under the same license as the TrainerDex package.
-# Jay Turner <jay@trainerdex.co.uk>, 2019.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: 2020.06.23\n"
+"Project-Id-Version: trainerdex\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-07-23 13:18+0000\n"
-"PO-Revision-Date: 2019-02-18 14:56+0000\n"
-"Last-Translator: b'Jay Turner <jaynicholasturner@gmail.com>'\n"
-"Language-Team: Chinese <i18n_zh@trainerdex.co.uk>\n"
-"Language: zh\n"
+"PO-Revision-Date: 2020-07-23 13:25\n"
+"Last-Translator: \n"
+"Language-Team: Chinese Traditional\n"
+"Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: trainerdex\n"
+"X-Crowdin-Project-ID: 413192\n"
+"X-Crowdin-Language: zh-TW\n"
+"X-Crowdin-File: /develop/config/locale/django.pot\n"
+"X-Crowdin-File-ID: 16\n"
 
 #: community/admin.py:18 community/admin.py:23
 msgid "Details"
@@ -54,10 +54,9 @@ msgid "Where your community is based"
 msgstr ""
 
 #: community/models.py:38
-#, fuzzy
 msgctxt "community__name__title"
 msgid "name"
-msgstr "暱稱"
+msgstr ""
 
 #: community/models.py:39
 msgctxt "community__name__help"
@@ -81,8 +80,7 @@ msgstr ""
 
 #: community/models.py:51
 msgctxt "community__can_see__help"
-msgid ""
-"Default: False\n"
+msgid "Default: False\n"
 "Turn this on to share your community with the world."
 msgstr ""
 
@@ -93,8 +91,7 @@ msgstr ""
 
 #: community/models.py:56
 msgctxt "community__can_join__title"
-msgid ""
-"Default: False\n"
+msgid "Default: False\n"
 "Turn this on to make your community free to join. No invites required."
 msgstr ""
 
@@ -103,18 +100,13 @@ msgctxt "community__title"
 msgid "community"
 msgid_plural "communities"
 msgstr[0] ""
-msgstr[1] ""
 
 #: core/abstract.py:16 trainerdex/models.py:229 trainerdex/models.py:245
 #: trainerdex/models.py:246
-#, fuzzy
-#| msgctxt "onboard_enter_name_hint"
-#| msgid "Nickname"
 msgctxt "nickname__title"
 msgid "nickname"
 msgid_plural "nicknames"
-msgstr[0] "暱稱"
-msgstr[1] "暱稱"
+msgstr[0] ""
 
 #: core/abstract.py:19
 msgid "Required. 3-15 characters. Letters and digits only. Must match PokemonGo Nickname."
@@ -185,75 +177,50 @@ msgid "Object"
 msgstr ""
 
 #: trainerdex/models.py:46 trainerdex/models.py:57
-#, fuzzy
-#| msgctxt "faction"
-#| msgid "Team"
 msgctxt "faction_0__short"
 msgid "Teamless"
-msgstr "隊"
+msgstr ""
 
 #: trainerdex/models.py:47 trainerdex/models.py:58
-#, fuzzy
-#| msgctxt "team_name_team1"
-#| msgid "Team Mystic"
 msgctxt "faction_1__short"
 msgid "Mystic"
-msgstr "叡智隊"
+msgstr ""
 
 #: trainerdex/models.py:48 trainerdex/models.py:59
-#, fuzzy
-#| msgctxt "team_name_team2"
-#| msgid "Team Valor"
 msgctxt "faction_2__short"
 msgid "Valor"
-msgstr "武勇隊"
+msgstr ""
 
 #: trainerdex/models.py:49 trainerdex/models.py:60
-#, fuzzy
-#| msgctxt "team_name_team3"
-#| msgid "Team Instinct"
 msgctxt "faction_3__short"
 msgid "Instinct"
-msgstr "靈犀隊"
+msgstr ""
 
 #: trainerdex/models.py:67
-#, fuzzy
-#| msgctxt "team_name_team0"
-#| msgid "No Team"
 msgctxt "faction_0__long"
 msgid "No Team"
-msgstr "未選擇隊伍"
+msgstr ""
 
 #: trainerdex/models.py:68
-#, fuzzy
-#| msgctxt "team_name_team1"
-#| msgid "Team Mystic"
 msgctxt "faction_1__long"
 msgid "Team Mystic"
-msgstr "叡智隊"
+msgstr ""
 
 #: trainerdex/models.py:69
-#, fuzzy
-#| msgctxt "team_name_team2"
-#| msgid "Team Valor"
 msgctxt "faction_2__long"
 msgid "Team Valor"
-msgstr "武勇隊"
+msgstr ""
 
 #: trainerdex/models.py:70
-#, fuzzy
-#| msgctxt "team_name_team3"
-#| msgid "Team Instinct"
 msgctxt "faction_3__long"
 msgid "Team Instinct"
-msgstr "靈犀隊"
+msgstr ""
 
 #: trainerdex/models.py:85 trainerdex/models.py:86
 msgctxt "faction__title"
 msgid "team"
 msgid_plural "teams"
 msgstr[0] ""
-msgstr[1] ""
 
 #: trainerdex/models.py:139
 msgid "The Trainer ID on the old TrainerDex API. This is deprecated and will be removed upon the retirement of API v1"
@@ -289,14 +256,12 @@ msgctxt "trainer__title"
 msgid "trainer"
 msgid_plural "trainers"
 msgstr[0] ""
-msgstr[1] ""
 
 #: trainerdex/models.py:275 trainerdex/models.py:287 trainerdex/models.py:288
 msgctxt "trainer_code__title"
 msgid "Trainer Code"
 msgid_plural "Trainer Codes"
 msgstr[0] ""
-msgstr[1] ""
 
 #: trainerdex/models.py:290
 msgid "Trainer Code can be seen by users of groups they're in"
@@ -315,7 +280,6 @@ msgctxt "data_source__title"
 msgid "Data Source"
 msgid_plural "Data Souces"
 msgstr[0] ""
-msgstr[1] ""
 
 #: trainerdex/models.py:342
 msgid "Time Updated"
@@ -338,11 +302,9 @@ msgid "Source"
 msgstr ""
 
 #: trainerdex/models.py:376
-#, fuzzy
-#| msgid "Total XP"
 msgctxt "total_xp__title"
 msgid "Total XP"
-msgstr "總XP"
+msgstr ""
 
 #: trainerdex/models.py:382
 msgctxt "pokedex_total_caught__title"
@@ -512,11 +474,9 @@ msgid "Visit {0} PokéStops."
 msgstr ""
 
 #: trainerdex/models.py:491
-#, fuzzy
-#| msgid "German"
 msgctxt "big_magikarp__title"
 msgid "Fisherman"
-msgstr "德"
+msgstr ""
 
 #: trainerdex/models.py:492
 #, python-brace-format
@@ -624,10 +584,9 @@ msgid "Defend Gyms for {0} hours."
 msgstr ""
 
 #: trainerdex/models.py:552
-#, fuzzy
 msgctxt "challenge_quests__title"
 msgid "Pokémon Ranger"
-msgstr "Pokémon GO Special Weekend"
+msgstr ""
 
 #: trainerdex/models.py:553
 #, python-brace-format
@@ -968,8 +927,7 @@ msgstr ""
 
 #: trainerdex/models.py:789
 #, python-brace-format
-msgid ""
-"You must fill in at least one of the following fields:\n"
+msgid "You must fill in at least one of the following fields:\n"
 "{csv_fields}"
 msgstr ""
 
@@ -988,9 +946,7 @@ msgid "Stat too high. Must be less than {badge}."
 msgstr ""
 
 #: trainerdex/models.py:1041
-msgid ""
-"This value is high. Your daily average is above the threshold of {threshold:,}. Please check you haven't made a mistake.\n"
-"\n"
+msgid "This value is high. Your daily average is above the threshold of {threshold:,}. Please check you haven't made a mistake.\n\n"
 "Your daily average between {earlier_date} and {later_date} is {average:,}"
 msgstr ""
 
@@ -1004,9 +960,7 @@ msgid "You must fill in {other_badge} if filling in {this_badge}."
 msgstr ""
 
 #: trainerdex/models.py:1076
-msgid ""
-"This value is high. Your distance per trade average is above the threshold of {threshold:,}/trade. Please check you haven't made a mistake.\n"
-"\n"
+msgid "This value is high. Your distance per trade average is above the threshold of {threshold:,}/trade. Please check you haven't made a mistake.\n\n"
 "Your average is {average:,}/trade"
 msgstr ""
 
@@ -1015,7 +969,6 @@ msgctxt "update__title"
 msgid "update"
 msgid_plural "updates"
 msgstr[0] ""
-msgstr[1] ""
 
 #: trainerdex/models.py:1130
 #, python-brace-format
@@ -1031,12 +984,10 @@ msgctxt "evidence__title"
 msgid "evidence"
 msgid_plural "evidence"
 msgstr[0] ""
-msgstr[1] ""
 
 #: trainerdex/models.py:1176
-#, fuzzy
 msgid "name"
-msgstr "暱稱"
+msgstr ""
 
 #: trainerdex/models.py:1180
 msgid "stat"
@@ -1048,7 +999,6 @@ msgctxt "target__title"
 msgid "target"
 msgid_plural "targets"
 msgstr[0] ""
-msgstr[1] ""
 
 #: trainerdex/models.py:1230
 msgctxt "target__is_reached__name"
@@ -1075,7 +1025,6 @@ msgctxt "target__title"
 msgid "target group"
 msgid_plural "target groups"
 msgstr[0] ""
-msgstr[1] ""
 
 #: trainerdex/validators.py:6
 msgctxt "onboard_name_invalid_characters_error"
@@ -1125,3 +1074,4 @@ msgstr "巴西葡萄牙语"
 #: config/settings.py:161
 msgid "Traditional Chinese"
 msgstr "中国传统"
+
