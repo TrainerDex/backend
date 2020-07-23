@@ -1,0 +1,3 @@
+files:
+  - source: /config/locale/django.pot
+    translation: /config/locale/%locale%/LC_MESSAGES/django.po
