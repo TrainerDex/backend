@@ -150,6 +150,7 @@ AUTH_USER_MODEL = 'trainerdex.Trainer'
 LANGUAGE_CODE = 'en'
 LANGUAGES = [
     ('en', _('English')),
+    ('en-GB', _('English (United Kingdom)')),
     ('de', _('German')),
     ('es', _('Spanish')),
     ('fr', _('French')),
