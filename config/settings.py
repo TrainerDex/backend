@@ -16,90 +16,90 @@ SECRET_KEY = local_settings.SECRET_KEY
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = local_settings.DEBUG
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ["*"]
 
 ADMINS = local_settings.ADMINS
 
 # Application definition
 
 INSTALLED_APPS = [
-    'corsheaders',
-    'jazzmin',
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.humanize',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'django.contrib.sites',
-    'django.contrib.sitemaps',
-    'django.contrib.gis',
-    'rest_framework',
-    'rest_framework.authtoken',
-    'community',
-    'core',
-    'trainerdex',
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
-    'allauth.socialaccount.providers.discord',
-    'allauth.socialaccount.providers.facebook',
-    'allauth.socialaccount.providers.google',
-    'allauth.socialaccount.providers.twitter',
-    'analytical',
-    'django_filters',
-    'django_countries',
-    'timezone_field',
-    ]
+    "corsheaders",
+    "jazzmin",
+    "django.contrib.admin",
+    "django.contrib.auth",
+    "django.contrib.contenttypes",
+    "django.contrib.humanize",
+    "django.contrib.sessions",
+    "django.contrib.messages",
+    "django.contrib.staticfiles",
+    "django.contrib.sites",
+    "django.contrib.sitemaps",
+    "django.contrib.gis",
+    "rest_framework",
+    "rest_framework.authtoken",
+    "community",
+    "core",
+    "trainerdex",
+    "allauth",
+    "allauth.account",
+    "allauth.socialaccount",
+    "allauth.socialaccount.providers.discord",
+    "allauth.socialaccount.providers.facebook",
+    "allauth.socialaccount.providers.google",
+    "allauth.socialaccount.providers.twitter",
+    "analytical",
+    "django_filters",
+    "django_countries",
+    "timezone_field",
+]
 
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.locale.LocaleMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "django.middleware.security.SecurityMiddleware",
+    "django.contrib.sessions.middleware.SessionMiddleware",
+    "django.middleware.locale.LocaleMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
+    "django.middleware.common.CommonMiddleware",
+    "django.middleware.csrf.CsrfViewMiddleware",
+    "django.contrib.auth.middleware.AuthenticationMiddleware",
+    "django.contrib.messages.middleware.MessageMiddleware",
+    "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
 CORS_ORIGIN_ALLOW_ALL = DEBUG
 
 LOCALE_PATHS = [
-    'i18n/django',
+    "i18n/django",
 ]
 
-ROOT_URLCONF = 'config.urls'
+ROOT_URLCONF = "config.urls"
 
 # DjangoDebugToolbar
 # https://django-debug-toolbar.readthedocs.io/en/latest/installation.html
 
 if DEBUG:
-    if 'django.contrib.staticfiles' not in INSTALLED_APPS:
-        INSTALLED_APPS.append('django.contrib.staticfiles')
-    INSTALLED_APPS.append('debug_toolbar')
-    MIDDLEWARE.append('debug_toolbar.middleware.DebugToolbarMiddleware')
-    INTERNAL_IPS = ['127.0.0.1']
+    if "django.contrib.staticfiles" not in INSTALLED_APPS:
+        INSTALLED_APPS.append("django.contrib.staticfiles")
+    INSTALLED_APPS.append("debug_toolbar")
+    MIDDLEWARE.append("debug_toolbar.middleware.DebugToolbarMiddleware")
+    INTERNAL_IPS = ["127.0.0.1"]
 
 TEMPLATES = [
     {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        'APP_DIRS': True,
-        'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
+        "BACKEND": "django.template.backends.django.DjangoTemplates",
+        "DIRS": [],
+        "APP_DIRS": True,
+        "OPTIONS": {
+            "context_processors": [
+                "django.template.context_processors.debug",
+                "django.template.context_processors.request",
+                "django.contrib.auth.context_processors.auth",
+                "django.contrib.messages.context_processors.messages",
             ],
         },
     },
 ]
 
-WSGI_APPLICATION = 'config.wsgi.application'
+WSGI_APPLICATION = "config.wsgi.application"
 
 
 # Database
@@ -107,16 +107,16 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Some settings handled in config.local_settings
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'django',
-        'USER': local_settings.db_user,
-        'PASSWORD': local_settings.db_password,
-        'HOST': '127.0.0.1',
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "django",
+        "USER": local_settings.db_user,
+        "PASSWORD": local_settings.db_password,
+        "HOST": "127.0.0.1",
     }
 }
 
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 
 
 # Password validation
@@ -124,43 +124,37 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
     },
-    {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    },
+    {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",},
+    {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",},
+    {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",},
 ]
 
 
 # Custom user ModelBackend
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-user-model
 
-AUTH_USER_MODEL = 'trainerdex.Trainer'
+AUTH_USER_MODEL = "trainerdex.Trainer"
 
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
-LANGUAGE_CODE = 'en'
+LANGUAGE_CODE = "en"
 LANGUAGES = [
-    ('en', _('English')),
-    ('de', _('German')),
-    ('es', _('Spanish')),
-    ('fr', _('French')),
-    ('it', _('Italian')),
-    ('ja', _('Japanese')),
-    ('ko', _('Korean')),
-    ('pt', _('Portuguese (Brazil)')),
-    ('zh', _('Traditional Chinese (Hong Kong)')),
+    ("en", _("English")),
+    ("de", _("German")),
+    ("es", _("Spanish")),
+    ("fr", _("French")),
+    ("it", _("Italian")),
+    ("ja", _("Japanese")),
+    ("ko", _("Korean")),
+    ("pt", _("Portuguese (Brazil)")),
+    ("zh", _("Traditional Chinese (Hong Kong)")),
 ]
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = "UTC"
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True
@@ -169,13 +163,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_URL = "/static/"
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 if not DEBUG:
-    STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
+    STATICFILES_STORAGE = (
+        "django.contrib.staticfiles.storage.ManifestStaticFilesStorage"
+    )
 USE_X_FORWARDED_HOST = True
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 # CORS
 # https://github.com/ottoyiu/django-cors-headers
@@ -186,18 +182,16 @@ CORS_ORIGIN_ALLOW_ALL = True
 # http://www.django-rest-framework.org/tutorial/4-authentication-and-permissions/
 
 REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework.authentication.SessionAuthentication',
-        'rest_framework.authentication.TokenAuthentication',
-        ),
-    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
-    'DEFAULT_PERMISSION_CLASSES': (
-        'config.permissions.IsAdminUserOrReadOnly',
-        ),
-    'DEFAULT_VERSIONING_CLASS': 'rest_framework.versioning.NamespaceVersioning',
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
-    'PAGE_SIZE': 100,
-    'COERCE_DECIMAL_TO_STRING': False,
+    "DEFAULT_AUTHENTICATION_CLASSES": (
+        "rest_framework.authentication.SessionAuthentication",
+        "rest_framework.authentication.TokenAuthentication",
+    ),
+    "DEFAULT_FILTER_BACKENDS": ["django_filters.rest_framework.DjangoFilterBackend"],
+    "DEFAULT_PERMISSION_CLASSES": ("config.permissions.IsAdminUserOrReadOnly",),
+    "DEFAULT_VERSIONING_CLASS": "rest_framework.versioning.NamespaceVersioning",
+    "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.LimitOffsetPagination",
+    "PAGE_SIZE": 100,
+    "COERCE_DECIMAL_TO_STRING": False,
 }
 
 # Django AllAuth
@@ -216,42 +210,20 @@ ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = True
 ACCOUNT_USERNAME_MIN_LENGTH = 3
 ACCOUNT_USERNAME_REQUIRED = True
 AUTHENTICATION_BACKENDS = (
-    'django.contrib.auth.backends.ModelBackend',
-    'allauth.account.auth_backends.AuthenticationBackend',
+    "django.contrib.auth.backends.ModelBackend",
+    "allauth.account.auth_backends.AuthenticationBackend",
 )
-LOGIN_REDIRECT_URL = 'trainerdex:profile'
+LOGIN_REDIRECT_URL = "trainerdex:profile"
 SOCIALACCOUNT_AUTO_SIGNUP = False
 SOCIALACCOUNT_PROVIDERS = {
-    'discord': {
-        'SCOPE': [
-            'identify',
-            'email',
-            'guilds',
-            'guilds.join',
-            'gdm.join',
-        ]
+    "discord": {"SCOPE": ["identify", "email", "guilds", "guilds.join", "gdm.join",]},
+    "facebook": {
+        "SCOPE": ["public_profile", "email", "user_location",],
+        "FIELDS": ["id", "email", "first_name", "last_name",],
     },
-    'facebook': {
-        'SCOPE': [
-            'public_profile',
-            'email',
-            'user_location',
-        ],
-        'FIELDS': [
-            'id',
-            'email',
-            'first_name',
-            'last_name',
-        ],
-    },
-    'google': {
-        'SCOPE': [
-            'profile',
-            'email',
-        ],
-        'AUTH_PARAMS': {
-            'access_type': 'online',
-        }
+    "google": {
+        "SCOPE": ["profile", "email",],
+        "AUTH_PARAMS": {"access_type": "online",},
     },
 }
 SOCIALACCOUNT_QUERY_EMAIL = True
@@ -259,7 +231,7 @@ SOCIALACCOUNT_QUERY_EMAIL = True
 # Email
 # https://docs.djangoproject.com/en/3.0/topics/email/
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = local_settings.EMAIL_HOST
 EMAIL_USE_TLS = local_settings.EMAIL_USE_TLS
 EMAIL_PORT = local_settings.EMAIL_PORT
@@ -274,46 +246,51 @@ FILE_UPLOAD_PERMISSIONS = 0x775
 # https://django-jazzmin.readthedocs.io/configuration/
 
 JAZZMIN_SETTINGS = {
-    'site_title': 'TrainerDex Admin',
-    'site_header': 'TrainerDex',
-    'site_logo': 'img/trainerdex-icon.png',
-    'copyright': 'TurnrDev',
-    'search_model': AUTH_USER_MODEL,
-    'user_avatar': 'avatar',
-    'topmenu_links': [
-        {'name': 'Home',  'url': 'admin:index', 'permissions': ['auth.view_user']},
-        {'model': AUTH_USER_MODEL},
-        {'app': 'trainerdex'},
-        {'name': 'GitHub', 'url': 'https://github.com/TrainerDex/backend/issues', 'new_window': True},
-        {'name': 'Discord', 'url': 'https://discord.trainerdex.co.uk', 'new_window': True},
+    "site_title": "TrainerDex Admin",
+    "site_header": "TrainerDex",
+    "site_logo": "img/trainerdex-icon.png",
+    "copyright": "TurnrDev",
+    "search_model": AUTH_USER_MODEL,
+    "user_avatar": "avatar",
+    "topmenu_links": [
+        {"name": "Home", "url": "admin:index", "permissions": ["auth.view_user"]},
+        {"model": AUTH_USER_MODEL},
+        {"app": "trainerdex"},
+        {
+            "name": "GitHub",
+            "url": "https://github.com/TrainerDex/backend/issues",
+            "new_window": True,
+        },
+        {
+            "name": "Discord",
+            "url": "https://discord.trainerdex.co.uk",
+            "new_window": True,
+        },
     ],
-    'navigation_expanded': False,
-    'hide_apps': ['sites', 'account', 'authtoken'],
-    'custom_links': {
-        'socialaccount': [{'model': 'account.emailaddress'}],
-        'auth': [
-            {'model': 'trainerdex.trainer'},
-            {'model': 'authtoken.token'}
-        ]
+    "navigation_expanded": False,
+    "hide_apps": ["sites", "account", "authtoken"],
+    "custom_links": {
+        "socialaccount": [{"model": "account.emailaddress"}],
+        "auth": [{"model": "trainerdex.trainer"}, {"model": "authtoken.token"}],
     },
-    'icons': {
-        'auth': 'fa-users-cog',
-        'auth.Group': 'fa-users',
-        'trainerdex': 'fa-cog',
-        'trainerdex.trainer': 'fa-user',
-        'trainerdex.datasource': 'fa-database',
-        'trainerdex.evidence': 'fa-images',
-        'trainerdex.nickname': 'fa-signature',
-        'trainerdex.target': 'fa-bullseye',
-        'trainerdex.presettarget': 'fa-bullseye',
-        'trainerdex.presettargetgroup': 'fa-bullseye',
-        'trainerdex.update': 'fa-table',
-        'socialaccount': 'fa-users',
-        'socialaccount.socialaccount': 'fa-user',
-        'socialaccount.socialtoken': 'fa-user-secret',
-        'socialaccount.socialapp': 'fa-key',
-        'account.emailaddress': 'fa-at',
-        'authtoken.token': 'fa-key',
+    "icons": {
+        "auth": "fa-users-cog",
+        "auth.Group": "fa-users",
+        "trainerdex": "fa-cog",
+        "trainerdex.trainer": "fa-user",
+        "trainerdex.datasource": "fa-database",
+        "trainerdex.evidence": "fa-images",
+        "trainerdex.nickname": "fa-signature",
+        "trainerdex.target": "fa-bullseye",
+        "trainerdex.presettarget": "fa-bullseye",
+        "trainerdex.presettargetgroup": "fa-bullseye",
+        "trainerdex.update": "fa-table",
+        "socialaccount": "fa-users",
+        "socialaccount.socialaccount": "fa-user",
+        "socialaccount.socialtoken": "fa-user-secret",
+        "socialaccount.socialapp": "fa-key",
+        "account.emailaddress": "fa-at",
+        "authtoken.token": "fa-key",
     },
 }
 JAZZMIN_UI_TWEAKS = {
@@ -331,5 +308,5 @@ JAZZMIN_UI_TWEAKS = {
     "sidebar_nav_child_indent": True,
     "sidebar_nav_compact_style": False,
     "sidebar_nav_legacy_style": False,
-    "sidebar_nav_flat_style": True
+    "sidebar_nav_flat_style": True,
 }
