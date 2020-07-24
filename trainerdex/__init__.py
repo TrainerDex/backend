@@ -1,1 +1,1 @@
-default_app_config = 'trainerdex.apps.TrainerDexConfig'
+default_app_config = "trainerdex.apps.TrainerDexConfig"

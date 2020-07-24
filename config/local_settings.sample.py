@@ -1,23 +1,23 @@
-SECRET_KEY = ''
+SECRET_KEY = ""
 
 DEBUG = True
 
-ADMINS = [('Name', 'email@example.com')]
+ADMINS = [("Name", "email@example.com")]
 
 
-db_user = ''
-db_password = ''
+db_user = ""
+db_password = ""
 
 
-EMAIL_HOST = 'smtp.mailgun.org'
+EMAIL_HOST = "smtp.mailgun.org"
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
-EMAIL_HOST_USER = ''
-EMAIL_HOST_PASSWORD = ''
-DEFAULT_FROM_EMAIL = ''
+EMAIL_HOST_USER = ""
+EMAIL_HOST_PASSWORD = ""
+DEFAULT_FROM_EMAIL = ""
 
 DISCORD_CLIENT_ID = 0
-DISCORD_CLIENT_SECRET = ''
-DISCORD_TOKEN = ''
-GOOGLE_ANALYTICS_PROPERTY_ID = ''
+DISCORD_CLIENT_SECRET = ""
+DISCORD_TOKEN = ""
+GOOGLE_ANALYTICS_PROPERTY_ID = ""
 GOOGLE_ANALYTICS_GTAG_PROPERTY_ID = GOOGLE_ANALYTICS_PROPERTY_ID
