@@ -68,7 +68,7 @@ MIDDLEWARE = [
 CORS_ORIGIN_ALLOW_ALL = DEBUG
 
 LOCALE_PATHS = [
-    'config/locale',
+    'i18n/django',
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -156,8 +156,8 @@ LANGUAGES = [
     ('it', _('Italian')),
     ('ja', _('Japanese')),
     ('ko', _('Korean')),
-    ('pt-br', _('Brazilian Portuguese')),
-    ('zh-hant', _('Traditional Chinese')),
+    ('pt', _('Portuguese (Brazil)')),
+    ('zh', _('Traditional Chinese (Hong Kong)')),
 ]
 
 TIME_ZONE = 'UTC'
