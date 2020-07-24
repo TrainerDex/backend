@@ -21,3 +21,6 @@ python manage.py collectstatic --clear
 python manage.py migrate
 python manage.py compilemessages
 ```
+
+## Running git blame?
+Add this to your config `git config blame.ignoreRevsFile .git-blame-ignore-revs`
