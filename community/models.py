@@ -1,12 +1,10 @@
 from django.conf import settings
 from django.db import models
-from django.urls import reverse
 from django.utils.translation import gettext_lazy as _, npgettext_lazy, pgettext_lazy
 
 from django_countries.fields import CountryField
 from timezone_field import TimeZoneField
 
-from trainerdex.leaderboard import Leaderboard
 from trainerdex.models import Trainer
 
 

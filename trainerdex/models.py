@@ -23,7 +23,6 @@ from django.db.models import F, Q
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 from django.templatetags.static import static
-from django.urls import reverse
 from django.utils import timezone
 from django.utils.translation import (
     gettext_lazy as _,
@@ -95,8 +94,8 @@ class Faction(models.Model):
         return self.name_long
 
     class Meta:
-        verbose_name = npgettext_lazy("faction__title", "team", "teams", 1)
-        verbose_name = npgettext_lazy("faction__title", "team", "teams", 3)
+        verbose_name = npgettext_lazy("faction", "team", "teams", 1)
+        verbose_name = npgettext_lazy("faction", "team", "teams", 3)
 
 
 class TrainerQuerySet(models.QuerySet):
@@ -149,13 +148,18 @@ class TrainerManager(UserManager):
 
 
 class Trainer(AbstractUser):
-    """The model used to represent a users profile in the database"""
+    """The model used to represent a Users profile in the database"""
 
-    old_id = models.PositiveIntegerField(
+    tid = models.PositiveIntegerField(
         editable=False,
-        verbose_name="(Deprecated) ID",
-        help_text=_(
-            "The Trainer ID on the old TrainerDex API. This is deprecated and will be removed upon the retirement of API v1"
+        verbose_name=pgettext_lazy("tid", "(Deprecated) TID"),
+        help_text=pgettext_lazy(
+            "tid_help",
+            (
+                "The Trainer ID on the old TrainerDex API."
+                " This is deprecated and will be removed upon the retirement of API v1,"
+                " as it's now shared with the User ID."
+            ),
         ),
         blank=True,
         null=True,
@@ -164,25 +168,22 @@ class Trainer(AbstractUser):
         null=True,
         blank=False,
         validators=[MinValueValidator(datetime.date(2016, 7, 5))],
-        verbose_name=pgettext_lazy("profile__start_date__title", "Start Date"),
-        help_text=pgettext_lazy(
-            "profile__start_date__help",
-            "The date of creating of the Pokémon Go profile.",
-        ),
+        verbose_name=pgettext_lazy("start_date", "Start Date"),
+        help_text=pgettext_lazy("start_date__help", "Creation date of the Pokémon Go profile."),
     )
     faction = models.ForeignKey(
         Faction,
         on_delete=models.PROTECT,
         verbose_name=Faction._meta.verbose_name,
-        help_text=pgettext_lazy("profile__faction__help", "The team of the Pokémon Go profile."),
+        help_text=pgettext_lazy("faction__help", "The team of the Pokémon Go profile."),
         default=0,
     )
 
     is_verified = models.BooleanField(
         default=False,
-        verbose_name=pgettext_lazy("profile__verified__title", "Verified"),
+        verbose_name=pgettext_lazy("is_verified", "Verified"),
         help_text=pgettext_lazy(
-            "profile__verified__help",
+            "is_verified__help",
             "Designates whether this user should be treated as verified.",
         ),
     )
@@ -238,8 +239,8 @@ class Trainer(AbstractUser):
         return f"pk: {self.pk} nickname: {self.username} faction: {self.faction}"
 
     class Meta(AbstractUser.Meta):
-        verbose_name = npgettext_lazy("trainer__title", "trainer", "trainers", 1)
-        verbose_name_plural = npgettext_lazy("trainer__title", "trainer", "trainers", 2)
+        verbose_name = npgettext_lazy("trainer", "trainer", "trainers", 1)
+        verbose_name_plural = npgettext_lazy("trainer", "trainer", "trainers", 2)
 
 
 class Nickname(LifecycleModelMixin, models.Model):
@@ -254,7 +255,7 @@ class Nickname(LifecycleModelMixin, models.Model):
         unique=True,
         validators=[PokemonGoUsernameValidator],
         db_index=True,
-        verbose_name=pgettext_lazy("nickname__title", "nickname"),
+        verbose_name=npgettext_lazy("nickname", "nickname", "nicknames", 1),
     )
     active = ExclusiveBooleanField(
         on="user",
@@ -270,8 +271,8 @@ class Nickname(LifecycleModelMixin, models.Model):
 
     class Meta:
         ordering = ["nickname"]
-        verbose_name = npgettext_lazy("nickname__title", "nickname", "nicknames", 1)
-        verbose_name_plural = npgettext_lazy("nickname__title", "nickname", "nicknames", 2)
+        verbose_name = npgettext_lazy("nickname", "nickname", "nicknames", 1)
+        verbose_name_plural = npgettext_lazy("nickname", "nickname", "nicknames", 2)
 
 
 @receiver(post_save, sender=Trainer)
@@ -301,7 +302,7 @@ class TrainerCode(LifecycleModelMixin, models.Model):
             MaxLengthValidator(15),
         ],
         max_length=15,
-        verbose_name=npgettext_lazy("trainer_code__title", "Trainer Code", "Trainer Codes", 1),
+        verbose_name=npgettext_lazy("trainer_code", "Trainer Code", "Trainer Codes", 1),
     )
 
     def __str__(self) -> str:
@@ -312,10 +313,8 @@ class TrainerCode(LifecycleModelMixin, models.Model):
         self.code = re.sub(r"\D", "", self.code)
 
     class Meta:
-        verbose_name = npgettext_lazy("trainer_code__title", "Trainer Code", "Trainer Codes", 1)
-        verbose_name_plural = npgettext_lazy(
-            "trainer_code__title", "Trainer Code", "Trainer Codes", 2
-        )
+        verbose_name = npgettext_lazy("trainer_code", "Trainer Code", "Trainer Codes", 1)
+        verbose_name_plural = npgettext_lazy("trainer_code", "Trainer Code", "Trainer Codes", 2)
         permissions = [
             (
                 "share_trainer_code_to_groups",
@@ -325,7 +324,10 @@ class TrainerCode(LifecycleModelMixin, models.Model):
                 "share_trainer_code_to_web",
                 _("Trainer Code can be seen on the web, publicly"),
             ),
-            ("share_trainer_code_to_api", _("Trainer Code can be on the API")),
+            (
+                "share_trainer_code_to_api",
+                _("Trainer Code can be on the API"),
+            ),
         ]
 
 
@@ -340,8 +342,8 @@ class DataSource(models.Model):
         return f"{self.verbose_name} ({self.slug})"
 
     class Meta:
-        verbose_name = npgettext_lazy("data_source__title", "Data Source", "Data Souces", 1)
-        verbose_name_plural = npgettext_lazy("data_source__title", "Data Source", "Data Souces", 2)
+        verbose_name = npgettext_lazy("data_source", "Data Source", "Data Souces", 1)
+        verbose_name_plural = npgettext_lazy("data_source", "Data Source", "Data Souces", 2)
         ordering = ["slug"]
 
 
@@ -379,20 +381,20 @@ class Update(models.Model):
     )
     update_time = models.DateTimeField(
         default=timezone.now,
-        verbose_name=_("Time Updated"),
+        verbose_name=pgettext_lazy("update_time", "Time Updated"),
     )
     submission_date = models.DateTimeField(
         auto_now_add=True,
-        verbose_name=_("Date Submitted"),
+        verbose_name=pgettext_lazy("submission_date", "Date Submitted"),
     )
     last_modified = models.DateTimeField(
         auto_now=True,
-        verbose_name=_("Last Modified"),
+        verbose_name=pgettext_lazy("last_modified", "Last Modified"),
     )
 
     comment = models.TextField(
         max_length=240,
-        verbose_name=_("Comment"),
+        verbose_name=pgettext_lazy("comment", "Comment"),
         null=True,
         blank=True,
     )
@@ -400,7 +402,7 @@ class Update(models.Model):
     data_source = models.ForeignKey(
         DataSource,
         on_delete=models.PROTECT,
-        verbose_name=_("Source"),
+        verbose_name=pgettext_lazy("data_source", "Source"),
         null=True,
         blank=True,
     )
@@ -413,23 +415,23 @@ class Update(models.Model):
     total_xp = models.PositiveIntegerField(
         null=True,
         blank=True,
-        verbose_name=pgettext_lazy("total_xp__title", "Total XP"),
+        verbose_name=pgettext_lazy("total_xp", "Total XP"),
     )
 
     pokedex_total_caught = models.PositiveIntegerField(
         null=True,
         blank=True,
-        verbose_name=pgettext_lazy("pokedex_total_caught__title", "Unique Species Caught"),
+        verbose_name=pgettext_lazy("pokedex_total_caught", "Unique Species Caught"),
     )
     pokedex_total_seen = models.PositiveIntegerField(
         null=True,
         blank=True,
-        verbose_name=pgettext_lazy("pokedex_total_seen__title", "Unique Species Seen"),
+        verbose_name=pgettext_lazy("pokedex_total_seen", "Unique Species Seen"),
     )
     pokedex_gen1 = models.PositiveIntegerField(
         null=True,
         blank=True,
-        verbose_name=pgettext_lazy("pokedex_gen1__title", "Kanto"),
+        verbose_name=pgettext_lazy("pokedex_gen1", "Kanto"),
         help_text=pgettext_lazy(
             "pokedex_gen1__help", "Register {0} Kanto region Pokémon in the Pokédex."
         ).format(100),
@@ -438,7 +440,7 @@ class Update(models.Model):
     pokedex_gen2 = models.PositiveIntegerField(
         null=True,
         blank=True,
-        verbose_name=pgettext_lazy("pokedex_gen2__title", "Johto"),
+        verbose_name=pgettext_lazy("pokedex_gen2", "Johto"),
         help_text=pgettext_lazy(
             "pokedex_gen2__help",
             "Register {0} Pokémon first discovered in the Johto region to the Pokédex.",
@@ -458,7 +460,7 @@ class Update(models.Model):
     pokedex_gen4 = models.PositiveIntegerField(
         null=True,
         blank=True,
-        verbose_name=pgettext_lazy("pokedex_gen4__title", "Sinnoh"),
+        verbose_name=pgettext_lazy("pokedex_gen4", "Sinnoh"),
         help_text=pgettext_lazy(
             "pokedex_gen4__help",
             "Register {0} Pokémon first discovered in the Sinnoh region to the Pokédex.",
@@ -468,7 +470,7 @@ class Update(models.Model):
     pokedex_gen5 = models.PositiveIntegerField(
         null=True,
         blank=True,
-        verbose_name=pgettext_lazy("pokedex_gen5__title", "Unova"),
+        verbose_name=pgettext_lazy("pokedex_gen5", "Unova"),
         help_text=pgettext_lazy(
             "pokedex_gen5__help",
             "Register {0} Pokémon first discovered in the Unova region to the Pokédex.",
@@ -478,7 +480,7 @@ class Update(models.Model):
     pokedex_gen6 = models.PositiveIntegerField(
         null=True,
         blank=True,
-        verbose_name=pgettext_lazy("pokedex_gen6__title", "Kalos"),
+        verbose_name=pgettext_lazy("pokedex_gen6", "Kalos"),
         help_text=pgettext_lazy(
             "pokedex_gen6__help",
             "Register {0} Pokémon first discovered in the Kalos region to the Pokédex.",
@@ -488,7 +490,7 @@ class Update(models.Model):
     pokedex_gen7 = models.PositiveIntegerField(
         null=True,
         blank=True,
-        verbose_name=pgettext_lazy("pokedex_gen7__title", "Alola"),
+        verbose_name=pgettext_lazy("pokedex_gen7", "Alola"),
         help_text=pgettext_lazy(
             "pokedex_gen7__help",
             "Register {0} Pokémon first discovered in the Alola region to the Pokédex.",
@@ -498,7 +500,7 @@ class Update(models.Model):
     pokedex_gen8 = models.PositiveIntegerField(
         null=True,
         blank=True,
-        verbose_name=pgettext_lazy("pokedex_gen8__title", "Galar"),
+        verbose_name=pgettext_lazy("pokedex_gen8", "Galar"),
         help_text=pgettext_lazy(
             "pokedex_gen8__help",
             "Register {0} Pokémon first discovered in the Galar region to the Pokédex.",
@@ -513,8 +515,8 @@ class Update(models.Model):
         null=True,
         blank=True,
         verbose_name="{title} | {alt}".format(
-            title=pgettext_lazy("travel_km__title", "Jogger"),
-            alt=pgettext_lazy("travel_km__title_alt", "Distance Walked"),
+            title=pgettext_lazy("travel_km", "Jogger"),
+            alt=pgettext_lazy("travel_km__alt", "Distance Walked"),
         ),
         help_text=pgettext_lazy("travel_km__help", "Walk {0:0,g} km").format(1000.0),
     )
@@ -522,79 +524,79 @@ class Update(models.Model):
         null=True,
         blank=True,
         verbose_name="{title} | {alt}".format(
-            title=pgettext_lazy("capture_total__title", "Collector"),
-            alt=pgettext_lazy("capture_total__title_alt", "Pokémon Caught"),
+            title=pgettext_lazy("capture_total", "Collector"),
+            alt=pgettext_lazy("capture_total__alt", "Pokémon Caught"),
         ),
         help_text=pgettext_lazy("capture_total__help", "Catch {0} Pokémon.").format(2000),
     )
     evolved_total = models.PositiveIntegerField(
         null=True,
         blank=True,
-        verbose_name=pgettext_lazy("evolved_total__title", "Scientist"),
+        verbose_name=pgettext_lazy("evolved_total", "Scientist"),
         help_text=pgettext_lazy("evolved_total__help", "Evolve {0} Pokémon.").format(200),
     )
     hatched_total = models.PositiveIntegerField(
         null=True,
         blank=True,
-        verbose_name=pgettext_lazy("hatched_total__title", "Breeder"),
+        verbose_name=pgettext_lazy("hatched_total", "Breeder"),
         help_text=pgettext_lazy("hatched_total__help", "Hatch {0} eggs.").format(500),
     )
     pokestops_visited = models.PositiveIntegerField(
         null=True,
         blank=True,
         verbose_name="{title} | {alt}".format(
-            title=pgettext_lazy("pokestops_visited__title", "Backpacker"),
-            alt=pgettext_lazy("pokestops_visited__title_alt", "PokéStops Visited"),
+            title=pgettext_lazy("pokestops_visited", "Backpacker"),
+            alt=pgettext_lazy("pokestops_visited__alt", "PokéStops Visited"),
         ),
         help_text=pgettext_lazy("pokestops_visited__help", "Visit {0} PokéStops.").format(2000),
     )
     big_magikarp = models.PositiveIntegerField(
         null=True,
         blank=True,
-        verbose_name=pgettext_lazy("big_magikarp__title", "Fisherman"),
+        verbose_name=pgettext_lazy("big_magikarp", "Fisher"),
         help_text=pgettext_lazy("big_magikarp__help", "Catch {0} big Magikarp.").format(300),
     )
     battle_attack_won = models.PositiveIntegerField(
         null=True,
         blank=True,
-        verbose_name=pgettext_lazy("battle_attack_won__title", "Battle Girl"),
+        verbose_name=pgettext_lazy("battle_attack_won", "Battle Girl"),
         help_text=pgettext_lazy("battle_attack_won__help", "Win {0} Gym battles.").format(1000),
     )
     battle_training_won = models.PositiveIntegerField(
         null=True,
         blank=True,
-        verbose_name=pgettext_lazy("battle_training_won__title", "Ace Trainer"),
+        verbose_name=pgettext_lazy("battle_training_won", "Ace Trainer"),
         help_text=pgettext_lazy("battle_training_won__help", "Train {0} times.").format(1000),
     )
     small_rattata = models.PositiveIntegerField(
         null=True,
         blank=True,
-        verbose_name=pgettext_lazy("small_rattata__title", "Youngster"),
+        verbose_name=pgettext_lazy("small_rattata", "Youngster"),
         help_text=pgettext_lazy("small_rattata__help", "Catch {0} tiny Rattata.").format(300),
     )
     pikachu = models.PositiveIntegerField(
         null=True,
         blank=True,
-        verbose_name=pgettext_lazy("pikachu__title", "Pikachu Fan"),
+        verbose_name=pgettext_lazy("pikachu", "Pikachu Fan"),
         help_text=pgettext_lazy("pikachu__help", "Catch {0} Pikachu.").format(300),
     )
     unown = models.PositiveIntegerField(
         null=True,
         blank=True,
-        verbose_name=pgettext_lazy("unown__title", "Unown"),
+        verbose_name=pgettext_lazy("unown", "Unown"),
         help_text=pgettext_lazy("unown__help", "Catch {0} Unown.").format(26),
         validators=[MaxValueValidator(28)],
     )
     raid_battle_won = models.PositiveIntegerField(
         null=True,
         blank=True,
-        verbose_name=pgettext_lazy("raid_battle_won__title", "Champion"),
+        verbose_name=pgettext_lazy("raid_battle_won", "Champion"),
         help_text=pgettext_lazy("raid_battle_won__help", "Win {0} Raids.").format(1000),
     )
     legendary_battle_won = models.PositiveIntegerField(
         null=True,
         blank=True,
-        verbose_name=pgettext_lazy("legendary_battle_won__title", "Battle Legend"),
+        verbose_name=pgettext_lazy("legendary_battle_won", "Battle Legend"),
         help_text=pgettext_lazy("legendary_battle_won__help", "Win {0} Legendary Raids.").format(
             1000
         ),
@@ -602,19 +604,19 @@ class Update(models.Model):
     berries_fed = models.PositiveIntegerField(
         null=True,
         blank=True,
-        verbose_name=pgettext_lazy("berries_fed__title", "Berry Master"),
+        verbose_name=pgettext_lazy("berries_fed", "Berry Master"),
         help_text=pgettext_lazy("berries_fed__help", "Feed {0} Berries at Gyms.").format(1000),
     )
     hours_defended = models.PositiveIntegerField(
         null=True,
         blank=True,
-        verbose_name=pgettext_lazy("hours_defended__title", "Gym Leader"),
+        verbose_name=pgettext_lazy("hours_defended", "Gym Leader"),
         help_text=pgettext_lazy("hours_defended__help", "Defend Gyms for {0} hours.").format(1000),
     )
     challenge_quests = models.PositiveIntegerField(
         null=True,
         blank=True,
-        verbose_name=pgettext_lazy("challenge_quests__title", "Pokémon Ranger"),
+        verbose_name=pgettext_lazy("challenge_quests", "Pokémon Ranger"),
         help_text=pgettext_lazy(
             "challenge_quests__help", "Complete {0} Field Research tasks."
         ).format(1000),
@@ -622,7 +624,7 @@ class Update(models.Model):
     max_level_friends = models.PositiveIntegerField(
         null=True,
         blank=True,
-        verbose_name=pgettext_lazy("max_level_friends__title", "Idol"),
+        verbose_name=pgettext_lazy("max_level_friends", "Idol"),
         help_text=pgettext_lazy(
             "max_level_friends__help", "Become Best Friends with {0} Trainers."
         ).format(3),
@@ -630,13 +632,13 @@ class Update(models.Model):
     trading = models.PositiveIntegerField(
         null=True,
         blank=True,
-        verbose_name=pgettext_lazy("trading__title", "Gentleman"),
+        verbose_name=pgettext_lazy("trading", "Gentleman"),
         help_text=pgettext_lazy("trading__help", "Trade {0} Pokémon.").format(1000),
     )
     trading_distance = models.PositiveIntegerField(
         null=True,
         blank=True,
-        verbose_name=pgettext_lazy("trading_distance__title", "Pilot"),
+        verbose_name=pgettext_lazy("trading_distance", "Pilot"),
         help_text=pgettext_lazy(
             "trading_distance__help",
             "Earn {0} km across the distance of all Pokémon trades.",
@@ -645,7 +647,7 @@ class Update(models.Model):
     great_league = models.PositiveIntegerField(
         null=True,
         blank=True,
-        verbose_name=pgettext_lazy("great_league__title", "Great League Veteran"),
+        verbose_name=pgettext_lazy("great_league", "Great League Veteran"),
         help_text=pgettext_lazy(
             "great_league__help", "Win {} Trainer Battles in the Great League."
         ).format(200),
@@ -653,7 +655,7 @@ class Update(models.Model):
     ultra_league = models.PositiveIntegerField(
         null=True,
         blank=True,
-        verbose_name=pgettext_lazy("ultra_league__title", "Ultra League Veteran"),
+        verbose_name=pgettext_lazy("ultra_league", "Ultra League Veteran"),
         help_text=pgettext_lazy(
             "ultra_league__help", "Win {} Trainer Battles in the Ultra League."
         ).format(200),
@@ -661,7 +663,7 @@ class Update(models.Model):
     master_league = models.PositiveIntegerField(
         null=True,
         blank=True,
-        verbose_name=pgettext_lazy("master_league__title", "Master League Veteran"),
+        verbose_name=pgettext_lazy("master_league", "Master League Veteran"),
         help_text=pgettext_lazy(
             "master_league__help", "Win {} Trainer Battles in the Master League."
         ).format(200),
@@ -669,7 +671,7 @@ class Update(models.Model):
     photobomb = models.PositiveIntegerField(
         null=True,
         blank=True,
-        verbose_name=pgettext_lazy("photobomb__title", "Cameraman"),
+        verbose_name=pgettext_lazy("photobomb", "Cameraman"),
         help_text=pgettext_lazy(
             "photobomb__help", "Have {0} surprise encounters in AR Snapshot."
         ).format(200),
@@ -677,7 +679,7 @@ class Update(models.Model):
     pokemon_purified = models.PositiveIntegerField(
         null=True,
         blank=True,
-        verbose_name=pgettext_lazy("pokemon_purified__title", "Purifier"),
+        verbose_name=pgettext_lazy("pokemon_purified", "Purifier"),
         help_text=pgettext_lazy("pokemon_purified__help", "Purify {0} Shadow Pokémon.").format(
             500
         ),
@@ -685,7 +687,7 @@ class Update(models.Model):
     rocket_grunts_defeated = models.PositiveIntegerField(
         null=True,
         blank=True,
-        verbose_name=pgettext_lazy("rocket_grunts_defeated__title", "Hero"),
+        verbose_name=pgettext_lazy("rocket_grunts_defeated", "Hero"),
         help_text=pgettext_lazy(
             "rocket_grunts_defeated__help", "Defeat {0} Team GO Rocket Grunts."
         ).format(1000),
@@ -693,26 +695,26 @@ class Update(models.Model):
     buddy_best = models.PositiveIntegerField(
         null=True,
         blank=True,
-        verbose_name=pgettext_lazy("buddy_best__title", "Best Buddy"),
+        verbose_name=pgettext_lazy("buddy_best", "Best Buddy"),
         help_text=pgettext_lazy("buddy_best__help", "Have {0} Best Buddies.").format(100),
     )
     wayfarer = models.PositiveIntegerField(
         null=True,
         blank=True,
-        verbose_name=pgettext_lazy("wayfarer__title", "Wayfarer"),
+        verbose_name=pgettext_lazy("wayfarer", "Wayfarer"),
         help_text=pgettext_lazy("wayfarer__help", "Earn {0} Wayfarer Agreements").format(1000),
     )
 
     type_normal = models.PositiveIntegerField(
         null=True,
         blank=True,
-        verbose_name=pgettext_lazy("type_normal__title", "Schoolkid"),
+        verbose_name=pgettext_lazy("type_normal", "Schoolkid"),
         help_text=pgettext_lazy("type_normal__help", "Catch {0} Normal-type Pokémon").format(200),
     )
     type_fighting = models.PositiveIntegerField(
         null=True,
         blank=True,
-        verbose_name=pgettext_lazy("type_fighting__title", "Black Belt"),
+        verbose_name=pgettext_lazy("type_fighting", "Black Belt"),
         help_text=pgettext_lazy("type_fighting__help", "Catch {0} Fighting-type Pokémon").format(
             200
         ),
@@ -720,67 +722,67 @@ class Update(models.Model):
     type_flying = models.PositiveIntegerField(
         null=True,
         blank=True,
-        verbose_name=pgettext_lazy("type_flying__title", "Bird Keeper"),
+        verbose_name=pgettext_lazy("type_flying", "Bird Keeper"),
         help_text=pgettext_lazy("type_flying__help", "Catch {0} Flying-type Pokémon").format(200),
     )
     type_poison = models.PositiveIntegerField(
         null=True,
         blank=True,
-        verbose_name=pgettext_lazy("type_poison__title", "Punk Girl"),
+        verbose_name=pgettext_lazy("type_poison", "Punk Girl"),
         help_text=pgettext_lazy("type_poison__help", "Catch {0} Poison-type Pokémon").format(200),
     )
     type_ground = models.PositiveIntegerField(
         null=True,
         blank=True,
-        verbose_name=pgettext_lazy("type_ground__title", "Ruin Maniac"),
+        verbose_name=pgettext_lazy("type_ground", "Ruin Maniac"),
         help_text=pgettext_lazy("type_ground__help", "Catch {0} Ground-type Pokémon").format(200),
     )
     type_rock = models.PositiveIntegerField(
         null=True,
         blank=True,
-        verbose_name=pgettext_lazy("type_rock__title", "Hiker"),
+        verbose_name=pgettext_lazy("type_rock", "Hiker"),
         help_text=pgettext_lazy("type_rock__help", "Catch {0} Rock-type Pokémon").format(200),
     )
     type_bug = models.PositiveIntegerField(
         null=True,
         blank=True,
-        verbose_name=pgettext_lazy("type_bug__title", "Bug Catcher"),
+        verbose_name=pgettext_lazy("type_bug", "Bug Catcher"),
         help_text=pgettext_lazy("type_bug__help", "Catch {0} Bug-type Pokémon").format(200),
     )
     type_ghost = models.PositiveIntegerField(
         null=True,
         blank=True,
-        verbose_name=pgettext_lazy("type_ghost__title", "Hex Maniac"),
+        verbose_name=pgettext_lazy("type_ghost", "Hex Maniac"),
         help_text=pgettext_lazy("type_ghost__help", "Catch {0} Ghost-type Pokémon").format(200),
     )
     type_steel = models.PositiveIntegerField(
         null=True,
         blank=True,
-        verbose_name=pgettext_lazy("type_steel__title", "Depot Agent"),
+        verbose_name=pgettext_lazy("type_steel", "Depot Agent"),
         help_text=pgettext_lazy("type_steel__help", "Catch {0} Steel-type Pokémon").format(200),
     )
     type_fire = models.PositiveIntegerField(
         null=True,
         blank=True,
-        verbose_name=pgettext_lazy("type_fire__title", "Kindler"),
+        verbose_name=pgettext_lazy("type_fire", "Kindler"),
         help_text=pgettext_lazy("type_fire__help", "Catch {0} Fire-type Pokémon").format(200),
     )
     type_water = models.PositiveIntegerField(
         null=True,
         blank=True,
-        verbose_name=pgettext_lazy("type_water__title", "Swimmer"),
+        verbose_name=pgettext_lazy("type_water", "Swimmer"),
         help_text=pgettext_lazy("type_water__help", "Catch {0} Water-type Pokémon").format(200),
     )
     type_grass = models.PositiveIntegerField(
         null=True,
         blank=True,
-        verbose_name=pgettext_lazy("type_grass__title", "Gardener"),
+        verbose_name=pgettext_lazy("type_grass", "Gardener"),
         help_text=pgettext_lazy("type_grass__help", "Catch {0} Grass-type Pokémon").format(200),
     )
     type_electric = models.PositiveIntegerField(
         null=True,
         blank=True,
-        verbose_name=pgettext_lazy("type_electric__title", "Rocker"),
+        verbose_name=pgettext_lazy("type_electric", "Rocker"),
         help_text=pgettext_lazy("type_electric__help", "Catch {0} Electric-type Pokémon").format(
             200
         ),
@@ -788,49 +790,49 @@ class Update(models.Model):
     type_psychic = models.PositiveIntegerField(
         null=True,
         blank=True,
-        verbose_name=pgettext_lazy("type_psychic__title", "Psychic"),
+        verbose_name=pgettext_lazy("type_psychic", "Psychic"),
         help_text=pgettext_lazy("type_psychic__help", "Catch {0} Pychic-type Pokémon").format(200),
     )
     type_ice = models.PositiveIntegerField(
         null=True,
         blank=True,
-        verbose_name=pgettext_lazy("type_ice__title", "Skier"),
+        verbose_name=pgettext_lazy("type_ice", "Skier"),
         help_text=pgettext_lazy("type_ice__help", "Catch {0} Ice-type Pokémon").format(200),
     )
     type_dragon = models.PositiveIntegerField(
         null=True,
         blank=True,
-        verbose_name=pgettext_lazy("type_dragon__title", "Dragon Tamer"),
+        verbose_name=pgettext_lazy("type_dragon", "Dragon Tamer"),
         help_text=pgettext_lazy("type_dragon__help", "Catch {0} Dragon-type Pokémon").format(200),
     )
     type_dark = models.PositiveIntegerField(
         null=True,
         blank=True,
-        verbose_name=pgettext_lazy("type_dark__title", "Delinquent"),
+        verbose_name=pgettext_lazy("type_dark", "Delinquent"),
         help_text=pgettext_lazy("type_dark__help", "Catch {0} Dark-type Pokémon").format(200),
     )
     type_fairy = models.PositiveIntegerField(
         null=True,
         blank=True,
-        verbose_name=pgettext_lazy("type_fairy__title", "Fairy Tale Girl"),
+        verbose_name=pgettext_lazy("type_fairy", "Fairy Tale Girl"),
         help_text=pgettext_lazy("type_fairy__help", "Catch {0} Fairy-type Pokémon").format(200),
     )
 
     gymbadges_total = models.PositiveIntegerField(
         null=True,
         blank=True,
-        verbose_name=pgettext_lazy("gymbadges_total__title", "Gym Badges"),
+        verbose_name=pgettext_lazy("gymbadges_total", "Gym Badges"),
         validators=[MaxValueValidator(1000)],
     )
     gymbadges_gold = models.PositiveIntegerField(
         null=True,
         blank=True,
-        verbose_name=pgettext_lazy("gymbadges_gold__title", "Gold Gym Badges"),
+        verbose_name=pgettext_lazy("gymbadges_gold", "Gold Gym Badges"),
     )
     stardust = models.PositiveIntegerField(
         null=True,
         blank=True,
-        verbose_name=pgettext_lazy("stardust__title", "Stardust"),
+        verbose_name=pgettext_lazy("stardust", "Stardust"),
     )
 
     def __str__(self) -> str:
@@ -918,7 +920,10 @@ class Update(models.Model):
                     errors[field.name].append(
                         ValidationError(
                             _(
-                                "This value has previously been entered at a higher value. Please try again ensuring the value you entered was correct."
+                                (
+                                    "This value has previously been entered at a higher value."
+                                    " Please try again ensuring the value you entered was correct."
+                                )
                             ),
                             code="insufficient",
                         ),
@@ -978,7 +983,8 @@ class Update(models.Model):
         Parameters
         ----------
         raise_: bool
-            If True, will raise an error instead of returning the list of warnings. Useful for returning to forms.
+            If True, will raise an error instead of returning the list of warnings.
+            Useful for returning to forms.
 
         Exceptions
         ----------
@@ -986,8 +992,7 @@ class Update(models.Model):
 
         Returns
         -------
-        List of exceptions of raise_ False
-        else None
+        List of exceptions of raise_ False else None
         """
 
         warnings = defaultdict(list)
@@ -1160,7 +1165,13 @@ class Update(models.Model):
                             warnings[field.name].append(
                                 ValidationError(
                                     _(
-                                        "This value is high. Your daily average is above the threshold of {threshold:,}. Please check you haven't made a mistake.\n\nYour daily average between {earlier_date} and {later_date} is {average:,}"
+                                        (
+                                            "This value is high."
+                                            " Your daily average is above the threshold of {threshold:,}."
+                                            " Please check you haven't made a mistake."
+                                            "\n\n"
+                                            "Your daily average between {earlier_date} and {later_date} is {average:,}"
+                                        )
                                     ).format(
                                         threshold=DailyLimit,
                                         average=rate,
@@ -1182,7 +1193,12 @@ class Update(models.Model):
                         warnings[field.name].append(
                             ValidationError(
                                 _(
-                                    "The {badge} you entered is too high. Please check for typos and other mistakes. You can't have more gold gyms than gyms in Total. {value:,}/{expected:,}"
+                                    (
+                                        "The {badge} you entered is too high."
+                                        " Please check for typos and other mistakes."
+                                        " You can't have more gold gyms than gyms in Total."
+                                        " {value:,}/{expected:,}"
+                                    )
                                 ).format(
                                     badge=field.verbose_name,
                                     value=getattr(self, field.name),
@@ -1214,7 +1230,13 @@ class Update(models.Model):
                         warnings[field.name].append(
                             ValidationError(
                                 _(
-                                    "This value is high. Your distance per trade average is above the threshold of {threshold:,}/trade. Please check you haven't made a mistake.\n\nYour average is {average:,}/trade"
+                                    (
+                                        "This value is high."
+                                        " Your distance per trade average is above the threshold of {threshold:,}/trade."
+                                        " Please check you haven't made a mistake."
+                                        "\n\n"
+                                        "Your average is {average:,}/trade"
+                                    )
                                 ).format(
                                     threshold=max_distance,
                                     average=rate,
@@ -1240,8 +1262,8 @@ class Update(models.Model):
     class Meta:
         get_latest_by = "update_time"
         ordering = ["-update_time"]
-        verbose_name = npgettext_lazy("update__title", "update", "updates", 1)
-        verbose_name_plural = npgettext_lazy("update__title", "update", "updates", 2)
+        verbose_name = npgettext_lazy("update", "update", "updates", 1)
+        verbose_name_plural = npgettext_lazy("update", "update", "updates", 2)
 
 
 class Evidence(models.Model):
@@ -1251,7 +1273,7 @@ class Evidence(models.Model):
         limit_choices_to=Q(app_label="trainerdex", model__in=["trainer", "update"]),
         verbose_name="model",
     )
-    object_pk = models.CharField(verbose_name="object PK", max_length=36)
+    object_pk = models.CharField(max_length=36)
     content_object = GenericForeignKey("content_type", "object_pk")
     content_field = models.CharField(
         max_length=max(
@@ -1259,7 +1281,7 @@ class Evidence(models.Model):
             len("trainer.profile"),
         ),
         choices=[
-            ("trainer.profile", f"{Trainer._meta.verbose_name.title()}"),
+            ("trainer.profile", Trainer._meta.verbose_name.title()),
         ]
         + [
             (
@@ -1303,8 +1325,8 @@ class Evidence(models.Model):
                 name="unique_request",
             ),
         ]
-        verbose_name = npgettext_lazy("evidence__title", "evidence", "evidence", 1)
-        verbose_name_plural = npgettext_lazy("evidence__title", "evidence", "evidence", 2)
+        verbose_name = npgettext_lazy("evidence", "evidence", "evidence", 1)
+        verbose_name_plural = npgettext_lazy("evidence", "evidence", "evidence", 2)
 
 
 @receiver(post_save, sender=Trainer)
@@ -1313,11 +1335,12 @@ def create_evidence(sender, instance: Trainer, created: bool, **kwargs) -> Evide
         return None
 
     if created:
-        return Evidence.objects.get_or_create(
+        evidence, new = Evidence.objects.get_or_create(
             content_type=ContentType.objects.get(app_label="trainerdex", model="trainer"),
             object_pk=instance.pk,
             content_field="trainer.profile",
-        )[0]
+        )
+        return evidence
 
 
 class EvidenceImage(models.Model):
@@ -1344,11 +1367,11 @@ class BaseTarget(models.Model):
             if f.name in Update.field_metadata()
             and not Update.field_metadata().get(f.name).get("reversable")
         ],
-        verbose_name=_("stat"),
+        verbose_name=pgettext("stat", "stat"),
     )
     _target = models.CharField(
         max_length=max(10, Update._meta.get_field("travel_km").max_digits),
-        verbose_name=npgettext_lazy("target__title", "target", "targets", 1),
+        verbose_name=npgettext_lazy("target", "target", "targets", 1),
     )
 
     def target() -> Dict:
@@ -1385,8 +1408,8 @@ class BaseTarget(models.Model):
 
     class Meta:
         abstract = True
-        verbose_name = npgettext_lazy("target__title", "target", "targets", 1)
-        verbose_name_plural = npgettext_lazy("target__title", "target", "targets", 2)
+        verbose_name = npgettext_lazy("target", "target", "targets", 1)
+        verbose_name_plural = npgettext_lazy("target", "target", "targets", 2)
         ordering = ["stat", "_target"]
 
 
@@ -1399,18 +1422,18 @@ class Target(LifecycleModelMixin, BaseTarget):
     )
     has_reached = models.BooleanField(
         default=False,
-        verbose_name=pgettext_lazy("target__is_reached__name", "reached"),
+        verbose_name=pgettext_lazy("has_reached", "reached"),
         help_text=pgettext_lazy(
-            "target__is_reached__help",
+            "has_reached__help",
             "Designates whether this target has been reached.",
         ),
     )
     date_reached = models.DateTimeField(
         blank=True,
         null=True,
-        verbose_name=pgettext_lazy("target__date_reached__name", "date reached"),
+        verbose_name=pgettext_lazy("date_reached__name", "date reached"),
         help_text=pgettext_lazy(
-            "target__date_reached__help", "The date the target was reached, if known."
+            "date_reached__help", "The date the target was reached, if known."
         ),
     )
 
@@ -1477,5 +1500,5 @@ class PresetTargetGroup(models.Model):
         return self.name
 
     class Meta:
-        verbose_name = npgettext_lazy("target__title", "target group", "target groups", 1)
-        verbose_name_plural = npgettext_lazy("target__title", "target group", "target groups", 2)
+        verbose_name = npgettext_lazy("target", "target group", "target groups", 1)
+        verbose_name_plural = npgettext_lazy("target", "target group", "target groups", 2)

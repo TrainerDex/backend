@@ -1,8 +1,6 @@
-import datetime
 import logging
 
 from allauth.socialaccount.models import SocialAccount
-from django.core.exceptions import PermissionDenied
 from django.http import Http404
 from rest_framework.decorators import action
 from rest_framework.response import Response
@@ -18,7 +16,7 @@ from trainerdex.api.v1.serializers import (
     UserSerializer,
 )
 from trainerdex.models import Trainer, Update
-from trainerdex.models import TrainerQuerySet, UpdateQuerySet
+from trainerdex.models import TrainerQuerySet
 
 log = logging.getLogger("django.trainerdex")
 
