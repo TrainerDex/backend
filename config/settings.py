@@ -65,8 +65,6 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-CORS_ORIGIN_ALLOW_ALL = DEBUG
-
 LOCALE_PATHS = [
     "i18n/django",
 ]
@@ -176,7 +174,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 # CORS
 # https://github.com/ottoyiu/django-cors-headers
 
-CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_ALL_ORIGINS = True
 
 # Django Rest Framework
 # http://www.django-rest-framework.org/tutorial/4-authentication-and-permissions/
