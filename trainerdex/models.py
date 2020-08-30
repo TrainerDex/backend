@@ -174,9 +174,7 @@ class Trainer(AbstractUser):
         Faction,
         on_delete=models.PROTECT,
         verbose_name=Faction._meta.verbose_name,
-        help_text=pgettext_lazy(
-            "profile__faction__help", "The team of the Pokémon Go profile."
-        ),
+        help_text=pgettext_lazy("profile__faction__help", "The team of the Pokémon Go profile."),
         default=0,
     )
 
@@ -189,7 +187,10 @@ class Trainer(AbstractUser):
         ),
     )
 
-    evidence = GenericRelation("Evidence", object_id_field="object_pk",)
+    evidence = GenericRelation(
+        "Evidence",
+        object_id_field="object_pk",
+    )
 
     objects = TrainerManager()
 
@@ -255,7 +256,9 @@ class Nickname(LifecycleModelMixin, models.Model):
         db_index=True,
         verbose_name=pgettext_lazy("nickname__title", "nickname"),
     )
-    active = ExclusiveBooleanField(on="user",)
+    active = ExclusiveBooleanField(
+        on="user",
+    )
 
     def __str__(self) -> str:
         return self.nickname
@@ -268,9 +271,7 @@ class Nickname(LifecycleModelMixin, models.Model):
     class Meta:
         ordering = ["nickname"]
         verbose_name = npgettext_lazy("nickname__title", "nickname", "nicknames", 1)
-        verbose_name_plural = npgettext_lazy(
-            "nickname__title", "nickname", "nicknames", 2
-        )
+        verbose_name_plural = npgettext_lazy("nickname__title", "nickname", "nicknames", 2)
 
 
 @receiver(post_save, sender=Trainer)
@@ -279,9 +280,7 @@ def create_nickname(sender, instance: Trainer, created: bool, **kwargs) -> Nickn
         return None
 
     if created:
-        return Nickname.objects.create(
-            user=instance, nickname=instance.username, active=True
-        )
+        return Nickname.objects.create(user=instance, nickname=instance.username, active=True)
 
 
 class TrainerCode(LifecycleModelMixin, models.Model):
@@ -302,9 +301,7 @@ class TrainerCode(LifecycleModelMixin, models.Model):
             MaxLengthValidator(15),
         ],
         max_length=15,
-        verbose_name=npgettext_lazy(
-            "trainer_code__title", "Trainer Code", "Trainer Codes", 1
-        ),
+        verbose_name=npgettext_lazy("trainer_code__title", "Trainer Code", "Trainer Codes", 1),
     )
 
     def __str__(self) -> str:
@@ -315,9 +312,7 @@ class TrainerCode(LifecycleModelMixin, models.Model):
         self.code = re.sub(r"\D", "", self.code)
 
     class Meta:
-        verbose_name = npgettext_lazy(
-            "trainer_code__title", "Trainer Code", "Trainer Codes", 1
-        )
+        verbose_name = npgettext_lazy("trainer_code__title", "Trainer Code", "Trainer Codes", 1)
         verbose_name_plural = npgettext_lazy(
             "trainer_code__title", "Trainer Code", "Trainer Codes", 2
         )
@@ -345,12 +340,8 @@ class DataSource(models.Model):
         return f"{self.verbose_name} ({self.slug})"
 
     class Meta:
-        verbose_name = npgettext_lazy(
-            "data_source__title", "Data Source", "Data Souces", 1
-        )
-        verbose_name_plural = npgettext_lazy(
-            "data_source__title", "Data Source", "Data Souces", 2
-        )
+        verbose_name = npgettext_lazy("data_source__title", "Data Source", "Data Souces", 1)
+        verbose_name_plural = npgettext_lazy("data_source__title", "Data Source", "Data Souces", 2)
         ordering = ["slug"]
 
 
@@ -375,7 +366,11 @@ class UpdateQuerySet(models.QuerySet):
 class Update(models.Model):
     objects = UpdateQuerySet.as_manager()
 
-    uuid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False,)
+    uuid = models.UUIDField(
+        primary_key=True,
+        default=uuid.uuid4,
+        editable=False,
+    )
     trainer = models.ForeignKey(
         Trainer,
         on_delete=models.CASCADE,
@@ -383,17 +378,23 @@ class Update(models.Model):
         related_name="updates",
     )
     update_time = models.DateTimeField(
-        default=timezone.now, verbose_name=_("Time Updated"),
+        default=timezone.now,
+        verbose_name=_("Time Updated"),
     )
     submission_date = models.DateTimeField(
-        auto_now_add=True, verbose_name=_("Date Submitted"),
+        auto_now_add=True,
+        verbose_name=_("Date Submitted"),
     )
     last_modified = models.DateTimeField(
-        auto_now=True, verbose_name=_("Last Modified"),
+        auto_now=True,
+        verbose_name=_("Last Modified"),
     )
 
     comment = models.TextField(
-        max_length=240, verbose_name=_("Comment"), null=True, blank=True,
+        max_length=240,
+        verbose_name=_("Comment"),
+        null=True,
+        blank=True,
     )
 
     data_source = models.ForeignKey(
@@ -403,7 +404,11 @@ class Update(models.Model):
         null=True,
         blank=True,
     )
-    data_source_notes = models.CharField(max_length=255, null=True, blank=True,)
+    data_source_notes = models.CharField(
+        max_length=255,
+        null=True,
+        blank=True,
+    )
 
     total_xp = models.PositiveIntegerField(
         null=True,
@@ -414,9 +419,7 @@ class Update(models.Model):
     pokedex_total_caught = models.PositiveIntegerField(
         null=True,
         blank=True,
-        verbose_name=pgettext_lazy(
-            "pokedex_total_caught__title", "Unique Species Caught"
-        ),
+        verbose_name=pgettext_lazy("pokedex_total_caught__title", "Unique Species Caught"),
     )
     pokedex_total_seen = models.PositiveIntegerField(
         null=True,
@@ -522,17 +525,13 @@ class Update(models.Model):
             title=pgettext_lazy("capture_total__title", "Collector"),
             alt=pgettext_lazy("capture_total__title_alt", "Pokémon Caught"),
         ),
-        help_text=pgettext_lazy("capture_total__help", "Catch {0} Pokémon.").format(
-            2000
-        ),
+        help_text=pgettext_lazy("capture_total__help", "Catch {0} Pokémon.").format(2000),
     )
     evolved_total = models.PositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("evolved_total__title", "Scientist"),
-        help_text=pgettext_lazy("evolved_total__help", "Evolve {0} Pokémon.").format(
-            200
-        ),
+        help_text=pgettext_lazy("evolved_total__help", "Evolve {0} Pokémon.").format(200),
     )
     hatched_total = models.PositiveIntegerField(
         null=True,
@@ -547,41 +546,31 @@ class Update(models.Model):
             title=pgettext_lazy("pokestops_visited__title", "Backpacker"),
             alt=pgettext_lazy("pokestops_visited__title_alt", "PokéStops Visited"),
         ),
-        help_text=pgettext_lazy(
-            "pokestops_visited__help", "Visit {0} PokéStops."
-        ).format(2000),
+        help_text=pgettext_lazy("pokestops_visited__help", "Visit {0} PokéStops.").format(2000),
     )
     big_magikarp = models.PositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("big_magikarp__title", "Fisherman"),
-        help_text=pgettext_lazy("big_magikarp__help", "Catch {0} big Magikarp.").format(
-            300
-        ),
+        help_text=pgettext_lazy("big_magikarp__help", "Catch {0} big Magikarp.").format(300),
     )
     battle_attack_won = models.PositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("battle_attack_won__title", "Battle Girl"),
-        help_text=pgettext_lazy(
-            "battle_attack_won__help", "Win {0} Gym battles."
-        ).format(1000),
+        help_text=pgettext_lazy("battle_attack_won__help", "Win {0} Gym battles.").format(1000),
     )
     battle_training_won = models.PositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("battle_training_won__title", "Ace Trainer"),
-        help_text=pgettext_lazy("battle_training_won__help", "Train {0} times.").format(
-            1000
-        ),
+        help_text=pgettext_lazy("battle_training_won__help", "Train {0} times.").format(1000),
     )
     small_rattata = models.PositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("small_rattata__title", "Youngster"),
-        help_text=pgettext_lazy(
-            "small_rattata__help", "Catch {0} tiny Rattata."
-        ).format(300),
+        help_text=pgettext_lazy("small_rattata__help", "Catch {0} tiny Rattata.").format(300),
     )
     pikachu = models.PositiveIntegerField(
         null=True,
@@ -606,25 +595,21 @@ class Update(models.Model):
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("legendary_battle_won__title", "Battle Legend"),
-        help_text=pgettext_lazy(
-            "legendary_battle_won__help", "Win {0} Legendary Raids."
-        ).format(1000),
+        help_text=pgettext_lazy("legendary_battle_won__help", "Win {0} Legendary Raids.").format(
+            1000
+        ),
     )
     berries_fed = models.PositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("berries_fed__title", "Berry Master"),
-        help_text=pgettext_lazy(
-            "berries_fed__help", "Feed {0} Berries at Gyms."
-        ).format(1000),
+        help_text=pgettext_lazy("berries_fed__help", "Feed {0} Berries at Gyms.").format(1000),
     )
     hours_defended = models.PositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("hours_defended__title", "Gym Leader"),
-        help_text=pgettext_lazy(
-            "hours_defended__help", "Defend Gyms for {0} hours."
-        ).format(1000),
+        help_text=pgettext_lazy("hours_defended__help", "Defend Gyms for {0} hours.").format(1000),
     )
     challenge_quests = models.PositiveIntegerField(
         null=True,
@@ -693,9 +678,9 @@ class Update(models.Model):
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("pokemon_purified__title", "Purifier"),
-        help_text=pgettext_lazy(
-            "pokemon_purified__help", "Purify {0} Shadow Pokémon."
-        ).format(500),
+        help_text=pgettext_lazy("pokemon_purified__help", "Purify {0} Shadow Pokémon.").format(
+            500
+        ),
     )
     rocket_grunts_defeated = models.PositiveIntegerField(
         null=True,
@@ -709,162 +694,126 @@ class Update(models.Model):
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("buddy_best__title", "Best Buddy"),
-        help_text=pgettext_lazy("buddy_best__help", "Have {0} Best Buddies.").format(
-            100
-        ),
+        help_text=pgettext_lazy("buddy_best__help", "Have {0} Best Buddies.").format(100),
     )
     wayfarer = models.PositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("wayfarer__title", "Wayfarer"),
-        help_text=pgettext_lazy(
-            "wayfarer__help", "Earn {0} Wayfarer Agreements"
-        ).format(1000),
+        help_text=pgettext_lazy("wayfarer__help", "Earn {0} Wayfarer Agreements").format(1000),
     )
 
     type_normal = models.PositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("type_normal__title", "Schoolkid"),
-        help_text=pgettext_lazy(
-            "type_normal__help", "Catch {0} Normal-type Pokémon"
-        ).format(200),
+        help_text=pgettext_lazy("type_normal__help", "Catch {0} Normal-type Pokémon").format(200),
     )
     type_fighting = models.PositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("type_fighting__title", "Black Belt"),
-        help_text=pgettext_lazy(
-            "type_fighting__help", "Catch {0} Fighting-type Pokémon"
-        ).format(200),
+        help_text=pgettext_lazy("type_fighting__help", "Catch {0} Fighting-type Pokémon").format(
+            200
+        ),
     )
     type_flying = models.PositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("type_flying__title", "Bird Keeper"),
-        help_text=pgettext_lazy(
-            "type_flying__help", "Catch {0} Flying-type Pokémon"
-        ).format(200),
+        help_text=pgettext_lazy("type_flying__help", "Catch {0} Flying-type Pokémon").format(200),
     )
     type_poison = models.PositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("type_poison__title", "Punk Girl"),
-        help_text=pgettext_lazy(
-            "type_poison__help", "Catch {0} Poison-type Pokémon"
-        ).format(200),
+        help_text=pgettext_lazy("type_poison__help", "Catch {0} Poison-type Pokémon").format(200),
     )
     type_ground = models.PositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("type_ground__title", "Ruin Maniac"),
-        help_text=pgettext_lazy(
-            "type_ground__help", "Catch {0} Ground-type Pokémon"
-        ).format(200),
+        help_text=pgettext_lazy("type_ground__help", "Catch {0} Ground-type Pokémon").format(200),
     )
     type_rock = models.PositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("type_rock__title", "Hiker"),
-        help_text=pgettext_lazy(
-            "type_rock__help", "Catch {0} Rock-type Pokémon"
-        ).format(200),
+        help_text=pgettext_lazy("type_rock__help", "Catch {0} Rock-type Pokémon").format(200),
     )
     type_bug = models.PositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("type_bug__title", "Bug Catcher"),
-        help_text=pgettext_lazy("type_bug__help", "Catch {0} Bug-type Pokémon").format(
-            200
-        ),
+        help_text=pgettext_lazy("type_bug__help", "Catch {0} Bug-type Pokémon").format(200),
     )
     type_ghost = models.PositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("type_ghost__title", "Hex Maniac"),
-        help_text=pgettext_lazy(
-            "type_ghost__help", "Catch {0} Ghost-type Pokémon"
-        ).format(200),
+        help_text=pgettext_lazy("type_ghost__help", "Catch {0} Ghost-type Pokémon").format(200),
     )
     type_steel = models.PositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("type_steel__title", "Depot Agent"),
-        help_text=pgettext_lazy(
-            "type_steel__help", "Catch {0} Steel-type Pokémon"
-        ).format(200),
+        help_text=pgettext_lazy("type_steel__help", "Catch {0} Steel-type Pokémon").format(200),
     )
     type_fire = models.PositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("type_fire__title", "Kindler"),
-        help_text=pgettext_lazy(
-            "type_fire__help", "Catch {0} Fire-type Pokémon"
-        ).format(200),
+        help_text=pgettext_lazy("type_fire__help", "Catch {0} Fire-type Pokémon").format(200),
     )
     type_water = models.PositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("type_water__title", "Swimmer"),
-        help_text=pgettext_lazy(
-            "type_water__help", "Catch {0} Water-type Pokémon"
-        ).format(200),
+        help_text=pgettext_lazy("type_water__help", "Catch {0} Water-type Pokémon").format(200),
     )
     type_grass = models.PositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("type_grass__title", "Gardener"),
-        help_text=pgettext_lazy(
-            "type_grass__help", "Catch {0} Grass-type Pokémon"
-        ).format(200),
+        help_text=pgettext_lazy("type_grass__help", "Catch {0} Grass-type Pokémon").format(200),
     )
     type_electric = models.PositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("type_electric__title", "Rocker"),
-        help_text=pgettext_lazy(
-            "type_electric__help", "Catch {0} Electric-type Pokémon"
-        ).format(200),
+        help_text=pgettext_lazy("type_electric__help", "Catch {0} Electric-type Pokémon").format(
+            200
+        ),
     )
     type_psychic = models.PositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("type_psychic__title", "Psychic"),
-        help_text=pgettext_lazy(
-            "type_psychic__help", "Catch {0} Pychic-type Pokémon"
-        ).format(200),
+        help_text=pgettext_lazy("type_psychic__help", "Catch {0} Pychic-type Pokémon").format(200),
     )
     type_ice = models.PositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("type_ice__title", "Skier"),
-        help_text=pgettext_lazy("type_ice__help", "Catch {0} Ice-type Pokémon").format(
-            200
-        ),
+        help_text=pgettext_lazy("type_ice__help", "Catch {0} Ice-type Pokémon").format(200),
     )
     type_dragon = models.PositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("type_dragon__title", "Dragon Tamer"),
-        help_text=pgettext_lazy(
-            "type_dragon__help", "Catch {0} Dragon-type Pokémon"
-        ).format(200),
+        help_text=pgettext_lazy("type_dragon__help", "Catch {0} Dragon-type Pokémon").format(200),
     )
     type_dark = models.PositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("type_dark__title", "Delinquent"),
-        help_text=pgettext_lazy(
-            "type_dark__help", "Catch {0} Dark-type Pokémon"
-        ).format(200),
+        help_text=pgettext_lazy("type_dark__help", "Catch {0} Dark-type Pokémon").format(200),
     )
     type_fairy = models.PositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("type_fairy__title", "Fairy Tale Girl"),
-        help_text=pgettext_lazy(
-            "type_fairy__help", "Catch {0} Fairy-type Pokémon"
-        ).format(200),
+        help_text=pgettext_lazy("type_fairy__help", "Catch {0} Fairy-type Pokémon").format(200),
     )
 
     gymbadges_total = models.PositiveIntegerField(
@@ -909,14 +858,10 @@ class Update(models.Model):
             metadata = json.load(file)
 
         if reversable is not None:
-            metadata = {
-                k: v for k, v in metadata.items() if v.get("reversable") == reversable
-            }
+            metadata = {k: v for k, v in metadata.items() if v.get("reversable") == reversable}
 
         if sortable is not None:
-            metadata = {
-                k: v for k, v in metadata.items() if v.get("sortable") == sortable
-            }
+            metadata = {k: v for k, v in metadata.items() if v.get("sortable") == sortable}
 
         return metadata
 
@@ -936,9 +881,7 @@ class Update(models.Model):
         super().clean()
         errors = defaultdict(list)
 
-        if not any(
-            [(getattr(self, x) is not None) for x in Update.field_metadata().keys()]
-        ):
+        if not any([(getattr(self, x) is not None) for x in Update.field_metadata().keys()]):
             csv_fields = ", ".join(
                 [
                     str(x.verbose_name)
@@ -947,9 +890,9 @@ class Update(models.Model):
                 ]
             )
             raise ValidationError(
-                _(
-                    "You must fill in at least one of the following fields:\n{csv_fields}"
-                ).format(csv_fields=csv_fields),
+                _("You must fill in at least one of the following fields:\n{csv_fields}").format(
+                    csv_fields=csv_fields
+                ),
                 code="nodata",
             )
 
@@ -970,9 +913,7 @@ class Update(models.Model):
             # Overall Rules
 
             # Value must be higher than or equal to than previous value
-            if last_update is not None and field.name in Update.field_metadata(
-                reversable=False
-            ):
+            if last_update is not None and field.name in Update.field_metadata(reversable=False):
                 if getattr(self, field.name) < getattr(last_update, field.name):
                     errors[field.name].append(
                         ValidationError(
@@ -997,9 +938,9 @@ class Update(models.Model):
                 if total is None:
                     errors["gymbadges_total"].append(
                         ValidationError(
-                            _(
-                                "This is required since you provided data for {badge}."
-                            ).format(badge=field.verbose_name),
+                            _("This is required since you provided data for {badge}.").format(
+                                badge=field.verbose_name
+                            ),
                             code="required",
                         ),
                     )
@@ -1007,9 +948,7 @@ class Update(models.Model):
                     errors[field.name].append(
                         ValidationError(
                             _("Stat too high. Must be less than {badge}.").format(
-                                badge=Update._meta.get_field(
-                                    "gymbadges_total"
-                                ).verbose_name
+                                badge=Update._meta.get_field("gymbadges_total").verbose_name
                             ),
                             code="excessive",
                         ),
@@ -1023,9 +962,9 @@ class Update(models.Model):
                 if trading is None:
                     errors["trading"].append(
                         ValidationError(
-                            _(
-                                "This is required since you provided data for {badge}."
-                            ).format(badge=field.verbose_name),
+                            _("This is required since you provided data for {badge}.").format(
+                                badge=field.verbose_name
+                            ),
                             code="required",
                         ),
                     )
@@ -1035,16 +974,16 @@ class Update(models.Model):
 
     def check_values(self, raise_: bool = False) -> Dict[str, List[ValidationError]]:
         """Checks values for anything ary
-        
+
         Parameters
         ----------
         raise_: bool
             If True, will raise an error instead of returning the list of warnings. Useful for returning to forms.
-            
+
         Exceptions
         ----------
         ValidationError: raised is raise_ is True
-        
+
         Returns
         -------
         List of exceptions of raise_ False
@@ -1061,103 +1000,120 @@ class Update(models.Model):
         config = {
             "total_xp": {
                 "InterestDate": datetime.datetime.combine(
-                    start_date, datetime.time.min,
+                    start_date,
+                    datetime.time.min,
                 ),
                 "DailyLimit": 10000000,
             },
             "travel_km": {
                 "InterestDate": datetime.datetime.combine(
-                    start_date, datetime.time.min,
+                    start_date,
+                    datetime.time.min,
                 ),
                 "DailyLimit": Decimal("60.0"),
             },
             "capture_total": {
                 "InterestDate": datetime.datetime.combine(
-                    start_date, datetime.time.min,
+                    start_date,
+                    datetime.time.min,
                 ),
                 "DailyLimit": 800,
             },
             "evolved_total": {
                 "InterestDate": datetime.datetime.combine(
-                    start_date, datetime.time.min,
+                    start_date,
+                    datetime.time.min,
                 ),
                 "DailyLimit": 250,
             },
             "hatched_total": {
                 "InterestDate": datetime.datetime.combine(
-                    start_date, datetime.time.min,
+                    start_date,
+                    datetime.time.min,
                 ),
                 "DailyLimit": 60,
             },
             "pokestops_visited": {
                 "InterestDate": datetime.datetime.combine(
-                    start_date, datetime.time.min,
+                    start_date,
+                    datetime.time.min,
                 ),
                 "DailyLimit": 500,
             },
             "big_magikarp": {
                 "InterestDate": datetime.datetime.combine(
-                    start_date, datetime.time.min,
+                    start_date,
+                    datetime.time.min,
                 ),
                 "DailyLimit": 25,
             },
             "battle_attack_won": {
                 "InterestDate": datetime.datetime.combine(
-                    start_date, datetime.time.min,
+                    start_date,
+                    datetime.time.min,
                 ),
                 "DailyLimit": 500,
             },
             "battle_training_won": {
                 "InterestDate": datetime.datetime.combine(
-                    max(start_date, datetime.date(2018, 12, 13)), datetime.time.min,
+                    max(start_date, datetime.date(2018, 12, 13)),
+                    datetime.time.min,
                 ),
                 "DailyLimit": 100,
             },
             "small_rattata": {
                 "InterestDate": datetime.datetime.combine(
-                    start_date, datetime.time.min,
+                    start_date,
+                    datetime.time.min,
                 ),
                 "DailyLimit": 25,
             },
             "berries_fed": {
                 "InterestDate": datetime.datetime.combine(
-                    max(start_date, datetime.date(2017, 6, 22)), datetime.time.min,
+                    max(start_date, datetime.date(2017, 6, 22)),
+                    datetime.time.min,
                 ),
                 "DailyLimit": 100,
             },
             "hours_defended": {
                 "InterestDate": datetime.datetime.combine(
-                    max(start_date, datetime.date(2017, 6, 22)), datetime.time.min,
+                    max(start_date, datetime.date(2017, 6, 22)),
+                    datetime.time.min,
                 ),
                 "DailyLimit": 480,
             },
             "raid_battle_won": {
                 "InterestDate": datetime.datetime.combine(
-                    max(start_date, datetime.date(2017, 6, 26)), datetime.time.min,
+                    max(start_date, datetime.date(2017, 6, 26)),
+                    datetime.time.min,
                 ),
                 "DailyLimit": 100,
             },
             "legendary_battle_won": {
                 "InterestDate": datetime.datetime.combine(
-                    max(start_date, datetime.date(2017, 7, 22)), datetime.time.min,
+                    max(start_date, datetime.date(2017, 7, 22)),
+                    datetime.time.min,
                 ),
                 "DailyLimit": 100,
             },
             "challenge_quests": {
                 "InterestDate": datetime.datetime.combine(
-                    max(start_date, datetime.date(2018, 3, 30)), datetime.time.min,
+                    max(start_date, datetime.date(2018, 3, 30)),
+                    datetime.time.min,
                 ),
                 "DailyLimit": 500,
             },
             "trading": {
                 "InterestDate": datetime.datetime.combine(
-                    max(start_date, datetime.date(2018, 6, 21)), datetime.time.min,
+                    max(start_date, datetime.date(2018, 6, 21)),
+                    datetime.time.min,
                 ),
                 "DailyLimit": 100,
             },
             "trading_distance": {
                 "InterestDate": datetime.datetime.combine(
-                    max(start_date, datetime.date(2018, 6, 21)), datetime.time.min,
+                    max(start_date, datetime.date(2018, 6, 21)),
+                    datetime.time.min,
                 ),
                 "DailyLimit": 1001800,  # (earth_circumference/2) * trading.DailyLimit
             },
@@ -1178,9 +1134,9 @@ class Update(models.Model):
             )
 
             if config.get(field.name):
-                if config.get(field.name).get("InterestDate") and config.get(
-                    field.name
-                ).get("DailyLimit"):
+                if config.get(field.name).get("InterestDate") and config.get(field.name).get(
+                    "DailyLimit"
+                ):
                     rate_limits = [
                         {
                             "stat": 0,
@@ -1237,13 +1193,9 @@ class Update(models.Model):
                 else:
                     warnings[field.name].append(
                         ValidationError(
-                            _(
-                                "You must fill in {other_badge} if filling in {this_badge}."
-                            ).format(
+                            _("You must fill in {other_badge} if filling in {this_badge}.").format(
                                 this_badge=field.verbose_name,
-                                other_badge=Update._meta.get_field(
-                                    "gymbadges_total"
-                                ).verbose_name,
+                                other_badge=Update._meta.get_field("gymbadges_total").verbose_name,
                             )
                         )
                     )
@@ -1263,20 +1215,19 @@ class Update(models.Model):
                             ValidationError(
                                 _(
                                     "This value is high. Your distance per trade average is above the threshold of {threshold:,}/trade. Please check you haven't made a mistake.\n\nYour average is {average:,}/trade"
-                                ).format(threshold=max_distance, average=rate,),
+                                ).format(
+                                    threshold=max_distance,
+                                    average=rate,
+                                ),
                                 code="excessive",
                             ),
                         )
                 else:
                     warnings[field.name].append(
                         ValidationError(
-                            _(
-                                "You must fill in {other_badge} if filling in {this_badge}."
-                            ).format(
+                            _("You must fill in {other_badge} if filling in {this_badge}.").format(
                                 this_badge=field.verbose_name,
-                                other_badge=Update._meta.get_field(
-                                    "trading"
-                                ).verbose_name,
+                                other_badge=Update._meta.get_field("trading").verbose_name,
                             )
                         )
                     )
@@ -1307,7 +1258,9 @@ class Evidence(models.Model):
             len("update.") + len(max(Update.field_metadata().keys(), key=len)),
             len("trainer.profile"),
         ),
-        choices=[("trainer.profile", f"{Trainer._meta.verbose_name.title()}"),]
+        choices=[
+            ("trainer.profile", f"{Trainer._meta.verbose_name.title()}"),
+        ]
         + [
             (
                 f"update.{f.name}",
@@ -1318,7 +1271,9 @@ class Evidence(models.Model):
         ],
     )
 
-    approval = models.BooleanField(default=False,)
+    approval = models.BooleanField(
+        default=False,
+    )
 
     @property
     def trainer(self) -> Trainer:
@@ -1349,9 +1304,7 @@ class Evidence(models.Model):
             ),
         ]
         verbose_name = npgettext_lazy("evidence__title", "evidence", "evidence", 1)
-        verbose_name_plural = npgettext_lazy(
-            "evidence__title", "evidence", "evidence", 2
-        )
+        verbose_name_plural = npgettext_lazy("evidence__title", "evidence", "evidence", 2)
 
 
 @receiver(post_save, sender=Trainer)
@@ -1361,9 +1314,7 @@ def create_evidence(sender, instance: Trainer, created: bool, **kwargs) -> Evide
 
     if created:
         return Evidence.objects.get_or_create(
-            content_type=ContentType.objects.get(
-                app_label="trainerdex", model="trainer"
-            ),
+            content_type=ContentType.objects.get(app_label="trainerdex", model="trainer"),
             object_pk=instance.pk,
             content_field="trainer.profile",
         )[0]
@@ -1376,13 +1327,15 @@ class EvidenceImage(models.Model):
         related_name="images",
         verbose_name=Evidence._meta.verbose_name,
     )
-    image = models.ImageField(width_field="width", height_field="height", blank=False,)
+    image = models.ImageField(
+        width_field="width",
+        height_field="height",
+        blank=False,
+    )
 
 
 class BaseTarget(models.Model):
-    name = models.CharField(
-        max_length=200, null=True, blank=True, verbose_name=_("name")
-    )
+    name = models.CharField(max_length=200, null=True, blank=True, verbose_name=_("name"))
     stat = models.CharField(
         max_length=len(max(Update.field_metadata().keys(), key=len)),
         choices=[
@@ -1472,9 +1425,7 @@ class Target(LifecycleModelMixin, BaseTarget):
 
         log.debug(f"Checking {self.stat} @ {self.target}\n{qs}")
         if qs.exists():
-            log.debug(
-                f"{qs.first().value} >= {self.target}: {qs.first().value >= self.target}"
-            )
+            log.debug(f"{qs.first().value} >= {self.target}: {qs.first().value >= self.target}")
 
         if qs.exists() and qs.first().value >= self.target:
             self.has_reached = True
@@ -1488,16 +1439,16 @@ class Target(LifecycleModelMixin, BaseTarget):
 
     class Meta(BaseTarget.Meta):
         constraints = [
-            models.UniqueConstraint(
-                fields=["stat", "_target", "trainer"], name="unique_target"
-            ),
+            models.UniqueConstraint(fields=["stat", "_target", "trainer"], name="unique_target"),
         ]
 
 
 class PresetTarget(BaseTarget):
     name = models.CharField(max_length=200, null=False, blank=False)
     group = models.ForeignKey(
-        "PresetTargetGroup", on_delete=models.CASCADE, related_name="targets",
+        "PresetTargetGroup",
+        on_delete=models.CASCADE,
+        related_name="targets",
     )
 
     def add_to_trainer(self, trainer: Trainer) -> List[Union[Target, bool]]:
@@ -1526,9 +1477,5 @@ class PresetTargetGroup(models.Model):
         return self.name
 
     class Meta:
-        verbose_name = npgettext_lazy(
-            "target__title", "target group", "target groups", 1
-        )
-        verbose_name_plural = npgettext_lazy(
-            "target__title", "target group", "target groups", 2
-        )
+        verbose_name = npgettext_lazy("target__title", "target group", "target groups", 1)
+        verbose_name_plural = npgettext_lazy("target__title", "target group", "target groups", 2)

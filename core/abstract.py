@@ -20,7 +20,9 @@ class AbstractUser(LifecycleModelMixin, ABS):
             "Required. 3-15 characters. Letters and digits only. Must match Pokemon Go Nickname."
         ),
         validators=[PokemonGoUsernameValidator],
-        error_messages={"unique": _("A user with that username already exists."),},
+        error_messages={
+            "unique": _("A user with that username already exists."),
+        },
     )
 
     last_modified = models.DateTimeField(_("last modified"), auto_now=True)

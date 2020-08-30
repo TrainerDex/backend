@@ -1,7 +1,7 @@
 import os
 
 from django.utils.translation import gettext_lazy as _
-from config import local_settings
+from getenv import env
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -11,14 +11,14 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = local_settings.SECRET_KEY
+SECRET_KEY = env("DJANGO_SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = local_settings.DEBUG
+DEBUG = env("DJANGO_DEBUG", False)
 
 ALLOWED_HOSTS = ["*"]
 
-ADMINS = local_settings.ADMINS
+ADMINS = env("DJANGO_ADMINS", [])
 
 # Application definition
 
@@ -107,9 +107,9 @@ WSGI_APPLICATION = "config.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "django",
-        "USER": local_settings.db_user,
-        "PASSWORD": local_settings.db_password,
+        "NAME": env("DB_NAME", "django"),
+        "USER": env("DB_USER", "django"),
+        "PASSWORD": env("DB_PASS"),
         "HOST": "127.0.0.1",
     }
 }
@@ -121,12 +121,10 @@ SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
-    {
-        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
-    },
-    {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",},
-    {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",},
-    {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",},
+    {"NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"},
+    {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator"},
+    {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator"},
+    {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator"},
 ]
 
 
@@ -149,6 +147,7 @@ LANGUAGES = [
     ("ja", _("Japanese")),
     ("ko", _("Korean")),
     ("pt", _("Portuguese (Brazil)")),
+    ("th", _("Thai")),
     ("zh", _("Traditional Chinese (Hong Kong)")),
 ]
 
@@ -164,9 +163,7 @@ USE_TZ = True
 STATIC_URL = "/static/"
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 if not DEBUG:
-    STATICFILES_STORAGE = (
-        "django.contrib.staticfiles.storage.ManifestStaticFilesStorage"
-    )
+    STATICFILES_STORAGE = "django.contrib.staticfiles.storage.ManifestStaticFilesStorage"
 USE_X_FORWARDED_HOST = True
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
@@ -214,15 +211,12 @@ AUTHENTICATION_BACKENDS = (
 LOGIN_REDIRECT_URL = "trainerdex:profile"
 SOCIALACCOUNT_AUTO_SIGNUP = False
 SOCIALACCOUNT_PROVIDERS = {
-    "discord": {"SCOPE": ["identify", "email", "guilds", "guilds.join", "gdm.join",]},
+    "discord": {"SCOPE": ["identify", "email", "guilds", "guilds.join", "gdm.join"]},
     "facebook": {
-        "SCOPE": ["public_profile", "email", "user_location",],
-        "FIELDS": ["id", "email", "first_name", "last_name",],
+        "SCOPE": ["public_profile", "email", "user_location"],
+        "FIELDS": ["id", "email", "first_name", "last_name"],
     },
-    "google": {
-        "SCOPE": ["profile", "email",],
-        "AUTH_PARAMS": {"access_type": "online",},
-    },
+    "google": {"SCOPE": ["profile", "email"], "AUTH_PARAMS": {"access_type": "online"}},
 }
 SOCIALACCOUNT_QUERY_EMAIL = True
 
@@ -230,12 +224,12 @@ SOCIALACCOUNT_QUERY_EMAIL = True
 # https://docs.djangoproject.com/en/3.0/topics/email/
 
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-EMAIL_HOST = local_settings.EMAIL_HOST
-EMAIL_USE_TLS = local_settings.EMAIL_USE_TLS
-EMAIL_PORT = local_settings.EMAIL_PORT
-EMAIL_HOST_USER = local_settings.EMAIL_HOST_USER
-EMAIL_HOST_PASSWORD = local_settings.EMAIL_HOST_PASSWORD
-DEFAULT_FROM_EMAIL = local_settings.DEFAULT_FROM_EMAIL
+EMAIL_HOST = env("DJANGO_EMAIL_HOST")
+EMAIL_USE_TLS = env("DJANGO_EMAIL_USE_TLS")
+EMAIL_PORT = env("DJANGO_EMAIL_PORT")
+EMAIL_HOST_USER = env("DJANGO_EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = env("DJANGO_EMAIL_HOST_PASSWORD")
+DEFAULT_FROM_EMAIL = env("DJANGO_DEFAULT_FROM_EMAIL")
 SERVER_EMAIL = DEFAULT_FROM_EMAIL
 
 FILE_UPLOAD_PERMISSIONS = 0x775
@@ -259,11 +253,7 @@ JAZZMIN_SETTINGS = {
             "url": "https://github.com/TrainerDex/backend/issues",
             "new_window": True,
         },
-        {
-            "name": "Discord",
-            "url": "https://discord.trainerdex.co.uk",
-            "new_window": True,
-        },
+        {"name": "Discord", "url": "https://discord.trainerdex.co.uk", "new_window": True},
     ],
     "navigation_expanded": False,
     "hide_apps": ["sites", "account", "authtoken"],

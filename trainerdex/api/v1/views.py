@@ -88,9 +88,7 @@ class UpdateViewSet(ReadOnlyModelViewSet):
     @action(detail=True, methods=["get"])
     def latest(self, request, pk: int) -> Response:
         try:
-            obj = self.queryset.filter(trainer=self.get_trainer(pk)).latest(
-                "update_time"
-            )
+            obj = self.queryset.filter(trainer=self.get_trainer(pk)).latest("update_time")
         except Update.DoesNotExist:
             raise Http404
 

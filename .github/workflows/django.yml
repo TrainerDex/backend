@@ -1,0 +1,48 @@
+name: Django Tests, Migrations, & System Check
+
+on:
+  push:
+    branches: [ develop ]
+  pull_request:
+    branches: [ develop ]
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    strategy:
+      matrix:
+        python-version: [3.8]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Install Dependencies
+      run: |
+        sudo apt update
+        sudo apt -y install postgresql gdal-bin libgdal-dev python3-gdal
+        sudo systemctl start postgresql
+        python -m pip install --upgrade pip
+        pip install -r requirements-dev.txt
+        echo '${{secrets.DOTENV_DEV}}' > .env
+    - name: Setup PostgreSQL
+      run: |
+        export DB_NAME="${{secrets.DB_NAME}}"
+        export DB_USER="${{secrets.DB_USER}}"
+        export DB_PASS="${{secrets.DB_PASS}}"
+        chmod +x ./build_db.sh
+        ./build_db.sh
+    - name: Run Tests
+      run: |
+        python manage.py test
+    - name: Check for uncommited migrations
+      run: |
+        python manage.py makemigrations --check core community trainerdex
+    - name: Run Migrations
+      run: |
+        python manage.py migrate --noinput
+    - name: System Check
+      run: |
+        python manage.py check

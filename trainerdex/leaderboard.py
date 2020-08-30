@@ -16,9 +16,7 @@ class Leaderboard:
     ) -> None:
         self.order_by = order_by
         self.legacy = legacy_mode
-        self.__manager = (
-            LegacyLeaderboardManager() if self.legacy else LeaderboardManager()
-        )
+        self.__manager = LegacyLeaderboardManager() if self.legacy else LeaderboardManager()
         self.queryset = queryset
         self._query = self.__manager.get_queryset(o=self.order_by, q=self.queryset)
 

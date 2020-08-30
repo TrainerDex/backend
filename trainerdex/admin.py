@@ -325,7 +325,16 @@ class EvidenceAdmin(AddFieldsetsMixin, admin.ModelAdmin):
         ),
     ]
     add_fieldsets = [
-        (_("Object"), {"fields": ["content_type", "object_pk", "content_field",],}),
+        (
+            _("Object"),
+            {
+                "fields": [
+                    "content_type",
+                    "object_pk",
+                    "content_field",
+                ],
+            },
+        ),
     ]
     inlines = [
         EvidenceImageInline,

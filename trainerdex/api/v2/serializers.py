@@ -22,9 +22,7 @@ class UpdateSerializerInlineFilteredListSerializer(serializers.ListSerializer):
 
 
 class UpdateSerializerInline(serializers.ModelSerializer):
-    data_source = serializers.SlugRelatedField(
-        many=False, read_only=True, slug_field="slug"
-    )
+    data_source = serializers.SlugRelatedField(many=False, read_only=True, slug_field="slug")
 
     class Meta:
         model = Update
@@ -83,9 +81,7 @@ class TrainerSerializer(serializers.ModelSerializer):
 
 
 class UpdateSerializer(serializers.ModelSerializer):
-    data_source = serializers.SlugRelatedField(
-        many=False, read_only=True, slug_field="slug"
-    )
+    data_source = serializers.SlugRelatedField(many=False, read_only=True, slug_field="slug")
 
     class Meta:
         model = Update

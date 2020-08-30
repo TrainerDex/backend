@@ -43,7 +43,7 @@ class TrainerViewSet(NestedViewSetMixin, ModelViewSet):
     this is limited to the 15 latest updates.
     It's recommended to use the `/api/v2/trainers/{pk}/updates/`
     url instead.
-    
+
     For performance reasons, `updates` is excluded in the list view.
     """
 
@@ -140,11 +140,7 @@ class LeaderboardView(ListAPIView):
                     url = remove_query_param(url, "focus")
                     limit = max(
                         0,
-                        int(
-                            self.request.query_params.get(
-                                "limit", api_settings.PAGE_SIZE
-                            )
-                        ),
+                        int(self.request.query_params.get("limit", api_settings.PAGE_SIZE)),
                     )
                     url = replace_query_param(url, "limit", limit)
                     offset = max(0, index + 1 - math.ceil(limit / 2))

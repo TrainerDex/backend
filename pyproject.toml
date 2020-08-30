@@ -1,9 +1,11 @@
 [tool.black]
+    line-length = 99
+    target-version = ['py38']
+    include = '\.py$'
     exclude = '''
     /(
           \.eggs
         | \.git
-        | \.hg
         | \.mypy_cache
         | \.tox
         | \.venv
@@ -11,6 +13,7 @@
         | buck-out
         | build
         | dist
+        | env
         | migrations
     )/
     '''

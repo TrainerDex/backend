@@ -30,9 +30,7 @@ class Community(models.Model):
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("community__country__title", "country"),
-        help_text=pgettext_lazy(
-            "community__country__help", "Where your community is based"
-        ),
+        help_text=pgettext_lazy("community__country__help", "Where your community is based"),
     )
 
     name = models.CharField(
@@ -68,7 +66,9 @@ class Community(models.Model):
     )
 
     members = models.ManyToManyField(
-        Trainer, blank=True, related_query_name="communities",
+        Trainer,
+        blank=True,
+        related_query_name="communities",
     )
 
     def country_flag(self):
@@ -84,6 +84,4 @@ class Community(models.Model):
 
     class Meta:
         verbose_name = npgettext_lazy("community__title", "community", "communities", 1)
-        verbose_name_plural = npgettext_lazy(
-            "community__title", "community", "communities", 2
-        )
+        verbose_name_plural = npgettext_lazy("community__title", "community", "communities", 2)
