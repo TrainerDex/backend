@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.utils.translation import gettext_lazy as _
 
-from core.mixins import AddFieldsetsMixin
+from trainerdex.mixins import AddFieldsetsMixin
 from trainerdex.models import (
     DataSource,
     Evidence,

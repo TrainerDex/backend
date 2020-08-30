@@ -31,7 +31,7 @@ class UpdateFilter(filters.FilterSet):
     update_time = filters.IsoDateTimeFromToRangeFilter()
 
     o = filters.OrderingFilter(
-        fields=[(x, x) for x, y in Update.field_metadata().items() if y.get("sortable") == True]
+        fields=[(x, x) for x, y in Update.field_metadata().items() if y.get("sortable") is True]
         + [
             ("update_time", "update_time"),
         ]
@@ -40,7 +40,7 @@ class UpdateFilter(filters.FilterSet):
     class Meta:
         model = Update
         fields = ["trainer", "update_time"] + [
-            x for x, y in Update.field_metadata().items() if y.get("sortable") == True
+            x for x, y in Update.field_metadata().items() if y.get("sortable") is True
         ]
 
 
