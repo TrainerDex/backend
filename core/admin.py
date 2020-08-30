@@ -1,11 +1,13 @@
 # import json
 
 from django.contrib import admin
+
 # from django.utils.safestring import mark_safe
 # from django.utils.translation import gettext_lazy as _
 
 from allauth.socialaccount.admin import SocialAccountAdmin as BaseSocialAccountAdmin
 from allauth.socialaccount.models import SocialAccount
+
 # from pygments import highlight
 # from pygments.formatters import HtmlFormatter
 # from pygments.lexers import JsonLexer
@@ -13,9 +15,12 @@ from allauth.socialaccount.models import SocialAccount
 # from core.models import DiscordGuild, DiscordGuildMembership, DiscordGuildSettings, DiscordUser
 
 admin.site.unregister(SocialAccount)
+
+
 @admin.register(SocialAccount)
 class SocialAccountAdmin(BaseSocialAccountAdmin):
-    search_fields = ['user', 'uid']
+    search_fields = ["user", "uid"]
+
 
 # class DiscordSettingsInline(admin.StackedInline):
 #     model = DiscordGuildSettings
