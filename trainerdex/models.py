@@ -331,22 +331,6 @@ class TrainerCode(LifecycleModelMixin, models.Model):
         ]
 
 
-class DataSource(models.Model):
-    slug = models.SlugField()
-    verbose_name = models.CharField(max_length=100)
-
-    def __repr__(self) -> str:
-        return f"slug: '{self.slug}'"
-
-    def __str__(self) -> str:
-        return f"{self.verbose_name} ({self.slug})"
-
-    class Meta:
-        verbose_name = npgettext_lazy("data_source", "Data Source", "Data Souces", 1)
-        verbose_name_plural = npgettext_lazy("data_source", "Data Source", "Data Souces", 2)
-        ordering = ["slug"]
-
-
 class UpdateQuerySet(models.QuerySet):
     def exclude_banned_trainers(self: models.QuerySet) -> models.QuerySet:
         return self.exclude(trainer__is_banned=True)
@@ -399,17 +383,24 @@ class Update(models.Model):
         blank=True,
     )
 
-    data_source = models.ForeignKey(
-        DataSource,
-        on_delete=models.PROTECT,
-        verbose_name=pgettext_lazy("data_source", "Source"),
-        null=True,
-        blank=True,
-    )
-    data_source_notes = models.CharField(
-        max_length=255,
-        null=True,
-        blank=True,
+    metadata = models.JSONField(
+        verbose_name=pgettext("metadata", "Metadata"),
+        help_text=pgettext_lazy(
+            "metadata__help",
+            """This is a JSON dictionary allowing for as much metadata as you please.
+            However, the following attributes are expected:
+
+            `provider`: string
+            `ocr`: boolean
+            `image_url`: string
+
+            """,
+        ),
+        default={
+            "provider": "com.trainerdex",
+            "ocr": False,
+            "image_url": None,
+        },
     )
 
     total_xp = models.PositiveIntegerField(
