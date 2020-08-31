@@ -32,8 +32,7 @@ class UpdateSerializerInline(serializers.ModelSerializer):
             "update_time",
             "submission_date",
             "comment",
-            "data_source",
-            "data_source_notes",
+            "metadata",
         ] + [x for x in Update.field_metadata().keys()]
 
 
@@ -91,8 +90,7 @@ class UpdateSerializer(serializers.ModelSerializer):
             "update_time",
             "submission_date",
             "comment",
-            "data_source",
-            "data_source_notes",
+            "metadata",
         ] + [x for x in Update.field_metadata().keys()]
 
 
