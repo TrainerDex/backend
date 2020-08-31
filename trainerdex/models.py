@@ -395,11 +395,11 @@ class Update(models.Model):
 
             """,
         ),
-        default={
-            "provider": "com.trainerdex",
-            "ocr": False,
-            "image_url": None,
-        },
+        default=dict(
+            provider="com.trainerdex",
+            ocr=False,
+            image_url=None,
+        ),
     )
 
     total_xp = PogoPositiveIntegerField(
