@@ -1,5 +1,6 @@
 import django_filters as filters
 
+from trainerdex.fields import PogoDecimalField, PogoPositiveIntegerField
 from trainerdex.models import Trainer, TrainerCode, Update
 
 
@@ -31,16 +32,24 @@ class UpdateFilter(filters.FilterSet):
     update_time = filters.IsoDateTimeFromToRangeFilter()
 
     o = filters.OrderingFilter(
-        fields=[(x, x) for x, y in Update.field_metadata().items() if y.get("sortable") is True]
-        + [
-            ("update_time", "update_time"),
+        fields=[
+            (field.name, field.name)
+            for field in Update._meta.fields
+            if (
+                isinstance(field, (PogoDecimalField, PogoPositiveIntegerField))
+                and field.sortable is True
+            )
+            or field.name == "update_time"
         ]
     )
 
     class Meta:
         model = Update
         fields = ["trainer", "update_time"] + [
-            x for x, y in Update.field_metadata().items() if y.get("sortable") is True
+            field.name
+            for field in Update._meta.fields
+            if isinstance(field, (PogoDecimalField, PogoPositiveIntegerField))
+            and field.sortable is True
         ]
 
 

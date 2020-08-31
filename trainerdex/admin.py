@@ -4,7 +4,6 @@ from django.utils.translation import gettext_lazy as _
 
 from trainerdex.mixins import AddFieldsetsMixin
 from trainerdex.models import (
-    DataSource,
     Evidence,
     EvidenceImage,
     Nickname,
@@ -18,7 +17,6 @@ from trainerdex.models import (
 from trainerdex.models import TrainerQuerySet
 
 admin.site.register(PresetTargetGroup)
-admin.site.register(DataSource)
 
 
 @admin.register(Nickname)

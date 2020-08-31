@@ -1,8 +1,6 @@
 import datetime
-import json
 import logging
 import uuid
-import os
 import re
 from typing import Dict, Iterator, List, Union
 
@@ -38,7 +36,7 @@ from django_lifecycle import hook, LifecycleModelMixin
 from exclusivebooleanfield.fields import ExclusiveBooleanField
 
 from trainerdex.abstract import AbstractUser
-from trainerdex.fields import PogoPositiveIntegerField, PogoDecimalField
+from trainerdex.fields import PogoDecimalField, PogoPositiveIntegerField
 from trainerdex.validators import TrainerCodeValidator, PokemonGoUsernameValidator
 
 log = logging.getLogger("django.trainerdex")
@@ -1163,64 +1161,33 @@ class Update(models.Model):
     def __repr__(self) -> str:
         return f"trainer: {self.trainer} update_time: {self.update_time}"
 
-    def has_modified_extra_fields(self) -> bool:
-        return bool(list(self.modified_extra_fields()))
-
-    has_modified_extra_fields.boolean = True
-
-    @classmethod
-    def field_metadata(
-        self, reversable: bool = None, sortable: bool = None
-    ) -> Dict[str, Union[Dict[str, Union[int, float, Decimal]], bool]]:
-        with open(
-            os.path.join(
-                os.path.dirname(os.path.abspath(__file__)),
-                "data/update_fields_metadata.json",
-            ),
-            "r",
-        ) as file:
-            metadata = json.load(file)
-
-        if reversable is not None:
-            metadata = {k: v for k, v in metadata.items() if v.get("reversable") == reversable}
-
-        if sortable is not None:
-            metadata = {k: v for k, v in metadata.items() if v.get("sortable") == sortable}
-
-        return metadata
-
     def modified_fields(self) -> Iterator[str]:
-        fields = list(self.field_metadata().keys())
+        fields = [
+            field.name
+            for field in Update._meta.fields
+            if isinstance(field, (PogoDecimalField, PogoPositiveIntegerField))
+        ]
 
         for x in fields:
             if getattr(self, x):
                 yield x
 
-    def modified_extra_fields(self) -> Iterator[str]:
-        for x in self.modified_fields():
-            if x != "total_xp":
-                yield x
-
     def clean(self) -> None:
         super().clean()
         errors = defaultdict(list)
+        fields = [
+            field
+            for field in Update._meta.fields
+            if isinstance(field, (PogoDecimalField, PogoPositiveIntegerField))
+        ]
 
-        if not any([(getattr(self, x) is not None) for x in Update.field_metadata().keys()]):
-            csv_fields = ", ".join(
-                [
-                    str(x.verbose_name)
-                    for x in Update._meta.get_fields()
-                    if x.name in Update.field_metadata().keys()
-                ]
-            )
+        if not any([(getattr(self, field.name) is not None) for field in fields]):
             raise ValidationError(
-                _("You must fill in at least one of the following fields:\n{csv_fields}").format(
-                    csv_fields=csv_fields
-                ),
+                _("You must fill in at least one field"),
                 code="nodata",
             )
 
-        for field in Update._meta.get_fields():
+        for field in fields:
             if getattr(self, field.name) is None:
                 continue
 
@@ -1237,7 +1204,7 @@ class Update(models.Model):
             # Overall Rules
 
             # Value must be higher than or equal to than previous value
-            if last_update is not None and field.name in Update.field_metadata(reversable=False):
+            if last_update is not None and field.reversable is False:
                 if getattr(self, field.name) < getattr(last_update, field.name):
                     errors[field.name].append(
                         ValidationError(
@@ -1252,34 +1219,6 @@ class Update(models.Model):
                     )
 
             # Field specific Validation
-
-            if field.name == "gymbadges_gold":
-
-                # Max Value = 1000, unless total is at 1000
-
-                max_gymbadges_visible = 1000
-                gold = getattr(self, field.name)
-                total = getattr(self, "gymbadges_total")
-
-                # Check if gymbadges_total is filled in
-                if total is None:
-                    errors["gymbadges_total"].append(
-                        ValidationError(
-                            _("This is required since you provided data for {badge}.").format(
-                                badge=field.verbose_name
-                            ),
-                            code="required",
-                        ),
-                    )
-                elif total < max_gymbadges_visible and gold > total:
-                    errors[field.name].append(
-                        ValidationError(
-                            _("Stat too high. Must be less than {badge}.").format(
-                                badge=Update._meta.get_field("gymbadges_total").verbose_name
-                            ),
-                            code="excessive",
-                        ),
-                    )
 
             if field.name == "trading_distance":
 
@@ -1318,6 +1257,11 @@ class Update(models.Model):
         """
 
         warnings = defaultdict(list)
+        fields = [
+            field
+            for field in Update._meta.fields
+            if isinstance(field, (PogoDecimalField, PogoPositiveIntegerField))
+        ]
 
         if self.trainer.start_date:
             start_date = self.trainer.start_date
@@ -1337,7 +1281,7 @@ class Update(models.Model):
                     start_date,
                     datetime.time.min,
                 ),
-                "DailyLimit": Decimal("60.0"),
+                "DailyLimit": Decimal("60"),
             },
             "capture_total": {
                 "InterestDate": datetime.datetime.combine(
@@ -1446,7 +1390,7 @@ class Update(models.Model):
             },
         }
 
-        for field in Update._meta.get_fields():
+        for field in fields:
             if getattr(self, field.name) is None:
                 continue  # Nothing to check!
 
@@ -1599,7 +1543,17 @@ class Evidence(models.Model):
     content_object = GenericForeignKey("content_type", "object_pk")
     content_field = models.CharField(
         max_length=max(
-            len("update.") + len(max(Update.field_metadata().keys(), key=len)),
+            len("update.")
+            + len(
+                max(
+                    [
+                        field.name
+                        for field in Update._meta.fields
+                        if isinstance(field, (PogoDecimalField, PogoPositiveIntegerField))
+                    ],
+                    key=len,
+                )
+            ),
             len("trainer.profile"),
         ),
         choices=[
@@ -1607,11 +1561,11 @@ class Evidence(models.Model):
         ]
         + [
             (
-                f"update.{f.name}",
-                f"{Update._meta.verbose_name.title()}.{f.verbose_name}",
+                f"update.{field.name}",
+                f"{Update._meta.verbose_name.title()}.{field.verbose_name}",
             )
-            for f in Update._meta.fields
-            if f.name in Update.field_metadata()
+            for field in Update._meta.fields
+            if isinstance(field, (PogoDecimalField, PogoPositiveIntegerField))
         ],
     )
 
@@ -1682,12 +1636,21 @@ class EvidenceImage(models.Model):
 class BaseTarget(models.Model):
     name = models.CharField(max_length=200, null=True, blank=True, verbose_name=_("name"))
     stat = models.CharField(
-        max_length=len(max(Update.field_metadata().keys(), key=len)),
+        max_length=len(
+            max(
+                [
+                    field.name
+                    for field in Update._meta.fields
+                    if isinstance(field, (PogoDecimalField, PogoPositiveIntegerField))
+                ],
+                key=len,
+            )
+        ),
         choices=[
-            (f.name, f.verbose_name)
-            for f in Update._meta.fields
-            if f.name in Update.field_metadata()
-            and not Update.field_metadata().get(f.name).get("reversable")
+            (field.name, field.verbose_name)
+            for field in Update._meta.fields
+            if isinstance(field, (PogoDecimalField, PogoPositiveIntegerField))
+            and field.reversable is False
         ],
         verbose_name=pgettext("stat", "stat"),
     )
@@ -1711,12 +1674,8 @@ class BaseTarget(models.Model):
 
     target = property(**target())
 
-    @property
-    def unit(self):
-        return Update.field_metadata().get(self.stat).get("unit", "")
-
     def __target_str_(self) -> str:
-        return f"{self.target:0,}{self.unit}"
+        return f"{self.target:0,}"
 
     __target_str_.short_description = _target.verbose_name
 

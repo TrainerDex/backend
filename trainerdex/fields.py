@@ -37,6 +37,8 @@ class PogoDecimalField(models.DecimalField):
             (_("Silver"), 50),
             (_("Gold"), 200),
         ],
+        badge_id: Optional[int] = None,
+        translation_ref: Optional[str] = None,
         *args,
         **kwargs,
     ):
@@ -44,3 +46,5 @@ class PogoDecimalField(models.DecimalField):
         self.reversable = reversable
         self.sortable = sortable
         self.levels = levels
+        self.badge_id = badge_id
+        self.translation_ref = translation_ref
