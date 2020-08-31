@@ -1,8 +1,6 @@
 import datetime
-import json
 import logging
 import uuid
-import os
 import re
 from typing import Dict, Iterator, List, Union
 
@@ -37,7 +35,8 @@ from decimal import Decimal
 from django_lifecycle import hook, LifecycleModelMixin
 from exclusivebooleanfield.fields import ExclusiveBooleanField
 
-from core.abstract import AbstractUser
+from trainerdex.abstract import AbstractUser
+from trainerdex.fields import PogoDecimalField, PogoPositiveIntegerField
 from trainerdex.validators import TrainerCodeValidator, PokemonGoUsernameValidator
 
 log = logging.getLogger("django.trainerdex")
@@ -396,434 +395,764 @@ class Update(models.Model):
 
             """,
         ),
-        default={
-            "provider": "com.trainerdex",
-            "ocr": False,
-            "image_url": None,
-        },
+        default=dict(
+            provider="com.trainerdex",
+            ocr=False,
+            image_url=None,
+        ),
     )
 
-    total_xp = models.PositiveIntegerField(
+    total_xp = PogoPositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("total_xp", "Total XP"),
+        reversable=False,
+        sortable=True,
+        levels=[
+            ("1", 0),
+            ("2", 1000),
+            ("3", 3000),
+            ("4", 6000),
+            ("5", 10000),
+            ("6", 15000),
+            ("7", 21000),
+            ("8", 28000),
+            ("9", 36000),
+            ("10", 45000),
+            ("11", 55000),
+            ("12", 65000),
+            ("13", 75000),
+            ("14", 85000),
+            ("15", 100000),
+            ("16", 120000),
+            ("17", 140000),
+            ("18", 160000),
+            ("19", 185000),
+            ("20", 210000),
+            ("21", 260000),
+            ("22", 335000),
+            ("23", 435000),
+            ("24", 560000),
+            ("25", 710000),
+            ("26", 900000),
+            ("27", 1100000),
+            ("28", 1350000),
+            ("29", 1650000),
+            ("30", 2000000),
+            ("31", 2500000),
+            ("32", 3000000),
+            ("33", 3750000),
+            ("34", 4750000),
+            ("35", 6000000),
+            ("36", 7500000),
+            ("37", 9500000),
+            ("38", 12000000),
+            ("39", 15000000),
+            ("40", 20000000),
+        ],
     )
 
-    pokedex_total_caught = models.PositiveIntegerField(
+    pokedex_total_caught = PogoPositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("pokedex_total_caught", "Unique Species Caught"),
+        reversable=False,
+        sortable=False,
+        levels=[],
     )
-    pokedex_total_seen = models.PositiveIntegerField(
+    pokedex_total_seen = PogoPositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("pokedex_total_seen", "Unique Species Seen"),
+        reversable=False,
+        sortable=False,
+        levels=[],
     )
-    pokedex_gen1 = models.PositiveIntegerField(
+    pokedex_gen1 = PogoPositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("pokedex_gen1", "Kanto"),
         help_text=pgettext_lazy(
             "pokedex_gen1__help", "Register {0} Kanto region Pokémon in the Pokédex."
-        ).format(100),
+        ),
         validators=[MaxValueValidator(151)],
+        reversable=False,
+        sortable=True,
+        levels=[(_("Bronze"), 5), (_("Silver"), 50), (_("Gold"), 100)],
+        badge_id=2,
+        translation_ref="badge_pokedex_entries",
     )
-    pokedex_gen2 = models.PositiveIntegerField(
+    pokedex_gen2 = PogoPositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("pokedex_gen2", "Johto"),
         help_text=pgettext_lazy(
             "pokedex_gen2__help",
             "Register {0} Pokémon first discovered in the Johto region to the Pokédex.",
-        ).format(70),
+        ),
         validators=[MaxValueValidator(100)],
+        reversable=False,
+        sortable=True,
+        levels=[(_("Bronze"), 5), (_("Silver"), 30), (_("Gold"), 70)],
+        badge_id=39,
+        translation_ref="badge_pokedex_entries_gen2",
     )
-    pokedex_gen3 = models.PositiveIntegerField(
+    pokedex_gen3 = PogoPositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("pokedex_gen3_title", "Hoenn"),
         help_text=pgettext_lazy(
             "pokedex_gen3",
             "Register {0} Pokémon first discovered in the Hoenn region to the Pokédex.",
-        ).format(90),
+        ),
         validators=[MaxValueValidator(134)],
+        reversable=False,
+        sortable=True,
+        levels=[(_("Bronze"), 5), (_("Silver"), 40), (_("Gold"), 90)],
+        badge_id=45,
+        translation_ref="badge_pokedex_entries_gen3",
     )
-    pokedex_gen4 = models.PositiveIntegerField(
+    pokedex_gen4 = PogoPositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("pokedex_gen4", "Sinnoh"),
         help_text=pgettext_lazy(
             "pokedex_gen4__help",
             "Register {0} Pokémon first discovered in the Sinnoh region to the Pokédex.",
-        ).format(80),
+        ),
         validators=[MaxValueValidator(107)],
+        reversable=False,
+        sortable=True,
+        levels=[(_("Bronze"), 5), (_("Silver"), 30), (_("Gold"), 80)],
+        badge_id=51,
+        translation_ref="badge_pokedex_entries_gen4",
     )
-    pokedex_gen5 = models.PositiveIntegerField(
+    pokedex_gen5 = PogoPositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("pokedex_gen5", "Unova"),
         help_text=pgettext_lazy(
             "pokedex_gen5__help",
             "Register {0} Pokémon first discovered in the Unova region to the Pokédex.",
-        ).format(100),
+        ),
         validators=[MaxValueValidator(156)],
+        reversable=False,
+        sortable=True,
+        levels=[(_("Bronze"), 5), (_("Silver"), 50), (_("Gold"), 100)],
+        badge_id=56,
+        translation_ref="badge_pokedex_entries_gen5",
     )
-    pokedex_gen6 = models.PositiveIntegerField(
+    pokedex_gen6 = PogoPositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("pokedex_gen6", "Kalos"),
         help_text=pgettext_lazy(
             "pokedex_gen6__help",
             "Register {0} Pokémon first discovered in the Kalos region to the Pokédex.",
-        ).format("x"),
+        ),
         validators=[MaxValueValidator(72)],
+        reversable=False,
+        sortable=True,
+        levels=[],
+        translation_ref="badge_pokedex_entries_gen6",
     )
-    pokedex_gen7 = models.PositiveIntegerField(
+    pokedex_gen7 = PogoPositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("pokedex_gen7", "Alola"),
         help_text=pgettext_lazy(
             "pokedex_gen7__help",
             "Register {0} Pokémon first discovered in the Alola region to the Pokédex.",
-        ).format("x"),
+        ),
         validators=[MaxValueValidator(88)],
+        reversable=False,
+        sortable=True,
+        levels=[],
+        translation_ref="badge_pokedex_entries_gen7",
     )
-    pokedex_gen8 = models.PositiveIntegerField(
+    pokedex_gen8 = PogoPositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("pokedex_gen8", "Galar"),
         help_text=pgettext_lazy(
             "pokedex_gen8__help",
             "Register {0} Pokémon first discovered in the Galar region to the Pokédex.",
-        ).format("x"),
+        ),
         validators=[MaxValueValidator(87)],
+        reversable=False,
+        sortable=True,
+        levels=[],
+        badge_id=63,
+        translation_ref="badge_pokedex_entries_gen8",
     )
 
     # Medals
-    travel_km = models.DecimalField(
+    travel_km = PogoDecimalField(
         max_digits=16,
         decimal_places=2,
         null=True,
         blank=True,
-        verbose_name="{title} | {alt}".format(
+        verbose_name="{title} ({alt})".format(
             title=pgettext_lazy("travel_km", "Jogger"),
             alt=pgettext_lazy("travel_km__alt", "Distance Walked"),
         ),
-        help_text=pgettext_lazy("travel_km__help", "Walk {0:0,g} km").format(1000.0),
+        help_text=pgettext_lazy("travel_km__help", "Walk {0} km"),
+        reversable=False,
+        sortable=True,
+        levels=[
+            (_("Bronze"), Decimal("10")),
+            (_("Silver"), Decimal("100")),
+            (_("Gold"), Decimal("1000")),
+        ],
+        badge_id=1,
+        translation_ref="badge_travel_km",
     )
-    capture_total = models.PositiveIntegerField(
+    capture_total = PogoPositiveIntegerField(
         null=True,
         blank=True,
-        verbose_name="{title} | {alt}".format(
+        verbose_name="{title} ({alt})".format(
             title=pgettext_lazy("capture_total", "Collector"),
             alt=pgettext_lazy("capture_total__alt", "Pokémon Caught"),
         ),
-        help_text=pgettext_lazy("capture_total__help", "Catch {0} Pokémon.").format(2000),
+        help_text=pgettext_lazy("capture_total__help", "Catch {0} Pokémon."),
+        reversable=False,
+        sortable=True,
+        levels=[(_("Bronze"), 30), (_("Silver"), 500), (_("Gold"), 2000)],
+        badge_id=3,
+        translation_ref="badge_capture_total",
     )
-    evolved_total = models.PositiveIntegerField(
+    evolved_total = PogoPositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("evolved_total", "Scientist"),
-        help_text=pgettext_lazy("evolved_total__help", "Evolve {0} Pokémon.").format(200),
+        help_text=pgettext_lazy("evolved_total__help", "Evolve {0} Pokémon."),
+        reversable=False,
+        sortable=True,
+        levels=[(_("Bronze"), 3), (_("Silver"), 20), (_("Gold"), 200)],
+        badge_id=5,
+        translation_ref="badge_evolved_total",
     )
-    hatched_total = models.PositiveIntegerField(
+    hatched_total = PogoPositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("hatched_total", "Breeder"),
-        help_text=pgettext_lazy("hatched_total__help", "Hatch {0} eggs.").format(500),
+        help_text=pgettext_lazy("hatched_total__help", "Hatch {0} eggs."),
+        reversable=False,
+        sortable=True,
+        levels=[(_("Bronze"), 10), (_("Silver"), 100), (_("Gold"), 500)],
+        badge_id=6,
+        translation_ref="badge_hatched_total",
     )
-    pokestops_visited = models.PositiveIntegerField(
+    pokestops_visited = PogoPositiveIntegerField(
         null=True,
         blank=True,
-        verbose_name="{title} | {alt}".format(
+        verbose_name="{title} ({alt})".format(
             title=pgettext_lazy("pokestops_visited", "Backpacker"),
             alt=pgettext_lazy("pokestops_visited__alt", "PokéStops Visited"),
         ),
-        help_text=pgettext_lazy("pokestops_visited__help", "Visit {0} PokéStops.").format(2000),
+        help_text=pgettext_lazy("pokestops_visited__help", "Visit {0} PokéStops."),
+        reversable=False,
+        sortable=True,
+        levels=[(_("Bronze"), 100), (_("Silver"), 1000), (_("Gold"), 2000)],
+        badge_id=8,
+        translation_ref="badge_pokestops_visited",
     )
-    big_magikarp = models.PositiveIntegerField(
+    big_magikarp = PogoPositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("big_magikarp", "Fisher"),
-        help_text=pgettext_lazy("big_magikarp__help", "Catch {0} big Magikarp.").format(300),
+        help_text=pgettext_lazy("big_magikarp__help", "Catch {0} big Magikarp."),
+        reversable=False,
+        sortable=True,
+        levels=[(_("Bronze"), 3), (_("Silver"), 50), (_("Gold"), 300)],
+        badge_id=11,
+        translation_ref="badge_big_magikarp",
     )
-    battle_attack_won = models.PositiveIntegerField(
+    battle_attack_won = PogoPositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("battle_attack_won", "Battle Girl"),
-        help_text=pgettext_lazy("battle_attack_won__help", "Win {0} Gym battles.").format(1000),
+        help_text=pgettext_lazy("battle_attack_won__help", "Win {0} Gym battles."),
+        reversable=False,
+        sortable=True,
+        levels=[(_("Bronze"), 10), (_("Silver"), 100), (_("Gold"), 1000)],
+        badge_id=13,
+        translation_ref="badge_battle_attack_won",
     )
-    battle_training_won = models.PositiveIntegerField(
+    battle_training_won = PogoPositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("battle_training_won", "Ace Trainer"),
-        help_text=pgettext_lazy("battle_training_won__help", "Train {0} times.").format(1000),
+        help_text=pgettext_lazy("battle_training_won__help", "Train {0} times."),
+        reversable=False,
+        sortable=True,
+        levels=[(_("Bronze"), 10), (_("Silver"), 100), (_("Gold"), 1000)],
+        badge_id=14,
+        translation_ref="badge_battle_training_won",
     )
-    small_rattata = models.PositiveIntegerField(
+    small_rattata = PogoPositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("small_rattata", "Youngster"),
-        help_text=pgettext_lazy("small_rattata__help", "Catch {0} tiny Rattata.").format(300),
+        help_text=pgettext_lazy("small_rattata__help", "Catch {0} tiny Rattata."),
+        reversable=False,
+        sortable=True,
+        levels=[(_("Bronze"), 3), (_("Silver"), 50), (_("Gold"), 300)],
+        badge_id=36,
+        translation_ref="badge_small_rattata",
     )
-    pikachu = models.PositiveIntegerField(
+    pikachu = PogoPositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("pikachu", "Pikachu Fan"),
-        help_text=pgettext_lazy("pikachu__help", "Catch {0} Pikachu.").format(300),
+        help_text=pgettext_lazy("pikachu__help", "Catch {0} Pikachu."),
+        reversable=False,
+        sortable=True,
+        levels=[(_("Bronze"), 3), (_("Silver"), 50), (_("Gold"), 300)],
+        badge_id=37,
+        translation_ref="badge_pikachu",
     )
-    unown = models.PositiveIntegerField(
+    unown = PogoPositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("unown", "Unown"),
-        help_text=pgettext_lazy("unown__help", "Catch {0} Unown.").format(26),
+        help_text=pgettext_lazy("unown__help", "Catch {0} Unown."),
         validators=[MaxValueValidator(28)],
+        reversable=False,
+        sortable=True,
+        levels=[(_("Bronze"), 3), (_("Silver"), 10), (_("Gold"), 26)],
+        badge_id=38,
+        translation_ref="badge_unown",
     )
-    raid_battle_won = models.PositiveIntegerField(
+    raid_battle_won = PogoPositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("raid_battle_won", "Champion"),
-        help_text=pgettext_lazy("raid_battle_won__help", "Win {0} Raids.").format(1000),
+        help_text=pgettext_lazy("raid_battle_won__help", "Win {0} Raids."),
+        reversable=False,
+        sortable=True,
+        levels=[(_("Bronze"), 10), (_("Silver"), 100), (_("Gold"), 1000)],
+        badge_id=40,
+        translation_ref="badge_raid_battle_won",
     )
-    legendary_battle_won = models.PositiveIntegerField(
+    legendary_battle_won = PogoPositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("legendary_battle_won", "Battle Legend"),
-        help_text=pgettext_lazy("legendary_battle_won__help", "Win {0} Legendary Raids.").format(
-            1000
-        ),
+        help_text=pgettext_lazy("legendary_battle_won__help", "Win {0} Legendary Raids."),
+        reversable=False,
+        sortable=True,
+        levels=[(_("Bronze"), 10), (_("Silver"), 100), (_("Gold"), 1000)],
+        badge_id=41,
+        translation_ref="badge_legendary_battle_won",
     )
-    berries_fed = models.PositiveIntegerField(
+    berries_fed = PogoPositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("berries_fed", "Berry Master"),
-        help_text=pgettext_lazy("berries_fed__help", "Feed {0} Berries at Gyms.").format(1000),
+        help_text=pgettext_lazy("berries_fed__help", "Feed {0} Berries at Gyms."),
+        reversable=False,
+        sortable=True,
+        levels=[(_("Bronze"), 10), (_("Silver"), 100), (_("Gold"), 1000)],
+        badge_id=42,
+        translation_ref="badge_berries_fed",
     )
-    hours_defended = models.PositiveIntegerField(
+    hours_defended = PogoPositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("hours_defended", "Gym Leader"),
-        help_text=pgettext_lazy("hours_defended__help", "Defend Gyms for {0} hours.").format(1000),
+        help_text=pgettext_lazy("hours_defended__help", "Defend Gyms for {0} hours."),
+        reversable=False,
+        sortable=True,
+        levels=[(_("Bronze"), 10), (_("Silver"), 100), (_("Gold"), 1000)],
+        badge_id=43,
+        translation_ref="badge_hours_defended",
     )
-    challenge_quests = models.PositiveIntegerField(
+    challenge_quests = PogoPositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("challenge_quests", "Pokémon Ranger"),
-        help_text=pgettext_lazy(
-            "challenge_quests__help", "Complete {0} Field Research tasks."
-        ).format(1000),
+        help_text=pgettext_lazy("challenge_quests__help", "Complete {0} Field Research tasks."),
+        reversable=False,
+        sortable=True,
+        levels=[(_("Bronze"), 10), (_("Silver"), 100), (_("Gold"), 1000)],
+        badge_id=46,
+        translation_ref="badge_challenge_quests",
     )
-    max_level_friends = models.PositiveIntegerField(
+    max_level_friends = PogoPositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("max_level_friends", "Idol"),
         help_text=pgettext_lazy(
             "max_level_friends__help", "Become Best Friends with {0} Trainers."
-        ).format(3),
+        ),
+        reversable=False,
+        sortable=True,
+        levels=[(_("Bronze"), 1), (_("Silver"), 2), (_("Gold"), 3)],
+        badge_id=48,
+        translation_ref="badge_max_level_friends",
     )
-    trading = models.PositiveIntegerField(
+    trading = PogoPositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("trading", "Gentleman"),
-        help_text=pgettext_lazy("trading__help", "Trade {0} Pokémon.").format(1000),
+        help_text=pgettext_lazy("trading__help", "Trade {0} Pokémon."),
+        reversable=False,
+        sortable=True,
+        levels=[(_("Bronze"), 10), (_("Silver"), 100), (_("Gold"), 1000)],
+        badge_id=49,
+        translation_ref="badge_trading",
     )
-    trading_distance = models.PositiveIntegerField(
+    trading_distance = PogoPositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("trading_distance", "Pilot"),
         help_text=pgettext_lazy(
-            "trading_distance__help",
-            "Earn {0} km across the distance of all Pokémon trades.",
-        ).format(1000000),
+            "trading_distance__help", "Earn {0} km across the distance of all Pokémon trades."
+        ),
+        reversable=False,
+        sortable=True,
+        levels=[(_("Bronze"), 1000), (_("Silver"), 10000), (_("Gold"), 1000000)],
+        badge_id=50,
+        translation_ref="badge_trading",
     )
-    great_league = models.PositiveIntegerField(
+    great_league = PogoPositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("great_league", "Great League Veteran"),
         help_text=pgettext_lazy(
             "great_league__help", "Win {} Trainer Battles in the Great League."
-        ).format(200),
+        ),
+        reversable=False,
+        sortable=True,
+        levels=[(_("Bronze"), 5), (_("Silver"), 50), (_("Gold"), 200)],
+        badge_id=52,
+        translation_ref="badge_great_league",
     )
-    ultra_league = models.PositiveIntegerField(
+    ultra_league = PogoPositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("ultra_league", "Ultra League Veteran"),
         help_text=pgettext_lazy(
             "ultra_league__help", "Win {} Trainer Battles in the Ultra League."
-        ).format(200),
+        ),
+        reversable=False,
+        sortable=True,
+        levels=[(_("Bronze"), 5), (_("Silver"), 50), (_("Gold"), 200)],
+        badge_id=53,
+        translation_ref="badge_ultra_league",
     )
-    master_league = models.PositiveIntegerField(
+    master_league = PogoPositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("master_league", "Master League Veteran"),
         help_text=pgettext_lazy(
             "master_league__help", "Win {} Trainer Battles in the Master League."
-        ).format(200),
+        ),
+        reversable=False,
+        sortable=True,
+        levels=[(_("Bronze"), 5), (_("Silver"), 50), (_("Gold"), 200)],
+        badge_id=54,
+        translation_ref="badge_master_league",
     )
-    photobomb = models.PositiveIntegerField(
+    photobomb = PogoPositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("photobomb", "Cameraman"),
-        help_text=pgettext_lazy(
-            "photobomb__help", "Have {0} surprise encounters in AR Snapshot."
-        ).format(200),
+        help_text=pgettext_lazy("photobomb__help", "Have {0} surprise encounters in AR Snapshot."),
+        reversable=False,
+        sortable=True,
+        levels=[(_("Bronze"), 10), (_("Silver"), 50), (_("Gold"), 200)],
+        badge_id=55,
+        translation_ref="badge_photobomb",
     )
-    pokemon_purified = models.PositiveIntegerField(
+    pokemon_purified = PogoPositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("pokemon_purified", "Purifier"),
-        help_text=pgettext_lazy("pokemon_purified__help", "Purify {0} Shadow Pokémon.").format(
-            500
-        ),
+        help_text=pgettext_lazy("pokemon_purified__help", "Purify {0} Shadow Pokémon."),
+        reversable=False,
+        sortable=True,
+        levels=[(_("Bronze"), 5), (_("Silver"), 50), (_("Gold"), 500)],
+        badge_id=57,
+        translation_ref="badge_pokemon_purified",
     )
-    rocket_grunts_defeated = models.PositiveIntegerField(
+    rocket_grunts_defeated = PogoPositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("rocket_grunts_defeated", "Hero"),
         help_text=pgettext_lazy(
             "rocket_grunts_defeated__help", "Defeat {0} Team GO Rocket Grunts."
-        ).format(1000),
+        ),
+        reversable=False,
+        sortable=True,
+        levels=[(_("Bronze"), 10), (_("Silver"), 100), (_("Gold"), 1000)],
+        badge_id=58,
+        translation_ref="badge_rocket_grunts_defeated",
     )
-    buddy_best = models.PositiveIntegerField(
+    rocket_giovanni_defeated = PogoPositiveIntegerField(
+        null=True,
+        blank=True,
+        verbose_name=pgettext_lazy("rocket_giovanni_defeated", "Ulta Hero"),
+        help_text=pgettext_lazy(
+            "rocket_giovanni_defeated__help", "Defeat the Team GO Rocket Boss {0} times."
+        ),
+        reversable=False,
+        sortable=True,
+        levels=[(_("Bronze"), 1), (_("Silver"), 5), (_("Gold"), 20)],
+        badge_id=59,
+        translation_ref="badge_rocket_giovanni_defeated",
+    )
+    buddy_best = PogoPositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("buddy_best", "Best Buddy"),
-        help_text=pgettext_lazy("buddy_best__help", "Have {0} Best Buddies.").format(100),
+        help_text=pgettext_lazy("buddy_best__help", "Have {0} Best Buddies."),
+        reversable=False,
+        sortable=True,
+        levels=[(_("Bronze"), 1), (_("Silver"), 10), (_("Gold"), 100)],
+        badge_id=60,
+        translation_ref="badge_buddy_best",
     )
-    wayfarer = models.PositiveIntegerField(
+    wayfarer = PogoPositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("wayfarer", "Wayfarer"),
-        help_text=pgettext_lazy("wayfarer__help", "Earn {0} Wayfarer Agreements").format(1000),
+        help_text=pgettext_lazy("wayfarer__help", "Earn {0} Wayfarer Agreements"),
+        reversable=False,
+        sortable=True,
+        levels=[(_("Bronze"), 50), (_("Silver"), 500), (_("Gold"), 1000)],
+        badge_id=68,
+        translation_ref="badge_wayfarer",
+    )
+    total_mega_evos = PogoPositiveIntegerField(
+        null=True,
+        blank=True,
+        verbose_name=pgettext_lazy("total_mega_evos", "Successor"),
+        help_text=pgettext_lazy("total_mega_evos__help", "Mega Evolve a Pokémon {0} times."),
+        reversable=False,
+        sortable=True,
+        levels=[(_("Bronze"), 10), (_("Silver"), 50), (_("Gold"), 500)],
+        badge_id=69,
+        translation_ref="badge_total_mega_evos",
+    )
+    unique_mega_evos = PogoPositiveIntegerField(
+        null=True,
+        blank=True,
+        verbose_name=pgettext_lazy("unique_mega_evos", "Wayfarer"),
+        help_text=pgettext_lazy(
+            "unique_mega_evos__help", "Mega Evolve {0} different species of Pokémon."
+        ),
+        reversable=False,
+        sortable=True,
+        levels=[(_("Bronze"), 1), (_("Silver"), 24), (_("Gold"), 36)],
+        badge_id=70,
+        translation_ref="badge_unique_mega_evos",
     )
 
-    type_normal = models.PositiveIntegerField(
+    type_normal = PogoPositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("type_normal", "Schoolkid"),
-        help_text=pgettext_lazy("type_normal__help", "Catch {0} Normal-type Pokémon").format(200),
+        help_text=pgettext_lazy("type_normal__help", "Catch {0} Normal-type Pokémon"),
+        reversable=False,
+        sortable=True,
+        badge_id=18,
+        translation_ref="badge_type_normal",
     )
-    type_fighting = models.PositiveIntegerField(
+    type_fighting = PogoPositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("type_fighting", "Black Belt"),
-        help_text=pgettext_lazy("type_fighting__help", "Catch {0} Fighting-type Pokémon").format(
-            200
-        ),
+        help_text=pgettext_lazy("type_fighting__help", "Catch {0} Fighting-type Pokémon"),
+        reversable=False,
+        sortable=True,
+        badge_id=19,
+        translation_ref="badge_type_fighting",
     )
-    type_flying = models.PositiveIntegerField(
+    type_flying = PogoPositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("type_flying", "Bird Keeper"),
-        help_text=pgettext_lazy("type_flying__help", "Catch {0} Flying-type Pokémon").format(200),
+        help_text=pgettext_lazy("type_flying__help", "Catch {0} Flying-type Pokémon"),
+        reversable=False,
+        sortable=True,
+        badge_id=20,
+        translation_ref="badge_type_flying",
     )
-    type_poison = models.PositiveIntegerField(
+    type_poison = PogoPositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("type_poison", "Punk Girl"),
-        help_text=pgettext_lazy("type_poison__help", "Catch {0} Poison-type Pokémon").format(200),
+        help_text=pgettext_lazy("type_poison__help", "Catch {0} Poison-type Pokémon"),
+        reversable=False,
+        sortable=True,
+        badge_id=21,
+        translation_ref="badge_type_poison",
     )
-    type_ground = models.PositiveIntegerField(
+    type_ground = PogoPositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("type_ground", "Ruin Maniac"),
-        help_text=pgettext_lazy("type_ground__help", "Catch {0} Ground-type Pokémon").format(200),
+        help_text=pgettext_lazy("type_ground__help", "Catch {0} Ground-type Pokémon"),
+        reversable=False,
+        sortable=True,
+        badge_id=22,
+        translation_ref="badge_type_ground",
     )
-    type_rock = models.PositiveIntegerField(
+    type_rock = PogoPositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("type_rock", "Hiker"),
-        help_text=pgettext_lazy("type_rock__help", "Catch {0} Rock-type Pokémon").format(200),
+        help_text=pgettext_lazy("type_rock__help", "Catch {0} Rock-type Pokémon"),
+        reversable=False,
+        sortable=True,
+        badge_id=23,
+        translation_ref="badge_type_rock",
     )
-    type_bug = models.PositiveIntegerField(
+    type_bug = PogoPositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("type_bug", "Bug Catcher"),
-        help_text=pgettext_lazy("type_bug__help", "Catch {0} Bug-type Pokémon").format(200),
+        help_text=pgettext_lazy("type_bug__help", "Catch {0} Bug-type Pokémon"),
+        reversable=False,
+        sortable=True,
+        badge_id=24,
+        translation_ref="badge_type_bug",
     )
-    type_ghost = models.PositiveIntegerField(
+    type_ghost = PogoPositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("type_ghost", "Hex Maniac"),
-        help_text=pgettext_lazy("type_ghost__help", "Catch {0} Ghost-type Pokémon").format(200),
+        help_text=pgettext_lazy("type_ghost__help", "Catch {0} Ghost-type Pokémon"),
+        reversable=False,
+        sortable=True,
+        badge_id=25,
+        translation_ref="badge_type_ghost",
     )
-    type_steel = models.PositiveIntegerField(
+    type_steel = PogoPositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("type_steel", "Depot Agent"),
-        help_text=pgettext_lazy("type_steel__help", "Catch {0} Steel-type Pokémon").format(200),
+        help_text=pgettext_lazy("type_steel__help", "Catch {0} Steel-type Pokémon"),
+        reversable=False,
+        sortable=True,
+        badge_id=26,
+        translation_ref="badge_type_steel",
     )
-    type_fire = models.PositiveIntegerField(
+    type_fire = PogoPositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("type_fire", "Kindler"),
-        help_text=pgettext_lazy("type_fire__help", "Catch {0} Fire-type Pokémon").format(200),
+        help_text=pgettext_lazy("type_fire__help", "Catch {0} Fire-type Pokémon"),
+        reversable=False,
+        sortable=True,
+        badge_id=27,
+        translation_ref="badge_type_fire",
     )
-    type_water = models.PositiveIntegerField(
+    type_water = PogoPositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("type_water", "Swimmer"),
-        help_text=pgettext_lazy("type_water__help", "Catch {0} Water-type Pokémon").format(200),
+        help_text=pgettext_lazy("type_water__help", "Catch {0} Water-type Pokémon"),
+        reversable=False,
+        sortable=True,
+        badge_id=28,
+        translation_ref="badge_type_water",
     )
-    type_grass = models.PositiveIntegerField(
+    type_grass = PogoPositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("type_grass", "Gardener"),
-        help_text=pgettext_lazy("type_grass__help", "Catch {0} Grass-type Pokémon").format(200),
+        help_text=pgettext_lazy("type_grass__help", "Catch {0} Grass-type Pokémon"),
+        reversable=False,
+        sortable=True,
+        badge_id=29,
+        translation_ref="badge_type_grass",
     )
-    type_electric = models.PositiveIntegerField(
+    type_electric = PogoPositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("type_electric", "Rocker"),
-        help_text=pgettext_lazy("type_electric__help", "Catch {0} Electric-type Pokémon").format(
-            200
-        ),
+        help_text=pgettext_lazy("type_electric__help", "Catch {0} Electric-type Pokémon"),
+        reversable=False,
+        sortable=True,
+        badge_id=30,
+        translation_ref="badge_type_electric",
     )
-    type_psychic = models.PositiveIntegerField(
+    type_psychic = PogoPositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("type_psychic", "Psychic"),
-        help_text=pgettext_lazy("type_psychic__help", "Catch {0} Pychic-type Pokémon").format(200),
+        help_text=pgettext_lazy("type_psychic__help", "Catch {0} Pychic-type Pokémon"),
+        reversable=False,
+        sortable=True,
+        badge_id=31,
+        translation_ref="badge_type_psychic",
     )
-    type_ice = models.PositiveIntegerField(
+    type_ice = PogoPositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("type_ice", "Skier"),
-        help_text=pgettext_lazy("type_ice__help", "Catch {0} Ice-type Pokémon").format(200),
+        help_text=pgettext_lazy("type_ice__help", "Catch {0} Ice-type Pokémon"),
+        reversable=False,
+        sortable=True,
+        badge_id=32,
+        translation_ref="badge_type_ice",
     )
-    type_dragon = models.PositiveIntegerField(
+    type_dragon = PogoPositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("type_dragon", "Dragon Tamer"),
-        help_text=pgettext_lazy("type_dragon__help", "Catch {0} Dragon-type Pokémon").format(200),
+        help_text=pgettext_lazy("type_dragon__help", "Catch {0} Dragon-type Pokémon"),
+        reversable=False,
+        sortable=True,
+        badge_id=33,
+        translation_ref="badge_type_dragon",
     )
-    type_dark = models.PositiveIntegerField(
+    type_dark = PogoPositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("type_dark", "Delinquent"),
-        help_text=pgettext_lazy("type_dark__help", "Catch {0} Dark-type Pokémon").format(200),
+        help_text=pgettext_lazy("type_dark__help", "Catch {0} Dark-type Pokémon"),
+        reversable=False,
+        sortable=True,
+        badge_id=34,
+        translation_ref="badge_type_dark",
     )
-    type_fairy = models.PositiveIntegerField(
+    type_fairy = PogoPositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("type_fairy", "Fairy Tale Girl"),
-        help_text=pgettext_lazy("type_fairy__help", "Catch {0} Fairy-type Pokémon").format(200),
+        help_text=pgettext_lazy("type_fairy__help", "Catch {0} Fairy-type Pokémon"),
+        reversable=False,
+        sortable=True,
+        badge_id=35,
+        translation_ref="badge_type_fairy",
     )
 
-    gymbadges_total = models.PositiveIntegerField(
+    gymbadges_total = PogoPositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("gymbadges_total", "Gym Badges"),
-        validators=[MaxValueValidator(1000)],
+        reversable=True,
+        sortable=False,
+        translation_ref="profile_category_gymbadges",
     )
-    gymbadges_gold = models.PositiveIntegerField(
+    gymbadges_gold = PogoPositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("gymbadges_gold", "Gold Gym Badges"),
+        reversable=True,
+        sortable=False,
     )
-    stardust = models.PositiveIntegerField(
+    stardust = PogoPositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=pgettext_lazy("stardust", "Stardust"),
+        reversable=True,
+        sortable=False,
+        translation_ref="pokemon_info_stardust_label",
     )
 
     def __str__(self) -> str:
@@ -832,64 +1161,33 @@ class Update(models.Model):
     def __repr__(self) -> str:
         return f"trainer: {self.trainer} update_time: {self.update_time}"
 
-    def has_modified_extra_fields(self) -> bool:
-        return bool(list(self.modified_extra_fields()))
-
-    has_modified_extra_fields.boolean = True
-
-    @classmethod
-    def field_metadata(
-        self, reversable: bool = None, sortable: bool = None
-    ) -> Dict[str, Union[Dict[str, Union[int, float, Decimal]], bool]]:
-        with open(
-            os.path.join(
-                os.path.dirname(os.path.abspath(__file__)),
-                "data/update_fields_metadata.json",
-            ),
-            "r",
-        ) as file:
-            metadata = json.load(file)
-
-        if reversable is not None:
-            metadata = {k: v for k, v in metadata.items() if v.get("reversable") == reversable}
-
-        if sortable is not None:
-            metadata = {k: v for k, v in metadata.items() if v.get("sortable") == sortable}
-
-        return metadata
-
     def modified_fields(self) -> Iterator[str]:
-        fields = list(self.field_metadata().keys())
+        fields = [
+            field.name
+            for field in Update._meta.fields
+            if isinstance(field, (PogoDecimalField, PogoPositiveIntegerField))
+        ]
 
         for x in fields:
             if getattr(self, x):
                 yield x
 
-    def modified_extra_fields(self) -> Iterator[str]:
-        for x in self.modified_fields():
-            if x != "total_xp":
-                yield x
-
     def clean(self) -> None:
         super().clean()
         errors = defaultdict(list)
+        fields = [
+            field
+            for field in Update._meta.fields
+            if isinstance(field, (PogoDecimalField, PogoPositiveIntegerField))
+        ]
 
-        if not any([(getattr(self, x) is not None) for x in Update.field_metadata().keys()]):
-            csv_fields = ", ".join(
-                [
-                    str(x.verbose_name)
-                    for x in Update._meta.get_fields()
-                    if x.name in Update.field_metadata().keys()
-                ]
-            )
+        if not any([(getattr(self, field.name) is not None) for field in fields]):
             raise ValidationError(
-                _("You must fill in at least one of the following fields:\n{csv_fields}").format(
-                    csv_fields=csv_fields
-                ),
+                _("You must fill in at least one field"),
                 code="nodata",
             )
 
-        for field in Update._meta.get_fields():
+        for field in fields:
             if getattr(self, field.name) is None:
                 continue
 
@@ -906,7 +1204,7 @@ class Update(models.Model):
             # Overall Rules
 
             # Value must be higher than or equal to than previous value
-            if last_update is not None and field.name in Update.field_metadata(reversable=False):
+            if last_update is not None and field.reversable is False:
                 if getattr(self, field.name) < getattr(last_update, field.name):
                     errors[field.name].append(
                         ValidationError(
@@ -921,34 +1219,6 @@ class Update(models.Model):
                     )
 
             # Field specific Validation
-
-            if field.name == "gymbadges_gold":
-
-                # Max Value = 1000, unless total is at 1000
-
-                max_gymbadges_visible = 1000
-                gold = getattr(self, field.name)
-                total = getattr(self, "gymbadges_total")
-
-                # Check if gymbadges_total is filled in
-                if total is None:
-                    errors["gymbadges_total"].append(
-                        ValidationError(
-                            _("This is required since you provided data for {badge}.").format(
-                                badge=field.verbose_name
-                            ),
-                            code="required",
-                        ),
-                    )
-                elif total < max_gymbadges_visible and gold > total:
-                    errors[field.name].append(
-                        ValidationError(
-                            _("Stat too high. Must be less than {badge}.").format(
-                                badge=Update._meta.get_field("gymbadges_total").verbose_name
-                            ),
-                            code="excessive",
-                        ),
-                    )
 
             if field.name == "trading_distance":
 
@@ -987,6 +1257,11 @@ class Update(models.Model):
         """
 
         warnings = defaultdict(list)
+        fields = [
+            field
+            for field in Update._meta.fields
+            if isinstance(field, (PogoDecimalField, PogoPositiveIntegerField))
+        ]
 
         if self.trainer.start_date:
             start_date = self.trainer.start_date
@@ -1006,7 +1281,7 @@ class Update(models.Model):
                     start_date,
                     datetime.time.min,
                 ),
-                "DailyLimit": Decimal("60.0"),
+                "DailyLimit": Decimal("60"),
             },
             "capture_total": {
                 "InterestDate": datetime.datetime.combine(
@@ -1115,7 +1390,7 @@ class Update(models.Model):
             },
         }
 
-        for field in Update._meta.get_fields():
+        for field in fields:
             if getattr(self, field.name) is None:
                 continue  # Nothing to check!
 
@@ -1268,7 +1543,17 @@ class Evidence(models.Model):
     content_object = GenericForeignKey("content_type", "object_pk")
     content_field = models.CharField(
         max_length=max(
-            len("update.") + len(max(Update.field_metadata().keys(), key=len)),
+            len("update.")
+            + len(
+                max(
+                    [
+                        field.name
+                        for field in Update._meta.fields
+                        if isinstance(field, (PogoDecimalField, PogoPositiveIntegerField))
+                    ],
+                    key=len,
+                )
+            ),
             len("trainer.profile"),
         ),
         choices=[
@@ -1276,11 +1561,11 @@ class Evidence(models.Model):
         ]
         + [
             (
-                f"update.{f.name}",
-                f"{Update._meta.verbose_name.title()}.{f.verbose_name}",
+                f"update.{field.name}",
+                f"{Update._meta.verbose_name.title()}.{field.verbose_name}",
             )
-            for f in Update._meta.fields
-            if f.name in Update.field_metadata()
+            for field in Update._meta.fields
+            if isinstance(field, (PogoDecimalField, PogoPositiveIntegerField))
         ],
     )
 
@@ -1351,12 +1636,21 @@ class EvidenceImage(models.Model):
 class BaseTarget(models.Model):
     name = models.CharField(max_length=200, null=True, blank=True, verbose_name=_("name"))
     stat = models.CharField(
-        max_length=len(max(Update.field_metadata().keys(), key=len)),
+        max_length=len(
+            max(
+                [
+                    field.name
+                    for field in Update._meta.fields
+                    if isinstance(field, (PogoDecimalField, PogoPositiveIntegerField))
+                ],
+                key=len,
+            )
+        ),
         choices=[
-            (f.name, f.verbose_name)
-            for f in Update._meta.fields
-            if f.name in Update.field_metadata()
-            and not Update.field_metadata().get(f.name).get("reversable")
+            (field.name, field.verbose_name)
+            for field in Update._meta.fields
+            if isinstance(field, (PogoDecimalField, PogoPositiveIntegerField))
+            and field.reversable is False
         ],
         verbose_name=pgettext("stat", "stat"),
     )
@@ -1380,12 +1674,8 @@ class BaseTarget(models.Model):
 
     target = property(**target())
 
-    @property
-    def unit(self):
-        return Update.field_metadata().get(self.stat).get("unit", "")
-
     def __target_str_(self) -> str:
-        return f"{self.target:0,}{self.unit}"
+        return f"{self.target:0,}"
 
     __target_str_.short_description = _target.verbose_name
 

@@ -2,6 +2,7 @@ from typing import Iterable
 
 from rest_framework import serializers
 
+from trainerdex.fields import PogoDecimalField, PogoPositiveIntegerField
 from trainerdex.models import Faction, Nickname, Trainer, TrainerCode, Update
 from trainerdex.models import UpdateQuerySet
 
@@ -9,10 +10,7 @@ from trainerdex.models import UpdateQuerySet
 class NicknameSerializer(serializers.ModelSerializer):
     class Meta:
         model = Nickname
-        fields = (
-            "nickname",
-            "active",
-        )
+        fields = ["nickname", "active"]
 
 
 class UpdateSerializerInlineFilteredListSerializer(serializers.ListSerializer):
@@ -27,22 +25,17 @@ class UpdateSerializerInline(serializers.ModelSerializer):
     class Meta:
         model = Update
         list_serializer_class = UpdateSerializerInlineFilteredListSerializer
-        fields = [
-            "uuid",
-            "update_time",
-            "submission_date",
-            "comment",
-            "metadata",
-        ] + [x for x in Update.field_metadata().keys()]
+        fields = ["uuid", "update_time", "submission_date", "comment", "metadata"] + [
+            field.name
+            for field in Update._meta.fields
+            if isinstance(field, (PogoDecimalField, PogoPositiveIntegerField))
+        ]
 
 
 class FactionInline(serializers.ModelSerializer):
     class Meta:
         model = Faction
-        fields = (
-            "id",
-            "name_short",
-        )
+        fields = ["id", "name_short"]
 
 
 class TrainerSerializer(serializers.ModelSerializer):
@@ -61,7 +54,7 @@ class TrainerSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Trainer
-        fields = (
+        fields = [
             "id",
             "username",
             "first_name",
@@ -76,7 +69,7 @@ class TrainerSerializer(serializers.ModelSerializer):
             "leaderboard_eligibility",
             "nicknames",
             "updates",
-        )
+        ]
 
 
 class UpdateSerializer(serializers.ModelSerializer):
@@ -84,14 +77,11 @@ class UpdateSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Update
-        fields = [
-            "uuid",
-            "trainer",
-            "update_time",
-            "submission_date",
-            "comment",
-            "metadata",
-        ] + [x for x in Update.field_metadata().keys()]
+        fields = ["uuid", "trainer", "update_time", "submission_date", "comment", "metadata"] + [
+            field.name
+            for field in Update._meta.fields
+            if isinstance(field, (PogoDecimalField, PogoPositiveIntegerField))
+        ]
 
 
 class TrainerSerializerInline(serializers.ModelSerializer):
@@ -100,12 +90,12 @@ class TrainerSerializerInline(serializers.ModelSerializer):
 
     class Meta:
         model = Trainer
-        fields = (
+        fields = [
             "id",
             "nickname",
             "faction",
             "country",
-        )
+        ]
 
 
 class TrainerCodeSerializer(serializers.ModelSerializer):
@@ -132,7 +122,7 @@ class LeaderboardSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Update
-        fields = ("trainer", "value", "datetime", "rank", "extra_fields")
+        fields = ["trainer", "value", "datetime", "rank", "extra_fields"]
 
 
 class LeaderboardSerializerLegacy(LeaderboardSerializer):
@@ -151,4 +141,4 @@ class LeaderboardSerializerLegacy(LeaderboardSerializer):
 
     class Meta:
         model = Trainer
-        fields = ("trainer", "value", "datetime", "rank", "extra_fields")
+        fields = ["trainer", "value", "datetime", "rank", "extra_fields"]
