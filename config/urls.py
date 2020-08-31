@@ -1,5 +1,4 @@
 from django.conf import settings
-from django.conf.urls import url
 from django.contrib import admin
 from django.urls import include, path
 
@@ -7,6 +6,7 @@ urlpatterns = [
     path("accounts/", include("allauth.urls")),
     path("admin/", admin.site.urls),
     path("api/", include("trainerdex.api.urls")),
+    path("", include("trainerdex.urls")),
 ]
 
 if settings.DEBUG:

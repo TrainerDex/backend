@@ -1,0 +1,25 @@
+{
+  "name": "TrainerDex",
+  "version": "2.0.0",
+  "description": "Pokemon Go stats",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack --mode development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TrainerDex/backend.git"
+  },
+  "keywords": [],
+  "author": "TurnrDev",
+  "license": "",
+  "bugs": {
+    "url": "https://github.com/TrainerDex/backend/issues"
+  },
+  "homepage": "https://github.com/TrainerDex/backend#readme",
+  "devDependencies": {
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  }
+}
