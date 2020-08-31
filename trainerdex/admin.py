@@ -4,7 +4,6 @@ from django.utils.translation import gettext_lazy as _
 
 from trainerdex.mixins import AddFieldsetsMixin
 from trainerdex.models import (
-    DataSource,
     Evidence,
     EvidenceImage,
     Nickname,
@@ -18,7 +17,6 @@ from trainerdex.models import (
 from trainerdex.models import TrainerQuerySet
 
 admin.site.register(PresetTargetGroup)
-admin.site.register(DataSource)
 
 
 @admin.register(Nickname)
@@ -83,7 +81,6 @@ class UpdateAdmin(admin.ModelAdmin):
         "total_xp",
         "update_time",
         "submission_date",
-        "has_modified_extra_fields",
     ]
     search_fields = ["trainer__nicknames__nickname", "trainer__username"]
     ordering = ["-update_time"]
@@ -226,14 +223,14 @@ class TrainerAdmin(UserAdmin):
         "username",
     ]
     readonly_fields = [
-        "old_id",
+        "tid",
         "last_login",
         "date_joined",
         "last_modified",
     ]
     date_hierarchy = "start_date"
     fieldsets = [
-        (_("Authentication"), {"fields": ["username", "password", "email", "old_id"]}),
+        (_("Authentication"), {"fields": ["username", "password", "email", "tid"]}),
         (
             _("Trainer info"),
             {"fields": ["first_name", "last_name", "faction", "country"]},

@@ -23,7 +23,7 @@ log = logging.getLogger("django.trainerdex")
 
 class UserViewSet(ReadOnlyModelViewSet):
     serializer_class = UserSerializer
-    queryset = Trainer.objects.default_excludes().exclude(old_id__isnull=True)
+    queryset = Trainer.objects.default_excludes().exclude(tid__isnull=True)
 
 
 class TrainerViewSet(ReadOnlyModelViewSet):
@@ -56,7 +56,7 @@ class UpdateViewSet(ReadOnlyModelViewSet):
 
     def get_trainer(self, pk: int) -> Trainer:
         try:
-            obj = Trainer.objects.get(old_id=pk)
+            obj = Trainer.objects.get(tid=pk)
         except Trainer.DoesNotExist:
             raise Http404
 

@@ -3,6 +3,7 @@ from typing import Union
 from django.db.models import F, Max, Subquery, Window
 from django.db.models.functions import DenseRank
 
+from trainerdex.fields import PogoDecimalField, PogoPositiveIntegerField
 from trainerdex.models import Trainer, Update
 from trainerdex.models import TrainerQuerySet, UpdateQuerySet
 
@@ -68,9 +69,10 @@ class LegacyLeaderboardManager:
             .prefetch_related("updates", "faction")
             .annotate(
                 **{
-                    f"extra_max__{x}": Max(f"updates__{x}")
-                    for x, y in Update.field_metadata().items()
-                    if y.get("reversable") is False
+                    f"extra_max__{field.name}": Max(f"updates__{field.name}")
+                    for field in Update._meta.fields
+                    if isinstance(field, (PogoDecimalField, PogoPositiveIntegerField))
+                    and field.reversable is False
                 }
             )
             .annotate(value=Max(f"updates__{o}"), datetime=Max("updates__update_time"))
