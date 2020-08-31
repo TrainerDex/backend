@@ -96,7 +96,7 @@ class BriefUpdateSerializer(serializers.ModelSerializer):
         return getattr(obj, "total_xp")
 
     def get_trainer(self, obj: Update) -> int:
-        return getattr(obj, "trainer").old_id
+        return getattr(obj, "trainer").tid
 
     def get_modified_extra_fields(self, obj: Update) -> List[str]:
         return [v1_field_names["update"][x] for x in obj.modified_extra_fields()]
@@ -175,7 +175,7 @@ class DetailedUpdateSerializer(serializers.ModelSerializer):
     pokemon_info_stardust = serializers.SerializerMethodField()
 
     def get_trainer(self, obj: Update) -> int:
-        return getattr(obj, "trainer").old_id
+        return getattr(obj, "trainer").tid
 
     def get_xp(self, obj: Update) -> int:
         """This field is deprecated and will be removed in API v2"""
@@ -447,7 +447,7 @@ class UserSerializer(serializers.ModelSerializer):
 
     def get_trainer(self, obj: Trainer) -> int:
         """This field is deprecated and will be removed in API v2"""
-        return obj.old_id
+        return obj.tid
 
     def get_profiles(self, obj: Trainer) -> List[int]:
         """This field is deprecated and will be removed in API v2"""
