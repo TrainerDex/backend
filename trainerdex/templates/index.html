@@ -9,7 +9,7 @@
         <title>TrainerDex</title>
         <base href="/">
         <meta name="description" content="Join TrainerDex">
-        
+
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
@@ -18,7 +18,7 @@
         <meta property="og:site_name" content="TrainerDex" />
         <meta name="fb:page_id" content="1683676791663912" />
         <meta name="msvalidate.01" content="E7E20ABA1E037AC0B7E0116E01E3337A" />
-        
+
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic|Material+Icons">
         {% analytical_head_bottom %}
     </head>
@@ -26,8 +26,10 @@
         <noscript>
             <strong>We're sorry but TrainerDex doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
         </noscript>
+        <div id="root" />
+        <script src="{% static 'index-bundle.js' %}"></script>
         {% analytical_body_top %}
-        
+
         {% analytical_body_bottom %}
     </body>
 </html>
