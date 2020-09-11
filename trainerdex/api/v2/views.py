@@ -16,19 +16,19 @@ from rest_framework_extensions.mixins import NestedViewSetMixin
 
 from trainerdex.api.v2.filters import (
     LeaderboardFilter,
-    TrainerCodeFilter,
+    FriendCodeFilter,
     TrainerFilter,
     UpdateFilter,
 )
 from trainerdex.api.v2.serializers import (
     LeaderboardSerializer,
     LeaderboardSerializerLegacy,
-    NicknameSerializer,
-    TrainerCodeSerializer,
+    CodenameSerializer,
+    FriendCodeSerializer,
     TrainerSerializer,
     UpdateSerializer,
 )
-from trainerdex.models import Trainer, TrainerCode, Update
+from trainerdex.models import Trainer, FriendCode, Update
 from trainerdex.models import TrainerQuerySet, UpdateQuerySet
 
 log = logging.getLogger("django.trainerdex")
@@ -49,13 +49,13 @@ class TrainerViewSet(NestedViewSetMixin, ModelViewSet):
     filterset_class = TrainerFilter
 
     @action(detail=True, methods=["post"])
-    def set_nickname(self, request, pk=None):
-        """Set the nickname of the user"""
+    def set_codename(self, request, pk=None):
+        """Set the codename of the user"""
         user = self.get_object()
-        serializer = NicknameSerializer(
+        serializer = CodenameSerializer(
             data={
                 "user": user.pk,
-                "nickname": request.data.get("nickname"),
+                "codename": request.data.get("codename"),
                 "active": request.data.get("active", True),
             }
         )
@@ -76,10 +76,10 @@ class NestedUpdateViewSet(NestedViewSetMixin, UpdateViewSet):
     pass
 
 
-class TrainerCodeViewSet(ModelViewSet):
-    queryset = TrainerCode.objects.all()
-    serializer_class = TrainerCodeSerializer
-    filterset_class = TrainerCodeFilter
+class FriendCodeViewSet(ModelViewSet):
+    queryset = FriendCode.objects.all()
+    serializer_class = FriendCodeSerializer
+    filterset_class = FriendCodeFilter
 
 
 class LeaderboardView(ListAPIView):

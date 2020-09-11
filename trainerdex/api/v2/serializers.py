@@ -3,14 +3,14 @@ from typing import Iterable
 from rest_framework import serializers
 
 from trainerdex.fields import PogoDecimalField, PogoPositiveIntegerField
-from trainerdex.models import Faction, Nickname, Trainer, TrainerCode, Update
+from trainerdex.models import Faction, Codename, Trainer, FriendCode, Update
 from trainerdex.models import UpdateQuerySet
 
 
-class NicknameSerializer(serializers.ModelSerializer):
+class CodenameSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Nickname
-        fields = ["nickname", "active"]
+        model = Codename
+        fields = ["codename", "active"]
 
 
 class UpdateSerializerInlineFilteredListSerializer(serializers.ListSerializer):
@@ -42,7 +42,7 @@ class TrainerSerializer(serializers.ModelSerializer):
     country = serializers.CharField()
     faction = FactionInline(many=False, read_only=True)
     leaderboard_eligibility = serializers.BooleanField(read_only=True)
-    nicknames = NicknameSerializer(many=True, read_only=True)
+    codenames = CodenameSerializer(many=True, read_only=True)
     updates = UpdateSerializerInline(many=True, read_only=True)
 
     def get_fields(self, *args, **kwargs) -> Iterable[str]:
@@ -67,7 +67,7 @@ class TrainerSerializer(serializers.ModelSerializer):
             "date_joined",
             "last_modified",
             "leaderboard_eligibility",
-            "nicknames",
+            "codenames",
             "updates",
         ]
 
@@ -92,17 +92,17 @@ class TrainerSerializerInline(serializers.ModelSerializer):
         model = Trainer
         fields = [
             "id",
-            "nickname",
+            "codename",
             "faction",
             "country",
         ]
 
 
-class TrainerCodeSerializer(serializers.ModelSerializer):
+class FriendCodeSerializer(serializers.ModelSerializer):
     trainer = TrainerSerializerInline(many=False, read_only=True)
 
     class Meta:
-        model = TrainerCode
+        model = FriendCode
         fields = "__all__"
 
 

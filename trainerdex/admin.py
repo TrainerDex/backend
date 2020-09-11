@@ -6,12 +6,12 @@ from trainerdex.mixins import AddFieldsetsMixin
 from trainerdex.models import (
     Evidence,
     EvidenceImage,
-    Nickname,
+    Codename,
     PresetTarget,
     PresetTargetGroup,
     Target,
     Trainer,
-    TrainerCode,
+    FriendCode,
     Update,
 )
 from trainerdex.models import TrainerQuerySet
@@ -19,19 +19,19 @@ from trainerdex.models import TrainerQuerySet
 admin.site.register(PresetTargetGroup)
 
 
-@admin.register(Nickname)
-class NicknameAdmin(admin.ModelAdmin):
+@admin.register(Codename)
+class CodenameAdmin(admin.ModelAdmin):
     search_fields = [
-        "nickname",
+        "codename",
         "user__username",
     ]
     list_display = [
-        "nickname",
+        "codename",
         "user",
         "active",
     ]
     list_filter = ["active"]
-    list_display_links = ["nickname"]
+    list_display_links = ["codename"]
 
 
 @admin.register(PresetTarget)
@@ -64,7 +64,7 @@ class TargetAdmin(admin.ModelAdmin):
     ]
     list_filter = ["stat", "has_reached"]
     search_fields = [
-        "trainer__nicknames__nickname",
+        "trainer__codenames__codename",
         "trainer__username",
         "stat",
         "name",
@@ -82,7 +82,7 @@ class UpdateAdmin(admin.ModelAdmin):
         "update_time",
         "submission_date",
     ]
-    search_fields = ["trainer__nicknames__nickname", "trainer__username"]
+    search_fields = ["trainer__codenames__codename", "trainer__username"]
     ordering = ["-update_time"]
     date_hierarchy = "update_time"
     readonly_fields = [
@@ -187,12 +187,12 @@ class UpdateAdmin(admin.ModelAdmin):
     ]
 
 
-class TrainerCodeInline(admin.TabularInline):
-    model = TrainerCode
+class FriendCodeInline(admin.TabularInline):
+    model = FriendCode
     min_num = 1
     max_num = 1
     can_delete = False
-    verbose_name_plural = TrainerCode._meta.verbose_name
+    verbose_name_plural = FriendCode._meta.verbose_name
 
 
 class TargetInline(admin.TabularInline):
@@ -206,7 +206,7 @@ class TargetInline(admin.TabularInline):
 @admin.register(Trainer)
 class TrainerAdmin(UserAdmin):
     list_display = [
-        "nickname",
+        "codename",
         "faction",
         "is_banned",
         "leaderboard_eligibility",
@@ -218,7 +218,7 @@ class TrainerAdmin(UserAdmin):
         "is_verified",
     ]
     search_fields = [
-        "nicknames__nickname",
+        "codenames__codename",
         "first_name",
         "username",
     ]
@@ -272,7 +272,7 @@ class TrainerAdmin(UserAdmin):
     ]
     inlines = [
         TargetInline,
-        TrainerCodeInline,
+        FriendCodeInline,
     ]
 
     def get_readonly_fields(self, request, obj=None):
@@ -285,7 +285,7 @@ class TrainerAdmin(UserAdmin):
             super()
             .get_queryset(request)
             .prefetch_related("targets")
-            .prefetch_related("trainer_code")
+            .prefetch_related("friend_code")
         )
 
 

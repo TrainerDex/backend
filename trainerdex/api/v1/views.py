@@ -33,14 +33,14 @@ class TrainerViewSet(ReadOnlyModelViewSet):
         """
         Optionally restricts the returned trainers by name or team,
         by filtering against a `q` or `t` query parameter in the URL,
-        where `t` is the faction id and `q` is a trainers nickname.
+        where `t` is the faction id and `q` is a trainers codename.
         Possible faction id's are 0-3 in this order: grey,blue,red,yellow.
         """
         queryset = Trainer.objects.default_excludes()
-        nickname = self.request.query_params.get("q")
+        codename = self.request.query_params.get("q")
         faction = self.request.query_params.get("t")
-        if nickname:
-            queryset = queryset.filter(nickname__nickname=nickname)
+        if codename:
+            queryset = queryset.filter(codename__codename=codename)
         if faction:
             queryset = queryset.filter(faction__pk=faction)
         return queryset

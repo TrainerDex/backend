@@ -1,28 +1,28 @@
 import django_filters as filters
 
 from trainerdex.fields import PogoDecimalField, PogoPositiveIntegerField
-from trainerdex.models import Trainer, TrainerCode, Update
+from trainerdex.models import Trainer, FriendCode, Update
 
 
 class TrainerFilter(filters.FilterSet):
-    nickname = filters.CharFilter(field_name="nicknames__nickname")
+    codename = filters.CharFilter(field_name="codenames__codename")
 
     class Meta:
         model = Trainer
         fields = [
-            "nickname",
+            "codename",
             "faction",
             "country",
         ]
 
 
-class TrainerCodeFilter(filters.FilterSet):
-    trainer__nickname = filters.CharFilter(field_name="trainer__nicknames__nickname")
+class FriendCodeFilter(filters.FilterSet):
+    trainer__codename = filters.CharFilter(field_name="trainer__codenames__codename")
 
     class Meta:
-        model = TrainerCode
+        model = FriendCode
         fields = [
-            "trainer__nickname",
+            "trainer__codename",
             "trainer__faction",
             "trainer__country",
         ]
@@ -54,8 +54,8 @@ class UpdateFilter(filters.FilterSet):
 
 
 class LeaderboardFilter(filters.FilterSet):
-    nickname = filters.CharFilter(field_name="nicknames__nickname")
+    codename = filters.CharFilter(field_name="codenames__codename")
 
     class Meta:
         model = Trainer
-        fields = ["nickname", "faction", "country", "communities"]
+        fields = ["codename", "faction", "country", "communities"]

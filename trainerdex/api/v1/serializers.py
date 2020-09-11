@@ -365,6 +365,7 @@ class TrainerSerializer(serializers.ModelSerializer):
     owner = serializers.SerializerMethodField()
     username = serializers.SerializerMethodField()
     trainer_code = serializers.SerializerMethodField()
+    friend_code = serializers.SerializerMethodField()
     has_cheated = serializers.SerializerMethodField()
     last_cheated = serializers.SerializerMethodField()
     currently_cheats = serializers.SerializerMethodField()
@@ -382,13 +383,16 @@ class TrainerSerializer(serializers.ModelSerializer):
         return getattr(obj, "pk")
 
     def get_username(self, obj: Trainer) -> str:
-        return getattr(obj, "nickname")
+        return getattr(obj, "codename")
+
+    def get_friend_code(self, obj: Trainer) -> str:
+        if obj.has_perm("trainerdex.share_friend_code_to_api"):
+            if hasattr(obj, "friend_code"):
+                return obj.friend_code.code
+        return None
 
     def get_trainer_code(self, obj: Trainer) -> str:
-        if obj.has_perm("trainerdex.share_trainer_code_to_api"):
-            if hasattr(obj, "trainer_code"):
-                return obj.trainer_code.code
-        return None
+        return self.get_friend_code(obj)
 
     def get_has_cheated(self, obj: Trainer) -> bool:
         return getattr(obj, "is_banned")
@@ -429,6 +433,7 @@ class TrainerSerializer(serializers.ModelSerializer):
             "start_date",
             "faction",
             "trainer_code",
+            "friend_code",
             "has_cheated",
             "last_cheated",
             "currently_cheats",

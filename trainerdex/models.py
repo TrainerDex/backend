@@ -37,7 +37,7 @@ from exclusivebooleanfield.fields import ExclusiveBooleanField
 
 from trainerdex.abstract import AbstractUser
 from trainerdex.fields import PogoDecimalField, PogoPositiveIntegerField
-from trainerdex.validators import TrainerCodeValidator, PokemonGoUsernameValidator
+from trainerdex.validators import FriendCodeValidator, PokemonGoUsernameValidator
 
 log = logging.getLogger("django.trainerdex")
 
@@ -220,8 +220,10 @@ class Trainer(AbstractUser):
     leaderboard_eligibility.boolean = True
 
     @property
-    def nickname(self) -> str:
+    def codename(self) -> str:
         return self.username
+
+    nickname = codename
 
     @property
     def avatar(self) -> str:
@@ -235,60 +237,60 @@ class Trainer(AbstractUser):
         return self.username
 
     def __repr__(self) -> str:
-        return f"pk: {self.pk} nickname: {self.username} faction: {self.faction}"
+        return f"pk: {self.pk} codename: {self.username} faction: {self.faction}"
 
     class Meta(AbstractUser.Meta):
         verbose_name = npgettext_lazy("trainer", "trainer", "trainers", 1)
         verbose_name_plural = npgettext_lazy("trainer", "trainer", "trainers", 2)
 
 
-class Nickname(LifecycleModelMixin, models.Model):
+class Codename(LifecycleModelMixin, models.Model):
     user = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
         verbose_name=Trainer._meta.verbose_name,
-        related_name="nicknames",
+        related_name="codenames",
     )
-    nickname = django.contrib.postgres.fields.CICharField(
+    codename = django.contrib.postgres.fields.CICharField(
         max_length=15,
         unique=True,
         validators=[PokemonGoUsernameValidator],
         db_index=True,
-        verbose_name=npgettext_lazy("nickname", "nickname", "nicknames", 1),
+        verbose_name=npgettext_lazy("codename", "Nickname", "Nicknames", 1),
     )
     active = ExclusiveBooleanField(
         on="user",
     )
 
     def __str__(self) -> str:
-        return self.nickname
+        return self.codename
 
     @hook("after_save", when="active", is_now=True)
     def on_active_set_username_on_user(self) -> None:
-        self.user.username = self.nickname
+        self.user.username = self.codename
         self.user.save(update_fields=["username"])
 
     class Meta:
-        ordering = ["nickname"]
-        verbose_name = npgettext_lazy("nickname", "nickname", "nicknames", 1)
-        verbose_name_plural = npgettext_lazy("nickname", "nickname", "nicknames", 2)
+        ordering = ["codename"]
+        verbose_name = npgettext_lazy("codename", "Nickname", "Nicknames", 1)
+        verbose_name_plural = npgettext_lazy("codename", "Nickname", "Nicknames", 2)
 
 
 @receiver(post_save, sender=Trainer)
-def create_nickname(sender, instance: Trainer, created: bool, **kwargs) -> Nickname:
+def create_codename(sender, instance: Trainer, created: bool, **kwargs) -> Codename:
     if kwargs.get("raw"):
         return None
 
     if created:
-        return Nickname.objects.create(user=instance, nickname=instance.username, active=True)
+        return Codename.objects.create(user=instance, codename=instance.username, active=True)
 
 
-class TrainerCode(LifecycleModelMixin, models.Model):
+class FriendCode(LifecycleModelMixin, models.Model):
 
     trainer = models.OneToOneField(
         Trainer,
         on_delete=models.CASCADE,
-        related_name="trainer_code",
+        related_name="friend_code",
         verbose_name=Trainer._meta.verbose_name,
         primary_key=True,
     )
@@ -296,12 +298,12 @@ class TrainerCode(LifecycleModelMixin, models.Model):
         null=True,
         blank=True,
         validators=[
-            TrainerCodeValidator,
+            FriendCodeValidator,
             MinLengthValidator(12),
             MaxLengthValidator(15),
         ],
         max_length=15,
-        verbose_name=npgettext_lazy("trainer_code", "Trainer Code", "Trainer Codes", 1),
+        verbose_name=pgettext_lazy("friend_code_title", "Trainer Code"),
     )
 
     def __str__(self) -> str:
@@ -312,19 +314,18 @@ class TrainerCode(LifecycleModelMixin, models.Model):
         self.code = re.sub(r"\D", "", self.code)
 
     class Meta:
-        verbose_name = npgettext_lazy("trainer_code", "Trainer Code", "Trainer Codes", 1)
-        verbose_name_plural = npgettext_lazy("trainer_code", "Trainer Code", "Trainer Codes", 2)
+        verbose_name = pgettext_lazy("friend_code_title", "Trainer Code")
         permissions = [
             (
-                "share_trainer_code_to_groups",
+                "share_friend_code_to_groups",
                 _("Trainer Code can be seen by users of groups they're in"),
             ),
             (
-                "share_trainer_code_to_web",
+                "share_friend_code_to_web",
                 _("Trainer Code can be seen on the web, publicly"),
             ),
             (
-                "share_trainer_code_to_api",
+                "share_friend_code_to_api",
                 _("Trainer Code can be on the API"),
             ),
         ]
@@ -1033,8 +1034,8 @@ class Update(models.Model):
     type_steel = PogoPositiveIntegerField(
         null=True,
         blank=True,
-        verbose_name=pgettext_lazy("type_steel", "Depot Agent"),
-        help_text=pgettext_lazy("type_steel__help", "Catch {0} Steel-type Pokémon"),
+        verbose_name=pgettext_lazy("type_steel", "Rail Staff"),
+        help_text=pgettext_lazy("type_steel__help", "Catch {0} Steel-type Pokémon."),
         reversable=False,
         sortable=True,
         badge_id=26,
