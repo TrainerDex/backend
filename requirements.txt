@@ -1,4 +1,4 @@
-django==3.0.9
+django~=3.1.0
 django-allauth==0.42
 django-analytical==2.6.0
 django-cors-headers==3.5.0
@@ -10,7 +10,7 @@ django-jazzmin==2.2.7
 django-lifecycle==0.7.7
 django-timezone-field==4.0
 djangorestframework==3.11.1
-drf-extensions==0.6.0
+git+git://github.com/chibisov/drf-extensions.git@002a67cec4159cbd691580b6e7fa42a701f0d2dd#egg=drf-extensions
 humanize
 pendulum==2.1.2
 Pillow
