@@ -11,6 +11,7 @@ urlpatterns = [
     path("accounts/", include("allauth.urls")),
     path("admin/", admin.site.urls),
     path("api/", include("trainerdex.api.urls")),
+    path("oauth/", include("oauth2_provider.urls", namespace="oauth2_provider")),
     path("", include("trainerdex.urls")),
 ]
 

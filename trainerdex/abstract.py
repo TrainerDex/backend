@@ -15,7 +15,7 @@ class AbstractUser(LifecycleModelMixin, ABS):
     username = django.contrib.postgres.fields.CICharField(
         max_length=15,
         unique=True,
-        verbose_name=pgettext_lazy("nickname", "nickname"),
+        verbose_name=pgettext_lazy("codename", "nickname"),
         help_text=pgettext_lazy(
             "nickname__help",
             (

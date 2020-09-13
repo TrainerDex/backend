@@ -206,7 +206,7 @@ class TargetInline(admin.TabularInline):
 @admin.register(Trainer)
 class TrainerAdmin(UserAdmin):
     list_display = [
-        "codename",
+        "username",
         "faction",
         "is_banned",
         "leaderboard_eligibility",

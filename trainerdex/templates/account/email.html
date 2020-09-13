@@ -1,0 +1,90 @@
+{% extends "account/base.html" %}
+
+{% load i18n %}
+{% load widget_tweaks %}
+
+{% block head_title %}{% trans "Account" %}{% endblock %}
+{% block section_title %}{% trans "Account" %}{% endblock %}
+
+{% block content %}
+<div>
+  <div>
+    <h2>{% trans "Add E-mail Address" %}</h2>
+  </div>
+    <form method="post" action="{% url 'account_email' %}">
+      <div>
+        <p>{% trans 'Add an email address to your account to get back in if you forget your password. Also, your primary email is used for gravatar generation.' %}</p>
+        <div id="form_email">
+          {% csrf_token %}
+          {% render_field form.email %}
+          <labelfor="id_email">{{enter_email_trans}}</label>
+        </div>
+      </div>
+      <div>
+        <buttonname="action_add" type="submit"><i class="material-icons">done</i>{% trans "Add E-mail" %}</button>
+      </div>
+    </form>
+</div>
+<div>
+  <div>
+    <h2>{% trans "E-mail Addresses" %}</h2>
+  </div>
+{% if user.emailaddress_set.all %}
+  <form action="{% url 'account_email' %}" method="post">
+  {% csrf_token %}
+  <fieldset>
+    <div>
+      {% trans 'The following e-mail addresses are associated with your account:' %}
+    </div>
+    <ul>
+    {% for emailaddress in user.emailaddress_set.all %}
+      <li>
+        <label for="email_radio_{{forloop.counter}}">
+          <input id="email_radio_{{forloop.counter}}" type="radio"name="email" {% if emailaddress.primary or user.emailaddress_set.count == 1 %}checked="checked"{%endif %} value="{{emailaddress.email}}"/>
+          <span>{{ emailaddress.email }}</span>
+          {% if emailaddress.primary %}<span>{% trans 'Primary' %}</span>{% endif %}
+        </label>
+        <span>
+          {% if emailaddress.verified %}<label for="verified_{{forloop.counter}}">
+            <input type="checkbox" id="verified_{{forloop.counter}}" checked>
+            <i class="mdl-icon-toggle__label material-icons">verified_user</i>
+          </label>{% endif %}
+        </span>
+      </li>
+    {% endfor %}
+    </ul>
+    <div>
+      <button type="submit" name="action_primary" ><i class="material-icons">done</i> {% trans 'Make Primary' %}</button>
+      <button type="submit" name="action_send" ><i class="material-icons">autorenew</i> {% trans 'Re-send Verification' %}</button>
+      <button type="submit" name="action_remove" ><i class="material-icons">remove_circle</i> {% trans 'Remove' %}</button>
+      <div id="action_remove_message">
+        <div></div>
+        <button type="button"></button>
+      </div>
+    </div>
+  </fieldset>
+</form>
+{% else %}
+  <div>
+    <strong>{% trans 'Warning:'%}</strong> {% trans "You currently do not have any e-mail address set up. You should really add an e-mail address so you can receive notifications, reset your password, etc." %}
+  </div>
+{% endif %}
+</div>
+{% endblock %}
+
+
+{% block extra_body %}
+<script type="text/javascript">
+(function() {
+  var message = "{% trans 'Do you really want to remove the selected e-mail address?' %}";
+  var actions = document.getElementsByName('action_remove');
+  if (actions.length) {
+    actions[0].addEventListener("click", function(e) {
+      if (! confirm(message)) {
+        e.preventDefault();
+      }
+    });
+  }
+})();
+</script>
+{% endblock %}

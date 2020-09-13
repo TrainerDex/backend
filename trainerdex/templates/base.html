@@ -23,13 +23,20 @@
         {% analytical_head_bottom %}
     </head>
     <body>
-        <noscript>
-            <strong>We're sorry but TrainerDex doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-        </noscript>
-        <div id="root" />
+        {% block body %}
+        {% block page %}
+        <main>
+          {% block content %}
+          <div id="root" />
+          {% endblock %}
+        </main>
+        {% endblock %}
+
+        {% endblock %}
+        {% block extra_body %}
+        {% endblock %}
         <script src="{% static 'index-bundle.js' %}"></script>
         {% analytical_body_top %}
-
         {% analytical_body_bottom %}
     </body>
 </html>

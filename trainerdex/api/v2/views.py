@@ -13,6 +13,7 @@ from rest_framework.utils.urls import remove_query_param, replace_query_param
 from rest_framework.viewsets import ModelViewSet
 
 from rest_framework_extensions.mixins import NestedViewSetMixin
+from oauth2_provider.contrib.rest_framework import OAuth2Authentication, TokenHasScope
 
 from trainerdex.api.v2.filters import (
     LeaderboardFilter,
@@ -44,6 +45,9 @@ class TrainerViewSet(NestedViewSetMixin, ModelViewSet):
     For performance reasons, `updates` is excluded in the list view.
     """
 
+    authentication_classes = [OAuth2Authentication]
+    permission_classes = [TokenHasScope]
+    required_scopes = ["read"]
     queryset = Trainer.objects.default_excludes()
     serializer_class = TrainerSerializer
     filterset_class = TrainerFilter
