@@ -1,0 +1,21 @@
+npm:
+  - package.json
+  - package-lock.json
+
+pip:
+  - requirements.txt
+  - requirements-dev.txt
+
+frontend:
+  - assets/*
+  - */templates/*
+  - */static/*
+
+backend:
+  - any: ['trainerdex/api/*', '*/urls.py', '*/models.py', '!trainerdex/pogo_assets/strings.py', '!static/pogo_assets/*']
+
+dependencies:
+  - package.json
+  - package-lock.json
+  - requirements.txt
+  - requirements-dev.txt
