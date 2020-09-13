@@ -52,10 +52,10 @@ class Faction(models.Model):
     VALOR = 2
     INSTINCT = 3
     FACTION_CHOICES = (
-        (TEAMLESS, pgettext("faction_0__short", "Teamless")),
-        (MYSTIC, pgettext("faction_1__short", "Mystic")),
-        (VALOR, pgettext("faction_2__short", "Valor")),
-        (INSTINCT, pgettext("faction_3__short", "Instinct")),
+        (TEAMLESS, pgettext("team_name_team0_abbr", "Teamless")),
+        (MYSTIC, pgettext("team_name_team1_abbr", "Mystic")),
+        (VALOR, pgettext("team_name_team2_abbr", "Valor")),
+        (INSTINCT, pgettext("team_name_team3_abbr", "Instinct")),
     )
 
     id = models.PositiveSmallIntegerField(
@@ -65,20 +65,20 @@ class Faction(models.Model):
     @property
     def name_short(self) -> str:
         CHOICES = (
-            pgettext("faction_0__short", "Teamless"),
-            pgettext("faction_1__short", "Mystic"),
-            pgettext("faction_2__short", "Valor"),
-            pgettext("faction_3__short", "Instinct"),
+            pgettext("team_name_team0_abbr", "Teamless"),
+            pgettext("team_name_team1_abbr", "Mystic"),
+            pgettext("team_name_team2_abbr", "Valor"),
+            pgettext("team_name_team3_abbr", "Instinct"),
         )
         return CHOICES[self.id]
 
     @property
     def name_long(self) -> str:
         CHOICES = (
-            pgettext("faction_0__long", "No Team"),
-            pgettext("faction_1__long", "Team Mystic"),
-            pgettext("faction_2__long", "Team Valor"),
-            pgettext("faction_3__long", "Team Instinct"),
+            pgettext("team_name_team0", "No Team"),
+            pgettext("team_name_team0", "Team Mystic"),
+            pgettext("team_name_team0", "Team Valor"),
+            pgettext("team_name_team0", "Team Instinct"),
         )
         return CHOICES[self.id]
 
