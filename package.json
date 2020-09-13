@@ -23,6 +23,9 @@
     "@babel/preset-env": "^7.11.5",
     "@babel/preset-react": "^7.10.4",
     "babel-loader": "^8.1.0",
+    "eslint": "^7.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-react": "^7.20.6",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12"
   },
