@@ -1,8 +1,6 @@
-import datetime
 import logging
 
 from allauth.socialaccount.models import SocialAccount
-from django.core.exceptions import PermissionDenied
 from django.http import Http404
 from rest_framework.decorators import action
 from rest_framework.response import Response
@@ -18,14 +16,14 @@ from trainerdex.api.v1.serializers import (
     UserSerializer,
 )
 from trainerdex.models import Trainer, Update
-from trainerdex.models import TrainerQuerySet, UpdateQuerySet
+from trainerdex.models import TrainerQuerySet
 
 log = logging.getLogger("django.trainerdex")
 
 
 class UserViewSet(ReadOnlyModelViewSet):
     serializer_class = UserSerializer
-    queryset = Trainer.objects.default_excludes().exclude(old_id__isnull=True)
+    queryset = Trainer.objects.default_excludes().exclude(tid__isnull=True)
 
 
 class TrainerViewSet(ReadOnlyModelViewSet):
@@ -35,14 +33,14 @@ class TrainerViewSet(ReadOnlyModelViewSet):
         """
         Optionally restricts the returned trainers by name or team,
         by filtering against a `q` or `t` query parameter in the URL,
-        where `t` is the faction id and `q` is a trainers nickname.
+        where `t` is the faction id and `q` is a trainers codename.
         Possible faction id's are 0-3 in this order: grey,blue,red,yellow.
         """
         queryset = Trainer.objects.default_excludes()
-        nickname = self.request.query_params.get("q")
+        codename = self.request.query_params.get("q")
         faction = self.request.query_params.get("t")
-        if nickname:
-            queryset = queryset.filter(nickname__nickname=nickname)
+        if codename:
+            queryset = queryset.filter(codename__codename=codename)
         if faction:
             queryset = queryset.filter(faction__pk=faction)
         return queryset
@@ -58,7 +56,7 @@ class UpdateViewSet(ReadOnlyModelViewSet):
 
     def get_trainer(self, pk: int) -> Trainer:
         try:
-            obj = Trainer.objects.get(old_id=pk)
+            obj = Trainer.objects.get(tid=pk)
         except Trainer.DoesNotExist:
             raise Http404
 

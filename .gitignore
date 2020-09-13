@@ -1,6 +1,6 @@
 
-# Created by https://www.toptal.com/developers/gitignore/api/django
-# Edit at https://www.toptal.com/developers/gitignore?templates=django
+# Created by https://www.toptal.com/developers/gitignore/api/django,react
+# Edit at https://www.toptal.com/developers/gitignore?templates=django,react
 
 ### Django ###
 *.log
@@ -68,6 +68,7 @@ coverage.xml
 *.py,cover
 .hypothesis/
 .pytest_cache/
+pytestdebug.log
 
 # Translations
 *.mo
@@ -83,6 +84,7 @@ instance/
 
 # Sphinx documentation
 docs/_build/
+doc/_build/
 
 # PyBuilder
 target/
@@ -144,4 +146,19 @@ dmypy.json
 # pytype static type analyzer
 .pytype/
 
-# End of https://www.toptal.com/developers/gitignore/api/django
+### react ###
+.DS_*
+logs
+**/*.backup.*
+**/*.back.*
+
+node_modules
+bower_components
+
+*.sublime*
+
+psd
+thumb
+sketch
+
+# End of https://www.toptal.com/developers/gitignore/api/django,react

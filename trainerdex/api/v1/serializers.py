@@ -48,8 +48,11 @@ v1_field_names = {
         "photobomb": "badge_photobomb",
         "pokemon_purified": "badge_pokemon_purified",
         "rocket_grunts_defeated": "badge_rocket_grunts_defeated",
+        "rocket_giovanni_defeated": "badge_rocket_giovanni_defeated",
         "buddy_best": "badge_buddy_best",
         "wayfarer": "badge_wayfarer",
+        "total_mega_evos": "badge_total_mega_evos",
+        "unique_mega_evos": "badge_unique_mega_evos",
         "type_normal": "badge_type_normal",
         "type_fighting": "badge_type_fighting",
         "type_flying": "badge_type_flying",
@@ -93,7 +96,7 @@ class BriefUpdateSerializer(serializers.ModelSerializer):
         return getattr(obj, "total_xp")
 
     def get_trainer(self, obj: Update) -> int:
-        return getattr(obj, "trainer").old_id
+        return getattr(obj, "trainer").tid
 
     def get_modified_extra_fields(self, obj: Update) -> List[str]:
         return [v1_field_names["update"][x] for x in obj.modified_extra_fields()]
@@ -172,7 +175,7 @@ class DetailedUpdateSerializer(serializers.ModelSerializer):
     pokemon_info_stardust = serializers.SerializerMethodField()
 
     def get_trainer(self, obj: Update) -> int:
-        return getattr(obj, "trainer").old_id
+        return getattr(obj, "trainer").tid
 
     def get_xp(self, obj: Update) -> int:
         """This field is deprecated and will be removed in API v2"""
@@ -362,6 +365,7 @@ class TrainerSerializer(serializers.ModelSerializer):
     owner = serializers.SerializerMethodField()
     username = serializers.SerializerMethodField()
     trainer_code = serializers.SerializerMethodField()
+    friend_code = serializers.SerializerMethodField()
     has_cheated = serializers.SerializerMethodField()
     last_cheated = serializers.SerializerMethodField()
     currently_cheats = serializers.SerializerMethodField()
@@ -379,13 +383,16 @@ class TrainerSerializer(serializers.ModelSerializer):
         return getattr(obj, "pk")
 
     def get_username(self, obj: Trainer) -> str:
-        return getattr(obj, "nickname")
+        return getattr(obj, "codename")
+
+    def get_friend_code(self, obj: Trainer) -> str:
+        if obj.has_perm("trainerdex.share_friend_code_to_api"):
+            if hasattr(obj, "friend_code"):
+                return obj.friend_code.code
+        return None
 
     def get_trainer_code(self, obj: Trainer) -> str:
-        if obj.has_perm("trainerdex.share_trainer_code_to_api"):
-            if hasattr(obj, "trainer_code"):
-                return obj.trainer_code.code
-        return None
+        return self.get_friend_code(obj)
 
     def get_has_cheated(self, obj: Trainer) -> bool:
         return getattr(obj, "is_banned")
@@ -426,6 +433,7 @@ class TrainerSerializer(serializers.ModelSerializer):
             "start_date",
             "faction",
             "trainer_code",
+            "friend_code",
             "has_cheated",
             "last_cheated",
             "currently_cheats",
@@ -444,7 +452,7 @@ class UserSerializer(serializers.ModelSerializer):
 
     def get_trainer(self, obj: Trainer) -> int:
         """This field is deprecated and will be removed in API v2"""
-        return obj.old_id
+        return obj.tid
 
     def get_profiles(self, obj: Trainer) -> List[int]:
         """This field is deprecated and will be removed in API v2"""

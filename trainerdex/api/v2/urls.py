@@ -5,7 +5,7 @@ from rest_framework_extensions import routers
 from trainerdex.api.v2.views import (
     LeaderboardView,
     NestedUpdateViewSet,
-    TrainerCodeViewSet,
+    FriendCodeViewSet,
     TrainerViewSet,
     UpdateViewSet,
 )
@@ -20,7 +20,7 @@ router.register(r"trainers", TrainerViewSet, basename="trainer").register(
     parents_query_lookups=["trainer"],
 )
 
-router.register(r"trainer-code", TrainerCodeViewSet)
+router.register(r"trainer-code", FriendCodeViewSet)
 router.register(r"updates", UpdateViewSet)
 
 urlpatterns = [

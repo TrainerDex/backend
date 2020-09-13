@@ -2,36 +2,34 @@ import logging
 import math
 from distutils.util import strtobool
 
-from django.db.utils import IntegrityError
 from django.shortcuts import redirect
 from django.urls import reverse
 from rest_framework import status
 from rest_framework.decorators import action
 from rest_framework.generics import ListAPIView
-from rest_framework.pagination import LimitOffsetPagination
 from rest_framework.response import Response
 from rest_framework.settings import api_settings
 from rest_framework.utils.urls import remove_query_param, replace_query_param
-from rest_framework.viewsets import ModelViewSet, ReadOnlyModelViewSet
+from rest_framework.viewsets import ModelViewSet
 
 from rest_framework_extensions.mixins import NestedViewSetMixin
+from oauth2_provider.contrib.rest_framework import OAuth2Authentication, TokenHasScope
 
 from trainerdex.api.v2.filters import (
     LeaderboardFilter,
-    TrainerCodeFilter,
+    FriendCodeFilter,
     TrainerFilter,
     UpdateFilter,
 )
 from trainerdex.api.v2.serializers import (
     LeaderboardSerializer,
     LeaderboardSerializerLegacy,
-    NicknameSerializer,
-    TrainerCodeSerializer,
+    CodenameSerializer,
+    FriendCodeSerializer,
     TrainerSerializer,
     UpdateSerializer,
 )
-from trainerdex.leaderboard import Leaderboard
-from trainerdex.models import PresetTarget, Target, Trainer, TrainerCode, Update
+from trainerdex.models import Trainer, FriendCode, Update
 from trainerdex.models import TrainerQuerySet, UpdateQuerySet
 
 log = logging.getLogger("django.trainerdex")
@@ -47,18 +45,21 @@ class TrainerViewSet(NestedViewSetMixin, ModelViewSet):
     For performance reasons, `updates` is excluded in the list view.
     """
 
+    authentication_classes = [OAuth2Authentication]
+    permission_classes = [TokenHasScope]
+    required_scopes = ["read"]
     queryset = Trainer.objects.default_excludes()
     serializer_class = TrainerSerializer
     filterset_class = TrainerFilter
 
     @action(detail=True, methods=["post"])
-    def set_nickname(self, request, pk=None):
-        """Set the nickname of the user"""
+    def set_codename(self, request, pk=None):
+        """Set the codename of the user"""
         user = self.get_object()
-        serializer = NicknameSerializer(
+        serializer = CodenameSerializer(
             data={
                 "user": user.pk,
-                "nickname": request.data.get("nickname"),
+                "codename": request.data.get("codename"),
                 "active": request.data.get("active", True),
             }
         )
@@ -79,10 +80,10 @@ class NestedUpdateViewSet(NestedViewSetMixin, UpdateViewSet):
     pass
 
 
-class TrainerCodeViewSet(ModelViewSet):
-    queryset = TrainerCode.objects.all()
-    serializer_class = TrainerCodeSerializer
-    filterset_class = TrainerCodeFilter
+class FriendCodeViewSet(ModelViewSet):
+    queryset = FriendCode.objects.all()
+    serializer_class = FriendCodeSerializer
+    filterset_class = FriendCodeFilter
 
 
 class LeaderboardView(ListAPIView):

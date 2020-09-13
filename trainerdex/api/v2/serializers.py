@@ -2,17 +2,15 @@ from typing import Iterable
 
 from rest_framework import serializers
 
-from trainerdex.models import Faction, Nickname, Trainer, TrainerCode, Update
+from trainerdex.fields import PogoDecimalField, PogoPositiveIntegerField
+from trainerdex.models import Faction, Codename, Trainer, FriendCode, Update
 from trainerdex.models import UpdateQuerySet
 
 
-class NicknameSerializer(serializers.ModelSerializer):
+class CodenameSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Nickname
-        fields = (
-            "nickname",
-            "active",
-        )
+        model = Codename
+        fields = ["codename", "active"]
 
 
 class UpdateSerializerInlineFilteredListSerializer(serializers.ListSerializer):
@@ -27,30 +25,24 @@ class UpdateSerializerInline(serializers.ModelSerializer):
     class Meta:
         model = Update
         list_serializer_class = UpdateSerializerInlineFilteredListSerializer
-        fields = [
-            "uuid",
-            "update_time",
-            "submission_date",
-            "comment",
-            "data_source",
-            "data_source_notes",
-        ] + [x for x in Update.field_metadata().keys()]
+        fields = ["uuid", "update_time", "submission_date", "comment", "metadata"] + [
+            field.name
+            for field in Update._meta.fields
+            if isinstance(field, (PogoDecimalField, PogoPositiveIntegerField))
+        ]
 
 
 class FactionInline(serializers.ModelSerializer):
     class Meta:
         model = Faction
-        fields = (
-            "id",
-            "name_short",
-        )
+        fields = ["id", "name_short"]
 
 
 class TrainerSerializer(serializers.ModelSerializer):
     country = serializers.CharField()
     faction = FactionInline(many=False, read_only=True)
     leaderboard_eligibility = serializers.BooleanField(read_only=True)
-    nicknames = NicknameSerializer(many=True, read_only=True)
+    codenames = CodenameSerializer(many=True, read_only=True)
     updates = UpdateSerializerInline(many=True, read_only=True)
 
     def get_fields(self, *args, **kwargs) -> Iterable[str]:
@@ -62,7 +54,7 @@ class TrainerSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Trainer
-        fields = (
+        fields = [
             "id",
             "username",
             "first_name",
@@ -75,9 +67,9 @@ class TrainerSerializer(serializers.ModelSerializer):
             "date_joined",
             "last_modified",
             "leaderboard_eligibility",
-            "nicknames",
+            "codenames",
             "updates",
-        )
+        ]
 
 
 class UpdateSerializer(serializers.ModelSerializer):
@@ -85,15 +77,11 @@ class UpdateSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Update
-        fields = [
-            "uuid",
-            "trainer",
-            "update_time",
-            "submission_date",
-            "comment",
-            "data_source",
-            "data_source_notes",
-        ] + [x for x in Update.field_metadata().keys()]
+        fields = ["uuid", "trainer", "update_time", "submission_date", "comment", "metadata"] + [
+            field.name
+            for field in Update._meta.fields
+            if isinstance(field, (PogoDecimalField, PogoPositiveIntegerField))
+        ]
 
 
 class TrainerSerializerInline(serializers.ModelSerializer):
@@ -102,19 +90,19 @@ class TrainerSerializerInline(serializers.ModelSerializer):
 
     class Meta:
         model = Trainer
-        fields = (
+        fields = [
             "id",
-            "nickname",
+            "codename",
             "faction",
             "country",
-        )
+        ]
 
 
-class TrainerCodeSerializer(serializers.ModelSerializer):
+class FriendCodeSerializer(serializers.ModelSerializer):
     trainer = TrainerSerializerInline(many=False, read_only=True)
 
     class Meta:
-        model = TrainerCode
+        model = FriendCode
         fields = "__all__"
 
 
@@ -134,7 +122,7 @@ class LeaderboardSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Update
-        fields = ("trainer", "value", "datetime", "rank", "extra_fields")
+        fields = ["trainer", "value", "datetime", "rank", "extra_fields"]
 
 
 class LeaderboardSerializerLegacy(LeaderboardSerializer):
@@ -153,4 +141,4 @@ class LeaderboardSerializerLegacy(LeaderboardSerializer):
 
     class Meta:
         model = Trainer
-        fields = ("trainer", "value", "datetime", "rank", "extra_fields")
+        fields = ["trainer", "value", "datetime", "rank", "extra_fields"]

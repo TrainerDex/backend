@@ -1,27 +1,28 @@
 import django_filters as filters
 
-from trainerdex.models import Trainer, TrainerCode, Update
+from trainerdex.fields import PogoDecimalField, PogoPositiveIntegerField
+from trainerdex.models import Trainer, FriendCode, Update
 
 
 class TrainerFilter(filters.FilterSet):
-    nickname = filters.CharFilter(field_name="nicknames__nickname")
+    codename = filters.CharFilter(field_name="codenames__codename")
 
     class Meta:
         model = Trainer
         fields = [
-            "nickname",
+            "codename",
             "faction",
             "country",
         ]
 
 
-class TrainerCodeFilter(filters.FilterSet):
-    trainer__nickname = filters.CharFilter(field_name="trainer__nicknames__nickname")
+class FriendCodeFilter(filters.FilterSet):
+    trainer__codename = filters.CharFilter(field_name="trainer__codenames__codename")
 
     class Meta:
-        model = TrainerCode
+        model = FriendCode
         fields = [
-            "trainer__nickname",
+            "trainer__codename",
             "trainer__faction",
             "trainer__country",
         ]
@@ -31,22 +32,30 @@ class UpdateFilter(filters.FilterSet):
     update_time = filters.IsoDateTimeFromToRangeFilter()
 
     o = filters.OrderingFilter(
-        fields=[(x, x) for x, y in Update.field_metadata().items() if y.get("sortable") == True]
-        + [
-            ("update_time", "update_time"),
+        fields=[
+            (field.name, field.name)
+            for field in Update._meta.fields
+            if (
+                isinstance(field, (PogoDecimalField, PogoPositiveIntegerField))
+                and field.sortable is True
+            )
+            or field.name == "update_time"
         ]
     )
 
     class Meta:
         model = Update
         fields = ["trainer", "update_time"] + [
-            x for x, y in Update.field_metadata().items() if y.get("sortable") == True
+            field.name
+            for field in Update._meta.fields
+            if isinstance(field, (PogoDecimalField, PogoPositiveIntegerField))
+            and field.sortable is True
         ]
 
 
 class LeaderboardFilter(filters.FilterSet):
-    nickname = filters.CharFilter(field_name="nicknames__nickname")
+    codename = filters.CharFilter(field_name="codenames__codename")
 
     class Meta:
         model = Trainer
-        fields = ["nickname", "faction", "country", "communities"]
+        fields = ["codename", "faction", "country", "communities"]
