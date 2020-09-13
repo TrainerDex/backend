@@ -35,14 +35,10 @@ jobs:
         chmod +x ./build_db.sh
         ./build_db.sh
     - name: Run Tests
-      run: |
-        python manage.py test
+      run: python manage.py test
     - name: Check for uncommited migrations
-      run: |
-        python manage.py makemigrations --check community trainerdex
+      run: python manage.py makemigrations --check community trainerdex
     - name: Run Migrations
-      run: |
-        python manage.py migrate --noinput
+      run: python manage.py migrate --noinput
     - name: System Check
-      run: |
-        python manage.py check
+      run: python manage.py check
