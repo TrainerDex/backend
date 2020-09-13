@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     "allauth.socialaccount.providers.facebook",
     "allauth.socialaccount.providers.google",
     "allauth.socialaccount.providers.twitter",
+    "invitations",
     "analytical",
     "django_filters",
     "django_countries",
@@ -221,12 +222,18 @@ OAUTH2_PROVIDER = {
     "WRITE_SCOPE": "write",
 }
 
+# Invitations
+# https://github.com/bee-keeper/django-invitations
+INVITATIONS_INVITATION_ONLY = env("INVITATIONS_INVITATION_ONLY", False)
+INVITATIONS_ACCEPT_INVITE_AFTER_SIGNUP = INVITATIONS_INVITATION_ONLY
+
 
 # Django AllAuth
 # http://django-allauth.readthedocs.io/en/latest/configuration.html
-
 SITE_ID = 1
 
+if INVITATIONS_INVITATION_ONLY:
+    ACCOUNT_ADAPTER = "invitations.models.InvitationsAdapter"
 ACCOUNT_CONFIRM_EMAIL_ON_GET = True
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = "optional"

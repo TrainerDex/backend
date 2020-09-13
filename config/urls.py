@@ -15,6 +15,11 @@ urlpatterns = [
     path("", include("trainerdex.urls")),
 ]
 
+if settings.INVITATIONS_INVITATION_ONLY:
+    urlpatterns.append(
+        path("accounts/invitations/", include("invitations.urls", namespace="invitations"))
+    )
+
 if settings.DEBUG:
     import debug_toolbar
     from django.conf.urls.static import static
