@@ -205,17 +205,20 @@ REST_FRAMEWORK = {
 OAUTH2_PROVIDER = {
     "ALLOWED_REDIRECT_URI_SCHEMES": ["http", "https"] if DEBUG is True else ["https"],
     "SCOPES": {
-        "public_profile": _(
-            "View your public profile including; Trainer Codename, Team and Updates"
+        "profile:read": _(
+            "View your Trainer Codename, Team, Country and other standard information"
         ),
-        "edit_profile": _(
-            "Edit your profile including; Trainer Codename, Team, Updates, Email and Trainer Code"
+        "profile:write": _(
+            "Edit your Trainer Codename, Team, Country and other standard information"
         ),
-        "email": _("View your email address"),
-        "social_accounts": _("View your connected social accounts"),
-        "friend_code": _("View your Trainer Code"),
+        "update:read": _("View full set of Stats Updates"),
+        "update:write": _("Post Stats Updates"),
+        "email:read": _("View your email address"),
+        "social_accounts:read": _("View your connected social accounts"),
     },
-    "DEFAULT_SCOPES": ["public_profile"],
+    "DEFAULT_SCOPES": ["profile:read", "update:read"],
+    "READ_SCOPE": "read",
+    "WRITE_SCOPE": "write",
 }
 
 
