@@ -6,16 +6,29 @@ pip:
   - requirements.txt
   - requirements-dev.txt
 
-frontend:
-  - assets/*
-  - */templates/*
-  - */static/*
-
-backend:
-  - any: ['trainerdex/api/*', '*/urls.py', '*/models.py', '!trainerdex/pogo_assets/strings.py', '!static/pogo_assets/*']
-
 dependencies:
   - package.json
   - package-lock.json
   - requirements.txt
   - requirements-dev.txt
+
+frontend:
+  - 'assets/**/*'
+  - 'trainerdex/templates/**/*'
+  - 'trainerdex/static/**/*'
+
+backend:
+  - 'community/admin.py'
+  - 'community/models.py'
+  - 'config/settings.py'
+  - 'config/urls.py'
+  - 'trainerdex/api/**/*'
+  - 'trainerdex/admin.py'
+  - 'trainerdex/urls.py'
+  - 'trainerdex/models.py'
+  - '!trainerdex/pogo_assets/strings.py'
+  - '!static/pogo_assets/**/*'
+
+migrations:
+  - 'community/migrations/*'
+  - 'trainerdex/migrations/*'
