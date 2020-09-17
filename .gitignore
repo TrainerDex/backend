@@ -161,6 +161,8 @@ psd
 thumb
 sketch
 
-*-bundle.js
+# webpack
+webpack_bundles
+webpack-stats.json
 
 # End of https://www.toptal.com/developers/gitignore/api/django,react

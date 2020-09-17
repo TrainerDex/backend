@@ -60,6 +60,7 @@ INSTALLED_APPS = [
     "django_countries",
     "timezone_field",
     "widget_tweaks",
+    "webpack_loader",
 ]
 
 MIDDLEWARE = [
@@ -173,6 +174,9 @@ STATIC_URL = "/static/"
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 if not DEBUG:
     STATICFILES_STORAGE = "django.contrib.staticfiles.storage.ManifestStaticFilesStorage"
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "assets"),
+]
 USE_X_FORWARDED_HOST = env("USE_X_FORWARDED_HOST", True)
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
@@ -265,3 +269,18 @@ DEFAULT_FROM_EMAIL = env("DJANGO_DEFAULT_FROM_EMAIL")
 SERVER_EMAIL = DEFAULT_FROM_EMAIL
 
 FILE_UPLOAD_PERMISSIONS = 0x775
+
+# Django Webpack Loader
+# https://github.com/owais/django-webpack-loader/blob/0.7.0/README.md
+
+WEBPACK_LOADER = {
+    "DEFAULT": {
+        "CACHE": not DEBUG,
+        "BUNDLE_DIR_NAME": "webpack_bundles/",
+        "STATS_FILE": os.path.join(BASE_DIR, "webpack-stats.json"),
+        "POLL_INTERVAL": 0.1,
+        "TIMEOUT": None,
+        "IGNORE": [r".+\.hot-update.js", r".+\.map"],
+        "LOADER_CLASS": "webpack_loader.loader.WebpackLoader",
+    }
+}

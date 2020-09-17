@@ -6,7 +6,7 @@
         {% analytical_head_top %}
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>TrainerDex</title>
+        <title>TrainerDex | {% block title %}Untitled{% endblock %}</title>
         <base href="/">
         <meta name="description" content="Join TrainerDex">
 
@@ -21,22 +21,18 @@
 
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic|Material+Icons">
         {% analytical_head_bottom %}
+        {% block head %}
+        {% endblock %}
     </head>
     <body>
+        {% analytical_body_top %}
         {% block body %}
-        {% block page %}
-        <main>
           {% block content %}
-          <div id="root" />
           {% endblock %}
-        </main>
         {% endblock %}
 
-        {% endblock %}
         {% block extra_body %}
         {% endblock %}
-        <script src="{% static 'index-bundle.js' %}"></script>
-        {% analytical_body_top %}
         {% analytical_body_bottom %}
     </body>
 </html>

@@ -27,6 +27,7 @@
     "eslint-config-google": "^0.14.0",
     "eslint-plugin-react": "^7.20.6",
     "webpack": "^4.44.1",
+    "webpack-bundle-tracker": "^0.4.3",
     "webpack-cli": "^3.3.12"
   },
   "dependencies": {
