@@ -6,11 +6,11 @@
         {% analytical_head_top %}
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>TrainerDex | {% block title %}Untitled{% endblock %}</title>
+        <title>TrainerDex | {% block head_title %}Untitled{% endblock %}</title>
         <base href="/">
         <meta name="description" content="Join TrainerDex">
 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
         <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
@@ -19,7 +19,9 @@
         <meta name="fb:page_id" content="1683676791663912" />
         <meta name="msvalidate.01" content="E7E20ABA1E037AC0B7E0116E01E3337A" />
 
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic|Material+Icons">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+
         {% analytical_head_bottom %}
         {% block head %}
         {% endblock %}

@@ -45,7 +45,7 @@ jobs:
     - name: Lint with ESLint
       run: |
         npx eslint webpack.config.js --color
-        npx eslint assets/js --color
+        npx eslint assets/src --color
 
   py-style:
     runs-on: ubuntu-latest
