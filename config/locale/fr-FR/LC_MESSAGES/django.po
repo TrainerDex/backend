@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trainerdex\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-17 08:15+0000\n"
-"PO-Revision-Date: 2020-09-17 08:15\n"
+"POT-Creation-Date: 2020-09-17 09:30+0000\n"
+"PO-Revision-Date: 2020-09-17 09:30\n"
 "Last-Translator: \n"
 "Language-Team: French\n"
 "Language: fr_FR\n"
@@ -1237,675 +1237,675 @@ msgstr ""
 msgid "badge_pikachu_title"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:91
+#: trainerdex/pogo_assets/strings.py:90
 msgid "badge_pokedex_entries"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:93 trainerdex/pogo_assets/strings.py:99
+#: trainerdex/pogo_assets/strings.py:91 trainerdex/pogo_assets/strings.py:97
 msgid "badge_pokedex_entries_title"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:96
+#: trainerdex/pogo_assets/strings.py:94
 msgid "badge_pokedex_entries_gen2"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:102
+#: trainerdex/pogo_assets/strings.py:100
 msgid "badge_pokedex_entries_gen3"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:105
+#: trainerdex/pogo_assets/strings.py:103
 msgid "badge_pokedex_entries_gen3_title"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:108
+#: trainerdex/pogo_assets/strings.py:106
 msgid "badge_pokedex_entries_gen4"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:111
+#: trainerdex/pogo_assets/strings.py:109
 msgid "badge_pokedex_entries_gen4_title"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:114
+#: trainerdex/pogo_assets/strings.py:112
 msgid "badge_pokedex_entries_gen5"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:117
+#: trainerdex/pogo_assets/strings.py:115
 msgid "badge_pokedex_entries_gen5_title"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:120
+#: trainerdex/pogo_assets/strings.py:118
 msgid "badge_pokedex_entries_gen6"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:123
+#: trainerdex/pogo_assets/strings.py:121
 msgid "badge_pokedex_entries_gen6_title"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:126
+#: trainerdex/pogo_assets/strings.py:124
 msgid "badge_pokedex_entries_gen7"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:129
+#: trainerdex/pogo_assets/strings.py:127
 msgid "badge_pokedex_entries_gen7_title"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:132
+#: trainerdex/pogo_assets/strings.py:130
 msgid "badge_pokedex_entries_gen8"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:135
+#: trainerdex/pogo_assets/strings.py:133
 msgid "badge_pokedex_entries_gen8_title"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:137
+#: trainerdex/pogo_assets/strings.py:135
 msgid "badge_pokedex_entries_unknown_title"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:139
+#: trainerdex/pogo_assets/strings.py:137
 msgid "badge_pokemon_purified"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:140
+#: trainerdex/pogo_assets/strings.py:138
 msgid "badge_pokemon_purified_title"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:142
+#: trainerdex/pogo_assets/strings.py:140
 msgid "badge_pokestops_visited"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:143
+#: trainerdex/pogo_assets/strings.py:141
 msgid "badge_pokestops_visited_title"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:145
+#: trainerdex/pogo_assets/strings.py:143
 msgid "badge_prestige_dropped"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:146
+#: trainerdex/pogo_assets/strings.py:144
 msgid "badge_prestige_dropped_title"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:148
+#: trainerdex/pogo_assets/strings.py:146
 msgid "badge_prestige_raised"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:149
+#: trainerdex/pogo_assets/strings.py:147
 msgid "badge_prestige_raised_title"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:151
+#: trainerdex/pogo_assets/strings.py:149
 msgid "badge_raid_battle_won"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:152
+#: trainerdex/pogo_assets/strings.py:150
 msgid "badge_raid_battle_won_title"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:160
+#: trainerdex/pogo_assets/strings.py:158
 msgid "badge_rocket_giovanni_defeated_title"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:163
+#: trainerdex/pogo_assets/strings.py:160
 msgid "badge_rocket_grunts_defeated"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:165
+#: trainerdex/pogo_assets/strings.py:161
 msgid "badge_rocket_grunts_defeated_title"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:167
+#: trainerdex/pogo_assets/strings.py:163
 msgid "badge_small_rattata"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:168
+#: trainerdex/pogo_assets/strings.py:164
 msgid "badge_small_rattata_title"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:170
+#: trainerdex/pogo_assets/strings.py:166
 msgid "badge_trading"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:171
+#: trainerdex/pogo_assets/strings.py:167
 msgid "badge_trading_title"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:174
+#: trainerdex/pogo_assets/strings.py:169
 msgid "badge_trading_distance"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:176
+#: trainerdex/pogo_assets/strings.py:170
 msgid "badge_trading_distance_title"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:179
+#: trainerdex/pogo_assets/strings.py:173
 msgid "badge_travel_km"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:181
+#: trainerdex/pogo_assets/strings.py:175
 msgid "badge_travel_km_title"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:183
+#: trainerdex/pogo_assets/strings.py:177
 msgid "badge_type_bug"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:184
+#: trainerdex/pogo_assets/strings.py:178
 msgid "badge_type_bug_title"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:186
+#: trainerdex/pogo_assets/strings.py:180
 msgid "badge_type_dark"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:187
+#: trainerdex/pogo_assets/strings.py:181
 msgid "badge_type_dark_title"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:189
+#: trainerdex/pogo_assets/strings.py:183
 msgid "badge_type_dragon"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:190
+#: trainerdex/pogo_assets/strings.py:184
 msgid "badge_type_dragon_title"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:192
+#: trainerdex/pogo_assets/strings.py:186
 msgid "badge_type_electric"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:193
+#: trainerdex/pogo_assets/strings.py:187
 msgid "badge_type_electric_title"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:195
+#: trainerdex/pogo_assets/strings.py:189
 msgid "badge_type_fairy"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:196
+#: trainerdex/pogo_assets/strings.py:190
 msgid "badge_type_fairy_title"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:198
+#: trainerdex/pogo_assets/strings.py:192
 msgid "badge_type_fighting"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:199
+#: trainerdex/pogo_assets/strings.py:193
 msgid "badge_type_fighting_title"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:201
+#: trainerdex/pogo_assets/strings.py:195
 msgid "badge_type_fire"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:202
+#: trainerdex/pogo_assets/strings.py:196
 msgid "badge_type_fire_title"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:204
+#: trainerdex/pogo_assets/strings.py:198
 msgid "badge_type_flying"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:205
+#: trainerdex/pogo_assets/strings.py:199
 msgid "badge_type_flying_title"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:207
+#: trainerdex/pogo_assets/strings.py:201
 msgid "badge_type_ghost"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:208
+#: trainerdex/pogo_assets/strings.py:202
 msgid "badge_type_ghost_title"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:210
+#: trainerdex/pogo_assets/strings.py:204
 msgid "badge_type_grass"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:211
+#: trainerdex/pogo_assets/strings.py:205
 msgid "badge_type_grass_title"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:213
+#: trainerdex/pogo_assets/strings.py:207
 msgid "badge_type_ground"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:214
+#: trainerdex/pogo_assets/strings.py:208
 msgid "badge_type_ground_title"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:216
+#: trainerdex/pogo_assets/strings.py:210
 msgid "badge_type_ice"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:217
+#: trainerdex/pogo_assets/strings.py:211
 msgid "badge_type_ice_title"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:219
+#: trainerdex/pogo_assets/strings.py:213
 msgid "badge_type_normal"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:220
+#: trainerdex/pogo_assets/strings.py:214
 msgid "badge_type_normal_title"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:222
+#: trainerdex/pogo_assets/strings.py:216
 msgid "badge_type_poison"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:223
+#: trainerdex/pogo_assets/strings.py:217
 msgid "badge_type_poison_title"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:225
+#: trainerdex/pogo_assets/strings.py:219
 msgid "badge_type_psychic"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:226
+#: trainerdex/pogo_assets/strings.py:220
 msgid "badge_type_psychic_title"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:228
+#: trainerdex/pogo_assets/strings.py:222
 msgid "badge_type_rock"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:229
+#: trainerdex/pogo_assets/strings.py:223
 msgid "badge_type_rock_title"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:231
+#: trainerdex/pogo_assets/strings.py:225
 msgid "badge_type_steel"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:232
+#: trainerdex/pogo_assets/strings.py:226
 msgid "badge_type_steel_title"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:234
+#: trainerdex/pogo_assets/strings.py:228
 msgid "badge_type_water"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:235
+#: trainerdex/pogo_assets/strings.py:229
 msgid "badge_type_water_title"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:243
+#: trainerdex/pogo_assets/strings.py:237
 msgid "badge_ultra_league_title"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:245
+#: trainerdex/pogo_assets/strings.py:239
 msgid "badge_unique_pokestops"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:246
+#: trainerdex/pogo_assets/strings.py:240
 msgid "badge_unique_pokestops_title"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:248
+#: trainerdex/pogo_assets/strings.py:242
 msgid "badge_unown"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:249
+#: trainerdex/pogo_assets/strings.py:243
 msgid "badge_unown_title"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:257
+#: trainerdex/pogo_assets/strings.py:248
 msgid "badge_wayfarer_title"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:265
+#: trainerdex/pogo_assets/strings.py:256
 msgid "badge_total_mega_evos_title"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:273
+#: trainerdex/pogo_assets/strings.py:264
 msgid "badge_unique_mega_evos_title"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:281
+#: trainerdex/pogo_assets/strings.py:272
 msgid "codename_already_yours"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:282
+#: trainerdex/pogo_assets/strings.py:273
 msgid "codename_reassign_success"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:284
+#: trainerdex/pogo_assets/strings.py:275
 msgid "date_format"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:286
+#: trainerdex/pogo_assets/strings.py:277
 msgid "encounter_score_total_exp"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:287
+#: trainerdex/pogo_assets/strings.py:278
 msgid "feedback_added_xp"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:290
+#: trainerdex/pogo_assets/strings.py:281
 msgid "friend_code_title"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:291
+#: trainerdex/pogo_assets/strings.py:282
 msgid "friend_full_name"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:292
+#: trainerdex/pogo_assets/strings.py:283
 msgid "friends_list_level_format"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:300
+#: trainerdex/pogo_assets/strings.py:291
 msgid "galarian_pokedex_header"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:302
+#: trainerdex/pogo_assets/strings.py:293
 msgid "general_accept"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:303
+#: trainerdex/pogo_assets/strings.py:294
 msgid "general_allow"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:304
+#: trainerdex/pogo_assets/strings.py:295
 msgid "general_button_select"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:305
+#: trainerdex/pogo_assets/strings.py:296
 msgid "general_cancel"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:306
+#: trainerdex/pogo_assets/strings.py:297
 msgid "general_close"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:307
+#: trainerdex/pogo_assets/strings.py:298
 msgid "general_continue"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:308
+#: trainerdex/pogo_assets/strings.py:299
 msgid "general_cp"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:309
+#: trainerdex/pogo_assets/strings.py:300
 msgid "general_dismiss"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:310
+#: trainerdex/pogo_assets/strings.py:301
 msgid "general_do_not_allow"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:311
+#: trainerdex/pogo_assets/strings.py:302
 msgid "general_error"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:312
+#: trainerdex/pogo_assets/strings.py:303
 msgid "general_go"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:313
+#: trainerdex/pogo_assets/strings.py:304
 msgid "general_kg"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:314
+#: trainerdex/pogo_assets/strings.py:305
 msgid "general_m"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:315
+#: trainerdex/pogo_assets/strings.py:306
 msgid "general_more"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:316
+#: trainerdex/pogo_assets/strings.py:307
 msgid "general_no"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:317
+#: trainerdex/pogo_assets/strings.py:308
 msgid "general_ok"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:318
+#: trainerdex/pogo_assets/strings.py:309
 msgid "general_pokemon"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:319
+#: trainerdex/pogo_assets/strings.py:310
 msgid "general_sign_out"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:320
+#: trainerdex/pogo_assets/strings.py:311
 msgid "general_sign_out_confirm"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:321
+#: trainerdex/pogo_assets/strings.py:312
 msgid "general_stamina"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:322
+#: trainerdex/pogo_assets/strings.py:313
 msgid "general_xp"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:323
+#: trainerdex/pogo_assets/strings.py:314
 msgid "general_yes"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:327
+#: trainerdex/pogo_assets/strings.py:317
 msgid "help_center_friends_link"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:329
+#: trainerdex/pogo_assets/strings.py:318
 msgid "help_center_link"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:331
+#: trainerdex/pogo_assets/strings.py:320
 msgid "onboard_name_fail"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:333
+#: trainerdex/pogo_assets/strings.py:321
 msgid "onboard_name_invalid_characters_error"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:335
+#: trainerdex/pogo_assets/strings.py:322
 msgid "onboard_name_not_available"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:336
+#: trainerdex/pogo_assets/strings.py:323
 msgid "onboard_name_not_valid"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:337
+#: trainerdex/pogo_assets/strings.py:324
 msgid "onboard_name_owned"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:339
+#: trainerdex/pogo_assets/strings.py:326
 msgid "pokemon_info_cp"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:340
+#: trainerdex/pogo_assets/strings.py:327
 msgid "pokemon_info_stardust_label"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:341
+#: trainerdex/pogo_assets/strings.py:328
 msgid "pokemon_info_type"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:343
+#: trainerdex/pogo_assets/strings.py:330
 msgid "pokemon_type_bug"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:344
+#: trainerdex/pogo_assets/strings.py:331
 msgid "pokemon_type_dark"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:345
+#: trainerdex/pogo_assets/strings.py:332
 msgid "pokemon_type_dragon"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:346
+#: trainerdex/pogo_assets/strings.py:333
 msgid "pokemon_type_electric"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:347
+#: trainerdex/pogo_assets/strings.py:334
 msgid "pokemon_type_fairy"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:348
+#: trainerdex/pogo_assets/strings.py:335
 msgid "pokemon_type_fighting"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:349
+#: trainerdex/pogo_assets/strings.py:336
 msgid "pokemon_type_fire"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:350
+#: trainerdex/pogo_assets/strings.py:337
 msgid "pokemon_type_flying"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:351
+#: trainerdex/pogo_assets/strings.py:338
 msgid "pokemon_type_ghost"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:352
+#: trainerdex/pogo_assets/strings.py:339
 msgid "pokemon_type_grass"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:353
+#: trainerdex/pogo_assets/strings.py:340
 msgid "pokemon_type_ground"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:354
+#: trainerdex/pogo_assets/strings.py:341
 msgid "pokemon_type_ice"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:355
+#: trainerdex/pogo_assets/strings.py:342
 msgid "pokemon_type_normal"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:356
+#: trainerdex/pogo_assets/strings.py:343
 msgid "pokemon_type_poison"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:357
+#: trainerdex/pogo_assets/strings.py:344
 msgid "pokemon_type_psychic"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:358
+#: trainerdex/pogo_assets/strings.py:345
 msgid "pokemon_type_rock"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:359
+#: trainerdex/pogo_assets/strings.py:346
 msgid "pokemon_type_steel"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:360
+#: trainerdex/pogo_assets/strings.py:347
 msgid "pokemon_type_water"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:362
+#: trainerdex/pogo_assets/strings.py:349
 msgid "privacy_policy_url"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:364
+#: trainerdex/pogo_assets/strings.py:351
 msgid "profile_button_activity_log"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:365
+#: trainerdex/pogo_assets/strings.py:352
 msgid "profile_button_customize"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:366
+#: trainerdex/pogo_assets/strings.py:353
 msgid "profile_category_gymbadges"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:367
+#: trainerdex/pogo_assets/strings.py:354
 msgid "profile_category_medals"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:368
+#: trainerdex/pogo_assets/strings.py:355
 msgid "profile_category_stats"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:369
+#: trainerdex/pogo_assets/strings.py:356
 msgid "profile_category_total_fitness"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:370
+#: trainerdex/pogo_assets/strings.py:357
 msgid "profile_category_weekly_fitness"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:371
+#: trainerdex/pogo_assets/strings.py:358
 msgid "profile_gymbadges_help"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:372
+#: trainerdex/pogo_assets/strings.py:359
 msgid "profile_gymbadges_recently_visited"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:373
+#: trainerdex/pogo_assets/strings.py:360
 msgid "profile_no_gymbadges"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:374
+#: trainerdex/pogo_assets/strings.py:361
 msgid "profile_player_level"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:375
+#: trainerdex/pogo_assets/strings.py:362
 msgid "profile_pokestops_visited"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:376
+#: trainerdex/pogo_assets/strings.py:363
 msgid "profile_start_date"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:377
+#: trainerdex/pogo_assets/strings.py:364
 msgid "profile_total_xp"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:379
+#: trainerdex/pogo_assets/strings.py:366
 msgid "screen_friends_title"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:380
+#: trainerdex/pogo_assets/strings.py:367
 msgid "screen_title_badge_collection"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:381
+#: trainerdex/pogo_assets/strings.py:368
 msgid "screen_title_friend_requests"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:382
+#: trainerdex/pogo_assets/strings.py:369
 msgid "screen_title_news"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:383
+#: trainerdex/pogo_assets/strings.py:370
 msgid "screen_title_notification"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:384
+#: trainerdex/pogo_assets/strings.py:371
 msgid "screen_title_pokedex"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:385
+#: trainerdex/pogo_assets/strings.py:372
 msgid "screen_title_settings"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:387
+#: trainerdex/pogo_assets/strings.py:374
 msgid "team_name_team0"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:388
+#: trainerdex/pogo_assets/strings.py:375
 msgid "team_name_team1"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:389
+#: trainerdex/pogo_assets/strings.py:376
 msgid "team_name_team2"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:390
+#: trainerdex/pogo_assets/strings.py:377
 msgid "team_name_team3"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:392
+#: trainerdex/pogo_assets/strings.py:379
 msgid "terms_of_service_url"
 msgstr ""
 
-#: trainerdex/pogo_assets/strings.py:394
+#: trainerdex/pogo_assets/strings.py:380
 msgid "three_strike_policy_url"
 msgstr ""
 
