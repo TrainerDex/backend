@@ -7,6 +7,11 @@ from django.utils.translation import pgettext, npgettext
 remote_metadata = ("2020-09-03T22:21:05.018639", "a7cbdfdeb5ba0f10697cce720de093807c4a9a4c")
 apk_metadata = ("2020-09-01T22:45:11.849571", "339c3fbf671838056e38cd7b43276db48e33b64c")
 
+pgettext("avatar_detail_battle_won", "Battles Won")
+pgettext("avatar_detail_pokemon_caught", "Pokémon Caught")
+pgettext("avatar_detail_total_activities", "Total Activity")
+pgettext("avatar_detail_walking_distance", "Distance Walked")
+
 pgettext("badge_battle_attack_won", "Win {0} Gym battles.")
 pgettext("badge_battle_attack_won_title", "Battle Girl")
 
@@ -291,6 +296,7 @@ npgettext("friendship_level_2", "Great Friend", "Great Friends", 1)
 npgettext("friendship_level_3", "Ultra Friend", "Ultra Friends", 1)
 npgettext("friendship_level_4", "Best Friend", "Best Friends", 1)
 
+pgettext("alola_pokedex_header", "Alolan Form")
 pgettext("galarian_pokedex_header", "Galarian Form")
 
 pgettext("general_accept", "Accept")
@@ -356,9 +362,9 @@ pgettext("profile_gymbadges_help", "Learn more")
 pgettext("profile_gymbadges_recently_visited", "Recently Visited")
 pgettext("profile_no_gymbadges", "You don't have any Gym Badges.")
 pgettext("profile_player_level", "Level")
-pgettext("profile_pokestops_visited", "PokéStops Visited:")
-pgettext("profile_start_date", "Start Date:")
-pgettext("profile_total_xp", "Total XP:")
+pgettext("profile_pokestops_visited", "PokéStops Visited")
+pgettext("profile_start_date", "Start Date")
+pgettext("profile_total_xp", "Total XP")
 
 pgettext("screen_friends_title", "friends")
 pgettext("screen_title_badge_collection", "Gym Badges")
