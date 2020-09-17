@@ -1,6 +1,6 @@
 {
   "name": "TrainerDex",
-  "version": "2.0.0-alpha.1",
+  "version": "2.0.0-alpha.2",
   "description": "Pokemon Go stats",
   "main": "index.js",
   "scripts": {

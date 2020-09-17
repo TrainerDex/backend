@@ -54,9 +54,6 @@ INSTALLED_APPS = [
     "allauth.account",
     "allauth.socialaccount",
     "allauth.socialaccount.providers.discord",
-    "allauth.socialaccount.providers.facebook",
-    "allauth.socialaccount.providers.google",
-    "allauth.socialaccount.providers.twitter",
     "invitations",
     "analytical",
     "django_filters",
@@ -232,8 +229,7 @@ INVITATIONS_ACCEPT_INVITE_AFTER_SIGNUP = INVITATIONS_INVITATION_ONLY
 # http://django-allauth.readthedocs.io/en/latest/configuration.html
 SITE_ID = 1
 
-if INVITATIONS_INVITATION_ONLY:
-    ACCOUNT_ADAPTER = "invitations.models.InvitationsAdapter"
+ACCOUNT_ADAPTER = "invitations.models.InvitationsAdapter"
 ACCOUNT_CONFIRM_EMAIL_ON_GET = True
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = "optional"
@@ -249,15 +245,10 @@ AUTHENTICATION_BACKENDS = (
     "allauth.account.auth_backends.AuthenticationBackend",
     "oauth2_provider.backends.OAuth2Backend",
 )
-LOGIN_REDIRECT_URL = "/accounts/"
+LOGIN_REDIRECT_URL = "/oauth/applications/"
 SOCIALACCOUNT_AUTO_SIGNUP = False
 SOCIALACCOUNT_PROVIDERS = {
     "discord": {"SCOPE": ["identify", "email", "guilds", "guilds.join", "gdm.join"]},
-    "facebook": {
-        "SCOPE": ["public_profile", "email", "user_location"],
-        "FIELDS": ["id", "email", "first_name", "last_name"],
-    },
-    "google": {"SCOPE": ["profile", "email"], "AUTH_PARAMS": {"access_type": "online"}},
 }
 SOCIALACCOUNT_QUERY_EMAIL = True
 
