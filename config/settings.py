@@ -28,9 +28,9 @@ SECRET_KEY = env("DJANGO_SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env("DJANGO_DEBUG", True)
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["beta.trainerdex.co.uk"] if DEBUG is False else []
 
-ADMINS = env("DJANGO_ADMINS", [])
+ADMINS = [("Jay", "jay@trainerdex.co.uk")]
 
 # Application definition
 
@@ -151,8 +151,8 @@ AUTH_USER_MODEL = "trainerdex.Trainer"
 
 LANGUAGE_CODE = "en-us"
 LANGUAGES = [
-    ("en", _("English")),
     ("de", _("German")),
+    ("en", _("English")),
     ("es", _("Spanish")),
     ("fr", _("French")),
     ("it", _("Italian")),
@@ -176,7 +176,7 @@ STATIC_URL = "/static/"
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 if not DEBUG:
     STATICFILES_STORAGE = "django.contrib.staticfiles.storage.ManifestStaticFilesStorage"
-USE_X_FORWARDED_HOST = True
+USE_X_FORWARDED_HOST = env("USE_X_FORWARDED_HOST", True)
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
@@ -249,7 +249,7 @@ AUTHENTICATION_BACKENDS = (
     "allauth.account.auth_backends.AuthenticationBackend",
     "oauth2_provider.backends.OAuth2Backend",
 )
-LOGIN_REDIRECT_URL = "trainerdex:profile"
+LOGIN_REDIRECT_URL = "/accounts/"
 SOCIALACCOUNT_AUTO_SIGNUP = False
 SOCIALACCOUNT_PROVIDERS = {
     "discord": {"SCOPE": ["identify", "email", "guilds", "guilds.join", "gdm.join"]},
