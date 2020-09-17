@@ -1,96 +1,292 @@
 from django.contrib import admin
+from django.contrib.auth.admin import UserAdmin
 from django.utils.translation import gettext_lazy as _
 
-from trainerdex.models import DataSource, Trainer, TrainerCode, Update, Evidence, EvidenceImage, Target, PresetTarget, PresetTargetGroup
+from trainerdex.mixins import AddFieldsetsMixin
+from trainerdex.models import (
+    Evidence,
+    EvidenceImage,
+    Codename,
+    PresetTarget,
+    PresetTargetGroup,
+    Target,
+    Trainer,
+    FriendCode,
+    Update,
+)
+from trainerdex.models import TrainerQuerySet
 
 admin.site.register(PresetTargetGroup)
-admin.site.register(DataSource)
+
+
+@admin.register(Codename)
+class CodenameAdmin(admin.ModelAdmin):
+    search_fields = [
+        "codename",
+        "user__username",
+    ]
+    list_display = [
+        "codename",
+        "user",
+        "active",
+    ]
+    list_filter = ["active"]
+    list_display_links = ["codename"]
 
 
 @admin.register(PresetTarget)
 class PresetTargetAdmin(admin.ModelAdmin):
 
-    list_display = ('name', 'stat', 'target')
-    list_filter = ('stat',)
-    search_fields = ('name', 'stat')
+    list_display = ["stat", "name", "target_str"]
+    list_filter = ["stat"]
+    search_fields = ["stat", "name"]
+
+
+def force_check_target(modeladmin, request, queryset):
+    for x in queryset:
+        x.check_reached()
+        x.save(update_fields=["has_reached", "date_reached"])
+
+
+force_check_target.short_description = "Check if this target has been reached"
+
+
+@admin.register(Target)
+class TargetAdmin(admin.ModelAdmin):
+
+    list_display = [
+        "trainer",
+        "stat",
+        "name",
+        "target_str",
+        "has_reached",
+        "date_reached",
+    ]
+    list_filter = ["stat", "has_reached"]
+    search_fields = [
+        "trainer__codenames__codename",
+        "trainer__username",
+        "stat",
+        "name",
+    ]
+    actions = [force_check_target]
 
 
 @admin.register(Update)
 class UpdateAdmin(admin.ModelAdmin):
 
-    autocomplete_fields = ['trainer']
-    list_display = ('trainer', 'total_xp', 'update_time', 'submission_date', 'has_modified_extra_fields')
-    search_fields = ('trainer__user__nickname__nickname', 'trainer__user__username')
-    ordering = ('-update_time',)
-    date_hierarchy = 'update_time'
+    autocomplete_fields = ["trainer"]
+    list_display = [
+        "trainer",
+        "total_xp",
+        "update_time",
+        "submission_date",
+    ]
+    search_fields = ["trainer__codenames__codename", "trainer__username"]
+    ordering = ["-update_time"]
+    date_hierarchy = "update_time"
+    readonly_fields = [
+        "submission_date",
+        "last_modified",
+        "pokedex_gen6",
+        "pokedex_gen7",
+        "pokedex_gen8",
+    ]
+    fieldsets = [
+        (
+            None,
+            {
+                "fields": [
+                    "trainer",
+                    "update_time",
+                    "submission_date",
+                    "last_modified",
+                    "gymbadges_total",
+                    "gymbadges_gold",
+                    "stardust",
+                ]
+            },
+        ),
+        (
+            _("Basic Info"),
+            {"fields": ["travel_km", "capture_total", "pokestops_visited", "total_xp"]},
+        ),
+        (
+            _("Medals"),
+            {
+                "fields": [
+                    "evolved_total",
+                    "hatched_total",
+                    "big_magikarp",
+                    "battle_attack_won",
+                    "battle_training_won",
+                    "small_rattata",
+                    "pikachu",
+                    "unown",
+                    "raid_battle_won",
+                    "legendary_battle_won",
+                    "berries_fed",
+                    "hours_defended",
+                    "challenge_quests",
+                    "max_level_friends",
+                    "trading",
+                    "trading_distance",
+                    "great_league",
+                    "ultra_league",
+                    "master_league",
+                    "photobomb",
+                    "pokemon_purified",
+                    "rocket_grunts_defeated",
+                    "buddy_best",
+                    "wayfarer",
+                ]
+            },
+        ),
+        (
+            _("Type Medals"),
+            {
+                "fields": [
+                    "type_normal",
+                    "type_fighting",
+                    "type_flying",
+                    "type_poison",
+                    "type_ground",
+                    "type_rock",
+                    "type_bug",
+                    "type_ghost",
+                    "type_steel",
+                    "type_fire",
+                    "type_water",
+                    "type_grass",
+                    "type_electric",
+                    "type_psychic",
+                    "type_ice",
+                    "type_dragon",
+                    "type_dark",
+                    "type_fairy",
+                ]
+            },
+        ),
+        (
+            _("Pokédex"),
+            {
+                "fields": [
+                    "pokedex_total_caught",
+                    "pokedex_total_seen",
+                    "pokedex_gen1",
+                    "pokedex_gen2",
+                    "pokedex_gen3",
+                    "pokedex_gen4",
+                    "pokedex_gen5",
+                    "pokedex_gen6",
+                    "pokedex_gen7",
+                    "pokedex_gen8",
+                ]
+            },
+        ),
+    ]
 
 
-class TrainerCodeInline(admin.TabularInline):
-    model = TrainerCode
+class FriendCodeInline(admin.TabularInline):
+    model = FriendCode
     min_num = 1
     max_num = 1
     can_delete = False
-    verbose_name_plural = TrainerCode._meta.verbose_name
+    verbose_name_plural = FriendCode._meta.verbose_name
 
 
 class TargetInline(admin.TabularInline):
     model = Target
     min_num = 0
 
+    def get_queryset(self, request):
+        return super().get_queryset(request).filter(has_reached=False)
+
 
 @admin.register(Trainer)
-class TrainerAdmin(admin.ModelAdmin):
-
-    autocomplete_fields = [
-        'user',
-        ]
+class TrainerAdmin(UserAdmin):
     list_display = [
-        'nickname',
-        'faction',
-        'banned',
-        'leaderboard_eligibility',
-        'awaiting_verification',
-        ]
+        "username",
+        "faction",
+        "is_banned",
+        "leaderboard_eligibility",
+    ]
     list_filter = [
-        'faction',
-        'banned',
-        'user__gdpr',
-        'verified',
-        ]
+        "faction",
+        "is_banned",
+        "is_active",
+        "is_verified",
+    ]
     search_fields = [
-        'user__nickname__nickname',
-        'user__first_name',
-        'user__username',
-        ]
+        "codenames__codename",
+        "first_name",
+        "username",
+    ]
     readonly_fields = [
-        'id',
-        ]
+        "tid",
+        "last_login",
+        "date_joined",
+        "last_modified",
+    ]
+    date_hierarchy = "start_date"
     fieldsets = [
-        (None, {
-            'fields': (
-                'user',
-                'id',
-                'faction',
-                'start_date',
-                'country',
+        (_("Authentication"), {"fields": ["username", "password", "email", "tid"]}),
+        (
+            _("Trainer info"),
+            {"fields": ["first_name", "last_name", "faction", "country"]},
+        ),
+        (
+            _("Permissions"),
+            {
+                "fields": [
+                    "is_active",
+                    "is_banned",
+                    "is_verified",
+                    "is_staff",
+                    "is_superuser",
+                    "groups",
+                    "user_permissions",
+                ]
+            },
+        ),
+        (
+            _("Important dates"),
+            {"fields": ["start_date", "last_login", "date_joined", "last_modified"]},
+        ),
+    ]
+    add_fieldsets = [
+        (
+            None,
+            {
+                "classes": ("wide",),
+                "fields": (
+                    "username",
+                    "password1",
+                    "password2",
+                    "faction",
+                    "country",
+                    "start_date",
                 ),
-        }),
-        (_('Reports'), {
-            'fields': (
-                'banned',
-                'verified',
-                ),
-        }),
+            },
+        )
     ]
     inlines = [
         TargetInline,
-        TrainerCodeInline,
+        FriendCodeInline,
     ]
-    
-    def queryset(self, request):
-        qs = super(TrainerAdmin, self).queryset(request)
-        qs = qs.order_by('user__username', 'pk').distinct('pk')
-        return qs
+
+    def get_readonly_fields(self, request, obj=None):
+        if obj:  # editing an existing object
+            return self.readonly_fields + ["username"]
+        return self.readonly_fields
+
+    def get_queryset(self, request) -> TrainerQuerySet:
+        return (
+            super()
+            .get_queryset(request)
+            .prefetch_related("targets")
+            .prefetch_related("friend_code")
+        )
 
 
 class EvidenceImageInline(admin.TabularInline):
@@ -99,37 +295,49 @@ class EvidenceImageInline(admin.TabularInline):
 
 
 @admin.register(Evidence)
-class EvidenceAdmin(admin.ModelAdmin):
-    
+class EvidenceAdmin(AddFieldsetsMixin, admin.ModelAdmin):
+
     list_display = [
-        'trainer',
-        'approval',
-        'content_type',
-        'content_field',
+        "trainer",
+        "approval",
+        "content_type",
+        "content_field",
     ]
     list_filter = [
-        'approval',
-        'content_type',
-        'content_field',
+        "approval",
+        "content_type",
+        "content_field",
     ]
     readonly_fields = [
-        'content_object',
+        "content_object",
     ]
+
     fieldsets = [
-        (_('Object'), {
-            'fields': [
-                'content_type',
-                'object_pk',
-                'content_object',
-                'content_field',
-            ],
-        }),
-        (None, {
-            'fields': [
-                'approval',
-            ],
-        }),
+        (
+            _("Object"),
+            {
+                "classes": ("wide",),
+                "fields": ("content_object", "content_field", "approval"),
+            },
+        ),
+    ]
+    add_fieldsets = [
+        (
+            _("Object"),
+            {
+                "fields": [
+                    "content_type",
+                    "object_pk",
+                    "content_field",
+                ],
+            },
+        ),
     ]
     inlines = [
         EvidenceImageInline,
     ]
+
+    def get_readonly_fields(self, request, obj=None):
+        if obj:  # editing an existing object
+            return self.readonly_fields + ["content_field"]
+        return self.readonly_fields

@@ -1,3 +1,5 @@
 -r requirements.txt
+black
 django-debug-toolbar
 flake8
+python-language-server[all]

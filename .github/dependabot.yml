@@ -1,15 +1,28 @@
 version: 2
 updates:
-- package-ecosystem: pip
-  directory: "/"
-  schedule:
-    interval: daily
-    timezone: Europe/London
-  open-pull-requests-limit: 10
-  target-branch: develop
-  reviewers:
-  - turnrdev
-  assignees:
-  - turnrdev
-  labels:
-  - dependencies
+
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    target-branch: develop
+    reviewers:
+      - turnrdev
+    assignees:
+      - turnrdev
+    labels:
+      - "dependencies"
+      - "pip"
+
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    target-branch: develop
+    reviewers:
+      - turnrdev
+    assignees:
+      - turnrdev
+    labels:
+      - "dependencies"
+      - "npm"

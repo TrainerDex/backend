@@ -1,0 +1,3224 @@
+[
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 3,
+        "fields": {
+            "stat": "battle_attack_won",
+            "_target": "10",
+            "name": "Bronze",
+            "group": "battle_attack_won",
+            "_order": 0
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 4,
+        "fields": {
+            "stat": "battle_attack_won",
+            "_target": "100",
+            "name": "Silver",
+            "group": "battle_attack_won",
+            "_order": 1
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 5,
+        "fields": {
+            "stat": "battle_attack_won",
+            "_target": "1000",
+            "name": "Gold",
+            "group": "battle_attack_won",
+            "_order": 2
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 6,
+        "fields": {
+            "stat": "battle_training_won",
+            "_target": "10",
+            "name": "Bronze",
+            "group": "battle_training_won",
+            "_order": 0
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 7,
+        "fields": {
+            "stat": "battle_training_won",
+            "_target": "100",
+            "name": "Silver",
+            "group": "battle_training_won",
+            "_order": 1
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 8,
+        "fields": {
+            "stat": "battle_training_won",
+            "_target": "1000",
+            "name": "Gold",
+            "group": "battle_training_won",
+            "_order": 2
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 9,
+        "fields": {
+            "stat": "berries_fed",
+            "_target": "10",
+            "name": "Bronze",
+            "group": "berries_fed",
+            "_order": 0
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 10,
+        "fields": {
+            "stat": "berries_fed",
+            "_target": "100",
+            "name": "Silver",
+            "group": "berries_fed",
+            "_order": 1
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 11,
+        "fields": {
+            "stat": "berries_fed",
+            "_target": "1000",
+            "name": "Gold",
+            "group": "berries_fed",
+            "_order": 2
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 12,
+        "fields": {
+            "stat": "big_magikarp",
+            "_target": "3",
+            "name": "Bronze",
+            "group": "big_magikarp",
+            "_order": 0
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 13,
+        "fields": {
+            "stat": "big_magikarp",
+            "_target": "50",
+            "name": "Silver",
+            "group": "big_magikarp",
+            "_order": 1
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 14,
+        "fields": {
+            "stat": "big_magikarp",
+            "_target": "300",
+            "name": "Gold",
+            "group": "big_magikarp",
+            "_order": 2
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 15,
+        "fields": {
+            "stat": "buddy_best",
+            "_target": "1",
+            "name": "Bronze",
+            "group": "buddy_best",
+            "_order": 0
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 16,
+        "fields": {
+            "stat": "buddy_best",
+            "_target": "10",
+            "name": "Silver",
+            "group": "buddy_best",
+            "_order": 1
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 17,
+        "fields": {
+            "stat": "buddy_best",
+            "_target": "100",
+            "name": "Gold",
+            "group": "buddy_best",
+            "_order": 2
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 18,
+        "fields": {
+            "stat": "capture_total",
+            "_target": "30",
+            "name": "Bronze",
+            "group": "capture_total",
+            "_order": 0
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 19,
+        "fields": {
+            "stat": "capture_total",
+            "_target": "500",
+            "name": "Silver",
+            "group": "capture_total",
+            "_order": 1
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 20,
+        "fields": {
+            "stat": "capture_total",
+            "_target": "2000",
+            "name": "Gold",
+            "group": "capture_total",
+            "_order": 2
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 21,
+        "fields": {
+            "stat": "challenge_quests",
+            "_target": "10",
+            "name": "Bronze",
+            "group": "challenge_quests",
+            "_order": 0
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 22,
+        "fields": {
+            "stat": "challenge_quests",
+            "_target": "100",
+            "name": "Silver",
+            "group": "challenge_quests",
+            "_order": 1
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 23,
+        "fields": {
+            "stat": "challenge_quests",
+            "_target": "1000",
+            "name": "Gold",
+            "group": "challenge_quests",
+            "_order": 2
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 24,
+        "fields": {
+            "stat": "evolved_total",
+            "_target": "3",
+            "name": "Bronze",
+            "group": "evolved_total",
+            "_order": 0
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 25,
+        "fields": {
+            "stat": "evolved_total",
+            "_target": "20",
+            "name": "Silver",
+            "group": "evolved_total",
+            "_order": 1
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 26,
+        "fields": {
+            "stat": "evolved_total",
+            "_target": "200",
+            "name": "Gold",
+            "group": "evolved_total",
+            "_order": 2
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 27,
+        "fields": {
+            "stat": "great_league",
+            "_target": "5",
+            "name": "Bronze",
+            "group": "great_league",
+            "_order": 0
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 28,
+        "fields": {
+            "stat": "great_league",
+            "_target": "50",
+            "name": "Silver",
+            "group": "great_league",
+            "_order": 1
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 29,
+        "fields": {
+            "stat": "great_league",
+            "_target": "200",
+            "name": "Gold",
+            "group": "great_league",
+            "_order": 2
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 30,
+        "fields": {
+            "stat": "gymbadges_total",
+            "_target": "10",
+            "name": "Bronze",
+            "group": "gymbadges_total",
+            "_order": 0
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 31,
+        "fields": {
+            "stat": "gymbadges_total",
+            "_target": "200",
+            "name": "Gold",
+            "group": "gymbadges_total",
+            "_order": 2
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 32,
+        "fields": {
+            "stat": "gymbadges_total",
+            "_target": "50",
+            "name": "Silver",
+            "group": "gymbadges_total",
+            "_order": 1
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 33,
+        "fields": {
+            "stat": "hatched_total",
+            "_target": "10",
+            "name": "Bronze",
+            "group": "hatched_total",
+            "_order": 0
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 34,
+        "fields": {
+            "stat": "hatched_total",
+            "_target": "100",
+            "name": "Silver",
+            "group": "hatched_total",
+            "_order": 1
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 35,
+        "fields": {
+            "stat": "hatched_total",
+            "_target": "500",
+            "name": "Gold",
+            "group": "hatched_total",
+            "_order": 2
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 36,
+        "fields": {
+            "stat": "hours_defended",
+            "_target": "10",
+            "name": "Bronze",
+            "group": "hours_defended",
+            "_order": 0
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 37,
+        "fields": {
+            "stat": "hours_defended",
+            "_target": "100",
+            "name": "Silver",
+            "group": "hours_defended",
+            "_order": 1
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 38,
+        "fields": {
+            "stat": "hours_defended",
+            "_target": "1000",
+            "name": "Gold",
+            "group": "hours_defended",
+            "_order": 2
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 39,
+        "fields": {
+            "stat": "legendary_battle_won",
+            "_target": "10",
+            "name": "Bronze",
+            "group": "legendary_battle_won",
+            "_order": 0
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 40,
+        "fields": {
+            "stat": "legendary_battle_won",
+            "_target": "100",
+            "name": "Silver",
+            "group": "legendary_battle_won",
+            "_order": 1
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 41,
+        "fields": {
+            "stat": "legendary_battle_won",
+            "_target": "1000",
+            "name": "Gold",
+            "group": "legendary_battle_won",
+            "_order": 2
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 42,
+        "fields": {
+            "stat": "master_league",
+            "_target": "5",
+            "name": "Bronze",
+            "group": "master_league",
+            "_order": 0
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 43,
+        "fields": {
+            "stat": "master_league",
+            "_target": "50",
+            "name": "Silver",
+            "group": "master_league",
+            "_order": 1
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 44,
+        "fields": {
+            "stat": "master_league",
+            "_target": "200",
+            "name": "Gold",
+            "group": "master_league",
+            "_order": 2
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 45,
+        "fields": {
+            "stat": "max_level_friends",
+            "_target": "1",
+            "name": "Bronze",
+            "group": "max_level_friends",
+            "_order": 0
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 46,
+        "fields": {
+            "stat": "max_level_friends",
+            "_target": "2",
+            "name": "Silver",
+            "group": "max_level_friends",
+            "_order": 1
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 47,
+        "fields": {
+            "stat": "max_level_friends",
+            "_target": "3",
+            "name": "Gold",
+            "group": "max_level_friends",
+            "_order": 2
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 48,
+        "fields": {
+            "stat": "photobomb",
+            "_target": "10",
+            "name": "Bronze",
+            "group": "photobomb",
+            "_order": 0
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 49,
+        "fields": {
+            "stat": "photobomb",
+            "_target": "50",
+            "name": "Silver",
+            "group": "photobomb",
+            "_order": 1
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 50,
+        "fields": {
+            "stat": "photobomb",
+            "_target": "200",
+            "name": "Gold",
+            "group": "photobomb",
+            "_order": 2
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 51,
+        "fields": {
+            "stat": "pikachu",
+            "_target": "3",
+            "name": "Bronze",
+            "group": "pikachu",
+            "_order": 0
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 52,
+        "fields": {
+            "stat": "pikachu",
+            "_target": "50",
+            "name": "Silver",
+            "group": "pikachu",
+            "_order": 1
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 53,
+        "fields": {
+            "stat": "pikachu",
+            "_target": "300",
+            "name": "Gold",
+            "group": "pikachu",
+            "_order": 2
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 54,
+        "fields": {
+            "stat": "pokedex_gen1",
+            "_target": "10",
+            "name": "Bronze",
+            "group": "pokedex_gen1",
+            "_order": 0
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 55,
+        "fields": {
+            "stat": "pokedex_gen1",
+            "_target": "200",
+            "name": "Gold",
+            "group": "pokedex_gen1",
+            "_order": 2
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 56,
+        "fields": {
+            "stat": "pokedex_gen1",
+            "_target": "50",
+            "name": "Silver",
+            "group": "pokedex_gen1",
+            "_order": 1
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 57,
+        "fields": {
+            "stat": "pokedex_gen2",
+            "_target": "10",
+            "name": "Bronze",
+            "group": "pokedex_gen2",
+            "_order": 0
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 58,
+        "fields": {
+            "stat": "pokedex_gen2",
+            "_target": "200",
+            "name": "Gold",
+            "group": "pokedex_gen2",
+            "_order": 2
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 59,
+        "fields": {
+            "stat": "pokedex_gen2",
+            "_target": "50",
+            "name": "Silver",
+            "group": "pokedex_gen2",
+            "_order": 1
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 60,
+        "fields": {
+            "stat": "pokedex_gen3",
+            "_target": "10",
+            "name": "Bronze",
+            "group": "pokedex_gen3",
+            "_order": 0
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 61,
+        "fields": {
+            "stat": "pokedex_gen3",
+            "_target": "200",
+            "name": "Gold",
+            "group": "pokedex_gen3",
+            "_order": 2
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 62,
+        "fields": {
+            "stat": "pokedex_gen3",
+            "_target": "50",
+            "name": "Silver",
+            "group": "pokedex_gen3",
+            "_order": 1
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 63,
+        "fields": {
+            "stat": "pokedex_gen4",
+            "_target": "10",
+            "name": "Bronze",
+            "group": "pokedex_gen4",
+            "_order": 0
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 64,
+        "fields": {
+            "stat": "pokedex_gen4",
+            "_target": "200",
+            "name": "Gold",
+            "group": "pokedex_gen4",
+            "_order": 2
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 65,
+        "fields": {
+            "stat": "pokedex_gen4",
+            "_target": "50",
+            "name": "Silver",
+            "group": "pokedex_gen4",
+            "_order": 1
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 66,
+        "fields": {
+            "stat": "pokedex_gen5",
+            "_target": "10",
+            "name": "Bronze",
+            "group": "pokedex_gen5",
+            "_order": 0
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 67,
+        "fields": {
+            "stat": "pokedex_gen5",
+            "_target": "200",
+            "name": "Gold",
+            "group": "pokedex_gen5",
+            "_order": 2
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 68,
+        "fields": {
+            "stat": "pokedex_gen5",
+            "_target": "50",
+            "name": "Silver",
+            "group": "pokedex_gen5",
+            "_order": 1
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 69,
+        "fields": {
+            "stat": "pokedex_gen6",
+            "_target": "10",
+            "name": "Bronze",
+            "group": "pokedex_gen6",
+            "_order": 0
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 70,
+        "fields": {
+            "stat": "pokedex_gen6",
+            "_target": "200",
+            "name": "Gold",
+            "group": "pokedex_gen6",
+            "_order": 2
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 71,
+        "fields": {
+            "stat": "pokedex_gen6",
+            "_target": "50",
+            "name": "Silver",
+            "group": "pokedex_gen6",
+            "_order": 1
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 72,
+        "fields": {
+            "stat": "pokedex_gen7",
+            "_target": "10",
+            "name": "Bronze",
+            "group": "pokedex_gen7",
+            "_order": 0
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 73,
+        "fields": {
+            "stat": "pokedex_gen7",
+            "_target": "200",
+            "name": "Gold",
+            "group": "pokedex_gen7",
+            "_order": 2
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 74,
+        "fields": {
+            "stat": "pokedex_gen7",
+            "_target": "50",
+            "name": "Silver",
+            "group": "pokedex_gen7",
+            "_order": 1
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 75,
+        "fields": {
+            "stat": "pokedex_gen8",
+            "_target": "10",
+            "name": "Bronze",
+            "group": "pokedex_gen8",
+            "_order": 0
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 76,
+        "fields": {
+            "stat": "pokedex_gen8",
+            "_target": "200",
+            "name": "Gold",
+            "group": "pokedex_gen8",
+            "_order": 2
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 77,
+        "fields": {
+            "stat": "pokedex_gen8",
+            "_target": "50",
+            "name": "Silver",
+            "group": "pokedex_gen8",
+            "_order": 1
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 78,
+        "fields": {
+            "stat": "pokedex_total_caught",
+            "_target": "10",
+            "name": "Bronze",
+            "group": "pokedex_total_caught",
+            "_order": 0
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 79,
+        "fields": {
+            "stat": "pokedex_total_caught",
+            "_target": "200",
+            "name": "Gold",
+            "group": "pokedex_total_caught",
+            "_order": 2
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 80,
+        "fields": {
+            "stat": "pokedex_total_caught",
+            "_target": "50",
+            "name": "Silver",
+            "group": "pokedex_total_caught",
+            "_order": 1
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 81,
+        "fields": {
+            "stat": "pokedex_total_seen",
+            "_target": "10",
+            "name": "Bronze",
+            "group": "pokedex_total_seen",
+            "_order": 0
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 82,
+        "fields": {
+            "stat": "pokedex_total_seen",
+            "_target": "200",
+            "name": "Gold",
+            "group": "pokedex_total_seen",
+            "_order": 2
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 83,
+        "fields": {
+            "stat": "pokedex_total_seen",
+            "_target": "50",
+            "name": "Silver",
+            "group": "pokedex_total_seen",
+            "_order": 1
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 84,
+        "fields": {
+            "stat": "pokemon_purified",
+            "_target": "5",
+            "name": "Bronze",
+            "group": "pokemon_purified",
+            "_order": 0
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 85,
+        "fields": {
+            "stat": "pokemon_purified",
+            "_target": "50",
+            "name": "Silver",
+            "group": "pokemon_purified",
+            "_order": 1
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 86,
+        "fields": {
+            "stat": "pokemon_purified",
+            "_target": "500",
+            "name": "Gold",
+            "group": "pokemon_purified",
+            "_order": 2
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 87,
+        "fields": {
+            "stat": "pokestops_visited",
+            "_target": "100",
+            "name": "Bronze",
+            "group": "pokestops_visited",
+            "_order": 0
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 88,
+        "fields": {
+            "stat": "pokestops_visited",
+            "_target": "1000",
+            "name": "Silver",
+            "group": "pokestops_visited",
+            "_order": 1
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 89,
+        "fields": {
+            "stat": "pokestops_visited",
+            "_target": "2000",
+            "name": "Gold",
+            "group": "pokestops_visited",
+            "_order": 2
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 90,
+        "fields": {
+            "stat": "raid_battle_won",
+            "_target": "10",
+            "name": "Bronze",
+            "group": "raid_battle_won",
+            "_order": 0
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 91,
+        "fields": {
+            "stat": "raid_battle_won",
+            "_target": "100",
+            "name": "Silver",
+            "group": "raid_battle_won",
+            "_order": 1
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 92,
+        "fields": {
+            "stat": "raid_battle_won",
+            "_target": "1000",
+            "name": "Gold",
+            "group": "raid_battle_won",
+            "_order": 2
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 93,
+        "fields": {
+            "stat": "rocket_grunts_defeated",
+            "_target": "10",
+            "name": "Bronze",
+            "group": "rocket_grunts_defeated",
+            "_order": 0
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 94,
+        "fields": {
+            "stat": "rocket_grunts_defeated",
+            "_target": "100",
+            "name": "Gold",
+            "group": "rocket_grunts_defeated",
+            "_order": 2
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 95,
+        "fields": {
+            "stat": "rocket_grunts_defeated",
+            "_target": "1000",
+            "name": "Silver",
+            "group": "rocket_grunts_defeated",
+            "_order": 1
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 96,
+        "fields": {
+            "stat": "small_rattata",
+            "_target": "3",
+            "name": "Bronze",
+            "group": "small_rattata",
+            "_order": 0
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 97,
+        "fields": {
+            "stat": "small_rattata",
+            "_target": "50",
+            "name": "Silver",
+            "group": "small_rattata",
+            "_order": 1
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 98,
+        "fields": {
+            "stat": "small_rattata",
+            "_target": "300",
+            "name": "Gold",
+            "group": "small_rattata",
+            "_order": 2
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 100,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "1000",
+            "name": "TL2",
+            "group": "total_xp",
+            "_order": 1000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 101,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "3000",
+            "name": "TL3",
+            "group": "total_xp",
+            "_order": 3000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 102,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "6000",
+            "name": "TL4",
+            "group": "total_xp",
+            "_order": 6000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 103,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "10000",
+            "name": "TL5",
+            "group": "total_xp",
+            "_order": 10000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 104,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "15000",
+            "name": "TL6",
+            "group": "total_xp",
+            "_order": 15000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 105,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "21000",
+            "name": "TL7",
+            "group": "total_xp",
+            "_order": 21000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 106,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "28000",
+            "name": "TL8",
+            "group": "total_xp",
+            "_order": 28000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 107,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "36000",
+            "name": "TL9",
+            "group": "total_xp",
+            "_order": 36000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 108,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "45000",
+            "name": "TL10",
+            "group": "total_xp",
+            "_order": 45000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 109,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "55000",
+            "name": "TL11",
+            "group": "total_xp",
+            "_order": 55000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 110,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "65000",
+            "name": "TL12",
+            "group": "total_xp",
+            "_order": 65000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 111,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "75000",
+            "name": "TL13",
+            "group": "total_xp",
+            "_order": 75000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 112,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "85000",
+            "name": "TL14",
+            "group": "total_xp",
+            "_order": 85000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 113,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "100000",
+            "name": "TL15",
+            "group": "total_xp",
+            "_order": 100000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 114,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "120000",
+            "name": "TL16",
+            "group": "total_xp",
+            "_order": 120000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 115,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "140000",
+            "name": "TL17",
+            "group": "total_xp",
+            "_order": 140000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 116,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "160000",
+            "name": "TL18",
+            "group": "total_xp",
+            "_order": 160000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 117,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "185000",
+            "name": "TL19",
+            "group": "total_xp",
+            "_order": 185000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 118,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "210000",
+            "name": "TL20",
+            "group": "total_xp",
+            "_order": 210000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 119,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "260000",
+            "name": "TL21",
+            "group": "total_xp",
+            "_order": 260000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 120,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "335000",
+            "name": "TL22",
+            "group": "total_xp",
+            "_order": 335000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 121,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "435000",
+            "name": "TL23",
+            "group": "total_xp",
+            "_order": 435000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 122,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "560000",
+            "name": "TL24",
+            "group": "total_xp",
+            "_order": 560000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 123,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "710000",
+            "name": "TL25",
+            "group": "total_xp",
+            "_order": 710000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 124,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "900000",
+            "name": "TL26",
+            "group": "total_xp",
+            "_order": 900000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 125,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "1100000",
+            "name": "TL27",
+            "group": "total_xp",
+            "_order": 1100000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 126,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "1350000",
+            "name": "TL28",
+            "group": "total_xp",
+            "_order": 1350000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 127,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "1650000",
+            "name": "TL29",
+            "group": "total_xp",
+            "_order": 1650000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 128,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "2000000",
+            "name": "TL30",
+            "group": "total_xp",
+            "_order": 2000000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 129,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "2500000",
+            "name": "TL31",
+            "group": "total_xp",
+            "_order": 2500000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 130,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "3000000",
+            "name": "TL32",
+            "group": "total_xp",
+            "_order": 3000000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 131,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "3750000",
+            "name": "TL33",
+            "group": "total_xp",
+            "_order": 3750000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 132,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "4750000",
+            "name": "TL34",
+            "group": "total_xp",
+            "_order": 4750000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 133,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "6000000",
+            "name": "TL35",
+            "group": "total_xp",
+            "_order": 6000000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 134,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "7500000",
+            "name": "TL36",
+            "group": "total_xp",
+            "_order": 7500000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 135,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "9500000",
+            "name": "TL37",
+            "group": "total_xp",
+            "_order": 9500000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 136,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "12000000",
+            "name": "TL38",
+            "group": "total_xp",
+            "_order": 12000000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 137,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "15000000",
+            "name": "TL39",
+            "group": "total_xp",
+            "_order": 15000000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 138,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "20000000",
+            "name": "TL40",
+            "group": "total_xp",
+            "_order": 20000000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 139,
+        "fields": {
+            "stat": "trading",
+            "_target": "10",
+            "name": "Bronze",
+            "group": "trading",
+            "_order": 0
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 140,
+        "fields": {
+            "stat": "trading",
+            "_target": "100",
+            "name": "Silver",
+            "group": "trading",
+            "_order": 1
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 141,
+        "fields": {
+            "stat": "trading",
+            "_target": "1000",
+            "name": "Gold",
+            "group": "trading",
+            "_order": 2
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 142,
+        "fields": {
+            "stat": "trading_distance",
+            "_target": "1000",
+            "name": "Bronze",
+            "group": "trading_distance",
+            "_order": 0
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 143,
+        "fields": {
+            "stat": "trading_distance",
+            "_target": "10000",
+            "name": "Silver",
+            "group": "trading_distance",
+            "_order": 1
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 144,
+        "fields": {
+            "stat": "trading_distance",
+            "_target": "1000000",
+            "name": "Gold",
+            "group": "trading_distance",
+            "_order": 2
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 145,
+        "fields": {
+            "stat": "travel_km",
+            "_target": "10.0",
+            "name": "Bronze",
+            "group": "travel_km",
+            "_order": 0
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 146,
+        "fields": {
+            "stat": "travel_km",
+            "_target": "100.0",
+            "name": "Silver",
+            "group": "travel_km",
+            "_order": 1
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 147,
+        "fields": {
+            "stat": "travel_km",
+            "_target": "1000.0",
+            "name": "Gold",
+            "group": "travel_km",
+            "_order": 2
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 148,
+        "fields": {
+            "stat": "type_bug",
+            "_target": "10",
+            "name": "Bronze",
+            "group": "type_bug",
+            "_order": 0
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 149,
+        "fields": {
+            "stat": "type_bug",
+            "_target": "50",
+            "name": "Silver",
+            "group": "type_bug",
+            "_order": 1
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 150,
+        "fields": {
+            "stat": "type_bug",
+            "_target": "200",
+            "name": "Gold",
+            "group": "type_bug",
+            "_order": 2
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 151,
+        "fields": {
+            "stat": "type_dark",
+            "_target": "10",
+            "name": "Bronze",
+            "group": "type_dark",
+            "_order": 0
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 152,
+        "fields": {
+            "stat": "type_dark",
+            "_target": "50",
+            "name": "Silver",
+            "group": "type_dark",
+            "_order": 1
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 153,
+        "fields": {
+            "stat": "type_dark",
+            "_target": "200",
+            "name": "Gold",
+            "group": "type_dark",
+            "_order": 2
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 154,
+        "fields": {
+            "stat": "type_dragon",
+            "_target": "10",
+            "name": "Bronze",
+            "group": "type_dragon",
+            "_order": 0
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 155,
+        "fields": {
+            "stat": "type_dragon",
+            "_target": "50",
+            "name": "Silver",
+            "group": "type_dragon",
+            "_order": 1
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 156,
+        "fields": {
+            "stat": "type_dragon",
+            "_target": "200",
+            "name": "Gold",
+            "group": "type_dragon",
+            "_order": 2
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 157,
+        "fields": {
+            "stat": "type_electric",
+            "_target": "10",
+            "name": "Bronze",
+            "group": "type_electric",
+            "_order": 0
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 158,
+        "fields": {
+            "stat": "type_electric",
+            "_target": "50",
+            "name": "Silver",
+            "group": "type_electric",
+            "_order": 1
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 159,
+        "fields": {
+            "stat": "type_electric",
+            "_target": "200",
+            "name": "Gold",
+            "group": "type_electric",
+            "_order": 2
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 160,
+        "fields": {
+            "stat": "type_fairy",
+            "_target": "10",
+            "name": "Bronze",
+            "group": "type_fairy",
+            "_order": 0
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 161,
+        "fields": {
+            "stat": "type_fairy",
+            "_target": "50",
+            "name": "Silver",
+            "group": "type_fairy",
+            "_order": 1
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 162,
+        "fields": {
+            "stat": "type_fairy",
+            "_target": "200",
+            "name": "Gold",
+            "group": "type_fairy",
+            "_order": 2
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 163,
+        "fields": {
+            "stat": "type_fighting",
+            "_target": "10",
+            "name": "Bronze",
+            "group": "type_fighting",
+            "_order": 0
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 164,
+        "fields": {
+            "stat": "type_fighting",
+            "_target": "50",
+            "name": "Silver",
+            "group": "type_fighting",
+            "_order": 1
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 165,
+        "fields": {
+            "stat": "type_fighting",
+            "_target": "200",
+            "name": "Gold",
+            "group": "type_fighting",
+            "_order": 2
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 166,
+        "fields": {
+            "stat": "type_fire",
+            "_target": "10",
+            "name": "Bronze",
+            "group": "type_fire",
+            "_order": 0
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 167,
+        "fields": {
+            "stat": "type_fire",
+            "_target": "50",
+            "name": "Silver",
+            "group": "type_fire",
+            "_order": 1
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 168,
+        "fields": {
+            "stat": "type_fire",
+            "_target": "200",
+            "name": "Gold",
+            "group": "type_fire",
+            "_order": 2
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 169,
+        "fields": {
+            "stat": "type_flying",
+            "_target": "10",
+            "name": "Bronze",
+            "group": "type_flying",
+            "_order": 0
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 170,
+        "fields": {
+            "stat": "type_flying",
+            "_target": "50",
+            "name": "Silver",
+            "group": "type_flying",
+            "_order": 1
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 171,
+        "fields": {
+            "stat": "type_flying",
+            "_target": "200",
+            "name": "Gold",
+            "group": "type_flying",
+            "_order": 2
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 172,
+        "fields": {
+            "stat": "type_ghost",
+            "_target": "10",
+            "name": "Bronze",
+            "group": "type_ghost",
+            "_order": 0
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 173,
+        "fields": {
+            "stat": "type_ghost",
+            "_target": "50",
+            "name": "Silver",
+            "group": "type_ghost",
+            "_order": 1
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 174,
+        "fields": {
+            "stat": "type_ghost",
+            "_target": "200",
+            "name": "Gold",
+            "group": "type_ghost",
+            "_order": 2
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 175,
+        "fields": {
+            "stat": "type_grass",
+            "_target": "10",
+            "name": "Bronze",
+            "group": "type_grass",
+            "_order": 0
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 176,
+        "fields": {
+            "stat": "type_grass",
+            "_target": "50",
+            "name": "Silver",
+            "group": "type_grass",
+            "_order": 1
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 177,
+        "fields": {
+            "stat": "type_grass",
+            "_target": "200",
+            "name": "Gold",
+            "group": "type_grass",
+            "_order": 2
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 178,
+        "fields": {
+            "stat": "type_ground",
+            "_target": "10",
+            "name": "Bronze",
+            "group": "type_ground",
+            "_order": 0
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 179,
+        "fields": {
+            "stat": "type_ground",
+            "_target": "50",
+            "name": "Silver",
+            "group": "type_ground",
+            "_order": 1
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 180,
+        "fields": {
+            "stat": "type_ground",
+            "_target": "200",
+            "name": "Gold",
+            "group": "type_ground",
+            "_order": 2
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 181,
+        "fields": {
+            "stat": "type_ice",
+            "_target": "10",
+            "name": "Bronze",
+            "group": "type_ice",
+            "_order": 0
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 182,
+        "fields": {
+            "stat": "type_ice",
+            "_target": "50",
+            "name": "Silver",
+            "group": "type_ice",
+            "_order": 1
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 183,
+        "fields": {
+            "stat": "type_ice",
+            "_target": "200",
+            "name": "Gold",
+            "group": "type_ice",
+            "_order": 2
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 184,
+        "fields": {
+            "stat": "type_normal",
+            "_target": "10",
+            "name": "Bronze",
+            "group": "type_normal",
+            "_order": 0
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 185,
+        "fields": {
+            "stat": "type_normal",
+            "_target": "50",
+            "name": "Silver",
+            "group": "type_normal",
+            "_order": 1
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 186,
+        "fields": {
+            "stat": "type_normal",
+            "_target": "200",
+            "name": "Gold",
+            "group": "type_normal",
+            "_order": 2
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 187,
+        "fields": {
+            "stat": "type_poison",
+            "_target": "10",
+            "name": "Bronze",
+            "group": "type_poison",
+            "_order": 0
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 188,
+        "fields": {
+            "stat": "type_poison",
+            "_target": "50",
+            "name": "Silver",
+            "group": "type_poison",
+            "_order": 1
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 189,
+        "fields": {
+            "stat": "type_poison",
+            "_target": "200",
+            "name": "Gold",
+            "group": "type_poison",
+            "_order": 2
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 190,
+        "fields": {
+            "stat": "type_psychic",
+            "_target": "10",
+            "name": "Bronze",
+            "group": "type_psychic",
+            "_order": 0
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 191,
+        "fields": {
+            "stat": "type_psychic",
+            "_target": "50",
+            "name": "Silver",
+            "group": "type_psychic",
+            "_order": 1
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 192,
+        "fields": {
+            "stat": "type_psychic",
+            "_target": "200",
+            "name": "Gold",
+            "group": "type_psychic",
+            "_order": 2
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 193,
+        "fields": {
+            "stat": "type_rock",
+            "_target": "10",
+            "name": "Bronze",
+            "group": "type_rock",
+            "_order": 0
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 194,
+        "fields": {
+            "stat": "type_rock",
+            "_target": "50",
+            "name": "Silver",
+            "group": "type_rock",
+            "_order": 1
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 195,
+        "fields": {
+            "stat": "type_rock",
+            "_target": "200",
+            "name": "Gold",
+            "group": "type_rock",
+            "_order": 2
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 196,
+        "fields": {
+            "stat": "type_steel",
+            "_target": "10",
+            "name": "Bronze",
+            "group": "type_steel",
+            "_order": 0
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 197,
+        "fields": {
+            "stat": "type_steel",
+            "_target": "50",
+            "name": "Silver",
+            "group": "type_steel",
+            "_order": 1
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 198,
+        "fields": {
+            "stat": "type_steel",
+            "_target": "200",
+            "name": "Gold",
+            "group": "type_steel",
+            "_order": 2
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 199,
+        "fields": {
+            "stat": "type_water",
+            "_target": "10",
+            "name": "Bronze",
+            "group": "type_water",
+            "_order": 0
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 200,
+        "fields": {
+            "stat": "type_water",
+            "_target": "50",
+            "name": "Silver",
+            "group": "type_water",
+            "_order": 1
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 201,
+        "fields": {
+            "stat": "type_water",
+            "_target": "200",
+            "name": "Gold",
+            "group": "type_water",
+            "_order": 2
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 202,
+        "fields": {
+            "stat": "ultra_league",
+            "_target": "5",
+            "name": "Bronze",
+            "group": "ultra_league",
+            "_order": 0
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 203,
+        "fields": {
+            "stat": "ultra_league",
+            "_target": "50",
+            "name": "Silver",
+            "group": "ultra_league",
+            "_order": 1
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 204,
+        "fields": {
+            "stat": "ultra_league",
+            "_target": "200",
+            "name": "Gold",
+            "group": "ultra_league",
+            "_order": 2
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 205,
+        "fields": {
+            "stat": "unown",
+            "_target": "5",
+            "name": "Bronze",
+            "group": "unown",
+            "_order": 0
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 206,
+        "fields": {
+            "stat": "unown",
+            "_target": "30",
+            "name": "Silver",
+            "group": "unown",
+            "_order": 1
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 207,
+        "fields": {
+            "stat": "unown",
+            "_target": "70",
+            "name": "Gold",
+            "group": "unown",
+            "_order": 2
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 208,
+        "fields": {
+            "stat": "wayfarer",
+            "_target": "50",
+            "name": "Bronze",
+            "group": "wayfarer",
+            "_order": 0
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 209,
+        "fields": {
+            "stat": "wayfarer",
+            "_target": "1000",
+            "name": "Gold",
+            "group": "wayfarer",
+            "_order": 2
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 210,
+        "fields": {
+            "stat": "wayfarer",
+            "_target": "184",
+            "name": "Silver",
+            "group": "wayfarer",
+            "_order": 1
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 211,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "40000000",
+            "name": "TL40×2",
+            "group": "total_xp_extended",
+            "_order": 40000000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 212,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "60000000",
+            "name": "TL40×3",
+            "group": "total_xp_extended",
+            "_order": 60000000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 213,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "80000000",
+            "name": "TL40×4",
+            "group": "total_xp_extended",
+            "_order": 80000000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 214,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "100000000",
+            "name": "TL40×5",
+            "group": "total_xp_extended",
+            "_order": 100000000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 215,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "120000000",
+            "name": "TL40×6",
+            "group": "total_xp_extended",
+            "_order": 120000000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 216,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "140000000",
+            "name": "TL40×7",
+            "group": "total_xp_extended",
+            "_order": 140000000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 217,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "160000000",
+            "name": "TL40×8",
+            "group": "total_xp_extended",
+            "_order": 160000000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 218,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "180000000",
+            "name": "TL40×9",
+            "group": "total_xp_extended",
+            "_order": 180000000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 219,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "200000000",
+            "name": "TL40×10",
+            "group": "total_xp_extended",
+            "_order": 200000000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 220,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "220000000",
+            "name": "TL40×11",
+            "group": "total_xp_extended",
+            "_order": 220000000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 221,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "240000000",
+            "name": "TL40×12",
+            "group": "total_xp_extended",
+            "_order": 240000000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 222,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "260000000",
+            "name": "TL40×13",
+            "group": "total_xp_extended",
+            "_order": 260000000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 223,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "280000000",
+            "name": "TL40×14",
+            "group": "total_xp_extended",
+            "_order": 280000000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 224,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "300000000",
+            "name": "TL40×15",
+            "group": "total_xp_extended",
+            "_order": 300000000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 225,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "320000000",
+            "name": "TL40×16",
+            "group": "total_xp_extended",
+            "_order": 320000000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 226,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "340000000",
+            "name": "TL40×17",
+            "group": "total_xp_extended",
+            "_order": 340000000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 227,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "360000000",
+            "name": "TL40×18",
+            "group": "total_xp_extended",
+            "_order": 360000000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 228,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "380000000",
+            "name": "TL40×19",
+            "group": "total_xp_extended",
+            "_order": 380000000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 229,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "400000000",
+            "name": "TL40×20",
+            "group": "total_xp_extended",
+            "_order": 400000000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 230,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "420000000",
+            "name": "TL40×21",
+            "group": "total_xp_extended",
+            "_order": 420000000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 231,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "440000000",
+            "name": "TL40×22",
+            "group": "total_xp_extended",
+            "_order": 440000000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 232,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "460000000",
+            "name": "TL40×23",
+            "group": "total_xp_extended",
+            "_order": 460000000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 233,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "480000000",
+            "name": "TL40×24",
+            "group": "total_xp_extended",
+            "_order": 480000000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 234,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "500000000",
+            "name": "TL40×25",
+            "group": "total_xp_extended",
+            "_order": 500000000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 235,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "520000000",
+            "name": "TL40×26",
+            "group": "total_xp_extended",
+            "_order": 520000000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 236,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "540000000",
+            "name": "TL40×27",
+            "group": "total_xp_extended",
+            "_order": 540000000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 237,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "560000000",
+            "name": "TL40×28",
+            "group": "total_xp_extended",
+            "_order": 560000000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 238,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "580000000",
+            "name": "TL40×29",
+            "group": "total_xp_extended",
+            "_order": 580000000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 239,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "600000000",
+            "name": "TL40×30",
+            "group": "total_xp_extended",
+            "_order": 600000000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 240,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "620000000",
+            "name": "TL40×31",
+            "group": "total_xp_extended",
+            "_order": 620000000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 241,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "640000000",
+            "name": "TL40×32",
+            "group": "total_xp_extended",
+            "_order": 640000000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 242,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "660000000",
+            "name": "TL40×33",
+            "group": "total_xp_extended",
+            "_order": 660000000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 243,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "680000000",
+            "name": "TL40×34",
+            "group": "total_xp_extended",
+            "_order": 680000000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 244,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "700000000",
+            "name": "TL40×35",
+            "group": "total_xp_extended",
+            "_order": 700000000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 245,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "720000000",
+            "name": "TL40×36",
+            "group": "total_xp_extended",
+            "_order": 720000000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 246,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "740000000",
+            "name": "TL40×37",
+            "group": "total_xp_extended",
+            "_order": 740000000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 247,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "760000000",
+            "name": "TL40×38",
+            "group": "total_xp_extended",
+            "_order": 760000000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 248,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "780000000",
+            "name": "TL40×39",
+            "group": "total_xp_extended",
+            "_order": 780000000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 249,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "800000000",
+            "name": "TL40×40",
+            "group": "total_xp_extended",
+            "_order": 800000000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 250,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "820000000",
+            "name": "TL40×41",
+            "group": "total_xp_extended",
+            "_order": 820000000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 251,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "840000000",
+            "name": "TL40×42",
+            "group": "total_xp_extended",
+            "_order": 840000000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 252,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "860000000",
+            "name": "TL40×43",
+            "group": "total_xp_extended",
+            "_order": 860000000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 253,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "880000000",
+            "name": "TL40×44",
+            "group": "total_xp_extended",
+            "_order": 880000000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 254,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "900000000",
+            "name": "TL40×45",
+            "group": "total_xp_extended",
+            "_order": 900000000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 255,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "920000000",
+            "name": "TL40×46",
+            "group": "total_xp_extended",
+            "_order": 920000000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 256,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "940000000",
+            "name": "TL40×47",
+            "group": "total_xp_extended",
+            "_order": 940000000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 257,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "960000000",
+            "name": "TL40×48",
+            "group": "total_xp_extended",
+            "_order": 960000000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 258,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "980000000",
+            "name": "TL40×49",
+            "group": "total_xp_extended",
+            "_order": 980000000
+        }
+    },
+    {
+        "model": "trainerdex.presettarget",
+        "pk": 259,
+        "fields": {
+            "stat": "total_xp",
+            "_target": "1000000000",
+            "name": "TL40×50",
+            "group": "total_xp_extended",
+            "_order": 1000000000
+        }
+    },
+    {
+        "model": "trainerdex.presettargetgroup",
+        "pk": "battle_attack_won",
+        "fields": {
+            "name": "Default Levels: Battle Girl"
+        }
+    },
+    {
+        "model": "trainerdex.presettargetgroup",
+        "pk": "battle_training_won",
+        "fields": {
+            "name": "Default Levels: Ace Trainer"
+        }
+    },
+    {
+        "model": "trainerdex.presettargetgroup",
+        "pk": "berries_fed",
+        "fields": {
+            "name": "Default Levels: Berry Master"
+        }
+    },
+    {
+        "model": "trainerdex.presettargetgroup",
+        "pk": "big_magikarp",
+        "fields": {
+            "name": "Default Levels: Fisherman"
+        }
+    },
+    {
+        "model": "trainerdex.presettargetgroup",
+        "pk": "buddy_best",
+        "fields": {
+            "name": "Default Levels: Best Buddy"
+        }
+    },
+    {
+        "model": "trainerdex.presettargetgroup",
+        "pk": "capture_total",
+        "fields": {
+            "name": "Default Levels: Collector | Pokémon Caught"
+        }
+    },
+    {
+        "model": "trainerdex.presettargetgroup",
+        "pk": "challenge_quests",
+        "fields": {
+            "name": "Default Levels: Pokémon Ranger"
+        }
+    },
+    {
+        "model": "trainerdex.presettargetgroup",
+        "pk": "evolved_total",
+        "fields": {
+            "name": "Default Levels: Scientist"
+        }
+    },
+    {
+        "model": "trainerdex.presettargetgroup",
+        "pk": "great_league",
+        "fields": {
+            "name": "Default Levels: Great League Veteran"
+        }
+    },
+    {
+        "model": "trainerdex.presettargetgroup",
+        "pk": "gymbadges_total",
+        "fields": {
+            "name": "Default Levels: Gym Badges"
+        }
+    },
+    {
+        "model": "trainerdex.presettargetgroup",
+        "pk": "hatched_total",
+        "fields": {
+            "name": "Default Levels: Breeder"
+        }
+    },
+    {
+        "model": "trainerdex.presettargetgroup",
+        "pk": "hours_defended",
+        "fields": {
+            "name": "Default Levels: Gym Leader"
+        }
+    },
+    {
+        "model": "trainerdex.presettargetgroup",
+        "pk": "legendary_battle_won",
+        "fields": {
+            "name": "Default Levels: Battle Legend"
+        }
+    },
+    {
+        "model": "trainerdex.presettargetgroup",
+        "pk": "master_league",
+        "fields": {
+            "name": "Default Levels: Master League Veteran"
+        }
+    },
+    {
+        "model": "trainerdex.presettargetgroup",
+        "pk": "max_level_friends",
+        "fields": {
+            "name": "Default Levels: Idol"
+        }
+    },
+    {
+        "model": "trainerdex.presettargetgroup",
+        "pk": "photobomb",
+        "fields": {
+            "name": "Default Levels: Cameraman"
+        }
+    },
+    {
+        "model": "trainerdex.presettargetgroup",
+        "pk": "pikachu",
+        "fields": {
+            "name": "Default Levels: Pikachu Fan"
+        }
+    },
+    {
+        "model": "trainerdex.presettargetgroup",
+        "pk": "pokedex_gen1",
+        "fields": {
+            "name": "Default Levels: Kanto"
+        }
+    },
+    {
+        "model": "trainerdex.presettargetgroup",
+        "pk": "pokedex_gen2",
+        "fields": {
+            "name": "Default Levels: Johto"
+        }
+    },
+    {
+        "model": "trainerdex.presettargetgroup",
+        "pk": "pokedex_gen3",
+        "fields": {
+            "name": "Default Levels: Hoenn"
+        }
+    },
+    {
+        "model": "trainerdex.presettargetgroup",
+        "pk": "pokedex_gen4",
+        "fields": {
+            "name": "Default Levels: Sinnoh"
+        }
+    },
+    {
+        "model": "trainerdex.presettargetgroup",
+        "pk": "pokedex_gen5",
+        "fields": {
+            "name": "Default Levels: Unova"
+        }
+    },
+    {
+        "model": "trainerdex.presettargetgroup",
+        "pk": "pokedex_gen6",
+        "fields": {
+            "name": "Default Levels: Kalos"
+        }
+    },
+    {
+        "model": "trainerdex.presettargetgroup",
+        "pk": "pokedex_gen7",
+        "fields": {
+            "name": "Default Levels: Alola"
+        }
+    },
+    {
+        "model": "trainerdex.presettargetgroup",
+        "pk": "pokedex_gen8",
+        "fields": {
+            "name": "Default Levels: Galar"
+        }
+    },
+    {
+        "model": "trainerdex.presettargetgroup",
+        "pk": "pokedex_total_caught",
+        "fields": {
+            "name": "Default Levels: Unique Species Caught"
+        }
+    },
+    {
+        "model": "trainerdex.presettargetgroup",
+        "pk": "pokedex_total_seen",
+        "fields": {
+            "name": "Default Levels: Unique Species Seen"
+        }
+    },
+    {
+        "model": "trainerdex.presettargetgroup",
+        "pk": "pokemon_purified",
+        "fields": {
+            "name": "Default Levels: Purifier"
+        }
+    },
+    {
+        "model": "trainerdex.presettargetgroup",
+        "pk": "pokestops_visited",
+        "fields": {
+            "name": "Default Levels: Backpacker | PokéStops Visited"
+        }
+    },
+    {
+        "model": "trainerdex.presettargetgroup",
+        "pk": "raid_battle_won",
+        "fields": {
+            "name": "Default Levels: Champion"
+        }
+    },
+    {
+        "model": "trainerdex.presettargetgroup",
+        "pk": "rocket_grunts_defeated",
+        "fields": {
+            "name": "Default Levels: Hero"
+        }
+    },
+    {
+        "model": "trainerdex.presettargetgroup",
+        "pk": "small_rattata",
+        "fields": {
+            "name": "Default Levels: Youngster"
+        }
+    },
+    {
+        "model": "trainerdex.presettargetgroup",
+        "pk": "total_xp",
+        "fields": {
+            "name": "Default Levels: Total XP"
+        }
+    },
+    {
+        "model": "trainerdex.presettargetgroup",
+        "pk": "total_xp_extended",
+        "fields": {
+            "name": "Extended Levels: Total XP"
+        }
+    },
+    {
+        "model": "trainerdex.presettargetgroup",
+        "pk": "trading",
+        "fields": {
+            "name": "Default Levels: Gentleman"
+        }
+    },
+    {
+        "model": "trainerdex.presettargetgroup",
+        "pk": "trading_distance",
+        "fields": {
+            "name": "Default Levels: Pilot"
+        }
+    },
+    {
+        "model": "trainerdex.presettargetgroup",
+        "pk": "travel_km",
+        "fields": {
+            "name": "Default Levels: Jogger | Distance Walked"
+        }
+    },
+    {
+        "model": "trainerdex.presettargetgroup",
+        "pk": "type_bug",
+        "fields": {
+            "name": "Default Levels: Bug Catcher"
+        }
+    },
+    {
+        "model": "trainerdex.presettargetgroup",
+        "pk": "type_dark",
+        "fields": {
+            "name": "Default Levels: Delinquent"
+        }
+    },
+    {
+        "model": "trainerdex.presettargetgroup",
+        "pk": "type_dragon",
+        "fields": {
+            "name": "Default Levels: Dragon Tamer"
+        }
+    },
+    {
+        "model": "trainerdex.presettargetgroup",
+        "pk": "type_electric",
+        "fields": {
+            "name": "Default Levels: Rocker"
+        }
+    },
+    {
+        "model": "trainerdex.presettargetgroup",
+        "pk": "type_fairy",
+        "fields": {
+            "name": "Default Levels: Fairy Tale Girl"
+        }
+    },
+    {
+        "model": "trainerdex.presettargetgroup",
+        "pk": "type_fighting",
+        "fields": {
+            "name": "Default Levels: Black Belt"
+        }
+    },
+    {
+        "model": "trainerdex.presettargetgroup",
+        "pk": "type_fire",
+        "fields": {
+            "name": "Default Levels: Kindler"
+        }
+    },
+    {
+        "model": "trainerdex.presettargetgroup",
+        "pk": "type_flying",
+        "fields": {
+            "name": "Default Levels: Bird Keeper"
+        }
+    },
+    {
+        "model": "trainerdex.presettargetgroup",
+        "pk": "type_ghost",
+        "fields": {
+            "name": "Default Levels: Hex Maniac"
+        }
+    },
+    {
+        "model": "trainerdex.presettargetgroup",
+        "pk": "type_grass",
+        "fields": {
+            "name": "Default Levels: Gardener"
+        }
+    },
+    {
+        "model": "trainerdex.presettargetgroup",
+        "pk": "type_ground",
+        "fields": {
+            "name": "Default Levels: Ruin Maniac"
+        }
+    },
+    {
+        "model": "trainerdex.presettargetgroup",
+        "pk": "type_ice",
+        "fields": {
+            "name": "Default Levels: Skier"
+        }
+    },
+    {
+        "model": "trainerdex.presettargetgroup",
+        "pk": "type_normal",
+        "fields": {
+            "name": "Default Levels: Schoolkid"
+        }
+    },
+    {
+        "model": "trainerdex.presettargetgroup",
+        "pk": "type_poison",
+        "fields": {
+            "name": "Default Levels: Punk Girl"
+        }
+    },
+    {
+        "model": "trainerdex.presettargetgroup",
+        "pk": "type_psychic",
+        "fields": {
+            "name": "Default Levels: Psychic"
+        }
+    },
+    {
+        "model": "trainerdex.presettargetgroup",
+        "pk": "type_rock",
+        "fields": {
+            "name": "Default Levels: Hiker"
+        }
+    },
+    {
+        "model": "trainerdex.presettargetgroup",
+        "pk": "type_steel",
+        "fields": {
+            "name": "Default Levels: Depot Agent"
+        }
+    },
+    {
+        "model": "trainerdex.presettargetgroup",
+        "pk": "type_water",
+        "fields": {
+            "name": "Default Levels: Swimmer"
+        }
+    },
+    {
+        "model": "trainerdex.presettargetgroup",
+        "pk": "ultra_league",
+        "fields": {
+            "name": "Default Levels: Ultra League Veteran"
+        }
+    },
+    {
+        "model": "trainerdex.presettargetgroup",
+        "pk": "unown",
+        "fields": {
+            "name": "Default Levels: Unown"
+        }
+    },
+    {
+        "model": "trainerdex.presettargetgroup",
+        "pk": "wayfarer",
+        "fields": {
+            "name": "Default Levels: Wayfarer"
+        }
+    }
+]

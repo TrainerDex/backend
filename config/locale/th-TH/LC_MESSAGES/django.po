@@ -1,0 +1,2113 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: trainerdex\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-09-17 10:09+0000\n"
+"PO-Revision-Date: 2020-09-17 10:09\n"
+"Last-Translator: \n"
+"Language-Team: Thai\n"
+"Language: th_TH\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: trainerdex\n"
+"X-Crowdin-Project-ID: 413366\n"
+"X-Crowdin-Language: th\n"
+"X-Crowdin-File: /django3.1/django.pot\n"
+"X-Crowdin-File-ID: 42\n"
+
+#: community/admin.py:18 community/admin.py:26
+msgid "Details"
+msgstr ""
+
+#: community/admin.py:21
+msgid "Members"
+msgstr ""
+
+#: community/models.py:14
+msgctxt "community__handle__title"
+msgid "Handle"
+msgstr ""
+
+#: community/models.py:17
+msgctxt "community__handle__help"
+msgid "Once you set this, it cannot be changed. Pick carefully as this will be the identifier to find your community leaderboard."
+msgstr ""
+
+#: community/models.py:24
+msgid "language"
+msgstr ""
+
+#: community/models.py:26
+msgid "timezone"
+msgstr ""
+
+#: community/models.py:30
+msgctxt "community__country__title"
+msgid "country"
+msgstr ""
+
+#: community/models.py:31
+msgctxt "community__country__help"
+msgid "Where your community is based"
+msgstr ""
+
+#: community/models.py:36
+msgctxt "community__name__title"
+msgid "name"
+msgstr ""
+
+#: community/models.py:37
+msgctxt "community__name__help"
+msgid "Max 70 characters"
+msgstr ""
+
+#: community/models.py:42
+msgctxt "community__description__title"
+msgid "description"
+msgstr ""
+
+#: community/models.py:45
+msgctxt "community__description__help"
+msgid "What makes your community unique? What are you about?"
+msgstr ""
+
+#: community/models.py:51
+msgctxt "community__can_see__title"
+msgid "Publicly Viewable"
+msgstr ""
+
+#: community/models.py:54
+msgctxt "community__can_see__help"
+msgid "Default: False\n"
+"Turn this on to share your community with the world."
+msgstr ""
+
+#: community/models.py:59
+msgctxt "community__can_join__title"
+msgid "Publicly Joinable"
+msgstr ""
+
+#: community/models.py:62
+msgctxt "community__can_join__title"
+msgid "Default: False\n"
+"Turn this on to make your community free to join. No invites required."
+msgstr ""
+
+#: community/models.py:84 community/models.py:85
+msgctxt "community__title"
+msgid "community"
+msgid_plural "communities"
+msgstr[0] ""
+
+#: trainerdex/abstract.py:18
+msgctxt "codename"
+msgid "nickname"
+msgstr ""
+
+#: trainerdex/abstract.py:30
+msgid "A user with that username already exists."
+msgstr ""
+
+#: trainerdex/abstract.py:36
+msgctxt "last_modified"
+msgid "last modified"
+msgstr ""
+
+#: trainerdex/abstract.py:42
+msgctxt "country"
+msgid "country"
+msgstr ""
+
+#: trainerdex/abstract.py:45
+msgctxt "country__help"
+msgid "Where this account plays the most. Used to place in localized leaderboards"
+msgstr ""
+
+#: trainerdex/abstract.py:51
+msgctxt "is_banned"
+msgid "banned"
+msgstr ""
+
+#: trainerdex/admin.py:111
+msgid "Basic Info"
+msgstr ""
+
+#: trainerdex/admin.py:115
+msgid "Medals"
+msgstr "เหรียญรางวัล"
+
+#: trainerdex/admin.py:146
+msgid "Type Medals"
+msgstr ""
+
+#: trainerdex/admin.py:171
+msgid "Pokédex"
+msgstr ""
+
+#: trainerdex/admin.py:233
+msgid "Authentication"
+msgstr ""
+
+#: trainerdex/admin.py:235
+msgid "Trainer info"
+msgstr ""
+
+#: trainerdex/admin.py:239
+msgid "Permissions"
+msgstr ""
+
+#: trainerdex/admin.py:253
+msgid "Important dates"
+msgstr ""
+
+#: trainerdex/admin.py:317 trainerdex/admin.py:326
+msgid "Object"
+msgstr ""
+
+#: trainerdex/fields.py:13 trainerdex/fields.py:36 trainerdex/models.py:478
+#: trainerdex/models.py:493 trainerdex/models.py:508 trainerdex/models.py:523
+#: trainerdex/models.py:538 trainerdex/models.py:600 trainerdex/models.py:617
+#: trainerdex/models.py:628 trainerdex/models.py:639 trainerdex/models.py:653
+#: trainerdex/models.py:664 trainerdex/models.py:675 trainerdex/models.py:686
+#: trainerdex/models.py:697 trainerdex/models.py:708 trainerdex/models.py:720
+#: trainerdex/models.py:731 trainerdex/models.py:742 trainerdex/models.py:753
+#: trainerdex/models.py:764 trainerdex/models.py:775 trainerdex/models.py:791
+#: trainerdex/models.py:802 trainerdex/models.py:815 trainerdex/models.py:831
+#: trainerdex/models.py:847 trainerdex/models.py:863 trainerdex/models.py:879
+#: trainerdex/models.py:890 trainerdex/models.py:903 trainerdex/models.py:919
+#: trainerdex/models.py:932 trainerdex/models.py:948 trainerdex/models.py:964
+#: trainerdex/models.py:980
+msgid "Bronze"
+msgstr ""
+
+#: trainerdex/fields.py:14 trainerdex/fields.py:37 trainerdex/models.py:478
+#: trainerdex/models.py:493 trainerdex/models.py:508 trainerdex/models.py:523
+#: trainerdex/models.py:538 trainerdex/models.py:601 trainerdex/models.py:617
+#: trainerdex/models.py:628 trainerdex/models.py:639 trainerdex/models.py:653
+#: trainerdex/models.py:664 trainerdex/models.py:675 trainerdex/models.py:686
+#: trainerdex/models.py:697 trainerdex/models.py:708 trainerdex/models.py:720
+#: trainerdex/models.py:731 trainerdex/models.py:742 trainerdex/models.py:753
+#: trainerdex/models.py:764 trainerdex/models.py:775 trainerdex/models.py:791
+#: trainerdex/models.py:802 trainerdex/models.py:815 trainerdex/models.py:831
+#: trainerdex/models.py:847 trainerdex/models.py:863 trainerdex/models.py:879
+#: trainerdex/models.py:890 trainerdex/models.py:903 trainerdex/models.py:919
+#: trainerdex/models.py:932 trainerdex/models.py:948 trainerdex/models.py:964
+#: trainerdex/models.py:980
+msgid "Silver"
+msgstr ""
+
+#: trainerdex/fields.py:15 trainerdex/fields.py:38 trainerdex/models.py:478
+#: trainerdex/models.py:493 trainerdex/models.py:508 trainerdex/models.py:523
+#: trainerdex/models.py:538 trainerdex/models.py:602 trainerdex/models.py:617
+#: trainerdex/models.py:628 trainerdex/models.py:639 trainerdex/models.py:653
+#: trainerdex/models.py:664 trainerdex/models.py:675 trainerdex/models.py:686
+#: trainerdex/models.py:697 trainerdex/models.py:708 trainerdex/models.py:720
+#: trainerdex/models.py:731 trainerdex/models.py:742 trainerdex/models.py:753
+#: trainerdex/models.py:764 trainerdex/models.py:775 trainerdex/models.py:791
+#: trainerdex/models.py:802 trainerdex/models.py:815 trainerdex/models.py:831
+#: trainerdex/models.py:847 trainerdex/models.py:863 trainerdex/models.py:879
+#: trainerdex/models.py:890 trainerdex/models.py:903 trainerdex/models.py:919
+#: trainerdex/models.py:932 trainerdex/models.py:948 trainerdex/models.py:964
+#: trainerdex/models.py:980
+msgid "Gold"
+msgstr ""
+
+#: trainerdex/models.py:55 trainerdex/models.py:68
+msgctxt "team_name_team0_abbr"
+msgid "Teamless"
+msgstr ""
+
+#: trainerdex/models.py:56 trainerdex/models.py:69
+msgctxt "team_name_team1_abbr"
+msgid "Mystic"
+msgstr ""
+
+#: trainerdex/models.py:57 trainerdex/models.py:70
+msgctxt "team_name_team2_abbr"
+msgid "Valor"
+msgstr ""
+
+#: trainerdex/models.py:58 trainerdex/models.py:71
+msgctxt "team_name_team3_abbr"
+msgid "Instinct"
+msgstr ""
+
+#: trainerdex/models.py:78 trainerdex/pogo_assets/strings.py:377
+msgctxt "team_name_team0"
+msgid "No Team"
+msgstr "ไม่มีทีม"
+
+#: trainerdex/models.py:79 trainerdex/pogo_assets/strings.py:378
+msgctxt "team_name_team1"
+msgid "Team Mystic"
+msgstr "ทีมมิสติก"
+
+#: trainerdex/models.py:80 trainerdex/pogo_assets/strings.py:379
+msgctxt "team_name_team2"
+msgid "Team Valor"
+msgstr "ทีมแวเลอร์"
+
+#: trainerdex/models.py:81 trainerdex/pogo_assets/strings.py:380
+msgctxt "team_name_team3"
+msgid "Team Instinct"
+msgstr "ทีมอินสติงต์"
+
+#: trainerdex/models.py:96 trainerdex/models.py:97
+msgctxt "faction"
+msgid "team"
+msgid_plural "teams"
+msgstr[0] ""
+
+#: trainerdex/models.py:154
+msgctxt "tid"
+msgid "(Deprecated) TID"
+msgstr ""
+
+#: trainerdex/models.py:170 trainerdex/pogo_assets/strings.py:366
+msgctxt "profile_start_date"
+msgid "Start Date"
+msgstr ""
+
+#: trainerdex/models.py:171
+msgctxt "start_date__help"
+msgid "Creation date of the Pokémon Go profile."
+msgstr ""
+
+#: trainerdex/models.py:177
+msgctxt "faction__help"
+msgid "The team of the Pokémon Go profile."
+msgstr ""
+
+#: trainerdex/models.py:183
+msgctxt "is_verified"
+msgid "Verified"
+msgstr ""
+
+#: trainerdex/models.py:186
+msgctxt "is_verified__help"
+msgid "Designates whether this user should be treated as verified."
+msgstr ""
+
+#: trainerdex/models.py:243 trainerdex/models.py:244
+msgctxt "trainer"
+msgid "trainer"
+msgid_plural "trainers"
+msgstr[0] ""
+
+#: trainerdex/models.py:259 trainerdex/models.py:275 trainerdex/models.py:276
+msgctxt "codename"
+msgid "Nickname"
+msgid_plural "Nicknames"
+msgstr[0] ""
+
+#: trainerdex/models.py:306 trainerdex/models.py:317
+#: trainerdex/pogo_assets/strings.py:289
+msgctxt "friend_code_title"
+msgid "Trainer Code"
+msgstr ""
+
+#: trainerdex/models.py:321
+msgid "Trainer Code can be seen by users of groups they're in"
+msgstr ""
+
+#: trainerdex/models.py:325
+msgid "Trainer Code can be seen on the web, publicly"
+msgstr ""
+
+#: trainerdex/models.py:329
+msgid "Trainer Code can be on the API"
+msgstr ""
+
+#: trainerdex/models.py:368
+msgctxt "update_time"
+msgid "Time Updated"
+msgstr ""
+
+#: trainerdex/models.py:372
+msgctxt "submission_date"
+msgid "Date Submitted"
+msgstr ""
+
+#: trainerdex/models.py:376
+msgctxt "last_modified"
+msgid "Last Modified"
+msgstr ""
+
+#: trainerdex/models.py:381
+msgctxt "comment"
+msgid "Comment"
+msgstr ""
+
+#: trainerdex/models.py:387
+msgctxt "metadata"
+msgid "Metadata"
+msgstr ""
+
+#: trainerdex/models.py:390
+msgctxt "metadata__help"
+msgid "This is a JSON dictionary allowing for as much metadata as you please.\n"
+"            However, the following attributes are expected:\n\n"
+"            `provider`: string\n"
+"            `ocr`: boolean\n"
+"            `image_url`: string\n\n"
+"            "
+msgstr ""
+
+#: trainerdex/models.py:405
+msgctxt "total_xp"
+msgid "Total XP"
+msgstr "XP ทั้งหมด"
+
+#: trainerdex/models.py:455
+msgctxt "pokedex_total_caught"
+msgid "Unique Species Caught"
+msgstr ""
+
+#: trainerdex/models.py:463
+msgctxt "pokedex_total_seen"
+msgid "Unique Species Seen"
+msgstr ""
+
+#: trainerdex/models.py:471 trainerdex/pogo_assets/strings.py:96
+msgctxt "badge_pokedex_entries_title"
+msgid "Kanto"
+msgstr "คันโต"
+
+#: trainerdex/models.py:473 trainerdex/pogo_assets/strings.py:95
+#, python-brace-format
+msgctxt "badge_pokedex_entries"
+msgid "Register {0} Kanto region Pokémon in the Pokédex."
+msgstr "บันทึกโปเกมอนจากเขตคันโตลงในโปเกเด็กซ์ {0} ตัว"
+
+#: trainerdex/models.py:485 trainerdex/pogo_assets/strings.py:102
+msgctxt "badge_pokedex_entries_title"
+msgid "Johto"
+msgstr "โจโตะ"
+
+#: trainerdex/models.py:488 trainerdex/pogo_assets/strings.py:100
+#, python-brace-format
+msgctxt "badge_pokedex_entries_gen2"
+msgid "Register {0} Pokémon first discovered in the Johto region to the Pokédex."
+msgstr "บันทึกโปเกมอนที่ถูกค้นพบครั้งแรกในเขตโจโตะจำนวน {0} ตัวลงในโปเกเด็กซ"
+
+#: trainerdex/models.py:500 trainerdex/pogo_assets/strings.py:108
+msgctxt "badge_pokedex_entries_gen3_title"
+msgid "Hoenn"
+msgstr "โฮเอ็น"
+
+#: trainerdex/models.py:503 trainerdex/pogo_assets/strings.py:106
+#, python-brace-format
+msgctxt "badge_pokedex_entries_gen3"
+msgid "Register {0} Pokémon first discovered in the Hoenn region to the Pokédex."
+msgstr "บันทึกโปเกมอนที่ถูกค้นพบครั้งแรกในเขตโฮเอ็นจำนวน {0} ตัวลงในโปเกเด็กซ์"
+
+#: trainerdex/models.py:515 trainerdex/pogo_assets/strings.py:114
+msgctxt "badge_pokedex_entries_gen4_title"
+msgid "Sinnoh"
+msgstr "ชินโอ"
+
+#: trainerdex/models.py:518 trainerdex/pogo_assets/strings.py:112
+#, python-brace-format
+msgctxt "badge_pokedex_entries_gen4"
+msgid "Register {0} Pokémon first discovered in the Sinnoh region to the Pokédex."
+msgstr "บันทึกโปเกมอนที่ถูกค้นพบครั้งแรกในเขตชินโอจำนวน {0} ตัวลงในโปเกเด็กซ์"
+
+#: trainerdex/models.py:530 trainerdex/pogo_assets/strings.py:120
+msgctxt "badge_pokedex_entries_gen5_title"
+msgid "Unova"
+msgstr "อิชชู"
+
+#: trainerdex/models.py:533 trainerdex/pogo_assets/strings.py:118
+#, python-brace-format
+msgctxt "badge_pokedex_entries_gen5"
+msgid "Register {0} Pokémon first discovered in the Unova region to the Pokédex."
+msgstr "บันทึกโปเกมอนที่ถูกค้นพบครั้งแรกในเขตอิชชูจำนวน {0} ตัวลงในโปเกเด็กซ์"
+
+#: trainerdex/models.py:545 trainerdex/pogo_assets/strings.py:126
+msgctxt "badge_pokedex_entries_gen6_title"
+msgid "Kalos"
+msgstr ""
+
+#: trainerdex/models.py:548 trainerdex/pogo_assets/strings.py:124
+#, python-brace-format
+msgctxt "badge_pokedex_entries_gen6"
+msgid "Register {0} Pokémon first discovered in the Kalos region to the Pokédex."
+msgstr ""
+
+#: trainerdex/models.py:559 trainerdex/pogo_assets/strings.py:132
+msgctxt "badge_pokedex_entries_gen7_title"
+msgid "Alola"
+msgstr ""
+
+#: trainerdex/models.py:562 trainerdex/pogo_assets/strings.py:130
+#, python-brace-format
+msgctxt "badge_pokedex_entries_gen7"
+msgid "Register {0} Pokémon first discovered in the Alola region to the Pokédex."
+msgstr ""
+
+#: trainerdex/models.py:573 trainerdex/pogo_assets/strings.py:138
+msgctxt "badge_pokedex_entries_gen8_title"
+msgid "Galar"
+msgstr ""
+
+#: trainerdex/models.py:576 trainerdex/pogo_assets/strings.py:136
+#, python-brace-format
+msgctxt "badge_pokedex_entries_gen8"
+msgid "Register {0} Pokémon first discovered in the Galar region to the Pokédex."
+msgstr ""
+
+#: trainerdex/models.py:593 trainerdex/pogo_assets/strings.py:180
+msgctxt "badge_travel_km_title"
+msgid "Jogger"
+msgstr "นักวิ่ง"
+
+#: trainerdex/models.py:594 trainerdex/pogo_assets/strings.py:13
+msgctxt "avatar_detail_walking_distance"
+msgid "Distance Walked"
+msgstr ""
+
+#: trainerdex/models.py:596 trainerdex/pogo_assets/strings.py:178
+msgctxt "badge_travel_km"
+msgid "Walk {0:0,g} km."
+msgstr ""
+
+#: trainerdex/models.py:611 trainerdex/pogo_assets/strings.py:34
+msgctxt "badge_capture_total_title"
+msgid "Collector"
+msgstr "นักสะสมโปเกมอน"
+
+#: trainerdex/models.py:612 trainerdex/pogo_assets/strings.py:11
+msgctxt "avatar_detail_pokemon_caught"
+msgid "Pokémon Caught"
+msgstr ""
+
+#: trainerdex/models.py:614 trainerdex/pogo_assets/strings.py:33
+#, python-brace-format
+msgctxt "badge_capture_total"
+msgid "Catch {0} Pokémon."
+msgstr ""
+
+#: trainerdex/models.py:624 trainerdex/pogo_assets/strings.py:49
+msgctxt "badge_evolved_total_title"
+msgid "Scientist"
+msgstr "นักวิจัย"
+
+#: trainerdex/models.py:625 trainerdex/pogo_assets/strings.py:48
+#, python-brace-format
+msgctxt "badge_evolved_total"
+msgid "Evolve {0} Pokémon."
+msgstr "วิวัฒนาการโปเกมอน {0} ตัว"
+
+#: trainerdex/models.py:635 trainerdex/pogo_assets/strings.py:60
+msgctxt "badge_hatched_total_title"
+msgid "Breeder"
+msgstr "คนเลี้ยงโปเกมอน"
+
+#: trainerdex/models.py:636
+#, python-brace-format
+msgctxt "badge_hatched_total"
+msgid "Hatch {0} eggs."
+msgstr "ฟักไข่ {0} ใบ"
+
+#: trainerdex/models.py:647 trainerdex/pogo_assets/strings.py:146
+msgctxt "badge_pokestops_visited_title"
+msgid "Backpacker"
+msgstr "แบ็กแพ็กเกอร์"
+
+#: trainerdex/models.py:648 trainerdex/pogo_assets/strings.py:365
+msgctxt "profile_pokestops_visited"
+msgid "PokéStops Visited"
+msgstr ""
+
+#: trainerdex/models.py:650 trainerdex/pogo_assets/strings.py:145
+#, python-brace-format
+msgctxt "badge_pokestops_visited"
+msgid "Visit {0} PokéStops."
+msgstr ""
+
+#: trainerdex/models.py:660 trainerdex/pogo_assets/strings.py:28
+msgctxt "badge_big_magikarp_title"
+msgid "Fisher"
+msgstr ""
+
+#: trainerdex/models.py:661 trainerdex/pogo_assets/strings.py:27
+#, python-brace-format
+msgctxt "badge_big_magikarp"
+msgid "Catch {0} big Magikarp."
+msgstr "จับคอยคิงขนาดใหญ่ {0} ตัว"
+
+#: trainerdex/models.py:671 trainerdex/pogo_assets/strings.py:16
+msgctxt "badge_battle_attack_won_title"
+msgid "Battle Girl"
+msgstr "แบตเทิลเกิร์ล"
+
+#: trainerdex/models.py:672 trainerdex/pogo_assets/strings.py:15
+#, python-brace-format
+msgctxt "badge_battle_attack_won"
+msgid "Win {0} Gym battles."
+msgstr ""
+
+#: trainerdex/models.py:682 trainerdex/pogo_assets/strings.py:22
+msgctxt "badge_battle_training_won_title"
+msgid "Ace Trainer"
+msgstr "เทรนเนอร์หัวกะทิ"
+
+#: trainerdex/models.py:683 trainerdex/pogo_assets/strings.py:21
+#, python-brace-format
+msgctxt "badge_battle_training_won"
+msgid "Train {0} times."
+msgstr ""
+
+#: trainerdex/models.py:693 trainerdex/pogo_assets/strings.py:169
+msgctxt "badge_small_rattata_title"
+msgid "Youngster"
+msgstr "เจ้าหนูกางเกงขาสั้น"
+
+#: trainerdex/models.py:694 trainerdex/pogo_assets/strings.py:168
+#, python-brace-format
+msgctxt "badge_small_rattata"
+msgid "Catch {0} tiny Rattata."
+msgstr "จับโครัตตาขนาดเล็ก {0} ตัว"
+
+#: trainerdex/models.py:704 trainerdex/pogo_assets/strings.py:93
+msgctxt "badge_pikachu_title"
+msgid "Pikachu Fan"
+msgstr "แฟนคลับพิคาชู"
+
+#: trainerdex/models.py:705 trainerdex/pogo_assets/strings.py:92
+#, python-brace-format
+msgctxt "badge_pikachu"
+msgid "Catch {0} Pikachu."
+msgstr "ับพิคาชู {0} ตัว"
+
+#: trainerdex/models.py:715 trainerdex/pogo_assets/strings.py:248
+msgctxt "badge_unown_title"
+msgid "Unown"
+msgstr "อันโนน"
+
+#: trainerdex/models.py:716 trainerdex/pogo_assets/strings.py:247
+#, python-brace-format
+msgctxt "badge_unown"
+msgid "Catch {0} Unown."
+msgstr "จับอันโนน {0} ตัว"
+
+#: trainerdex/models.py:727 trainerdex/pogo_assets/strings.py:155
+msgctxt "badge_raid_battle_won_title"
+msgid "Champion"
+msgstr "แชมเปี้ยน"
+
+#: trainerdex/models.py:728
+#, python-brace-format
+msgctxt "badge_raid_battle_won"
+msgid "Win {0} Raids."
+msgstr ""
+
+#: trainerdex/models.py:738 trainerdex/pogo_assets/strings.py:66
+msgctxt "badge_legendary_battle_won_title"
+msgid "Battle Legend"
+msgstr "แบตเทิลเลเจนด์"
+
+#: trainerdex/models.py:739
+#, python-brace-format
+msgctxt "badge_legendary_battle_won"
+msgid "Win {0} Legendary Raids."
+msgstr ""
+
+#: trainerdex/models.py:749 trainerdex/pogo_assets/strings.py:25
+msgctxt "badge_berries_fed_title"
+msgid "Berry Master"
+msgstr "ปรมาจารย์ด้านผลไม้"
+
+#: trainerdex/models.py:750 trainerdex/pogo_assets/strings.py:24
+#, python-brace-format
+msgctxt "badge_berries_fed"
+msgid "Feed {0} Berries at Gyms."
+msgstr ""
+
+#: trainerdex/models.py:760 trainerdex/pogo_assets/strings.py:63
+msgctxt "badge_hours_defended_title"
+msgid "Gym Leader"
+msgstr "หัวหน้ายิม"
+
+#: trainerdex/models.py:761 trainerdex/pogo_assets/strings.py:62
+#, python-brace-format
+msgctxt "badge_hours_defended"
+msgid "Defend Gyms for {0} hours."
+msgstr ""
+
+#: trainerdex/models.py:771 trainerdex/pogo_assets/strings.py:37
+msgctxt "badge_challenge_quests_title"
+msgid "Pokémon Ranger"
+msgstr "จนท.พิทักษ์โปเกมอน"
+
+#: trainerdex/models.py:772 trainerdex/pogo_assets/strings.py:36
+#, python-brace-format
+msgctxt "badge_challenge_quests"
+msgid "Complete {0} Field Research tasks."
+msgstr ""
+
+#: trainerdex/models.py:782 trainerdex/pogo_assets/strings.py:82
+msgctxt "badge_max_level_friends_title"
+msgid "Idol"
+msgstr "ไอดอล"
+
+#: trainerdex/models.py:785 trainerdex/pogo_assets/strings.py:78
+#, python-brace-format
+msgctxt "badge_max_level_friends"
+msgid "Become Best Friends with {0} Trainer."
+msgid_plural "Become Best Friends with {0} Trainers."
+msgstr[0] "เป็นเพื่อนแท้กับเทรนเนอร์ {0} คน"
+
+#: trainerdex/models.py:798 trainerdex/pogo_assets/strings.py:172
+msgctxt "badge_trading_title"
+msgid "Gentleman"
+msgstr "สุภาพบุรุษ"
+
+#: trainerdex/models.py:799 trainerdex/pogo_assets/strings.py:171
+#, python-brace-format
+msgctxt "badge_trading"
+msgid "Trade {0} Pokémon."
+msgstr ""
+
+#: trainerdex/models.py:809 trainerdex/pogo_assets/strings.py:175
+msgctxt "badge_trading_distance_title"
+msgid "Pilot"
+msgstr "นักบิน"
+
+#: trainerdex/models.py:811 trainerdex/pogo_assets/strings.py:174
+#, python-brace-format
+msgctxt "badge_trading_distance"
+msgid "Earn {0} km across the distance of all Pokémon trades."
+msgstr ""
+
+#: trainerdex/models.py:822 trainerdex/pogo_assets/strings.py:57
+msgctxt "badge_great_league_title"
+msgid "Great League Veteran"
+msgstr "ผู้ผ่านศึกเกรตลีก"
+
+#: trainerdex/models.py:825 trainerdex/pogo_assets/strings.py:53
+#, python-brace-format
+msgctxt "badge_great_league"
+msgid "Win a Trainer Battle in the Great League."
+msgid_plural "Win {0} Trainer Battles in the Great League."
+msgstr[0] "ชนะเทรนเนอร์แบตเทิลในเกรตลีก {0} ครั้ง"
+
+#: trainerdex/models.py:838 trainerdex/pogo_assets/strings.py:242
+msgctxt "badge_ultra_league_title"
+msgid "Ultra League Veteran"
+msgstr "ผู้ผ่านศึกอัลตร้าลีก"
+
+#: trainerdex/models.py:841 trainerdex/pogo_assets/strings.py:238
+#, python-brace-format
+msgctxt "badge_ultra_league"
+msgid "Win a Trainer Battle in the Ultra League."
+msgid_plural "Win {0} Trainer Battles in the Ultra League."
+msgstr[0] "ชนะเทรนเนอร์แบตเทิลในอัลตร้าลีก {0} ครั้ง"
+
+#: trainerdex/models.py:854 trainerdex/pogo_assets/strings.py:74
+msgctxt "badge_master_league_title"
+msgid "Master League Veteran"
+msgstr "ผู้ผ่านศึกมาสเตอร์ลีก"
+
+#: trainerdex/models.py:857 trainerdex/pogo_assets/strings.py:70
+#, python-brace-format
+msgctxt "badge_master_league"
+msgid "Win a Trainer Battle in the Master League."
+msgid_plural "Win {0} Trainer Battles in the Master League."
+msgstr[0] "ชนะเทรนเนอร์แบตเทิลในมาสเตอร์ลีก {0} ครั้ง"
+
+#: trainerdex/models.py:870 trainerdex/pogo_assets/strings.py:90
+msgctxt "badge_photobomb_title"
+msgid "Cameraman"
+msgstr "ช่างกล้อง"
+
+#: trainerdex/models.py:873 trainerdex/pogo_assets/strings.py:86
+#, python-brace-format
+msgctxt "badge_photobomb"
+msgid "Have {0} surprise encounter in GO Snapshot."
+msgid_plural "Have {0} surprise encounters in GO Snapshot."
+msgstr[0] "พบการเผชิญหน้าที่ไม่คาดคิดในโกสแนปช็อต {0} ครั้ง"
+
+#: trainerdex/models.py:886 trainerdex/pogo_assets/strings.py:143
+msgctxt "badge_pokemon_purified_title"
+msgid "Purifier"
+msgstr "ผู้ชำระล้าง"
+
+#: trainerdex/models.py:887 trainerdex/pogo_assets/strings.py:142
+#, python-brace-format
+msgctxt "badge_pokemon_purified"
+msgid "Purify {0} Shadow Pokémon."
+msgstr "ชำระล้างโปเกมอนชาโดว์ {0} ตัว"
+
+#: trainerdex/models.py:897 trainerdex/pogo_assets/strings.py:166
+msgctxt "badge_rocket_grunts_defeated_title"
+msgid "Hero"
+msgstr "ฮีโร่"
+
+#: trainerdex/models.py:899
+#, python-brace-format
+msgctxt "badge_rocket_grunts_defeated"
+msgid "Defeat {0} Team GO Rocket Grunts."
+msgstr ""
+
+#: trainerdex/models.py:910
+msgctxt "badge_rocket_giovanni_defeated_title"
+msgid "Ulta Hero"
+msgstr ""
+
+#: trainerdex/models.py:913 trainerdex/pogo_assets/strings.py:159
+#, python-brace-format
+msgctxt "badge_rocket_giovanni_defeated"
+msgid "Defeat the Team GO Rocket Boss."
+msgid_plural "Defeat the Team GO Rocket Boss {0} times. "
+msgstr[0] "เอาชนะหัวหน้าใหญ่แก๊งโกร็อกเกต {0} ครั้ง"
+
+#: trainerdex/models.py:926 trainerdex/pogo_assets/strings.py:31
+msgctxt "badge_buddy_best_title"
+msgid "Best Buddy"
+msgstr "คู่หูมิตรแท้"
+
+#: trainerdex/models.py:928 trainerdex/pogo_assets/strings.py:30
+#, python-brace-format
+msgctxt "badge_buddy_best"
+msgid "Have 1 Best Buddy."
+msgid_plural "Have {0} Best Buddies."
+msgstr[0] "มีคู่หูมิตรแท้ {0} ตัว"
+
+#: trainerdex/models.py:939 trainerdex/pogo_assets/strings.py:256
+msgctxt "badge_wayfarer_title"
+msgid "Wayfarer"
+msgstr "ผู้เดินทาง"
+
+#: trainerdex/models.py:942 trainerdex/pogo_assets/strings.py:252
+#, python-brace-format
+msgctxt "badge_wayfarer"
+msgid "Earn a Wayfarer Agreement"
+msgid_plural "Earn {0} Wayfarer Agreements"
+msgstr[0] "ได้รับความเห็นพ้องผู้เดินทาง {0} ครั้ง"
+
+#: trainerdex/models.py:955 trainerdex/pogo_assets/strings.py:264
+msgctxt "badge_total_mega_evos_title"
+msgid "Successor"
+msgstr ""
+
+#: trainerdex/models.py:958 trainerdex/pogo_assets/strings.py:260
+#, python-brace-format
+msgctxt "badge_total_mega_evos"
+msgid "Mega Evolve a Pokémon {0} time."
+msgid_plural "Mega Evolve a Pokémon {0} times."
+msgstr[0] ""
+
+#: trainerdex/models.py:971 trainerdex/pogo_assets/strings.py:272
+msgctxt "badge_unique_mega_evos_title"
+msgid "Mega Evolution Guru"
+msgstr ""
+
+#: trainerdex/models.py:974 trainerdex/pogo_assets/strings.py:268
+#, python-brace-format
+msgctxt "badge_unique_mega_evos"
+msgid "Mega Evolve {0} Pokémon."
+msgid_plural "Mega Evolve {0} different species of Pokémon."
+msgstr[0] ""
+
+#: trainerdex/models.py:988 trainerdex/pogo_assets/strings.py:219
+msgctxt "badge_type_normal_title"
+msgid "Schoolkid"
+msgstr "เด็กนักเรียน"
+
+#: trainerdex/models.py:989
+#, python-brace-format
+msgctxt "badge_type_normal"
+msgid "Catch {0} Normal-type Pokémon"
+msgstr "จับโปเกมอนประเภทปกติ {0} ตัว"
+
+#: trainerdex/models.py:998 trainerdex/pogo_assets/strings.py:198
+msgctxt "badge_type_fighting_title"
+msgid "Black Belt"
+msgstr "คาราเต้สายดำ"
+
+#: trainerdex/models.py:999
+#, python-brace-format
+msgctxt "badge_type_fighting"
+msgid "Catch {0} Fighting-type Pokémon"
+msgstr "จับโปเกมอนประเภทต่อสู้ {0} ตัว"
+
+#: trainerdex/models.py:1008 trainerdex/pogo_assets/strings.py:204
+msgctxt "badge_type_flying_title"
+msgid "Bird Keeper"
+msgstr "ผู้ฝึกนก"
+
+#: trainerdex/models.py:1009
+#, python-brace-format
+msgctxt "badge_type_flying"
+msgid "Catch {0} Flying-type Pokémon"
+msgstr "จับโปเกมอนประเภทบิน {0} ตัว"
+
+#: trainerdex/models.py:1018 trainerdex/pogo_assets/strings.py:222
+msgctxt "badge_type_poison_title"
+msgid "Punk Girl"
+msgstr "จิ๊กกี๋"
+
+#: trainerdex/models.py:1019
+#, python-brace-format
+msgctxt "badge_type_poison"
+msgid "Catch {0} Poison-type Pokémon"
+msgstr "จับโปเกมอนประเภทพิษ {0} ตัว"
+
+#: trainerdex/models.py:1028 trainerdex/pogo_assets/strings.py:213
+msgctxt "badge_type_ground_title"
+msgid "Ruin Maniac"
+msgstr "ผู้คลั่งไคล้โบราณสถาน"
+
+#: trainerdex/models.py:1029
+#, python-brace-format
+msgctxt "badge_type_ground"
+msgid "Catch {0} Ground-type Pokémon"
+msgstr "จับโปเกมอนประเภทดิน {0} ตัว"
+
+#: trainerdex/models.py:1038 trainerdex/pogo_assets/strings.py:228
+msgctxt "badge_type_rock_title"
+msgid "Hiker"
+msgstr "นักปีนเขา"
+
+#: trainerdex/models.py:1039
+#, python-brace-format
+msgctxt "badge_type_rock"
+msgid "Catch {0} Rock-type Pokémon"
+msgstr "จับโปเกมอนประเภทหิน {0} ตัว"
+
+#: trainerdex/models.py:1048 trainerdex/pogo_assets/strings.py:183
+msgctxt "badge_type_bug_title"
+msgid "Bug Catcher"
+msgstr "นักจับแมลง"
+
+#: trainerdex/models.py:1049
+#, python-brace-format
+msgctxt "badge_type_bug"
+msgid "Catch {0} Bug-type Pokémon"
+msgstr "จับโปเกมอนประเภทแมลง {0} ตัว"
+
+#: trainerdex/models.py:1058 trainerdex/pogo_assets/strings.py:207
+msgctxt "badge_type_ghost_title"
+msgid "Hex Maniac"
+msgstr "ผู้คลั่งไคล้ไสยศาสตร์"
+
+#: trainerdex/models.py:1059
+#, python-brace-format
+msgctxt "badge_type_ghost"
+msgid "Catch {0} Ghost-type Pokémon"
+msgstr "จับโปเกมอนประเภทผี {0} ตัว"
+
+#: trainerdex/models.py:1068 trainerdex/pogo_assets/strings.py:231
+msgctxt "badge_type_steel_title"
+msgid "Rail Staff"
+msgstr ""
+
+#: trainerdex/models.py:1069 trainerdex/pogo_assets/strings.py:230
+#, python-brace-format
+msgctxt "badge_type_steel"
+msgid "Catch {0} Steel-type Pokémon."
+msgstr ""
+
+#: trainerdex/models.py:1078 trainerdex/pogo_assets/strings.py:201
+msgctxt "badge_type_fire_title"
+msgid "Kindler"
+msgstr "นักก่อไฟ"
+
+#: trainerdex/models.py:1079
+#, python-brace-format
+msgctxt "badge_type_fire"
+msgid "Catch {0} Fire-type Pokémon"
+msgstr "จับโปเกมอนประเภทไฟ {0} ตัว"
+
+#: trainerdex/models.py:1088
+msgctxt "badge_type_water_title"
+msgid "Swimmer"
+msgstr "นักว่ายน้ำ"
+
+#: trainerdex/models.py:1089
+#, python-brace-format
+msgctxt "badge_type_water"
+msgid "Catch {0} Water-type Pokémon"
+msgstr "จับโปเกมอนประเภทน้ำ {0} ตัว"
+
+#: trainerdex/models.py:1098 trainerdex/pogo_assets/strings.py:210
+msgctxt "badge_type_grass_title"
+msgid "Gardener"
+msgstr "คนสวน"
+
+#: trainerdex/models.py:1099
+#, python-brace-format
+msgctxt "badge_type_grass"
+msgid "Catch {0} Grass-type Pokémon"
+msgstr "จับโปเกมอนประเภทหญ้า {0} ตัว"
+
+#: trainerdex/models.py:1108 trainerdex/pogo_assets/strings.py:192
+msgctxt "badge_type_electric_title"
+msgid "Rocker"
+msgstr "นักดนตรีร็อก"
+
+#: trainerdex/models.py:1109
+#, python-brace-format
+msgctxt "badge_type_electric"
+msgid "Catch {0} Electric-type Pokémon"
+msgstr "จับโปเกมอนประเภทไฟฟ้า {0} ตัว"
+
+#: trainerdex/models.py:1118 trainerdex/pogo_assets/strings.py:225
+msgctxt "badge_type_psychic_title"
+msgid "Psychic"
+msgstr "ผู้มีพลังจิต"
+
+#: trainerdex/models.py:1119
+#, python-brace-format
+msgctxt "badge_type_psychic"
+msgid "Catch {0} Pychic-type Pokémon"
+msgstr "จับโปเกมอนประเภทพลังจิต {0} ตัว"
+
+#: trainerdex/models.py:1128 trainerdex/pogo_assets/strings.py:216
+msgctxt "badge_type_ice_title"
+msgid "Skier"
+msgstr "นักสกี"
+
+#: trainerdex/models.py:1129
+#, python-brace-format
+msgctxt "badge_type_ice"
+msgid "Catch {0} Ice-type Pokémon"
+msgstr "จับโปเกมอนประเภทน้ำแข็ง {0} ตัว"
+
+#: trainerdex/models.py:1138 trainerdex/pogo_assets/strings.py:189
+msgctxt "badge_type_dragon_title"
+msgid "Dragon Tamer"
+msgstr "ผู้สยบมังกร"
+
+#: trainerdex/models.py:1139
+#, python-brace-format
+msgctxt "badge_type_dragon"
+msgid "Catch {0} Dragon-type Pokémon"
+msgstr "จับโปเกมอนประเภทมังกร {0} ตัว"
+
+#: trainerdex/models.py:1148 trainerdex/pogo_assets/strings.py:186
+msgctxt "badge_type_dark_title"
+msgid "Delinquent"
+msgstr "สาวแยงกี้"
+
+#: trainerdex/models.py:1149
+#, python-brace-format
+msgctxt "badge_type_dark"
+msgid "Catch {0} Dark-type Pokémon"
+msgstr "จับโปเกมอนประเภทความมืด {0} ตัว"
+
+#: trainerdex/models.py:1158 trainerdex/pogo_assets/strings.py:195
+msgctxt "badge_type_fairy_title"
+msgid "Fairy Tale Girl"
+msgstr "สาวน้อยเทพนิยาย"
+
+#: trainerdex/models.py:1159
+#, python-brace-format
+msgctxt "badge_type_fairy"
+msgid "Catch {0} Fairy-type Pokémon"
+msgstr "จับโปเกมอนประเภทแฟรี่ {0} ตัว"
+
+#: trainerdex/models.py:1169 trainerdex/pogo_assets/strings.py:356
+msgctxt "profile_category_gymbadges"
+msgid "Gym Badges"
+msgstr "เหรียญตรายิม"
+
+#: trainerdex/models.py:1177
+msgid "Gold Gym Badges"
+msgstr ""
+
+#: trainerdex/models.py:1184 trainerdex/pogo_assets/strings.py:332
+msgctxt "pokemon_info_stardust_label"
+msgid "Stardust"
+msgstr ""
+
+#: trainerdex/models.py:1218
+msgid "You must fill in at least one field"
+msgstr ""
+
+#: trainerdex/models.py:1263
+#, python-brace-format
+msgid "This is required since you provided data for {badge}."
+msgstr ""
+
+#: trainerdex/models.py:1510 trainerdex/models.py:1548
+#, python-brace-format
+msgid "You must fill in {other_badge} if filling in {this_badge}."
+msgstr ""
+
+#: trainerdex/models.py:1563 trainerdex/models.py:1564
+msgctxt "update"
+msgid "update"
+msgid_plural "updates"
+msgstr[0] ""
+
+#: trainerdex/models.py:1617
+#, python-brace-format
+msgid "Evidence for {evidence_type} and {trainer}"
+msgstr ""
+
+#: trainerdex/models.py:1626
+msgid "Content Field doesn't match Content Object"
+msgstr ""
+
+#: trainerdex/models.py:1636 trainerdex/models.py:1637
+msgctxt "evidence"
+msgid "evidence"
+msgid_plural "evidence"
+msgstr[0] ""
+
+#: trainerdex/models.py:1669
+msgid "name"
+msgstr ""
+
+#: trainerdex/models.py:1687
+msgctxt "stat"
+msgid "stat"
+msgstr ""
+
+#: trainerdex/models.py:1691 trainerdex/models.py:1724
+#: trainerdex/models.py:1725
+msgctxt "target"
+msgid "target"
+msgid_plural "targets"
+msgstr[0] ""
+
+#: trainerdex/models.py:1738
+msgctxt "has_reached"
+msgid "reached"
+msgstr ""
+
+#: trainerdex/models.py:1741
+msgctxt "has_reached__help"
+msgid "Designates whether this target has been reached."
+msgstr ""
+
+#: trainerdex/models.py:1747
+msgctxt "date_reached__name"
+msgid "date reached"
+msgstr ""
+
+#: trainerdex/models.py:1749
+msgctxt "date_reached__help"
+msgid "The date the target was reached, if known."
+msgstr ""
+
+#: trainerdex/models.py:1816 trainerdex/models.py:1817
+msgctxt "target"
+msgid "target group"
+msgid_plural "target groups"
+msgstr[0] ""
+
+#: trainerdex/pogo_assets/strings.py:10
+msgctxt "avatar_detail_battle_won"
+msgid "Battles Won"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:12
+msgctxt "avatar_detail_total_activities"
+msgid "Total Activity"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:18
+#, python-brace-format
+msgctxt "badge_battle_defend_won"
+msgid "Win {0} defense battles!"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:19
+msgctxt "badge_battle_defend_won_title"
+msgid "Defense Battles Won"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:39
+#, python-brace-format
+msgctxt "badge_defeated_fort"
+msgid "Win {0} battles."
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:40
+msgctxt "badge_defeated_fort_title"
+msgid "Battle"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:42
+#, python-brace-format
+msgctxt "badge_deployed_total"
+msgid "Assign {0} Pokémon to Gyms!"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:43
+msgctxt "badge_deployed_total_title"
+msgid "Pokémon at Gyms"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:45
+#, python-brace-format
+msgctxt "badge_encountered_total"
+msgid "Encounter {0} Pokémon."
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:46
+msgctxt "badge_encountered_total_title"
+msgid "Encounters"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:59
+#, python-brace-format
+msgctxt "badge_hatched_total"
+msgid "Hatch {0} Eggs."
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:65
+#, python-brace-format
+msgctxt "badge_legendary_battle_won"
+msgid "Win {0} Legendary raids."
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:140
+msgctxt "badge_pokedex_entries_unknown_title"
+msgid "Unknown"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:148
+#, python-brace-format
+msgctxt "badge_prestige_dropped"
+msgid "Reduce {0} total Gym Prestige!"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:149
+msgctxt "badge_prestige_dropped_title"
+msgid "Reduced Prestige"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:151
+#, python-brace-format
+msgctxt "badge_prestige_raised"
+msgid "Raise {0} total Gym Prestige!"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:152
+msgctxt "badge_prestige_raised_title"
+msgid "Prestige Raised"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:154
+#, python-brace-format
+msgctxt "badge_raid_battle_won"
+msgid "Win {0} raids."
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:163
+msgctxt "badge_rocket_giovanni_defeated_title"
+msgid "Ultra Hero"
+msgstr "อัลตร้าฮีโร่"
+
+#: trainerdex/pogo_assets/strings.py:165
+#, python-brace-format
+msgctxt "badge_rocket_grunts_defeated"
+msgid "Defeat {0} Team GO Rocket members."
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:182
+#, python-brace-format
+msgctxt "badge_type_bug"
+msgid "Catch {0} Bug-type Pokémon."
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:185
+#, python-brace-format
+msgctxt "badge_type_dark"
+msgid "Catch {0} Dark-type Pokémon."
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:188
+#, python-brace-format
+msgctxt "badge_type_dragon"
+msgid "Catch {0} Dragon-type Pokémon."
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:191
+#, python-brace-format
+msgctxt "badge_type_electric"
+msgid "Catch {0} Electric-type Pokémon."
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:194
+#, python-brace-format
+msgctxt "badge_type_fairy"
+msgid "Catch {0} Fairy-type Pokémon."
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:197
+#, python-brace-format
+msgctxt "badge_type_fighting"
+msgid "Catch {0} Fighting-type Pokémon."
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:200
+#, python-brace-format
+msgctxt "badge_type_fire"
+msgid "Catch {0} Fire-type Pokémon."
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:203
+#, python-brace-format
+msgctxt "badge_type_flying"
+msgid "Catch {0} Flying-type Pokémon."
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:206
+#, python-brace-format
+msgctxt "badge_type_ghost"
+msgid "Catch {0} Ghost-type Pokémon."
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:209
+#, python-brace-format
+msgctxt "badge_type_grass"
+msgid "Catch {0} Grass-type Pokémon."
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:212
+#, python-brace-format
+msgctxt "badge_type_ground"
+msgid "Catch {0} Ground-type Pokémon."
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:215
+#, python-brace-format
+msgctxt "badge_type_ice"
+msgid "Catch {0} Ice-type Pokémon."
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:218
+#, python-brace-format
+msgctxt "badge_type_normal"
+msgid "Catch {0} Normal-type Pokémon."
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:221
+#, python-brace-format
+msgctxt "badge_type_poison"
+msgid "Catch {0} Poison-type Pokémon."
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:224
+#, python-brace-format
+msgctxt "badge_type_psychic"
+msgid "Catch {0} Psychic-type Pokémon."
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:227
+#, python-brace-format
+msgctxt "badge_type_rock"
+msgid "Catch {0} Rock-type Pokémon."
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:233
+#, python-brace-format
+msgctxt "badge_type_water"
+msgid "Catch {0} Water-type Pokémon."
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:234
+msgctxt "badge_type_water_title"
+msgid "Water"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:244
+#, python-brace-format
+msgctxt "badge_unique_pokestops"
+msgid "Visit {0} unique PokéStops."
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:245
+msgctxt "badge_unique_pokestops_title"
+msgid "Unique PokéStops"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:274
+msgctxt "buddy_level_0"
+msgid "Buddy"
+msgid_plural "Buddies"
+msgstr[0] ""
+
+#: trainerdex/pogo_assets/strings.py:275
+msgctxt "buddy_level_1"
+msgid "Good Buddy"
+msgid_plural "Good Buddies"
+msgstr[0] ""
+
+#: trainerdex/pogo_assets/strings.py:276
+msgctxt "buddy_level_2"
+msgid "Great Buddy"
+msgid_plural "Great Buddies"
+msgstr[0] ""
+
+#: trainerdex/pogo_assets/strings.py:277
+msgctxt "buddy_level_3"
+msgid "Ultra Buddy"
+msgid_plural "Ultra Buddies"
+msgstr[0] ""
+
+#: trainerdex/pogo_assets/strings.py:278
+msgctxt "buddy_level_4"
+msgid "Best Buddy"
+msgid_plural "Best Buddies"
+msgstr[0] ""
+
+#: trainerdex/pogo_assets/strings.py:280
+msgctxt "codename_already_yours"
+msgid "That's already your name!"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:281
+#, python-brace-format
+msgctxt "codename_reassign_success"
+msgid "You're now known as {0}."
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:283
+msgctxt "date_format"
+msgid "MMM dd, yyyy"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:285
+#, python-brace-format
+msgctxt "encounter_score_total_exp"
+msgid "{0} XP"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:286
+#, python-brace-format
+msgctxt "feedback_added_xp"
+msgid "+{0} XP"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:288
+msgctxt "friend"
+msgid "friend"
+msgid_plural "friends"
+msgstr[0] ""
+
+#: trainerdex/pogo_assets/strings.py:290
+#, python-brace-format
+msgctxt "friend_full_name"
+msgid "{0} ({1})"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:291
+#, python-brace-format
+msgctxt "friends_list_level_format"
+msgid "Lv {0}"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:293
+msgctxt "friendship_level_0"
+msgid "Friend"
+msgid_plural "Friends"
+msgstr[0] ""
+
+#: trainerdex/pogo_assets/strings.py:294
+msgctxt "friendship_level_1"
+msgid "Good Friend"
+msgid_plural "Good Friends"
+msgstr[0] ""
+
+#: trainerdex/pogo_assets/strings.py:295
+msgctxt "friendship_level_2"
+msgid "Great Friend"
+msgid_plural "Great Friends"
+msgstr[0] ""
+
+#: trainerdex/pogo_assets/strings.py:296
+msgctxt "friendship_level_3"
+msgid "Ultra Friend"
+msgid_plural "Ultra Friends"
+msgstr[0] ""
+
+#: trainerdex/pogo_assets/strings.py:297
+msgctxt "friendship_level_4"
+msgid "Best Friend"
+msgid_plural "Best Friends"
+msgstr[0] ""
+
+#: trainerdex/pogo_assets/strings.py:299
+msgctxt "alola_pokedex_header"
+msgid "Alolan Form"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:300
+msgctxt "galarian_pokedex_header"
+msgid "Galarian Form"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:302
+msgctxt "general_accept"
+msgid "Accept"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:303
+msgctxt "general_allow"
+msgid "Allow"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:304
+msgctxt "general_button_select"
+msgid "Select"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:305
+msgctxt "general_cancel"
+msgid "Cancel"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:306
+msgctxt "general_close"
+msgid "Close"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:307
+msgctxt "general_continue"
+msgid "Continue"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:308
+msgctxt "general_cp"
+msgid "CP"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:309
+msgctxt "general_dismiss"
+msgid "Dismiss"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:310
+msgctxt "general_do_not_allow"
+msgid "Don’t Allow"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:311
+msgctxt "general_error"
+msgid "Error"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:312
+msgctxt "general_go"
+msgid "GO"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:313
+msgctxt "general_kg"
+msgid "kg"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:314
+msgctxt "general_m"
+msgid "m"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:315
+msgctxt "general_more"
+msgid "More"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:316
+msgctxt "general_no"
+msgid "No"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:317
+msgctxt "general_ok"
+msgid "OK"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:318
+msgctxt "general_pokemon"
+msgid "Pokémon"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:319
+msgctxt "general_sign_out"
+msgid "Sign Out"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:320
+msgctxt "general_sign_out_confirm"
+msgid "Are you sure you want to sign out?"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:321
+msgctxt "general_stamina"
+msgid "HP"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:322
+msgctxt "general_xp"
+msgid "XP"
+msgstr "XP"
+
+#: trainerdex/pogo_assets/strings.py:323
+msgctxt "general_yes"
+msgid "Yes"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:325
+msgctxt "onboard_name_fail"
+msgid "An error has occurred. Try another name."
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:326
+msgctxt "onboard_name_invalid_characters_error"
+msgid "Only letters and numbers are allowed."
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:327
+msgctxt "onboard_name_not_available"
+msgid "That name isn't available."
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:328
+msgctxt "onboard_name_not_valid"
+msgid "That name is invalid."
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:329
+msgctxt "onboard_name_owned"
+msgid "This name is already in use by another Trainer."
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:331
+msgctxt "pokemon_info_cp"
+msgid "CP"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:333
+msgctxt "pokemon_info_type"
+msgid "Type"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:335
+msgctxt "pokemon_type_bug"
+msgid "Bug"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:336
+msgctxt "pokemon_type_dark"
+msgid "Dark"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:337
+msgctxt "pokemon_type_dragon"
+msgid "Dragon"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:338
+msgctxt "pokemon_type_electric"
+msgid "Electric"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:339
+msgctxt "pokemon_type_fairy"
+msgid "Fairy"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:340
+msgctxt "pokemon_type_fighting"
+msgid "Fighting"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:341
+msgctxt "pokemon_type_fire"
+msgid "Fire"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:342
+msgctxt "pokemon_type_flying"
+msgid "Flying"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:343
+msgctxt "pokemon_type_ghost"
+msgid "Ghost"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:344
+msgctxt "pokemon_type_grass"
+msgid "Grass"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:345
+msgctxt "pokemon_type_ground"
+msgid "Ground"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:346
+msgctxt "pokemon_type_ice"
+msgid "Ice"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:347
+msgctxt "pokemon_type_normal"
+msgid "Normal"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:348
+msgctxt "pokemon_type_poison"
+msgid "Poison"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:349
+msgctxt "pokemon_type_psychic"
+msgid "Psychic"
+msgstr "ผู้มีพลังจิต"
+
+#: trainerdex/pogo_assets/strings.py:350
+msgctxt "pokemon_type_rock"
+msgid "Rock"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:351
+msgctxt "pokemon_type_steel"
+msgid "Steel"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:352
+msgctxt "pokemon_type_water"
+msgid "Water"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:354
+msgctxt "profile_button_activity_log"
+msgid "Journal"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:355
+msgctxt "profile_button_customize"
+msgid "Style"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:357
+msgctxt "profile_category_medals"
+msgid "Medals"
+msgstr "เหรียญรางวัล"
+
+#: trainerdex/pogo_assets/strings.py:358
+msgctxt "profile_category_stats"
+msgid "Stats"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:359
+msgctxt "profile_category_total_fitness"
+msgid "TOTAL PROGRESS"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:360
+msgctxt "profile_category_weekly_fitness"
+msgid "WEEKLY PROGRESS"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:361
+msgctxt "profile_gymbadges_help"
+msgid "Learn more"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:362
+msgctxt "profile_gymbadges_recently_visited"
+msgid "Recently Visited"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:363
+msgctxt "profile_no_gymbadges"
+msgid "You don't have any Gym Badges."
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:364
+msgctxt "profile_player_level"
+msgid "Level"
+msgstr "เลเวล"
+
+#: trainerdex/pogo_assets/strings.py:367
+msgctxt "profile_total_xp"
+msgid "Total XP"
+msgstr "XP ทั้งหมด"
+
+#: trainerdex/pogo_assets/strings.py:369
+msgctxt "screen_friends_title"
+msgid "friends"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:370
+msgctxt "screen_title_badge_collection"
+msgid "Gym Badges"
+msgstr "เหรียญตรายิม"
+
+#: trainerdex/pogo_assets/strings.py:371
+msgctxt "screen_title_friend_requests"
+msgid "Friend Requests"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:372
+msgctxt "screen_title_news"
+msgid "News"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:373
+msgctxt "screen_title_notification"
+msgid "Notifications"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:374
+msgctxt "screen_title_pokedex"
+msgid "POKÉDEX"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:375
+msgctxt "screen_title_settings"
+msgid "SETTINGS"
+msgstr ""
+
+#: trainerdex/templates/404.html:6 trainerdex/templates/404.html:7
+#: trainerdex/templates/404.html:11
+msgid "404 Not Found"
+msgstr ""
+
+#: trainerdex/templates/account/account_inactive.html:5
+#: trainerdex/templates/account/account_inactive.html:6
+#: trainerdex/templates/account/account_inactive.html:11
+msgid "Account Inactive"
+msgstr ""
+
+#: trainerdex/templates/account/account_inactive.html:14
+msgid "This account is inactive. Please contact us on Discord, Twitter or via Email to reactivate your account."
+msgstr ""
+
+#: trainerdex/templates/account/account_inactive.html:18
+msgid "Discord Server"
+msgstr ""
+
+#: trainerdex/templates/account/account_inactive.html:21
+msgid "@TrainerDexApp on Twitter"
+msgstr ""
+
+#: trainerdex/templates/account/account_settings.html:5
+#: trainerdex/templates/account/account_settings.html:6
+#: trainerdex/templates/account/account_settings.html:7
+msgid "Account Settings"
+msgstr ""
+
+#: trainerdex/templates/account/account_settings.html:12
+msgid "Set/Change Password"
+msgstr ""
+
+#: trainerdex/templates/account/account_settings.html:15
+msgid "Email Management"
+msgstr ""
+
+#: trainerdex/templates/account/account_settings.html:18
+msgid "Link Social Accounts"
+msgstr ""
+
+#: trainerdex/templates/account/email.html:6
+#: trainerdex/templates/account/email.html:7
+msgid "Account"
+msgstr ""
+
+#: trainerdex/templates/account/email.html:12
+msgid "Add E-mail Address"
+msgstr ""
+
+#: trainerdex/templates/account/email.html:16
+msgid "Add an email address to your account to get back in if you forget your password. Also, your primary email is used for gravatar generation."
+msgstr ""
+
+#: trainerdex/templates/account/email.html:24
+msgid "Add E-mail"
+msgstr ""
+
+#: trainerdex/templates/account/email.html:30
+msgid "E-mail Addresses"
+msgstr ""
+
+#: trainerdex/templates/account/email.html:37
+msgid "The following e-mail addresses are associated with your account:"
+msgstr ""
+
+#: trainerdex/templates/account/email.html:45
+msgid "Primary"
+msgstr ""
+
+#: trainerdex/templates/account/email.html:57
+msgid "Make Primary"
+msgstr ""
+
+#: trainerdex/templates/account/email.html:58
+msgid "Re-send Verification"
+msgstr ""
+
+#: trainerdex/templates/account/email.html:59
+msgid "Remove"
+msgstr ""
+
+#: trainerdex/templates/account/email.html:69
+msgid "Warning:"
+msgstr ""
+
+#: trainerdex/templates/account/email.html:69
+msgid "You currently do not have any e-mail address set up. You should really add an e-mail address so you can receive notifications, reset your password, etc."
+msgstr ""
+
+#: trainerdex/templates/account/email.html:79
+msgid "Do you really want to remove the selected e-mail address?"
+msgstr ""
+
+#: trainerdex/templates/account/email_confirm.html:6
+#: trainerdex/templates/account/email_confirm.html:7
+#: trainerdex/templates/account/email_confirm.html:12
+msgid "Confirm E-mail Address"
+msgstr ""
+
+#: trainerdex/templates/account/email_confirm.html:17
+#, python-format
+msgid "Please confirm that <a href=\"mailto:%(email)s\">%(email)s</a> is an e-mail address for user %(user_display)s."
+msgstr ""
+
+#: trainerdex/templates/account/email_confirm.html:22
+msgid "Confirm"
+msgstr ""
+
+#: trainerdex/templates/account/email_confirm.html:28
+msgid "This e-mail confirmation link expired or is invalid."
+msgstr ""
+
+#: trainerdex/templates/account/email_confirm.html:32
+msgid "Resend confirmation email"
+msgstr ""
+
+#: trainerdex/templates/account/login.html:6
+#: trainerdex/templates/account/login.html:7
+#: trainerdex/templates/account/login.html:14
+#: trainerdex/templates/account/login.html:74
+msgid "Sign In"
+msgstr ""
+
+#: trainerdex/templates/account/login.html:18
+#, python-format
+msgid "If you have not created an account yet, then please <a href=\"%(signup_url)s\">sign up</a> first."
+msgstr ""
+
+#: trainerdex/templates/account/login.html:75
+msgid "Forget/Reset Password"
+msgstr ""
+
+#: trainerdex/templates/account/logout.html:5
+#: trainerdex/templates/account/logout.html:6
+#: trainerdex/templates/account/logout.html:11
+#: trainerdex/templates/account/logout.html:22
+msgid "Sign Out"
+msgstr ""
+
+#: trainerdex/templates/account/logout.html:14
+msgid "Are you sure you want to sign out?"
+msgstr ""
+
+#: trainerdex/templates/account/password_change.html:6
+#: trainerdex/templates/account/password_change.html:7
+#: trainerdex/templates/account/password_change.html:12
+#: trainerdex/templates/account/password_change.html:24
+#: trainerdex/templates/account/password_reset_from_key.html:6
+#: trainerdex/templates/account/password_reset_from_key.html:7
+#: trainerdex/templates/account/password_reset_from_key.html:12
+#: trainerdex/templates/account/password_reset_from_key_done.html:4
+#: trainerdex/templates/account/password_reset_from_key_done.html:5
+#: trainerdex/templates/account/password_reset_from_key_done.html:10
+msgid "Change Password"
+msgstr ""
+
+#: trainerdex/templates/account/password_reset.html:7
+#: trainerdex/templates/account/password_reset.html:8
+#: trainerdex/templates/account/password_reset.html:22
+#: trainerdex/templates/account/password_reset_done.html:6
+#: trainerdex/templates/account/password_reset_done.html:7
+#: trainerdex/templates/account/password_reset_done.html:12
+msgid "Password Reset"
+msgstr ""
+
+#: trainerdex/templates/account/password_reset.html:28
+msgid "Forgotten your password? Enter your e-mail address below, and we'll send you an e-mail allowing you to reset it."
+msgstr ""
+
+#: trainerdex/templates/account/password_reset.html:29
+msgid "Please contact us if you have any trouble resetting your password."
+msgstr ""
+
+#: trainerdex/templates/account/password_reset.html:32
+msgid "Email address..."
+msgstr ""
+
+#: trainerdex/templates/account/password_reset.html:36
+msgid "Reset My Password"
+msgstr ""
+
+#: trainerdex/templates/account/password_reset_done.html:16
+msgid "We have sent you an e-mail. Please contact us if you do not receive it within a few minutes."
+msgstr ""
+
+#: trainerdex/templates/account/password_reset_done.html:19
+#: trainerdex/templates/account/password_reset_from_key_done.html:16
+#: trainerdex/templates/account/verification_sent.html:16
+msgid "Return to homepage"
+msgstr ""
+
+#: trainerdex/templates/account/password_reset_from_key.html:12
+msgid "Bad Token"
+msgstr ""
+
+#: trainerdex/templates/account/password_reset_from_key.html:17
+msgid "The password reset link was invalid, possibly because it has already been used."
+msgstr ""
+
+#: trainerdex/templates/account/password_reset_from_key.html:21
+msgid "New password reset key"
+msgstr ""
+
+#: trainerdex/templates/account/password_reset_from_key.html:35
+msgid "change password"
+msgstr ""
+
+#: trainerdex/templates/account/password_reset_from_key.html:40
+msgid "Your password has now been changed."
+msgstr ""
+
+#: trainerdex/templates/account/password_reset_from_key.html:44
+#: trainerdex/templates/account/verified_email_required.html:20
+msgid "Return to login page"
+msgstr ""
+
+#: trainerdex/templates/account/password_reset_from_key_done.html:13
+msgid "Your password is now changed."
+msgstr ""
+
+#: trainerdex/templates/account/password_set.html:6
+#: trainerdex/templates/account/password_set.html:7
+#: trainerdex/templates/account/password_set.html:12
+#: trainerdex/templates/account/password_set.html:25
+msgid "Set Password"
+msgstr ""
+
+#: trainerdex/templates/account/password_set.html:17
+msgid "Please set a password"
+msgstr ""
+
+#: trainerdex/templates/account/signup.html:7
+#: trainerdex/templates/account/signup.html:8
+msgid "Signup"
+msgstr ""
+
+#: trainerdex/templates/account/signup.html:14
+#: trainerdex/templates/account/signup.html:39
+msgid "Register"
+msgstr ""
+
+#: trainerdex/templates/account/verification_sent.html:5
+#: trainerdex/templates/account/verification_sent.html:6
+#: trainerdex/templates/account/verification_sent.html:11
+#: trainerdex/templates/account/verified_email_required.html:5
+#: trainerdex/templates/account/verified_email_required.html:6
+#: trainerdex/templates/account/verified_email_required.html:11
+msgid "Verify Your E-mail Address"
+msgstr ""
+
+#: trainerdex/templates/account/verification_sent.html:14
+msgid "We have sent an e-mail to you for verification. Follow the link provided to finalize the signup process. Please contact us if you do not receive it within a few minutes."
+msgstr ""
+
+#: trainerdex/templates/account/verified_email_required.html:15
+msgid "This part of the site requires us to verify that you are who you claim to be. For this purpose, we require that you verify ownership of your e-mail address. "
+msgstr ""
+
+#: trainerdex/templates/account/verified_email_required.html:16
+msgid "We have sent an e-mail to you for verification. Please click on the link inside this e-mail. Please contact us if you do not receive it within a few minutes."
+msgstr ""
+
+#: trainerdex/templates/account/verified_email_required.html:23
+msgid "Change your email"
+msgstr ""
+
+#: trainerdex/validators.py:6
+msgctxt "codename__error"
+msgid "Only letters and numbers are allowed."
+msgstr ""
+
+#: trainerdex/validators.py:14
+msgctxt "friend_code__error"
+msgid "Trainer Code must be 12 digits long and contain only numbers and whitespace."
+msgstr ""
+
+#: config/settings.py:154
+msgid "English"
+msgstr ""
+
+#: config/settings.py:155
+msgid "German"
+msgstr ""
+
+#: config/settings.py:156
+msgid "Spanish"
+msgstr ""
+
+#: config/settings.py:157
+msgid "French"
+msgstr ""
+
+#: config/settings.py:158
+msgid "Italian"
+msgstr ""
+
+#: config/settings.py:159
+msgid "Japanese"
+msgstr ""
+
+#: config/settings.py:160
+msgid "Korean"
+msgstr ""
+
+#: config/settings.py:161
+msgid "Brazilian Portuguese"
+msgstr ""
+
+#: config/settings.py:162
+msgid "Thai"
+msgstr ""
+
+#: config/settings.py:163
+msgid "Traditional Chinese"
+msgstr ""
+
+#: config/settings.py:210
+msgid "View your Trainer Codename, Team, Country and other standard information"
+msgstr ""
+
+#: config/settings.py:213
+msgid "Edit your Trainer Codename, Team, Country and other standard information"
+msgstr ""
+
+#: config/settings.py:215
+msgid "View full set of Stats Updates"
+msgstr ""
+
+#: config/settings.py:216
+msgid "Post Stats Updates"
+msgstr ""
+
+#: config/settings.py:217
+msgid "View your email address"
+msgstr ""
+
+#: config/settings.py:218
+msgid "View your connected social accounts"
+msgstr ""
+
