@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trainerdex\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-17 10:09+0000\n"
-"PO-Revision-Date: 2020-09-17 10:09\n"
+"POT-Creation-Date: 2020-09-24 08:15+0000\n"
+"PO-Revision-Date: 2020-09-24 08:15\n"
 "Last-Translator: \n"
 "Language-Team: Spanish\n"
 "Language: es_ES\n"
@@ -19,59 +19,59 @@ msgstr ""
 
 #: community/admin.py:18 community/admin.py:26
 msgid "Details"
-msgstr ""
+msgstr "Detalles"
 
 #: community/admin.py:21
 msgid "Members"
-msgstr ""
+msgstr "Miembros"
 
 #: community/models.py:14
 msgctxt "community__handle__title"
 msgid "Handle"
-msgstr ""
+msgstr "Encargarse de"
 
 #: community/models.py:17
 msgctxt "community__handle__help"
 msgid "Once you set this, it cannot be changed. Pick carefully as this will be the identifier to find your community leaderboard."
-msgstr ""
+msgstr "Una vez que establezcas esto, no se puede cambiar. Elige cuidadosamente ya que este será el identificador para encontrarte en el tablero de líderes de tu comunidad."
 
 #: community/models.py:24
 msgid "language"
-msgstr ""
+msgstr "language"
 
 #: community/models.py:26
 msgid "timezone"
-msgstr ""
+msgstr "zona horaria"
 
 #: community/models.py:30
 msgctxt "community__country__title"
 msgid "country"
-msgstr ""
+msgstr "país"
 
 #: community/models.py:31
 msgctxt "community__country__help"
 msgid "Where your community is based"
-msgstr ""
+msgstr "Donde se basa tu comunidad"
 
 #: community/models.py:36
 msgctxt "community__name__title"
 msgid "name"
-msgstr ""
+msgstr "nombre"
 
 #: community/models.py:37
 msgctxt "community__name__help"
 msgid "Max 70 characters"
-msgstr ""
+msgstr "Máx. 70 caracteres"
 
 #: community/models.py:42
 msgctxt "community__description__title"
 msgid "description"
-msgstr ""
+msgstr "descripción"
 
 #: community/models.py:45
 msgctxt "community__description__help"
 msgid "What makes your community unique? What are you about?"
-msgstr ""
+msgstr "¿Qué hace que tu comunidad sea única? ¿De qué trata?"
 
 #: community/models.py:51
 msgctxt "community__can_see__title"
@@ -82,7 +82,8 @@ msgstr "Públicamente visible"
 msgctxt "community__can_see__help"
 msgid "Default: False\n"
 "Turn this on to share your community with the world."
-msgstr ""
+msgstr "Predeterminado: False\n"
+"Activa esto para compartir tu comunidad con el mundo."
 
 #: community/models.py:59
 msgctxt "community__can_join__title"
@@ -93,47 +94,48 @@ msgstr "Unirse públicamente"
 msgctxt "community__can_join__title"
 msgid "Default: False\n"
 "Turn this on to make your community free to join. No invites required."
-msgstr ""
+msgstr "Predeterminado: False\n"
+"Activa esto para hacer que tu comunidad se una libremente. No se requieren invitaciones."
 
 #: community/models.py:84 community/models.py:85
 msgctxt "community__title"
 msgid "community"
 msgid_plural "communities"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "comunidad"
+msgstr[1] "comunidades"
 
 #: trainerdex/abstract.py:18
 msgctxt "codename"
 msgid "nickname"
-msgstr ""
+msgstr "apodo"
 
 #: trainerdex/abstract.py:30
 msgid "A user with that username already exists."
-msgstr ""
+msgstr "Un usuario con este nombre de usuario ya existe."
 
 #: trainerdex/abstract.py:36
 msgctxt "last_modified"
 msgid "last modified"
-msgstr ""
+msgstr "última modificación"
 
 #: trainerdex/abstract.py:42
 msgctxt "country"
 msgid "country"
-msgstr ""
+msgstr "país"
 
 #: trainerdex/abstract.py:45
 msgctxt "country__help"
 msgid "Where this account plays the most. Used to place in localized leaderboards"
-msgstr ""
+msgstr "Donde esta cuenta juega más. Utilizado para las clasificaciones localizadas"
 
 #: trainerdex/abstract.py:51
 msgctxt "is_banned"
 msgid "banned"
-msgstr ""
+msgstr "baneado"
 
 #: trainerdex/admin.py:111
 msgid "Basic Info"
-msgstr ""
+msgstr "Información básica"
 
 #: trainerdex/admin.py:115
 msgid "Medals"
@@ -145,27 +147,27 @@ msgstr "Tipos de medalla"
 
 #: trainerdex/admin.py:171
 msgid "Pokédex"
-msgstr ""
+msgstr "Pokédex"
 
 #: trainerdex/admin.py:233
 msgid "Authentication"
-msgstr ""
+msgstr "Autenticación"
 
 #: trainerdex/admin.py:235
 msgid "Trainer info"
-msgstr ""
+msgstr "Información del entrenador"
 
 #: trainerdex/admin.py:239
 msgid "Permissions"
-msgstr ""
+msgstr "Permisos"
 
 #: trainerdex/admin.py:253
 msgid "Important dates"
-msgstr ""
+msgstr "Fecha de importación"
 
 #: trainerdex/admin.py:317 trainerdex/admin.py:326
 msgid "Object"
-msgstr ""
+msgstr "Objeto"
 
 #: trainerdex/fields.py:13 trainerdex/fields.py:36 trainerdex/models.py:478
 #: trainerdex/models.py:493 trainerdex/models.py:508 trainerdex/models.py:523
@@ -181,7 +183,7 @@ msgstr ""
 #: trainerdex/models.py:932 trainerdex/models.py:948 trainerdex/models.py:964
 #: trainerdex/models.py:980
 msgid "Bronze"
-msgstr ""
+msgstr "Bronce"
 
 #: trainerdex/fields.py:14 trainerdex/fields.py:37 trainerdex/models.py:478
 #: trainerdex/models.py:493 trainerdex/models.py:508 trainerdex/models.py:523
@@ -197,7 +199,7 @@ msgstr ""
 #: trainerdex/models.py:932 trainerdex/models.py:948 trainerdex/models.py:964
 #: trainerdex/models.py:980
 msgid "Silver"
-msgstr ""
+msgstr "Plata"
 
 #: trainerdex/fields.py:15 trainerdex/fields.py:38 trainerdex/models.py:478
 #: trainerdex/models.py:493 trainerdex/models.py:508 trainerdex/models.py:523
@@ -213,12 +215,12 @@ msgstr ""
 #: trainerdex/models.py:932 trainerdex/models.py:948 trainerdex/models.py:964
 #: trainerdex/models.py:980
 msgid "Gold"
-msgstr ""
+msgstr "Oro"
 
 #: trainerdex/models.py:55 trainerdex/models.py:68
 msgctxt "team_name_team0_abbr"
 msgid "Teamless"
-msgstr ""
+msgstr "Sin equipo"
 
 #: trainerdex/models.py:56 trainerdex/models.py:69
 msgctxt "team_name_team1_abbr"
@@ -259,8 +261,8 @@ msgstr "Equipo Instinto"
 msgctxt "faction"
 msgid "team"
 msgid_plural "teams"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "equipo"
+msgstr[1] "equipos"
 
 #: trainerdex/models.py:154
 msgctxt "tid"
@@ -275,12 +277,12 @@ msgstr ""
 #: trainerdex/models.py:171
 msgctxt "start_date__help"
 msgid "Creation date of the Pokémon Go profile."
-msgstr ""
+msgstr "Fecha de creación del perfil de Pokémon Go."
 
 #: trainerdex/models.py:177
 msgctxt "faction__help"
 msgid "The team of the Pokémon Go profile."
-msgstr ""
+msgstr "Fecha de creación del equipo de Pokémon Go."
 
 #: trainerdex/models.py:183
 msgctxt "is_verified"
@@ -290,21 +292,21 @@ msgstr "Verificado"
 #: trainerdex/models.py:186
 msgctxt "is_verified__help"
 msgid "Designates whether this user should be treated as verified."
-msgstr ""
+msgstr "Designa si este usuario debe tratarse como verificado."
 
 #: trainerdex/models.py:243 trainerdex/models.py:244
 msgctxt "trainer"
 msgid "trainer"
 msgid_plural "trainers"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "entrenadores"
+msgstr[1] "entrenadores"
 
 #: trainerdex/models.py:259 trainerdex/models.py:275 trainerdex/models.py:276
 msgctxt "codename"
 msgid "Nickname"
 msgid_plural "Nicknames"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Apodo"
+msgstr[1] "Apodos"
 
 #: trainerdex/models.py:306 trainerdex/models.py:317
 #: trainerdex/pogo_assets/strings.py:289
@@ -314,15 +316,15 @@ msgstr "Código de Entrenador"
 
 #: trainerdex/models.py:321
 msgid "Trainer Code can be seen by users of groups they're in"
-msgstr ""
+msgstr "El código del entrenador puede ser visto por los usuarios de grupos en los que están"
 
 #: trainerdex/models.py:325
 msgid "Trainer Code can be seen on the web, publicly"
-msgstr ""
+msgstr "El código del entrenador se puede ver en la web, públicamente"
 
 #: trainerdex/models.py:329
 msgid "Trainer Code can be on the API"
-msgstr ""
+msgstr "Código del entrenador puede estar en la API"
 
 #: trainerdex/models.py:368
 msgctxt "update_time"
@@ -332,7 +334,7 @@ msgstr "Tiempo Actualizado"
 #: trainerdex/models.py:372
 msgctxt "submission_date"
 msgid "Date Submitted"
-msgstr ""
+msgstr "Fecha de registro"
 
 #: trainerdex/models.py:376
 msgctxt "last_modified"
@@ -342,12 +344,12 @@ msgstr "Última modificación"
 #: trainerdex/models.py:381
 msgctxt "comment"
 msgid "Comment"
-msgstr ""
+msgstr "Comentar"
 
 #: trainerdex/models.py:387
 msgctxt "metadata"
 msgid "Metadata"
-msgstr ""
+msgstr "Metadatos"
 
 #: trainerdex/models.py:390
 msgctxt "metadata__help"
@@ -357,7 +359,12 @@ msgid "This is a JSON dictionary allowing for as much metadata as you please.\n"
 "            `ocr`: boolean\n"
 "            `image_url`: string\n\n"
 "            "
-msgstr ""
+msgstr "Esto es un  JSON diccionario que permite  tantos metadatos como se desee.\n"
+"            Como sea, los siguientes atributos se esperan:\n\n"
+"            `provider`: string\n"
+"            `ocr`: boolean\n"
+"            `image_url`: string\n\n"
+"            "
 
 #: trainerdex/models.py:405
 msgctxt "total_xp"
@@ -421,7 +428,7 @@ msgstr "Registra {0} Pokémon originalmente de la región de Sinnoh en la Pokéd
 #: trainerdex/models.py:530 trainerdex/pogo_assets/strings.py:120
 msgctxt "badge_pokedex_entries_gen5_title"
 msgid "Unova"
-msgstr "Teselia"
+msgstr "Unova"
 
 #: trainerdex/models.py:533 trainerdex/pogo_assets/strings.py:118
 #, python-brace-format
@@ -606,7 +613,7 @@ msgstr "Campeón"
 #, python-brace-format
 msgctxt "badge_raid_battle_won"
 msgid "Win {0} Raids."
-msgstr ""
+msgstr "Incursiones ganadas: {0}."
 
 #: trainerdex/models.py:738 trainerdex/pogo_assets/strings.py:66
 msgctxt "badge_legendary_battle_won_title"
@@ -617,7 +624,7 @@ msgstr "Combates legendarios"
 #, python-brace-format
 msgctxt "badge_legendary_battle_won"
 msgid "Win {0} Legendary Raids."
-msgstr ""
+msgstr "Gana {0} incursiones legendarias."
 
 #: trainerdex/models.py:749 trainerdex/pogo_assets/strings.py:25
 msgctxt "badge_berries_fed_title"
@@ -628,7 +635,7 @@ msgstr "Maestro de Bayas"
 #, python-brace-format
 msgctxt "badge_berries_fed"
 msgid "Feed {0} Berries at Gyms."
-msgstr ""
+msgstr "Bayas usadas en Gimnasios: {0}."
 
 #: trainerdex/models.py:760 trainerdex/pogo_assets/strings.py:63
 msgctxt "badge_hours_defended_title"
@@ -639,7 +646,7 @@ msgstr "Líder del Gimnasio"
 #, python-brace-format
 msgctxt "badge_hours_defended"
 msgid "Defend Gyms for {0} hours."
-msgstr ""
+msgstr "Defende gimnasios por {0} horas."
 
 #: trainerdex/models.py:771 trainerdex/pogo_assets/strings.py:37
 msgctxt "badge_challenge_quests_title"
@@ -650,7 +657,7 @@ msgstr "Pokémon Ranger"
 #, python-brace-format
 msgctxt "badge_challenge_quests"
 msgid "Complete {0} Field Research tasks."
-msgstr ""
+msgstr "Completa {0} tareas de campo."
 
 #: trainerdex/models.py:782 trainerdex/pogo_assets/strings.py:82
 msgctxt "badge_max_level_friends_title"
@@ -674,7 +681,7 @@ msgstr "Aristócrata"
 #, python-brace-format
 msgctxt "badge_trading"
 msgid "Trade {0} Pokémon."
-msgstr ""
+msgstr "Intercambia {0} Pókemon."
 
 #: trainerdex/models.py:809 trainerdex/pogo_assets/strings.py:175
 msgctxt "badge_trading_distance_title"
@@ -685,7 +692,7 @@ msgstr "Piloto"
 #, python-brace-format
 msgctxt "badge_trading_distance"
 msgid "Earn {0} km across the distance of all Pokémon trades."
-msgstr ""
+msgstr "Gana {0} km de distancia por intercambio de Pókemon."
 
 #: trainerdex/models.py:822 trainerdex/pogo_assets/strings.py:57
 msgctxt "badge_great_league_title"
@@ -759,12 +766,12 @@ msgstr "Héroe"
 #, python-brace-format
 msgctxt "badge_rocket_grunts_defeated"
 msgid "Defeat {0} Team GO Rocket Grunts."
-msgstr ""
+msgstr "Derrota {0} Líderes del Team Rocket."
 
 #: trainerdex/models.py:910
 msgctxt "badge_rocket_giovanni_defeated_title"
 msgid "Ulta Hero"
-msgstr ""
+msgstr "Ultrahéroe"
 
 #: trainerdex/models.py:913 trainerdex/pogo_assets/strings.py:159
 #, python-brace-format
@@ -810,21 +817,21 @@ msgstr "Sucesor"
 msgctxt "badge_total_mega_evos"
 msgid "Mega Evolve a Pokémon {0} time."
 msgid_plural "Mega Evolve a Pokémon {0} times."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Mega evoluciona un Pókemon {0} veces."
+msgstr[1] "Mega Evoluciona un Pókemon {0} veces."
 
 #: trainerdex/models.py:971 trainerdex/pogo_assets/strings.py:272
 msgctxt "badge_unique_mega_evos_title"
 msgid "Mega Evolution Guru"
-msgstr ""
+msgstr "Mega Evolución Guru"
 
 #: trainerdex/models.py:974 trainerdex/pogo_assets/strings.py:268
 #, python-brace-format
 msgctxt "badge_unique_mega_evos"
 msgid "Mega Evolve {0} Pokémon."
 msgid_plural "Mega Evolve {0} different species of Pokémon."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Mega Evoluciona {0} Pókemon."
+msgstr[1] "Mega Evoluciona {0} especies diferentes de Pókemon."
 
 #: trainerdex/models.py:988 trainerdex/pogo_assets/strings.py:219
 msgctxt "badge_type_normal_title"
@@ -1040,12 +1047,12 @@ msgstr "Polvos Estelares"
 
 #: trainerdex/models.py:1218
 msgid "You must fill in at least one field"
-msgstr ""
+msgstr "Debe rellenar al menos un campo"
 
 #: trainerdex/models.py:1263
 #, python-brace-format
 msgid "This is required since you provided data for {badge}."
-msgstr ""
+msgstr "Esto es necesario ya que proporcionó datos para {badge}."
 
 #: trainerdex/models.py:1510 trainerdex/models.py:1548
 #, python-brace-format
@@ -1056,68 +1063,68 @@ msgstr "Debes rellenar {other_badge} si estas llenando {this_badge}."
 msgctxt "update"
 msgid "update"
 msgid_plural "updates"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "actualizar"
+msgstr[1] "actualizaciones"
 
 #: trainerdex/models.py:1617
 #, python-brace-format
 msgid "Evidence for {evidence_type} and {trainer}"
-msgstr ""
+msgstr "Evidencia para {evidence_type} y {trainer}"
 
 #: trainerdex/models.py:1626
 msgid "Content Field doesn't match Content Object"
-msgstr ""
+msgstr "El campo de contenido no coincide con el objeto de contenido"
 
 #: trainerdex/models.py:1636 trainerdex/models.py:1637
 msgctxt "evidence"
 msgid "evidence"
 msgid_plural "evidence"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "evidencia"
+msgstr[1] "evidencia"
 
 #: trainerdex/models.py:1669
 msgid "name"
-msgstr ""
+msgstr "nombre"
 
 #: trainerdex/models.py:1687
 msgctxt "stat"
 msgid "stat"
-msgstr ""
+msgstr "estadística"
 
 #: trainerdex/models.py:1691 trainerdex/models.py:1724
 #: trainerdex/models.py:1725
 msgctxt "target"
 msgid "target"
 msgid_plural "targets"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "objetivo"
+msgstr[1] "objetivos"
 
 #: trainerdex/models.py:1738
 msgctxt "has_reached"
 msgid "reached"
-msgstr ""
+msgstr "conseguido"
 
 #: trainerdex/models.py:1741
 msgctxt "has_reached__help"
 msgid "Designates whether this target has been reached."
-msgstr ""
+msgstr "Designa si este objetivo ha sido alcanzado."
 
 #: trainerdex/models.py:1747
 msgctxt "date_reached__name"
 msgid "date reached"
-msgstr ""
+msgstr "fecha alcanzada"
 
 #: trainerdex/models.py:1749
 msgctxt "date_reached__help"
 msgid "The date the target was reached, if known."
-msgstr ""
+msgstr "La fecha en que se alcanzó el objetivo, si se conoce."
 
 #: trainerdex/models.py:1816 trainerdex/models.py:1817
 msgctxt "target"
 msgid "target group"
 msgid_plural "target groups"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "grupo objetivo"
+msgstr[1] "objetivos de grupo"
 
 #: trainerdex/pogo_assets/strings.py:10
 msgctxt "avatar_detail_battle_won"
@@ -1577,7 +1584,7 @@ msgstr ""
 #: trainerdex/pogo_assets/strings.py:322
 msgctxt "general_xp"
 msgid "XP"
-msgstr "PX"
+msgstr "Experiencia"
 
 #: trainerdex/pogo_assets/strings.py:323
 msgctxt "general_yes"
@@ -1692,7 +1699,7 @@ msgstr ""
 #: trainerdex/pogo_assets/strings.py:349
 msgctxt "pokemon_type_psychic"
 msgid "Psychic"
-msgstr "Médium"
+msgstr "Psíquico"
 
 #: trainerdex/pogo_assets/strings.py:350
 msgctxt "pokemon_type_rock"
@@ -1762,7 +1769,7 @@ msgstr "Nivel"
 #: trainerdex/pogo_assets/strings.py:367
 msgctxt "profile_total_xp"
 msgid "Total XP"
-msgstr "Total de PX"
+msgstr "Total de experiencia"
 
 #: trainerdex/pogo_assets/strings.py:369
 msgctxt "screen_friends_title"
@@ -1804,268 +1811,6 @@ msgstr ""
 msgid "404 Not Found"
 msgstr "Error 404 No Encontrado"
 
-#: trainerdex/templates/account/account_inactive.html:5
-#: trainerdex/templates/account/account_inactive.html:6
-#: trainerdex/templates/account/account_inactive.html:11
-msgid "Account Inactive"
-msgstr "Cuenta Inactiva"
-
-#: trainerdex/templates/account/account_inactive.html:14
-msgid "This account is inactive. Please contact us on Discord, Twitter or via Email to reactivate your account."
-msgstr "Esta cuenta está inactiva. Por favor contáctenos en Discord, Twitter o vía correo electrónico para reactivar tu cuenta."
-
-#: trainerdex/templates/account/account_inactive.html:18
-msgid "Discord Server"
-msgstr "Servidor de Discord"
-
-#: trainerdex/templates/account/account_inactive.html:21
-msgid "@TrainerDexApp on Twitter"
-msgstr "@TrainerDexApp en Twitter"
-
-#: trainerdex/templates/account/account_settings.html:5
-#: trainerdex/templates/account/account_settings.html:6
-#: trainerdex/templates/account/account_settings.html:7
-msgid "Account Settings"
-msgstr "Configuración de cuenta"
-
-#: trainerdex/templates/account/account_settings.html:12
-msgid "Set/Change Password"
-msgstr "Establecer/Cambiar contraseña"
-
-#: trainerdex/templates/account/account_settings.html:15
-msgid "Email Management"
-msgstr "Gestión de correo electrónico"
-
-#: trainerdex/templates/account/account_settings.html:18
-msgid "Link Social Accounts"
-msgstr "Vincular Cuentas Sociales"
-
-#: trainerdex/templates/account/email.html:6
-#: trainerdex/templates/account/email.html:7
-msgid "Account"
-msgstr "Cuenta"
-
-#: trainerdex/templates/account/email.html:12
-msgid "Add E-mail Address"
-msgstr "Agregar correo electrónico "
-
-#: trainerdex/templates/account/email.html:16
-msgid "Add an email address to your account to get back in if you forget your password. Also, your primary email is used for gravatar generation."
-msgstr "Agregue una dirección de correo electrónico a su cuenta para volver a ingresar si olvida su contraseña. Además, su correo electrónico principal se usa para la generación de Gravatar."
-
-#: trainerdex/templates/account/email.html:24
-msgid "Add E-mail"
-msgstr "Agregar correo electrónico "
-
-#: trainerdex/templates/account/email.html:30
-msgid "E-mail Addresses"
-msgstr "Direcciones de correo electrónico"
-
-#: trainerdex/templates/account/email.html:37
-msgid "The following e-mail addresses are associated with your account:"
-msgstr "La siguiente dirección de correo electrónico está asociada con tu cuenta:"
-
-#: trainerdex/templates/account/email.html:45
-msgid "Primary"
-msgstr "Primario"
-
-#: trainerdex/templates/account/email.html:57
-msgid "Make Primary"
-msgstr "Hacer Primario"
-
-#: trainerdex/templates/account/email.html:58
-msgid "Re-send Verification"
-msgstr "Re-enviar verificación"
-
-#: trainerdex/templates/account/email.html:59
-msgid "Remove"
-msgstr "Remover"
-
-#: trainerdex/templates/account/email.html:69
-msgid "Warning:"
-msgstr "Advertencia:"
-
-#: trainerdex/templates/account/email.html:69
-msgid "You currently do not have any e-mail address set up. You should really add an e-mail address so you can receive notifications, reset your password, etc."
-msgstr "Actualmente no tienes ninguna dirección de correo electrónico configurada. Realmente deberías agregar una dirección de correo electrónico para que puedas recibir notificaciones, restablecer tu contraseña, etc."
-
-#: trainerdex/templates/account/email.html:79
-msgid "Do you really want to remove the selected e-mail address?"
-msgstr "¿Realmente quires remover el correo electrónico seleccionado?"
-
-#: trainerdex/templates/account/email_confirm.html:6
-#: trainerdex/templates/account/email_confirm.html:7
-#: trainerdex/templates/account/email_confirm.html:12
-msgid "Confirm E-mail Address"
-msgstr "Confirmar dirección de correo electrónico "
-
-#: trainerdex/templates/account/email_confirm.html:17
-#, python-format
-msgid "Please confirm that <a href=\"mailto:%(email)s\">%(email)s</a> is an e-mail address for user %(user_display)s."
-msgstr "Por favor, confirme que <a href=\"mailto:%(email)s\">%(email)s</a> es el correo electronic para el usuario %(user_display)s."
-
-#: trainerdex/templates/account/email_confirm.html:22
-msgid "Confirm"
-msgstr "Confirmar"
-
-#: trainerdex/templates/account/email_confirm.html:28
-msgid "This e-mail confirmation link expired or is invalid."
-msgstr "Este enlace de confirmación por correo electrónico expiró o no es válido."
-
-#: trainerdex/templates/account/email_confirm.html:32
-msgid "Resend confirmation email"
-msgstr "Re enviar correo electrónico de confirmación"
-
-#: trainerdex/templates/account/login.html:6
-#: trainerdex/templates/account/login.html:7
-#: trainerdex/templates/account/login.html:14
-#: trainerdex/templates/account/login.html:74
-msgid "Sign In"
-msgstr "Inicio de sesión"
-
-#: trainerdex/templates/account/login.html:18
-#, python-format
-msgid "If you have not created an account yet, then please <a href=\"%(signup_url)s\">sign up</a> first."
-msgstr "Si no hay creado una cuenta aún,  por favor <a href=\"%(signup_url)s\">Crea una cuenta</a> primero."
-
-#: trainerdex/templates/account/login.html:75
-msgid "Forget/Reset Password"
-msgstr "Olvidar/Restablecer Contraseña"
-
-#: trainerdex/templates/account/logout.html:5
-#: trainerdex/templates/account/logout.html:6
-#: trainerdex/templates/account/logout.html:11
-#: trainerdex/templates/account/logout.html:22
-msgid "Sign Out"
-msgstr "Cerrar sesión"
-
-#: trainerdex/templates/account/logout.html:14
-msgid "Are you sure you want to sign out?"
-msgstr "¿Estás seguro que quieres salir?"
-
-#: trainerdex/templates/account/password_change.html:6
-#: trainerdex/templates/account/password_change.html:7
-#: trainerdex/templates/account/password_change.html:12
-#: trainerdex/templates/account/password_change.html:24
-#: trainerdex/templates/account/password_reset_from_key.html:6
-#: trainerdex/templates/account/password_reset_from_key.html:7
-#: trainerdex/templates/account/password_reset_from_key.html:12
-#: trainerdex/templates/account/password_reset_from_key_done.html:4
-#: trainerdex/templates/account/password_reset_from_key_done.html:5
-#: trainerdex/templates/account/password_reset_from_key_done.html:10
-msgid "Change Password"
-msgstr "Cambiar contraseña"
-
-#: trainerdex/templates/account/password_reset.html:7
-#: trainerdex/templates/account/password_reset.html:8
-#: trainerdex/templates/account/password_reset.html:22
-#: trainerdex/templates/account/password_reset_done.html:6
-#: trainerdex/templates/account/password_reset_done.html:7
-#: trainerdex/templates/account/password_reset_done.html:12
-msgid "Password Reset"
-msgstr "Resetear contraseña"
-
-#: trainerdex/templates/account/password_reset.html:28
-msgid "Forgotten your password? Enter your e-mail address below, and we'll send you an e-mail allowing you to reset it."
-msgstr "¿Haz olvidado tu contraseña? Introduce la dirección de correo electrónico a continuación y te enviaremos un correo electrónico que te permitirá reestablecerla."
-
-#: trainerdex/templates/account/password_reset.html:29
-msgid "Please contact us if you have any trouble resetting your password."
-msgstr "Por favor, contáctanos si tienes problemas reseteando tu contraseña"
-
-#: trainerdex/templates/account/password_reset.html:32
-msgid "Email address..."
-msgstr "Dirección de correo electrónico..."
-
-#: trainerdex/templates/account/password_reset.html:36
-msgid "Reset My Password"
-msgstr "Resetear mi contraseña"
-
-#: trainerdex/templates/account/password_reset_done.html:16
-msgid "We have sent you an e-mail. Please contact us if you do not receive it within a few minutes."
-msgstr "Te hemos enviado un correo electrónico. Por favor contáctenos si no lo recibes en unos minutos."
-
-#: trainerdex/templates/account/password_reset_done.html:19
-#: trainerdex/templates/account/password_reset_from_key_done.html:16
-#: trainerdex/templates/account/verification_sent.html:16
-msgid "Return to homepage"
-msgstr "Volver al Inicio"
-
-#: trainerdex/templates/account/password_reset_from_key.html:12
-msgid "Bad Token"
-msgstr "Token inválido"
-
-#: trainerdex/templates/account/password_reset_from_key.html:17
-msgid "The password reset link was invalid, possibly because it has already been used."
-msgstr "El link para resetear tu contraseña es invalido, posiblemente porque ya ha sido utilizado."
-
-#: trainerdex/templates/account/password_reset_from_key.html:21
-msgid "New password reset key"
-msgstr "Nueva clave para restablecer contraseña"
-
-#: trainerdex/templates/account/password_reset_from_key.html:35
-msgid "change password"
-msgstr "cambiar contraseña"
-
-#: trainerdex/templates/account/password_reset_from_key.html:40
-msgid "Your password has now been changed."
-msgstr "Tu contraseña ha sido cambiada"
-
-#: trainerdex/templates/account/password_reset_from_key.html:44
-#: trainerdex/templates/account/verified_email_required.html:20
-msgid "Return to login page"
-msgstr "Volver a la página de Inicio de Sesión "
-
-#: trainerdex/templates/account/password_reset_from_key_done.html:13
-msgid "Your password is now changed."
-msgstr "Tu contraseña ha cambiado."
-
-#: trainerdex/templates/account/password_set.html:6
-#: trainerdex/templates/account/password_set.html:7
-#: trainerdex/templates/account/password_set.html:12
-#: trainerdex/templates/account/password_set.html:25
-msgid "Set Password"
-msgstr "Configurar contraseña"
-
-#: trainerdex/templates/account/password_set.html:17
-msgid "Please set a password"
-msgstr ""
-
-#: trainerdex/templates/account/signup.html:7
-#: trainerdex/templates/account/signup.html:8
-msgid "Signup"
-msgstr "Regístrate "
-
-#: trainerdex/templates/account/signup.html:14
-#: trainerdex/templates/account/signup.html:39
-msgid "Register"
-msgstr "Registrar"
-
-#: trainerdex/templates/account/verification_sent.html:5
-#: trainerdex/templates/account/verification_sent.html:6
-#: trainerdex/templates/account/verification_sent.html:11
-#: trainerdex/templates/account/verified_email_required.html:5
-#: trainerdex/templates/account/verified_email_required.html:6
-#: trainerdex/templates/account/verified_email_required.html:11
-msgid "Verify Your E-mail Address"
-msgstr "Verifica tu dirección de correo electrónico "
-
-#: trainerdex/templates/account/verification_sent.html:14
-msgid "We have sent an e-mail to you for verification. Follow the link provided to finalize the signup process. Please contact us if you do not receive it within a few minutes."
-msgstr "Le hemos enviado un correo electrónico para su verificación. Siga el enlace provisto para finalizar el proceso de registro. Por favor contáctenos si no lo recibe en unos minutos."
-
-#: trainerdex/templates/account/verified_email_required.html:15
-msgid "This part of the site requires us to verify that you are who you claim to be. For this purpose, we require that you verify ownership of your e-mail address. "
-msgstr "Esta parte del sitio requiere que verifiquemos que usted es quien dice ser. Para este fin, le solicitamos que verifique la propiedad de su dirección de correo electrónico."
-
-#: trainerdex/templates/account/verified_email_required.html:16
-msgid "We have sent an e-mail to you for verification. Please click on the link inside this e-mail. Please contact us if you do not receive it within a few minutes."
-msgstr "Le hemos enviado un correo electrónico para su verificación. Haga clic en el enlace dentro de este correo. Por favor contáctenos si no lo recibe en unos minutos."
-
-#: trainerdex/templates/account/verified_email_required.html:23
-msgid "Change your email"
-msgstr ""
-
 #: trainerdex/validators.py:6
 msgctxt "codename__error"
 msgid "Only letters and numbers are allowed."
@@ -2076,67 +1821,67 @@ msgctxt "friend_code__error"
 msgid "Trainer Code must be 12 digits long and contain only numbers and whitespace."
 msgstr "El código de entrenador debe tener 12 dígitos y sólo contiene números y espacios en blanco."
 
-#: config/settings.py:154
-msgid "English"
-msgstr "Inglés"
-
-#: config/settings.py:155
+#: config/settings.py:151
 msgid "German"
 msgstr "Alemán"
 
-#: config/settings.py:156
+#: config/settings.py:152
+msgid "English"
+msgstr "Inglés"
+
+#: config/settings.py:153
 msgid "Spanish"
 msgstr "Español"
 
-#: config/settings.py:157
+#: config/settings.py:154
 msgid "French"
 msgstr "Francés"
 
-#: config/settings.py:158
+#: config/settings.py:155
 msgid "Italian"
 msgstr "Italiano"
 
-#: config/settings.py:159
+#: config/settings.py:156
 msgid "Japanese"
 msgstr "Japonés"
 
-#: config/settings.py:160
+#: config/settings.py:157
 msgid "Korean"
 msgstr "Coreano"
 
-#: config/settings.py:161
+#: config/settings.py:158
 msgid "Brazilian Portuguese"
 msgstr "Portugués Brasileño"
 
-#: config/settings.py:162
+#: config/settings.py:159
 msgid "Thai"
 msgstr "Thai"
 
-#: config/settings.py:163
+#: config/settings.py:160
 msgid "Traditional Chinese"
 msgstr "Chino Tradicional"
 
-#: config/settings.py:210
+#: config/settings.py:207
 msgid "View your Trainer Codename, Team, Country and other standard information"
-msgstr ""
+msgstr "Ver su código de entrenador, equipo, país y otra información estándar"
+
+#: config/settings.py:210
+msgid "Edit your Trainer Codename, Team, Country and other standard information"
+msgstr "Edita tu código de entrenador, equipo, país y otra información estándar"
+
+#: config/settings.py:212
+msgid "View full set of Stats Updates"
+msgstr "Ver el conjunto completo de actualizaciones de estadísticas"
 
 #: config/settings.py:213
-msgid "Edit your Trainer Codename, Team, Country and other standard information"
-msgstr ""
+msgid "Post Stats Updates"
+msgstr "Publicar Actualizaciones de estadísticas"
+
+#: config/settings.py:214
+msgid "View your email address"
+msgstr "Revisa tu dirección de correo electrónico"
 
 #: config/settings.py:215
-msgid "View full set of Stats Updates"
-msgstr ""
-
-#: config/settings.py:216
-msgid "Post Stats Updates"
-msgstr ""
-
-#: config/settings.py:217
-msgid "View your email address"
-msgstr ""
-
-#: config/settings.py:218
 msgid "View your connected social accounts"
-msgstr ""
+msgstr "Ver tus cuentas sociales conectadas"
 

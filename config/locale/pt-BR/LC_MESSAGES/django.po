@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trainerdex\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-17 10:09+0000\n"
-"PO-Revision-Date: 2020-09-17 10:09\n"
+"POT-Creation-Date: 2020-09-24 08:15+0000\n"
+"PO-Revision-Date: 2020-09-24 08:15\n"
 "Last-Translator: \n"
 "Language-Team: Portuguese, Brazilian\n"
 "Language: pt_BR\n"
@@ -388,7 +388,7 @@ msgstr "Registre {0} Pokémon da região de Kanto ao Pokédex."
 #: trainerdex/models.py:485 trainerdex/pogo_assets/strings.py:102
 msgctxt "badge_pokedex_entries_title"
 msgid "Johto"
-msgstr "Johto"
+msgstr ""
 
 #: trainerdex/models.py:488 trainerdex/pogo_assets/strings.py:100
 #, python-brace-format
@@ -410,7 +410,7 @@ msgstr "Registre {0} Pokémon originalmente descobertos na região de Hoenn ao P
 #: trainerdex/models.py:515 trainerdex/pogo_assets/strings.py:114
 msgctxt "badge_pokedex_entries_gen4_title"
 msgid "Sinnoh"
-msgstr "Sinnoh"
+msgstr ""
 
 #: trainerdex/models.py:518 trainerdex/pogo_assets/strings.py:112
 #, python-brace-format
@@ -421,7 +421,7 @@ msgstr "Registre {0} Pokémon originalmente descobertos na região de Sinnoh ao 
 #: trainerdex/models.py:530 trainerdex/pogo_assets/strings.py:120
 msgctxt "badge_pokedex_entries_gen5_title"
 msgid "Unova"
-msgstr "Unova"
+msgstr ""
 
 #: trainerdex/models.py:533 trainerdex/pogo_assets/strings.py:118
 #, python-brace-format
@@ -1692,7 +1692,7 @@ msgstr ""
 #: trainerdex/pogo_assets/strings.py:349
 msgctxt "pokemon_type_psychic"
 msgid "Psychic"
-msgstr "Médium"
+msgstr ""
 
 #: trainerdex/pogo_assets/strings.py:350
 msgctxt "pokemon_type_rock"
@@ -1757,12 +1757,12 @@ msgstr ""
 #: trainerdex/pogo_assets/strings.py:364
 msgctxt "profile_player_level"
 msgid "Level"
-msgstr "Nível"
+msgstr ""
 
 #: trainerdex/pogo_assets/strings.py:367
 msgctxt "profile_total_xp"
 msgid "Total XP"
-msgstr "Total de PE"
+msgstr ""
 
 #: trainerdex/pogo_assets/strings.py:369
 msgctxt "screen_friends_title"
@@ -1804,268 +1804,6 @@ msgstr ""
 msgid "404 Not Found"
 msgstr ""
 
-#: trainerdex/templates/account/account_inactive.html:5
-#: trainerdex/templates/account/account_inactive.html:6
-#: trainerdex/templates/account/account_inactive.html:11
-msgid "Account Inactive"
-msgstr ""
-
-#: trainerdex/templates/account/account_inactive.html:14
-msgid "This account is inactive. Please contact us on Discord, Twitter or via Email to reactivate your account."
-msgstr ""
-
-#: trainerdex/templates/account/account_inactive.html:18
-msgid "Discord Server"
-msgstr ""
-
-#: trainerdex/templates/account/account_inactive.html:21
-msgid "@TrainerDexApp on Twitter"
-msgstr ""
-
-#: trainerdex/templates/account/account_settings.html:5
-#: trainerdex/templates/account/account_settings.html:6
-#: trainerdex/templates/account/account_settings.html:7
-msgid "Account Settings"
-msgstr ""
-
-#: trainerdex/templates/account/account_settings.html:12
-msgid "Set/Change Password"
-msgstr ""
-
-#: trainerdex/templates/account/account_settings.html:15
-msgid "Email Management"
-msgstr ""
-
-#: trainerdex/templates/account/account_settings.html:18
-msgid "Link Social Accounts"
-msgstr ""
-
-#: trainerdex/templates/account/email.html:6
-#: trainerdex/templates/account/email.html:7
-msgid "Account"
-msgstr ""
-
-#: trainerdex/templates/account/email.html:12
-msgid "Add E-mail Address"
-msgstr ""
-
-#: trainerdex/templates/account/email.html:16
-msgid "Add an email address to your account to get back in if you forget your password. Also, your primary email is used for gravatar generation."
-msgstr ""
-
-#: trainerdex/templates/account/email.html:24
-msgid "Add E-mail"
-msgstr ""
-
-#: trainerdex/templates/account/email.html:30
-msgid "E-mail Addresses"
-msgstr ""
-
-#: trainerdex/templates/account/email.html:37
-msgid "The following e-mail addresses are associated with your account:"
-msgstr ""
-
-#: trainerdex/templates/account/email.html:45
-msgid "Primary"
-msgstr ""
-
-#: trainerdex/templates/account/email.html:57
-msgid "Make Primary"
-msgstr ""
-
-#: trainerdex/templates/account/email.html:58
-msgid "Re-send Verification"
-msgstr ""
-
-#: trainerdex/templates/account/email.html:59
-msgid "Remove"
-msgstr ""
-
-#: trainerdex/templates/account/email.html:69
-msgid "Warning:"
-msgstr ""
-
-#: trainerdex/templates/account/email.html:69
-msgid "You currently do not have any e-mail address set up. You should really add an e-mail address so you can receive notifications, reset your password, etc."
-msgstr ""
-
-#: trainerdex/templates/account/email.html:79
-msgid "Do you really want to remove the selected e-mail address?"
-msgstr ""
-
-#: trainerdex/templates/account/email_confirm.html:6
-#: trainerdex/templates/account/email_confirm.html:7
-#: trainerdex/templates/account/email_confirm.html:12
-msgid "Confirm E-mail Address"
-msgstr ""
-
-#: trainerdex/templates/account/email_confirm.html:17
-#, python-format
-msgid "Please confirm that <a href=\"mailto:%(email)s\">%(email)s</a> is an e-mail address for user %(user_display)s."
-msgstr ""
-
-#: trainerdex/templates/account/email_confirm.html:22
-msgid "Confirm"
-msgstr ""
-
-#: trainerdex/templates/account/email_confirm.html:28
-msgid "This e-mail confirmation link expired or is invalid."
-msgstr ""
-
-#: trainerdex/templates/account/email_confirm.html:32
-msgid "Resend confirmation email"
-msgstr ""
-
-#: trainerdex/templates/account/login.html:6
-#: trainerdex/templates/account/login.html:7
-#: trainerdex/templates/account/login.html:14
-#: trainerdex/templates/account/login.html:74
-msgid "Sign In"
-msgstr ""
-
-#: trainerdex/templates/account/login.html:18
-#, python-format
-msgid "If you have not created an account yet, then please <a href=\"%(signup_url)s\">sign up</a> first."
-msgstr ""
-
-#: trainerdex/templates/account/login.html:75
-msgid "Forget/Reset Password"
-msgstr ""
-
-#: trainerdex/templates/account/logout.html:5
-#: trainerdex/templates/account/logout.html:6
-#: trainerdex/templates/account/logout.html:11
-#: trainerdex/templates/account/logout.html:22
-msgid "Sign Out"
-msgstr ""
-
-#: trainerdex/templates/account/logout.html:14
-msgid "Are you sure you want to sign out?"
-msgstr ""
-
-#: trainerdex/templates/account/password_change.html:6
-#: trainerdex/templates/account/password_change.html:7
-#: trainerdex/templates/account/password_change.html:12
-#: trainerdex/templates/account/password_change.html:24
-#: trainerdex/templates/account/password_reset_from_key.html:6
-#: trainerdex/templates/account/password_reset_from_key.html:7
-#: trainerdex/templates/account/password_reset_from_key.html:12
-#: trainerdex/templates/account/password_reset_from_key_done.html:4
-#: trainerdex/templates/account/password_reset_from_key_done.html:5
-#: trainerdex/templates/account/password_reset_from_key_done.html:10
-msgid "Change Password"
-msgstr ""
-
-#: trainerdex/templates/account/password_reset.html:7
-#: trainerdex/templates/account/password_reset.html:8
-#: trainerdex/templates/account/password_reset.html:22
-#: trainerdex/templates/account/password_reset_done.html:6
-#: trainerdex/templates/account/password_reset_done.html:7
-#: trainerdex/templates/account/password_reset_done.html:12
-msgid "Password Reset"
-msgstr ""
-
-#: trainerdex/templates/account/password_reset.html:28
-msgid "Forgotten your password? Enter your e-mail address below, and we'll send you an e-mail allowing you to reset it."
-msgstr ""
-
-#: trainerdex/templates/account/password_reset.html:29
-msgid "Please contact us if you have any trouble resetting your password."
-msgstr ""
-
-#: trainerdex/templates/account/password_reset.html:32
-msgid "Email address..."
-msgstr ""
-
-#: trainerdex/templates/account/password_reset.html:36
-msgid "Reset My Password"
-msgstr ""
-
-#: trainerdex/templates/account/password_reset_done.html:16
-msgid "We have sent you an e-mail. Please contact us if you do not receive it within a few minutes."
-msgstr ""
-
-#: trainerdex/templates/account/password_reset_done.html:19
-#: trainerdex/templates/account/password_reset_from_key_done.html:16
-#: trainerdex/templates/account/verification_sent.html:16
-msgid "Return to homepage"
-msgstr ""
-
-#: trainerdex/templates/account/password_reset_from_key.html:12
-msgid "Bad Token"
-msgstr ""
-
-#: trainerdex/templates/account/password_reset_from_key.html:17
-msgid "The password reset link was invalid, possibly because it has already been used."
-msgstr ""
-
-#: trainerdex/templates/account/password_reset_from_key.html:21
-msgid "New password reset key"
-msgstr ""
-
-#: trainerdex/templates/account/password_reset_from_key.html:35
-msgid "change password"
-msgstr ""
-
-#: trainerdex/templates/account/password_reset_from_key.html:40
-msgid "Your password has now been changed."
-msgstr ""
-
-#: trainerdex/templates/account/password_reset_from_key.html:44
-#: trainerdex/templates/account/verified_email_required.html:20
-msgid "Return to login page"
-msgstr ""
-
-#: trainerdex/templates/account/password_reset_from_key_done.html:13
-msgid "Your password is now changed."
-msgstr ""
-
-#: trainerdex/templates/account/password_set.html:6
-#: trainerdex/templates/account/password_set.html:7
-#: trainerdex/templates/account/password_set.html:12
-#: trainerdex/templates/account/password_set.html:25
-msgid "Set Password"
-msgstr ""
-
-#: trainerdex/templates/account/password_set.html:17
-msgid "Please set a password"
-msgstr ""
-
-#: trainerdex/templates/account/signup.html:7
-#: trainerdex/templates/account/signup.html:8
-msgid "Signup"
-msgstr ""
-
-#: trainerdex/templates/account/signup.html:14
-#: trainerdex/templates/account/signup.html:39
-msgid "Register"
-msgstr ""
-
-#: trainerdex/templates/account/verification_sent.html:5
-#: trainerdex/templates/account/verification_sent.html:6
-#: trainerdex/templates/account/verification_sent.html:11
-#: trainerdex/templates/account/verified_email_required.html:5
-#: trainerdex/templates/account/verified_email_required.html:6
-#: trainerdex/templates/account/verified_email_required.html:11
-msgid "Verify Your E-mail Address"
-msgstr ""
-
-#: trainerdex/templates/account/verification_sent.html:14
-msgid "We have sent an e-mail to you for verification. Follow the link provided to finalize the signup process. Please contact us if you do not receive it within a few minutes."
-msgstr ""
-
-#: trainerdex/templates/account/verified_email_required.html:15
-msgid "This part of the site requires us to verify that you are who you claim to be. For this purpose, we require that you verify ownership of your e-mail address. "
-msgstr ""
-
-#: trainerdex/templates/account/verified_email_required.html:16
-msgid "We have sent an e-mail to you for verification. Please click on the link inside this e-mail. Please contact us if you do not receive it within a few minutes."
-msgstr ""
-
-#: trainerdex/templates/account/verified_email_required.html:23
-msgid "Change your email"
-msgstr ""
-
 #: trainerdex/validators.py:6
 msgctxt "codename__error"
 msgid "Only letters and numbers are allowed."
@@ -2076,67 +1814,67 @@ msgctxt "friend_code__error"
 msgid "Trainer Code must be 12 digits long and contain only numbers and whitespace."
 msgstr ""
 
-#: config/settings.py:154
-msgid "English"
-msgstr ""
-
-#: config/settings.py:155
+#: config/settings.py:151
 msgid "German"
 msgstr ""
 
-#: config/settings.py:156
+#: config/settings.py:152
+msgid "English"
+msgstr ""
+
+#: config/settings.py:153
 msgid "Spanish"
 msgstr ""
 
-#: config/settings.py:157
+#: config/settings.py:154
 msgid "French"
 msgstr ""
 
-#: config/settings.py:158
+#: config/settings.py:155
 msgid "Italian"
 msgstr ""
 
-#: config/settings.py:159
+#: config/settings.py:156
 msgid "Japanese"
 msgstr ""
 
-#: config/settings.py:160
+#: config/settings.py:157
 msgid "Korean"
 msgstr ""
 
-#: config/settings.py:161
+#: config/settings.py:158
 msgid "Brazilian Portuguese"
 msgstr ""
 
-#: config/settings.py:162
+#: config/settings.py:159
 msgid "Thai"
 msgstr ""
 
-#: config/settings.py:163
+#: config/settings.py:160
 msgid "Traditional Chinese"
 msgstr ""
 
-#: config/settings.py:210
+#: config/settings.py:207
 msgid "View your Trainer Codename, Team, Country and other standard information"
 msgstr ""
 
-#: config/settings.py:213
+#: config/settings.py:210
 msgid "Edit your Trainer Codename, Team, Country and other standard information"
 msgstr ""
 
-#: config/settings.py:215
+#: config/settings.py:212
 msgid "View full set of Stats Updates"
 msgstr ""
 
-#: config/settings.py:216
+#: config/settings.py:213
 msgid "Post Stats Updates"
 msgstr ""
 
-#: config/settings.py:217
+#: config/settings.py:214
 msgid "View your email address"
 msgstr ""
 
-#: config/settings.py:218
+#: config/settings.py:215
 msgid "View your connected social accounts"
 msgstr ""
 
