@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trainerdex\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-01 08:16+0000\n"
-"PO-Revision-Date: 2020-10-01 08:16\n"
+"PO-Revision-Date: 2020-10-08 08:15\n"
 "Last-Translator: \n"
 "Language-Team: German\n"
 "Language: de_DE\n"
@@ -270,7 +270,7 @@ msgstr ""
 #: trainerdex/models.py:170 trainerdex/pogo_assets/strings.py:365
 msgctxt "profile_start_date"
 msgid "Start Date"
-msgstr ""
+msgstr "Startdatum"
 
 #: trainerdex/models.py:171
 msgctxt "start_date__help"
@@ -388,7 +388,7 @@ msgstr "Trage {0} Pokémon im Pokédex ein."
 #: trainerdex/models.py:485
 msgctxt "badge_pokedex_entries_title"
 msgid "Johto"
-msgstr ""
+msgstr "Johto"
 
 #: trainerdex/models.py:488 trainerdex/pogo_assets/strings.py:99
 #, python-brace-format
@@ -410,7 +410,7 @@ msgstr "Registriere {0} Pokémon im Pokédex, die zuerst in der Hoenn-Region ent
 #: trainerdex/models.py:515 trainerdex/pogo_assets/strings.py:113
 msgctxt "badge_pokedex_entries_gen4_title"
 msgid "Sinnoh"
-msgstr ""
+msgstr "Sinnoh"
 
 #: trainerdex/models.py:518 trainerdex/pogo_assets/strings.py:111
 #, python-brace-format
@@ -421,7 +421,7 @@ msgstr "Registriere {0} Pokémon im Pokédex, die zuerst in der Sinnoh-Region en
 #: trainerdex/models.py:530 trainerdex/pogo_assets/strings.py:119
 msgctxt "badge_pokedex_entries_gen5_title"
 msgid "Unova"
-msgstr ""
+msgstr "Einall"
 
 #: trainerdex/models.py:533 trainerdex/pogo_assets/strings.py:117
 #, python-brace-format
@@ -432,35 +432,35 @@ msgstr "Registriere {0} Pokémon im Pokédex, die zuerst in der Einall-Region en
 #: trainerdex/models.py:545 trainerdex/pogo_assets/strings.py:125
 msgctxt "badge_pokedex_entries_gen6_title"
 msgid "Kalos"
-msgstr ""
+msgstr "Kalos"
 
 #: trainerdex/models.py:548 trainerdex/pogo_assets/strings.py:123
 #, python-brace-format
 msgctxt "badge_pokedex_entries_gen6"
 msgid "Register {0} Pokémon first discovered in the Kalos region to the Pokédex."
-msgstr ""
+msgstr "Registriere {0} Pokémon im Pokédex, die zuerst in der Kalos-Region entdeckt wurden."
 
 #: trainerdex/models.py:559 trainerdex/pogo_assets/strings.py:131
 msgctxt "badge_pokedex_entries_gen7_title"
 msgid "Alola"
-msgstr ""
+msgstr "Alola"
 
 #: trainerdex/models.py:562 trainerdex/pogo_assets/strings.py:129
 #, python-brace-format
 msgctxt "badge_pokedex_entries_gen7"
 msgid "Register {0} Pokémon first discovered in the Alola region to the Pokédex."
-msgstr ""
+msgstr "Registriere {0} Pokémon im Pokédex, die zuerst in der Alola-Region entdeckt wurden."
 
 #: trainerdex/models.py:573 trainerdex/pogo_assets/strings.py:137
 msgctxt "badge_pokedex_entries_gen8_title"
 msgid "Galar"
-msgstr ""
+msgstr "Galar"
 
 #: trainerdex/models.py:576 trainerdex/pogo_assets/strings.py:135
 #, python-brace-format
 msgctxt "badge_pokedex_entries_gen8"
 msgid "Register {0} Pokémon first discovered in the Galar region to the Pokédex."
-msgstr ""
+msgstr "Registriere {0} Pokémon im Pokédex, die zuerst in der Galar-Region entdeckt wurden."
 
 #: trainerdex/models.py:593 trainerdex/pogo_assets/strings.py:179
 msgctxt "badge_travel_km_title"
@@ -470,12 +470,12 @@ msgstr "Jogger"
 #: trainerdex/models.py:594 trainerdex/pogo_assets/strings.py:12
 msgctxt "avatar_detail_walking_distance"
 msgid "Distance Walked"
-msgstr ""
+msgstr "Gelaufene Distanz"
 
 #: trainerdex/models.py:596 trainerdex/pogo_assets/strings.py:177
 msgctxt "badge_travel_km"
 msgid "Walk {0:0,g} km."
-msgstr ""
+msgstr "Laufe {0:0,g} km."
 
 #: trainerdex/models.py:611 trainerdex/pogo_assets/strings.py:33
 msgctxt "badge_capture_total_title"
@@ -485,13 +485,13 @@ msgstr "Sammler"
 #: trainerdex/models.py:612 trainerdex/pogo_assets/strings.py:10
 msgctxt "avatar_detail_pokemon_caught"
 msgid "Pokémon Caught"
-msgstr ""
+msgstr "Gefangene Pokémon"
 
 #: trainerdex/models.py:614 trainerdex/pogo_assets/strings.py:32
 #, python-brace-format
 msgctxt "badge_capture_total"
 msgid "Catch {0} Pokémon."
-msgstr ""
+msgstr "Fange {0} Pokémon."
 
 #: trainerdex/models.py:624 trainerdex/pogo_assets/strings.py:48
 msgctxt "badge_evolved_total_title"
@@ -523,18 +523,18 @@ msgstr "Backpacker"
 #: trainerdex/models.py:648 trainerdex/pogo_assets/strings.py:364
 msgctxt "profile_pokestops_visited"
 msgid "PokéStops Visited"
-msgstr ""
+msgstr "Besuchte PokéStops"
 
 #: trainerdex/models.py:650 trainerdex/pogo_assets/strings.py:144
 #, python-brace-format
 msgctxt "badge_pokestops_visited"
 msgid "Visit {0} PokéStops."
-msgstr ""
+msgstr "Besuche {0} PokéStops."
 
 #: trainerdex/models.py:660 trainerdex/pogo_assets/strings.py:27
 msgctxt "badge_big_magikarp_title"
 msgid "Fisher"
-msgstr ""
+msgstr "Angler"
 
 #: trainerdex/models.py:661 trainerdex/pogo_assets/strings.py:26
 #, python-brace-format
@@ -551,7 +551,7 @@ msgstr "Kämpferin"
 #, python-brace-format
 msgctxt "badge_battle_attack_won"
 msgid "Win {0} Gym battles."
-msgstr ""
+msgstr "Gewinne {0} Arenakämpfe."
 
 #: trainerdex/models.py:682 trainerdex/pogo_assets/strings.py:21
 msgctxt "badge_battle_training_won_title"
@@ -562,7 +562,7 @@ msgstr "Ass-Trainer"
 #, python-brace-format
 msgctxt "badge_battle_training_won"
 msgid "Train {0} times."
-msgstr ""
+msgstr "Trainiere {0}-mal."
 
 #: trainerdex/models.py:693 trainerdex/pogo_assets/strings.py:168
 msgctxt "badge_small_rattata_title"
@@ -628,7 +628,7 @@ msgstr "Beerenmeister"
 #, python-brace-format
 msgctxt "badge_berries_fed"
 msgid "Feed {0} Berries at Gyms."
-msgstr ""
+msgstr "Verteile in Arenen {0} Beeren."
 
 #: trainerdex/models.py:760 trainerdex/pogo_assets/strings.py:62
 msgctxt "badge_hours_defended_title"
@@ -639,7 +639,7 @@ msgstr "Arenaleiter"
 #, python-brace-format
 msgctxt "badge_hours_defended"
 msgid "Defend Gyms for {0} hours."
-msgstr ""
+msgstr "Verteidige Arenen für {0} Stunden."
 
 #: trainerdex/models.py:771 trainerdex/pogo_assets/strings.py:36
 msgctxt "badge_challenge_quests_title"
@@ -650,7 +650,7 @@ msgstr "Pokémon Ranger"
 #, python-brace-format
 msgctxt "badge_challenge_quests"
 msgid "Complete {0} Field Research tasks."
-msgstr ""
+msgstr "Führe {0} Feldforschungsaufgaben aus."
 
 #: trainerdex/models.py:782 trainerdex/pogo_assets/strings.py:81
 msgctxt "badge_max_level_friends_title"
@@ -674,7 +674,7 @@ msgstr "Gentleman"
 #, python-brace-format
 msgctxt "badge_trading"
 msgid "Trade {0} Pokémon."
-msgstr ""
+msgstr "Tausche {0} Pokémon."
 
 #: trainerdex/models.py:809 trainerdex/pogo_assets/strings.py:174
 msgctxt "badge_trading_distance_title"
@@ -685,7 +685,7 @@ msgstr "Pilot"
 #, python-brace-format
 msgctxt "badge_trading_distance"
 msgid "Earn {0} km across the distance of all Pokémon trades."
-msgstr ""
+msgstr "Tausche Pokémon über insgesamt {0} Kilometer Distanz."
 
 #: trainerdex/models.py:822 trainerdex/pogo_assets/strings.py:56
 msgctxt "badge_great_league_title"
@@ -803,28 +803,28 @@ msgstr[1] "Verdiene {0} Wayfarer-Vereinbarungen"
 #: trainerdex/models.py:955 trainerdex/pogo_assets/strings.py:263
 msgctxt "badge_total_mega_evos_title"
 msgid "Successor"
-msgstr ""
+msgstr "Erbfolgerin"
 
 #: trainerdex/models.py:958 trainerdex/pogo_assets/strings.py:259
 #, python-brace-format
 msgctxt "badge_total_mega_evos"
 msgid "Mega Evolve a Pokémon {0} time."
 msgid_plural "Mega Evolve a Pokémon {0} times."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Löse bei einem Pokémon {0} Mega-Entwicklung aus."
+msgstr[1] "Löse bei einem Pokémon {0} Mega-Entwicklungen aus."
 
 #: trainerdex/models.py:971 trainerdex/pogo_assets/strings.py:271
 msgctxt "badge_unique_mega_evos_title"
 msgid "Mega Evolution Guru"
-msgstr ""
+msgstr "Guru der Mega-Entwicklung"
 
 #: trainerdex/models.py:974 trainerdex/pogo_assets/strings.py:267
 #, python-brace-format
 msgctxt "badge_unique_mega_evos"
 msgid "Mega Evolve {0} Pokémon."
 msgid_plural "Mega Evolve {0} different species of Pokémon."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Löse bei {0} Pokémon die Mega-Entwicklung aus."
+msgstr[1] "Löse bei {0} verschiedenen Pokémon-Arten die Mega-Entwicklung aus."
 
 #: trainerdex/models.py:988 trainerdex/pogo_assets/strings.py:218
 msgctxt "badge_type_normal_title"
@@ -917,13 +917,13 @@ msgstr "Fange {0} Pokémon vom Typ Geist."
 #: trainerdex/models.py:1068 trainerdex/pogo_assets/strings.py:230
 msgctxt "badge_type_steel_title"
 msgid "Rail Staff"
-msgstr ""
+msgstr "Eisenbahner"
 
 #: trainerdex/models.py:1069 trainerdex/pogo_assets/strings.py:229
 #, python-brace-format
 msgctxt "badge_type_steel"
 msgid "Catch {0} Steel-type Pokémon."
-msgstr ""
+msgstr "Fange {0} Pokémon vom Typ Stahl."
 
 #: trainerdex/models.py:1078 trainerdex/pogo_assets/strings.py:200
 msgctxt "badge_type_fire_title"
@@ -1122,68 +1122,68 @@ msgstr[1] ""
 #: trainerdex/pogo_assets/strings.py:9
 msgctxt "avatar_detail_battle_won"
 msgid "Battles Won"
-msgstr ""
+msgstr "Gewonnene Kämpfe"
 
 #: trainerdex/pogo_assets/strings.py:11
 msgctxt "avatar_detail_total_activities"
 msgid "Total Activity"
-msgstr ""
+msgstr "Aktivitätsstatistik"
 
 #: trainerdex/pogo_assets/strings.py:17
 #, python-brace-format
 msgctxt "badge_battle_defend_won"
 msgid "Win {0} defense battles!"
-msgstr ""
+msgstr "Gewinne {0} Verteidigungskämpfe!"
 
 #: trainerdex/pogo_assets/strings.py:18
 msgctxt "badge_battle_defend_won_title"
 msgid "Defense Battles Won"
-msgstr ""
+msgstr "Gewonnene Vert.-Kämpfe"
 
 #: trainerdex/pogo_assets/strings.py:38
 #, python-brace-format
 msgctxt "badge_defeated_fort"
 msgid "Win {0} battles."
-msgstr ""
+msgstr "Gewinne {0} Kämpfe."
 
 #: trainerdex/pogo_assets/strings.py:39
 msgctxt "badge_defeated_fort_title"
 msgid "Battle"
-msgstr ""
+msgstr "Kämpfer"
 
 #: trainerdex/pogo_assets/strings.py:41
 #, python-brace-format
 msgctxt "badge_deployed_total"
 msgid "Assign {0} Pokémon to Gyms!"
-msgstr ""
+msgstr "Weise {0} Pokémon Arenen zu!"
 
 #: trainerdex/pogo_assets/strings.py:42
 msgctxt "badge_deployed_total_title"
 msgid "Pokémon at Gyms"
-msgstr ""
+msgstr "Pokémon in Arenen"
 
 #: trainerdex/pogo_assets/strings.py:44
 #, python-brace-format
 msgctxt "badge_encountered_total"
 msgid "Encounter {0} Pokémon."
-msgstr ""
+msgstr "Begegne {0} Pokémon."
 
 #: trainerdex/pogo_assets/strings.py:45
 msgctxt "badge_encountered_total_title"
 msgid "Encounters"
-msgstr ""
+msgstr "Entdecker"
 
 #: trainerdex/pogo_assets/strings.py:58
 #, python-brace-format
 msgctxt "badge_hatched_total"
 msgid "Hatch {0} Eggs."
-msgstr ""
+msgstr "Brüte {0} Eier aus."
 
 #: trainerdex/pogo_assets/strings.py:64
 #, python-brace-format
 msgctxt "badge_legendary_battle_won"
 msgid "Win {0} Legendary raids."
-msgstr ""
+msgstr "Gewinne {0} Legendäre Raids."
 
 #: trainerdex/pogo_assets/strings.py:101
 msgctxt "badge_pokedex_entries_gen2_title"
@@ -1193,35 +1193,35 @@ msgstr "Johto"
 #: trainerdex/pogo_assets/strings.py:139
 msgctxt "badge_pokedex_entries_unknown_title"
 msgid "Unknown"
-msgstr ""
+msgstr "Unbekannt"
 
 #: trainerdex/pogo_assets/strings.py:147
 #, python-brace-format
 msgctxt "badge_prestige_dropped"
 msgid "Reduce {0} total Gym Prestige!"
-msgstr ""
+msgstr "Setze Arena-Prestige um {0} herab."
 
 #: trainerdex/pogo_assets/strings.py:148
 msgctxt "badge_prestige_dropped_title"
 msgid "Reduced Prestige"
-msgstr ""
+msgstr "Prestige gesenkt"
 
 #: trainerdex/pogo_assets/strings.py:150
 #, python-brace-format
 msgctxt "badge_prestige_raised"
 msgid "Raise {0} total Gym Prestige!"
-msgstr ""
+msgstr "Erhöhe Arena-Prestige um {0}."
 
 #: trainerdex/pogo_assets/strings.py:151
 msgctxt "badge_prestige_raised_title"
 msgid "Prestige Raised"
-msgstr ""
+msgstr "Prestige erhöht"
 
 #: trainerdex/pogo_assets/strings.py:153
 #, python-brace-format
 msgctxt "badge_raid_battle_won"
 msgid "Win {0} raids."
-msgstr ""
+msgstr "Gewinne {0} Raids."
 
 #: trainerdex/pogo_assets/strings.py:162
 msgctxt "badge_rocket_giovanni_defeated_title"
@@ -1232,497 +1232,497 @@ msgstr "Ultraheld"
 #, python-brace-format
 msgctxt "badge_rocket_grunts_defeated"
 msgid "Defeat {0} Team GO Rocket members."
-msgstr ""
+msgstr "Besiege {0} Mitglieder von Team GO Rocket."
 
 #: trainerdex/pogo_assets/strings.py:181
 #, python-brace-format
 msgctxt "badge_type_bug"
 msgid "Catch {0} Bug-type Pokémon."
-msgstr ""
+msgstr "Fange {0} Pokémon vom Typ Käfer."
 
 #: trainerdex/pogo_assets/strings.py:184
 #, python-brace-format
 msgctxt "badge_type_dark"
 msgid "Catch {0} Dark-type Pokémon."
-msgstr ""
+msgstr "Fange {0} Pokémon vom Typ Unlicht."
 
 #: trainerdex/pogo_assets/strings.py:187
 #, python-brace-format
 msgctxt "badge_type_dragon"
 msgid "Catch {0} Dragon-type Pokémon."
-msgstr ""
+msgstr "Fange {0} Pokémon vom Typ Drache."
 
 #: trainerdex/pogo_assets/strings.py:190
 #, python-brace-format
 msgctxt "badge_type_electric"
 msgid "Catch {0} Electric-type Pokémon."
-msgstr ""
+msgstr "Fange {0} Pokémon vom Typ Elektro."
 
 #: trainerdex/pogo_assets/strings.py:193
 #, python-brace-format
 msgctxt "badge_type_fairy"
 msgid "Catch {0} Fairy-type Pokémon."
-msgstr ""
+msgstr "Fange {0} Pokémon vom Typ Fee."
 
 #: trainerdex/pogo_assets/strings.py:196
 #, python-brace-format
 msgctxt "badge_type_fighting"
 msgid "Catch {0} Fighting-type Pokémon."
-msgstr ""
+msgstr "Fange {0} Pokémon vom Typ Kampf."
 
 #: trainerdex/pogo_assets/strings.py:199
 #, python-brace-format
 msgctxt "badge_type_fire"
 msgid "Catch {0} Fire-type Pokémon."
-msgstr ""
+msgstr "Fange {0} Pokémon vom Typ Feuer."
 
 #: trainerdex/pogo_assets/strings.py:202
 #, python-brace-format
 msgctxt "badge_type_flying"
 msgid "Catch {0} Flying-type Pokémon."
-msgstr ""
+msgstr "Fange {0} Pokémon vom Typ Flug."
 
 #: trainerdex/pogo_assets/strings.py:205
 #, python-brace-format
 msgctxt "badge_type_ghost"
 msgid "Catch {0} Ghost-type Pokémon."
-msgstr ""
+msgstr "Fange {0} Pokémon vom Typ Geist."
 
 #: trainerdex/pogo_assets/strings.py:208
 #, python-brace-format
 msgctxt "badge_type_grass"
 msgid "Catch {0} Grass-type Pokémon."
-msgstr ""
+msgstr "Fange {0} Pokémon vom Typ Pflanze."
 
 #: trainerdex/pogo_assets/strings.py:211
 #, python-brace-format
 msgctxt "badge_type_ground"
 msgid "Catch {0} Ground-type Pokémon."
-msgstr ""
+msgstr "Fange {0} Pokémon vom Typ Boden."
 
 #: trainerdex/pogo_assets/strings.py:214
 #, python-brace-format
 msgctxt "badge_type_ice"
 msgid "Catch {0} Ice-type Pokémon."
-msgstr ""
+msgstr "Fange {0} Pokémon vom Typ Eis."
 
 #: trainerdex/pogo_assets/strings.py:217
 #, python-brace-format
 msgctxt "badge_type_normal"
 msgid "Catch {0} Normal-type Pokémon."
-msgstr ""
+msgstr "Fange {0} Pokémon vom Typ Normal."
 
 #: trainerdex/pogo_assets/strings.py:220
 #, python-brace-format
 msgctxt "badge_type_poison"
 msgid "Catch {0} Poison-type Pokémon."
-msgstr ""
+msgstr "Fange {0} Pokémon vom Typ Gift."
 
 #: trainerdex/pogo_assets/strings.py:223
 #, python-brace-format
 msgctxt "badge_type_psychic"
 msgid "Catch {0} Psychic-type Pokémon."
-msgstr ""
+msgstr "Fange {0} Pokémon vom Typ Psycho."
 
 #: trainerdex/pogo_assets/strings.py:226
 #, python-brace-format
 msgctxt "badge_type_rock"
 msgid "Catch {0} Rock-type Pokémon."
-msgstr ""
+msgstr "Fange {0} Pokémon vom Typ Gestein."
 
 #: trainerdex/pogo_assets/strings.py:232
 #, python-brace-format
 msgctxt "badge_type_water"
 msgid "Catch {0} Water-type Pokémon."
-msgstr ""
+msgstr "Fange {0} Pokémon vom Typ Wasser."
 
 #: trainerdex/pogo_assets/strings.py:233
 msgctxt "badge_type_water_title"
 msgid "Water"
-msgstr ""
+msgstr "Schwimmer"
 
 #: trainerdex/pogo_assets/strings.py:243
 #, python-brace-format
 msgctxt "badge_unique_pokestops"
 msgid "Visit {0} unique PokéStops."
-msgstr ""
+msgstr "Besuche {0} verschiedene PokéStops."
 
 #: trainerdex/pogo_assets/strings.py:244
 msgctxt "badge_unique_pokestops_title"
 msgid "Unique PokéStops"
-msgstr ""
+msgstr "Verschiedene PokéStops"
 
 #: trainerdex/pogo_assets/strings.py:273
 msgctxt "buddy_level_0"
 msgid "Buddy"
 msgid_plural "Buddies"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Kumpel"
+msgstr[1] "Kumpel"
 
 #: trainerdex/pogo_assets/strings.py:274
 msgctxt "buddy_level_1"
 msgid "Good Buddy"
 msgid_plural "Good Buddies"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Guter Kumpel"
+msgstr[1] "Gute Kumpel"
 
 #: trainerdex/pogo_assets/strings.py:275
 msgctxt "buddy_level_2"
 msgid "Great Buddy"
 msgid_plural "Great Buddies"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Superkumpel"
+msgstr[1] "Superkumpel"
 
 #: trainerdex/pogo_assets/strings.py:276
 msgctxt "buddy_level_3"
 msgid "Ultra Buddy"
 msgid_plural "Ultra Buddies"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Hyperkumpel"
+msgstr[1] "Hyperkumpel"
 
 #: trainerdex/pogo_assets/strings.py:277
 msgctxt "buddy_level_4"
 msgid "Best Buddy"
 msgid_plural "Best Buddies"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Bester Kumpel"
+msgstr[1] "Beste Kumpel"
 
 #: trainerdex/pogo_assets/strings.py:279
 msgctxt "codename_already_yours"
 msgid "That's already your name!"
-msgstr ""
+msgstr "Du heißt bereits so!"
 
 #: trainerdex/pogo_assets/strings.py:280
 #, python-brace-format
 msgctxt "codename_reassign_success"
 msgid "You're now known as {0}."
-msgstr ""
+msgstr "Jetzt heißt du {0}."
 
 #: trainerdex/pogo_assets/strings.py:282
 msgctxt "date_format"
 msgid "MMM dd, yyyy"
-msgstr ""
+msgstr "dd.MM.yyyy"
 
 #: trainerdex/pogo_assets/strings.py:284
 #, python-brace-format
 msgctxt "encounter_score_total_exp"
 msgid "{0} XP"
-msgstr ""
+msgstr "{0} EP"
 
 #: trainerdex/pogo_assets/strings.py:285
 #, python-brace-format
 msgctxt "feedback_added_xp"
 msgid "+{0} XP"
-msgstr ""
+msgstr "+{0} EP"
 
 #: trainerdex/pogo_assets/strings.py:287
 msgctxt "friend"
 msgid "friend"
 msgid_plural "friends"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Freund"
+msgstr[1] "Freunde"
 
 #: trainerdex/pogo_assets/strings.py:289
 #, python-brace-format
 msgctxt "friend_full_name"
 msgid "{0} ({1})"
-msgstr ""
+msgstr "{0} ({1})"
 
 #: trainerdex/pogo_assets/strings.py:290
 #, python-brace-format
 msgctxt "friends_list_level_format"
 msgid "Lv {0}"
-msgstr ""
+msgstr "Level {0}"
 
 #: trainerdex/pogo_assets/strings.py:292
 msgctxt "friendship_level_0"
 msgid "Friend"
 msgid_plural "Friends"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Freund"
+msgstr[1] "Freunde"
 
 #: trainerdex/pogo_assets/strings.py:293
 msgctxt "friendship_level_1"
 msgid "Good Friend"
 msgid_plural "Good Friends"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Guter Freund"
+msgstr[1] "Gute Freunde"
 
 #: trainerdex/pogo_assets/strings.py:294
 msgctxt "friendship_level_2"
 msgid "Great Friend"
 msgid_plural "Great Friends"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Superfreund"
+msgstr[1] "Superfreunde"
 
 #: trainerdex/pogo_assets/strings.py:295
 msgctxt "friendship_level_3"
 msgid "Ultra Friend"
 msgid_plural "Ultra Friends"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Hyperfreund"
+msgstr[1] "Hyperfreunde"
 
 #: trainerdex/pogo_assets/strings.py:296
 msgctxt "friendship_level_4"
 msgid "Best Friend"
 msgid_plural "Best Friends"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Bester Freund"
+msgstr[1] "Beste Freunde"
 
 #: trainerdex/pogo_assets/strings.py:298
 msgctxt "alola_pokedex_header"
 msgid "Alolan Form"
-msgstr ""
+msgstr "Alola-Form"
 
 #: trainerdex/pogo_assets/strings.py:299
 msgctxt "galarian_pokedex_header"
 msgid "Galarian Form"
-msgstr ""
+msgstr "Galar-Form"
 
 #: trainerdex/pogo_assets/strings.py:301
 msgctxt "general_accept"
 msgid "Accept"
-msgstr ""
+msgstr "Akzeptieren"
 
 #: trainerdex/pogo_assets/strings.py:302
 msgctxt "general_allow"
 msgid "Allow"
-msgstr ""
+msgstr "Erlauben"
 
 #: trainerdex/pogo_assets/strings.py:303
 msgctxt "general_button_select"
 msgid "Select"
-msgstr ""
+msgstr "Auswählen"
 
 #: trainerdex/pogo_assets/strings.py:304
 msgctxt "general_cancel"
 msgid "Cancel"
-msgstr ""
+msgstr "Abbrechen"
 
 #: trainerdex/pogo_assets/strings.py:305
 msgctxt "general_close"
 msgid "Close"
-msgstr ""
+msgstr "Schließen"
 
 #: trainerdex/pogo_assets/strings.py:306
 msgctxt "general_continue"
 msgid "Continue"
-msgstr ""
+msgstr "Fortsetzen"
 
 #: trainerdex/pogo_assets/strings.py:307
 msgctxt "general_cp"
 msgid "CP"
-msgstr ""
+msgstr "WP"
 
 #: trainerdex/pogo_assets/strings.py:308
 msgctxt "general_dismiss"
 msgid "Dismiss"
-msgstr ""
+msgstr "Ausblenden"
 
 #: trainerdex/pogo_assets/strings.py:309
 msgctxt "general_do_not_allow"
 msgid "Don’t Allow"
-msgstr ""
+msgstr "Nicht erlauben"
 
 #: trainerdex/pogo_assets/strings.py:310
 msgctxt "general_error"
 msgid "Error"
-msgstr ""
+msgstr "Fehler"
 
 #: trainerdex/pogo_assets/strings.py:311
 msgctxt "general_go"
 msgid "GO"
-msgstr ""
+msgstr "LOS"
 
 #: trainerdex/pogo_assets/strings.py:312
 msgctxt "general_kg"
 msgid "kg"
-msgstr ""
+msgstr "kg"
 
 #: trainerdex/pogo_assets/strings.py:313
 msgctxt "general_m"
 msgid "m"
-msgstr ""
+msgstr "m"
 
 #: trainerdex/pogo_assets/strings.py:314
 msgctxt "general_more"
 msgid "More"
-msgstr ""
+msgstr "Mehr"
 
 #: trainerdex/pogo_assets/strings.py:315
 msgctxt "general_no"
 msgid "No"
-msgstr ""
+msgstr "Nein"
 
 #: trainerdex/pogo_assets/strings.py:316
 msgctxt "general_ok"
 msgid "OK"
-msgstr ""
+msgstr "O. K."
 
 #: trainerdex/pogo_assets/strings.py:317
 msgctxt "general_pokemon"
 msgid "Pokémon"
-msgstr ""
+msgstr "Pokémon"
 
 #: trainerdex/pogo_assets/strings.py:318
 msgctxt "general_sign_out"
 msgid "Sign Out"
-msgstr ""
+msgstr "Abmelden"
 
 #: trainerdex/pogo_assets/strings.py:319
 msgctxt "general_sign_out_confirm"
 msgid "Are you sure you want to sign out?"
-msgstr ""
+msgstr "Bist du sicher, dass du dich abmelden willst?"
 
 #: trainerdex/pogo_assets/strings.py:320
 msgctxt "general_stamina"
 msgid "HP"
-msgstr ""
+msgstr "KP-Wert"
 
 #: trainerdex/pogo_assets/strings.py:321
 msgctxt "general_xp"
 msgid "XP"
-msgstr ""
+msgstr "EP"
 
 #: trainerdex/pogo_assets/strings.py:322
 msgctxt "general_yes"
 msgid "Yes"
-msgstr ""
+msgstr "Ja"
 
 #: trainerdex/pogo_assets/strings.py:324
 msgctxt "onboard_name_fail"
 msgid "An error has occurred. Try another name."
-msgstr ""
+msgstr "Ein Fehler ist aufgetreten. Versuche es mit einem anderen Namen."
 
 #: trainerdex/pogo_assets/strings.py:325
 msgctxt "onboard_name_invalid_characters_error"
 msgid "Only letters and numbers are allowed."
-msgstr ""
+msgstr "Es sind nur Buchstaben und Zahlen erlaubt."
 
 #: trainerdex/pogo_assets/strings.py:326
 msgctxt "onboard_name_not_available"
 msgid "That name isn't available."
-msgstr ""
+msgstr "Dieser Name steht nicht zur Verfügung."
 
 #: trainerdex/pogo_assets/strings.py:327
 msgctxt "onboard_name_not_valid"
 msgid "That name is invalid."
-msgstr ""
+msgstr "Dieser Name ist nicht gültig."
 
 #: trainerdex/pogo_assets/strings.py:328
 msgctxt "onboard_name_owned"
 msgid "This name is already in use by another Trainer."
-msgstr ""
+msgstr "Dieser Name wird bereits von einem anderen Trainer benutzt."
 
 #: trainerdex/pogo_assets/strings.py:330
 msgctxt "pokemon_info_cp"
 msgid "CP"
-msgstr ""
+msgstr "WP"
 
 #: trainerdex/pogo_assets/strings.py:332
 msgctxt "pokemon_info_type"
 msgid "Type"
-msgstr ""
+msgstr "Typ"
 
 #: trainerdex/pogo_assets/strings.py:334
 msgctxt "pokemon_type_bug"
 msgid "Bug"
-msgstr ""
+msgstr "Käfer"
 
 #: trainerdex/pogo_assets/strings.py:335
 msgctxt "pokemon_type_dark"
 msgid "Dark"
-msgstr ""
+msgstr "Unlicht"
 
 #: trainerdex/pogo_assets/strings.py:336
 msgctxt "pokemon_type_dragon"
 msgid "Dragon"
-msgstr ""
+msgstr "Drache"
 
 #: trainerdex/pogo_assets/strings.py:337
 msgctxt "pokemon_type_electric"
 msgid "Electric"
-msgstr ""
+msgstr "Elektro"
 
 #: trainerdex/pogo_assets/strings.py:338
 msgctxt "pokemon_type_fairy"
 msgid "Fairy"
-msgstr ""
+msgstr "Fee"
 
 #: trainerdex/pogo_assets/strings.py:339
 msgctxt "pokemon_type_fighting"
 msgid "Fighting"
-msgstr ""
+msgstr "Kampf"
 
 #: trainerdex/pogo_assets/strings.py:340
 msgctxt "pokemon_type_fire"
 msgid "Fire"
-msgstr ""
+msgstr "Feuer"
 
 #: trainerdex/pogo_assets/strings.py:341
 msgctxt "pokemon_type_flying"
 msgid "Flying"
-msgstr ""
+msgstr "Flug"
 
 #: trainerdex/pogo_assets/strings.py:342
 msgctxt "pokemon_type_ghost"
 msgid "Ghost"
-msgstr ""
+msgstr "Geist"
 
 #: trainerdex/pogo_assets/strings.py:343
 msgctxt "pokemon_type_grass"
 msgid "Grass"
-msgstr ""
+msgstr "Pflanze"
 
 #: trainerdex/pogo_assets/strings.py:344
 msgctxt "pokemon_type_ground"
 msgid "Ground"
-msgstr ""
+msgstr "Boden"
 
 #: trainerdex/pogo_assets/strings.py:345
 msgctxt "pokemon_type_ice"
 msgid "Ice"
-msgstr ""
+msgstr "Eis"
 
 #: trainerdex/pogo_assets/strings.py:346
 msgctxt "pokemon_type_normal"
 msgid "Normal"
-msgstr ""
+msgstr "Normal"
 
 #: trainerdex/pogo_assets/strings.py:347
 msgctxt "pokemon_type_poison"
 msgid "Poison"
-msgstr ""
+msgstr "Gift"
 
 #: trainerdex/pogo_assets/strings.py:348
 msgctxt "pokemon_type_psychic"
 msgid "Psychic"
-msgstr ""
+msgstr "Psycho"
 
 #: trainerdex/pogo_assets/strings.py:349
 msgctxt "pokemon_type_rock"
 msgid "Rock"
-msgstr ""
+msgstr "Gestein"
 
 #: trainerdex/pogo_assets/strings.py:350
 msgctxt "pokemon_type_steel"
 msgid "Steel"
-msgstr ""
+msgstr "Stahl"
 
 #: trainerdex/pogo_assets/strings.py:351
 msgctxt "pokemon_type_water"
 msgid "Water"
-msgstr ""
+msgstr "Wasser"
 
 #: trainerdex/pogo_assets/strings.py:353
 msgctxt "profile_button_activity_log"
 msgid "Journal"
-msgstr ""
+msgstr "Tagebuch"
 
 #: trainerdex/pogo_assets/strings.py:354
 msgctxt "profile_button_customize"
 msgid "Style"
-msgstr ""
+msgstr "Individualisieren"
 
 #: trainerdex/pogo_assets/strings.py:356
 msgctxt "profile_category_medals"
@@ -1732,47 +1732,47 @@ msgstr "Medaillen"
 #: trainerdex/pogo_assets/strings.py:357
 msgctxt "profile_category_stats"
 msgid "Stats"
-msgstr ""
+msgstr "Statistik"
 
 #: trainerdex/pogo_assets/strings.py:358
 msgctxt "profile_category_total_fitness"
 msgid "TOTAL PROGRESS"
-msgstr ""
+msgstr "GESAMTFORTSCHRITT"
 
 #: trainerdex/pogo_assets/strings.py:359
 msgctxt "profile_category_weekly_fitness"
 msgid "WEEKLY PROGRESS"
-msgstr ""
+msgstr "WÖCHENTLICHER FORTSCHRITT"
 
 #: trainerdex/pogo_assets/strings.py:360
 msgctxt "profile_gymbadges_help"
 msgid "Learn more"
-msgstr ""
+msgstr "Mehr über Arenaorden"
 
 #: trainerdex/pogo_assets/strings.py:361
 msgctxt "profile_gymbadges_recently_visited"
 msgid "Recently Visited"
-msgstr ""
+msgstr "Zuletzt besucht"
 
 #: trainerdex/pogo_assets/strings.py:362
 msgctxt "profile_no_gymbadges"
 msgid "You don't have any Gym Badges."
-msgstr ""
+msgstr "Keine"
 
 #: trainerdex/pogo_assets/strings.py:363
 msgctxt "profile_player_level"
 msgid "Level"
-msgstr ""
+msgstr "Level"
 
 #: trainerdex/pogo_assets/strings.py:366
 msgctxt "profile_total_xp"
 msgid "Total XP"
-msgstr ""
+msgstr "Gesamt-EP"
 
 #: trainerdex/pogo_assets/strings.py:368
 msgctxt "screen_friends_title"
 msgid "friends"
-msgstr ""
+msgstr "Freunde"
 
 #: trainerdex/pogo_assets/strings.py:369
 msgctxt "screen_title_badge_collection"
@@ -1782,27 +1782,27 @@ msgstr "Arenaorden"
 #: trainerdex/pogo_assets/strings.py:370
 msgctxt "screen_title_friend_requests"
 msgid "Friend Requests"
-msgstr ""
+msgstr "Freundschaftsanfragen"
 
 #: trainerdex/pogo_assets/strings.py:371
 msgctxt "screen_title_news"
 msgid "News"
-msgstr ""
+msgstr "Neuigkeiten"
 
 #: trainerdex/pogo_assets/strings.py:372
 msgctxt "screen_title_notification"
 msgid "Notifications"
-msgstr ""
+msgstr "Benachrichtigungen"
 
 #: trainerdex/pogo_assets/strings.py:373
 msgctxt "screen_title_pokedex"
 msgid "POKÉDEX"
-msgstr ""
+msgstr "Pokédex"
 
 #: trainerdex/pogo_assets/strings.py:374
 msgctxt "screen_title_settings"
 msgid "SETTINGS"
-msgstr ""
+msgstr "Einstellungen"
 
 #: trainerdex/templates/404.html:6 trainerdex/templates/404.html:7
 #: trainerdex/templates/404.html:11
