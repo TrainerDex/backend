@@ -26,8 +26,6 @@ backend:
   - 'trainerdex/admin.py'
   - 'trainerdex/urls.py'
   - 'trainerdex/models.py'
-  - '!trainerdex/pogo_assets/strings.py'
-  - '!static/pogo_assets/**/*'
 
 migrations:
   - 'community/migrations/*'
