@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trainerdex\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-01 08:16+0000\n"
-"PO-Revision-Date: 2020-10-08 08:15\n"
+"POT-Creation-Date: 2020-10-15 08:18+0000\n"
+"PO-Revision-Date: 2020-10-15 08:18\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Traditional, Hong Kong\n"
 "Language: zh_HK\n"
@@ -234,22 +234,22 @@ msgctxt "team_name_team3_abbr"
 msgid "Instinct"
 msgstr ""
 
-#: trainerdex/models.py:78 trainerdex/pogo_assets/strings.py:376
+#: trainerdex/models.py:78 trainerdex/pogo_assets/strings.py:383
 msgctxt "team_name_team0"
 msgid "No Team"
 msgstr "未選擇隊伍"
 
-#: trainerdex/models.py:79 trainerdex/pogo_assets/strings.py:377
+#: trainerdex/models.py:79 trainerdex/pogo_assets/strings.py:384
 msgctxt "team_name_team1"
 msgid "Team Mystic"
 msgstr "叡智隊"
 
-#: trainerdex/models.py:80 trainerdex/pogo_assets/strings.py:378
+#: trainerdex/models.py:80 trainerdex/pogo_assets/strings.py:385
 msgctxt "team_name_team2"
 msgid "Team Valor"
 msgstr "武勇隊"
 
-#: trainerdex/models.py:81 trainerdex/pogo_assets/strings.py:379
+#: trainerdex/models.py:81 trainerdex/pogo_assets/strings.py:386
 msgctxt "team_name_team3"
 msgid "Team Instinct"
 msgstr "靈犀隊"
@@ -265,7 +265,7 @@ msgctxt "tid"
 msgid "(Deprecated) TID"
 msgstr ""
 
-#: trainerdex/models.py:170 trainerdex/pogo_assets/strings.py:365
+#: trainerdex/models.py:170 trainerdex/pogo_assets/strings.py:372
 msgctxt "profile_start_date"
 msgid "Start Date"
 msgstr "開始日"
@@ -303,7 +303,7 @@ msgid_plural "Nicknames"
 msgstr[0] ""
 
 #: trainerdex/models.py:306 trainerdex/models.py:317
-#: trainerdex/pogo_assets/strings.py:288
+#: trainerdex/pogo_assets/strings.py:295
 msgctxt "friend_code_title"
 msgid "Trainer Code"
 msgstr "複製訓練家代碼"
@@ -516,7 +516,7 @@ msgctxt "badge_pokestops_visited_title"
 msgid "Backpacker"
 msgstr "背包客"
 
-#: trainerdex/models.py:648 trainerdex/pogo_assets/strings.py:364
+#: trainerdex/models.py:648 trainerdex/pogo_assets/strings.py:371
 msgctxt "profile_pokestops_visited"
 msgid "PokéStops Visited"
 msgstr "拜訪過的寶可補給站"
@@ -1010,7 +1010,7 @@ msgctxt "badge_type_fairy"
 msgid "Catch {0} Fairy-type Pokémon"
 msgstr "捉到 {0} 隻妖精屬性的寶可夢"
 
-#: trainerdex/models.py:1169 trainerdex/pogo_assets/strings.py:355
+#: trainerdex/models.py:1169 trainerdex/pogo_assets/strings.py:362
 msgctxt "profile_category_gymbadges"
 msgid "Gym Badges"
 msgstr "冒險筆記"
@@ -1019,7 +1019,7 @@ msgstr "冒險筆記"
 msgid "Gold Gym Badges"
 msgstr ""
 
-#: trainerdex/models.py:1184 trainerdex/pogo_assets/strings.py:331
+#: trainerdex/models.py:1184 trainerdex/pogo_assets/strings.py:338
 msgctxt "pokemon_info_stardust_label"
 msgid "Stardust"
 msgstr "星星沙子"
@@ -1335,442 +1335,472 @@ msgid "Unique PokéStops"
 msgstr "獨特的寶可補給站"
 
 #: trainerdex/pogo_assets/strings.py:273
+msgctxt "battle_hub_stats_battles"
+msgid "Battles"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:274
+msgctxt "battle_hub_stats_friends"
+msgid "Friends Battled"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:275
+msgctxt "battle_hub_stats_stardust"
+msgid "Stardust Earned"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:276
+msgctxt "battle_hub_stats_streak"
+msgid "Longest Streak"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:277
+msgctxt "battle_hub_stats_streak_abbrev"
+msgid "Streak"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:278
+msgctxt "battle_hub_stats_wins"
+msgid "Wins"
+msgstr ""
+
+#: trainerdex/pogo_assets/strings.py:280
 msgctxt "buddy_level_0"
 msgid "Buddy"
 msgid_plural "Buddies"
 msgstr[0] "夥伴"
 
-#: trainerdex/pogo_assets/strings.py:274
+#: trainerdex/pogo_assets/strings.py:281
 msgctxt "buddy_level_1"
 msgid "Good Buddy"
 msgid_plural "Good Buddies"
 msgstr[0] "好夥伴"
 
-#: trainerdex/pogo_assets/strings.py:275
+#: trainerdex/pogo_assets/strings.py:282
 msgctxt "buddy_level_2"
 msgid "Great Buddy"
 msgid_plural "Great Buddies"
 msgstr[0] "給力好夥伴"
 
-#: trainerdex/pogo_assets/strings.py:276
+#: trainerdex/pogo_assets/strings.py:283
 msgctxt "buddy_level_3"
 msgid "Ultra Buddy"
 msgid_plural "Ultra Buddies"
 msgstr[0] "麻吉好夥伴"
 
-#: trainerdex/pogo_assets/strings.py:277
+#: trainerdex/pogo_assets/strings.py:284
 msgctxt "buddy_level_4"
 msgid "Best Buddy"
 msgid_plural "Best Buddies"
 msgstr[0] "正港好夥伴"
 
-#: trainerdex/pogo_assets/strings.py:279
+#: trainerdex/pogo_assets/strings.py:286
 msgctxt "codename_already_yours"
 msgid "That's already your name!"
 msgstr "這是你現在的暱稱！"
 
-#: trainerdex/pogo_assets/strings.py:280
+#: trainerdex/pogo_assets/strings.py:287
 #, python-brace-format
 msgctxt "codename_reassign_success"
 msgid "You're now known as {0}."
 msgstr "你的暱稱已變更為 {0}"
 
-#: trainerdex/pogo_assets/strings.py:282
+#: trainerdex/pogo_assets/strings.py:289
 msgctxt "date_format"
 msgid "MMM dd, yyyy"
 msgstr "yyyy年 M月 d日"
 
-#: trainerdex/pogo_assets/strings.py:284
+#: trainerdex/pogo_assets/strings.py:291
 #, python-brace-format
 msgctxt "encounter_score_total_exp"
 msgid "{0} XP"
 msgstr "{0} XP"
 
-#: trainerdex/pogo_assets/strings.py:285
+#: trainerdex/pogo_assets/strings.py:292
 #, python-brace-format
 msgctxt "feedback_added_xp"
 msgid "+{0} XP"
 msgstr "+{0} XP"
 
-#: trainerdex/pogo_assets/strings.py:287
+#: trainerdex/pogo_assets/strings.py:294
 msgctxt "friend"
 msgid "friend"
 msgid_plural "friends"
 msgstr[0] "朋友"
 
-#: trainerdex/pogo_assets/strings.py:289
+#: trainerdex/pogo_assets/strings.py:296
 #, python-brace-format
 msgctxt "friend_full_name"
 msgid "{0} ({1})"
 msgstr "{0} ({1})"
 
-#: trainerdex/pogo_assets/strings.py:290
+#: trainerdex/pogo_assets/strings.py:297
 #, python-brace-format
 msgctxt "friends_list_level_format"
 msgid "Lv {0}"
 msgstr "Lv {0}"
 
-#: trainerdex/pogo_assets/strings.py:292
+#: trainerdex/pogo_assets/strings.py:299
 msgctxt "friendship_level_0"
 msgid "Friend"
 msgid_plural "Friends"
 msgstr[0] "朋友"
 
-#: trainerdex/pogo_assets/strings.py:293
+#: trainerdex/pogo_assets/strings.py:300
 msgctxt "friendship_level_1"
 msgid "Good Friend"
 msgid_plural "Good Friends"
 msgstr[0] "好朋友"
 
-#: trainerdex/pogo_assets/strings.py:294
+#: trainerdex/pogo_assets/strings.py:301
 msgctxt "friendship_level_2"
 msgid "Great Friend"
 msgid_plural "Great Friends"
 msgstr[0] "給力好朋友"
 
-#: trainerdex/pogo_assets/strings.py:295
+#: trainerdex/pogo_assets/strings.py:302
 msgctxt "friendship_level_3"
 msgid "Ultra Friend"
 msgid_plural "Ultra Friends"
 msgstr[0] "麻吉好朋友"
 
-#: trainerdex/pogo_assets/strings.py:296
+#: trainerdex/pogo_assets/strings.py:303
 msgctxt "friendship_level_4"
 msgid "Best Friend"
 msgid_plural "Best Friends"
 msgstr[0] "正港好朋友"
 
-#: trainerdex/pogo_assets/strings.py:298
+#: trainerdex/pogo_assets/strings.py:305
 msgctxt "alola_pokedex_header"
 msgid "Alolan Form"
 msgstr "阿羅拉的樣子"
 
-#: trainerdex/pogo_assets/strings.py:299
+#: trainerdex/pogo_assets/strings.py:306
 msgctxt "galarian_pokedex_header"
 msgid "Galarian Form"
 msgstr "伽勒爾的樣子"
 
-#: trainerdex/pogo_assets/strings.py:301
+#: trainerdex/pogo_assets/strings.py:308
 msgctxt "general_accept"
 msgid "Accept"
 msgstr "同意"
 
-#: trainerdex/pogo_assets/strings.py:302
+#: trainerdex/pogo_assets/strings.py:309
 msgctxt "general_allow"
 msgid "Allow"
 msgstr "接受"
 
-#: trainerdex/pogo_assets/strings.py:303
+#: trainerdex/pogo_assets/strings.py:310
 msgctxt "general_button_select"
 msgid "Select"
 msgstr "確定"
 
-#: trainerdex/pogo_assets/strings.py:304
+#: trainerdex/pogo_assets/strings.py:311
 msgctxt "general_cancel"
 msgid "Cancel"
 msgstr "取消"
 
-#: trainerdex/pogo_assets/strings.py:305
+#: trainerdex/pogo_assets/strings.py:312
 msgctxt "general_close"
 msgid "Close"
 msgstr "結束"
 
-#: trainerdex/pogo_assets/strings.py:306
+#: trainerdex/pogo_assets/strings.py:313
 msgctxt "general_continue"
 msgid "Continue"
 msgstr "繼續"
 
-#: trainerdex/pogo_assets/strings.py:307
+#: trainerdex/pogo_assets/strings.py:314
 msgctxt "general_cp"
 msgid "CP"
 msgstr "CP"
 
-#: trainerdex/pogo_assets/strings.py:308
+#: trainerdex/pogo_assets/strings.py:315
 msgctxt "general_dismiss"
 msgid "Dismiss"
 msgstr "跳過"
 
-#: trainerdex/pogo_assets/strings.py:309
+#: trainerdex/pogo_assets/strings.py:316
 msgctxt "general_do_not_allow"
 msgid "Don’t Allow"
 msgstr "拒絕"
 
-#: trainerdex/pogo_assets/strings.py:310
+#: trainerdex/pogo_assets/strings.py:317
 msgctxt "general_error"
 msgid "Error"
 msgstr "錯誤"
 
-#: trainerdex/pogo_assets/strings.py:311
+#: trainerdex/pogo_assets/strings.py:318
 msgctxt "general_go"
 msgid "GO"
 msgstr "GO"
 
-#: trainerdex/pogo_assets/strings.py:312
+#: trainerdex/pogo_assets/strings.py:319
 msgctxt "general_kg"
 msgid "kg"
 msgstr "kg"
 
-#: trainerdex/pogo_assets/strings.py:313
+#: trainerdex/pogo_assets/strings.py:320
 msgctxt "general_m"
 msgid "m"
 msgstr "m"
 
-#: trainerdex/pogo_assets/strings.py:314
+#: trainerdex/pogo_assets/strings.py:321
 msgctxt "general_more"
 msgid "More"
 msgstr "More"
 
-#: trainerdex/pogo_assets/strings.py:315
+#: trainerdex/pogo_assets/strings.py:322
 msgctxt "general_no"
 msgid "No"
 msgstr "No"
 
-#: trainerdex/pogo_assets/strings.py:316
+#: trainerdex/pogo_assets/strings.py:323
 msgctxt "general_ok"
 msgid "OK"
 msgstr "OK"
 
-#: trainerdex/pogo_assets/strings.py:317
+#: trainerdex/pogo_assets/strings.py:324
 msgctxt "general_pokemon"
 msgid "Pokémon"
 msgstr "寶可夢"
 
-#: trainerdex/pogo_assets/strings.py:318
+#: trainerdex/pogo_assets/strings.py:325
 msgctxt "general_sign_out"
 msgid "Sign Out"
 msgstr "登出"
 
-#: trainerdex/pogo_assets/strings.py:319
+#: trainerdex/pogo_assets/strings.py:326
 msgctxt "general_sign_out_confirm"
 msgid "Are you sure you want to sign out?"
 msgstr "確定要登出嗎？"
 
-#: trainerdex/pogo_assets/strings.py:320
+#: trainerdex/pogo_assets/strings.py:327
 msgctxt "general_stamina"
 msgid "HP"
 msgstr "HP"
 
-#: trainerdex/pogo_assets/strings.py:321
+#: trainerdex/pogo_assets/strings.py:328
 msgctxt "general_xp"
 msgid "XP"
 msgstr "XP"
 
-#: trainerdex/pogo_assets/strings.py:322
+#: trainerdex/pogo_assets/strings.py:329
 msgctxt "general_yes"
 msgid "Yes"
 msgstr "Yes"
 
-#: trainerdex/pogo_assets/strings.py:324
+#: trainerdex/pogo_assets/strings.py:331
 msgctxt "onboard_name_fail"
 msgid "An error has occurred. Try another name."
 msgstr "發生錯誤，請輸入其他暱稱"
 
-#: trainerdex/pogo_assets/strings.py:325
+#: trainerdex/pogo_assets/strings.py:332
 msgctxt "onboard_name_invalid_characters_error"
 msgid "Only letters and numbers are allowed."
 msgstr "只能使用英文字母和數字"
 
-#: trainerdex/pogo_assets/strings.py:326
+#: trainerdex/pogo_assets/strings.py:333
 msgctxt "onboard_name_not_available"
 msgid "That name isn't available."
 msgstr "無法使用這個暱稱"
 
-#: trainerdex/pogo_assets/strings.py:327
+#: trainerdex/pogo_assets/strings.py:334
 msgctxt "onboard_name_not_valid"
 msgid "That name is invalid."
 msgstr "這個暱稱無效"
 
-#: trainerdex/pogo_assets/strings.py:328
+#: trainerdex/pogo_assets/strings.py:335
 msgctxt "onboard_name_owned"
 msgid "This name is already in use by another Trainer."
 msgstr "這個暱稱已被其他訓練家使用"
 
-#: trainerdex/pogo_assets/strings.py:330
+#: trainerdex/pogo_assets/strings.py:337
 msgctxt "pokemon_info_cp"
 msgid "CP"
 msgstr "CP"
 
-#: trainerdex/pogo_assets/strings.py:332
+#: trainerdex/pogo_assets/strings.py:339
 msgctxt "pokemon_info_type"
 msgid "Type"
 msgstr "屬性"
 
-#: trainerdex/pogo_assets/strings.py:334
+#: trainerdex/pogo_assets/strings.py:341
 msgctxt "pokemon_type_bug"
 msgid "Bug"
 msgstr "蟲"
 
-#: trainerdex/pogo_assets/strings.py:335
+#: trainerdex/pogo_assets/strings.py:342
 msgctxt "pokemon_type_dark"
 msgid "Dark"
 msgstr "惡"
 
-#: trainerdex/pogo_assets/strings.py:336
+#: trainerdex/pogo_assets/strings.py:343
 msgctxt "pokemon_type_dragon"
 msgid "Dragon"
 msgstr "惡"
 
-#: trainerdex/pogo_assets/strings.py:337
+#: trainerdex/pogo_assets/strings.py:344
 msgctxt "pokemon_type_electric"
 msgid "Electric"
 msgstr "電"
 
-#: trainerdex/pogo_assets/strings.py:338
+#: trainerdex/pogo_assets/strings.py:345
 msgctxt "pokemon_type_fairy"
 msgid "Fairy"
 msgstr "妖精"
 
-#: trainerdex/pogo_assets/strings.py:339
+#: trainerdex/pogo_assets/strings.py:346
 msgctxt "pokemon_type_fighting"
 msgid "Fighting"
 msgstr "格鬥"
 
-#: trainerdex/pogo_assets/strings.py:340
+#: trainerdex/pogo_assets/strings.py:347
 msgctxt "pokemon_type_fire"
 msgid "Fire"
 msgstr "火"
 
-#: trainerdex/pogo_assets/strings.py:341
+#: trainerdex/pogo_assets/strings.py:348
 msgctxt "pokemon_type_flying"
 msgid "Flying"
 msgstr "飛行"
 
-#: trainerdex/pogo_assets/strings.py:342
+#: trainerdex/pogo_assets/strings.py:349
 msgctxt "pokemon_type_ghost"
 msgid "Ghost"
 msgstr "幽靈"
 
-#: trainerdex/pogo_assets/strings.py:343
+#: trainerdex/pogo_assets/strings.py:350
 msgctxt "pokemon_type_grass"
 msgid "Grass"
 msgstr "草"
 
-#: trainerdex/pogo_assets/strings.py:344
+#: trainerdex/pogo_assets/strings.py:351
 msgctxt "pokemon_type_ground"
 msgid "Ground"
 msgstr "地面"
 
-#: trainerdex/pogo_assets/strings.py:345
+#: trainerdex/pogo_assets/strings.py:352
 msgctxt "pokemon_type_ice"
 msgid "Ice"
 msgstr "冰"
 
-#: trainerdex/pogo_assets/strings.py:346
+#: trainerdex/pogo_assets/strings.py:353
 msgctxt "pokemon_type_normal"
 msgid "Normal"
 msgstr "一般"
 
-#: trainerdex/pogo_assets/strings.py:347
+#: trainerdex/pogo_assets/strings.py:354
 msgctxt "pokemon_type_poison"
 msgid "Poison"
 msgstr "毒"
 
-#: trainerdex/pogo_assets/strings.py:348
+#: trainerdex/pogo_assets/strings.py:355
 msgctxt "pokemon_type_psychic"
 msgid "Psychic"
 msgstr "超能力"
 
-#: trainerdex/pogo_assets/strings.py:349
+#: trainerdex/pogo_assets/strings.py:356
 msgctxt "pokemon_type_rock"
 msgid "Rock"
 msgstr "岩石"
 
-#: trainerdex/pogo_assets/strings.py:350
+#: trainerdex/pogo_assets/strings.py:357
 msgctxt "pokemon_type_steel"
 msgid "Steel"
 msgstr "鋼"
 
-#: trainerdex/pogo_assets/strings.py:351
+#: trainerdex/pogo_assets/strings.py:358
 msgctxt "pokemon_type_water"
 msgid "Water"
 msgstr "水"
 
-#: trainerdex/pogo_assets/strings.py:353
+#: trainerdex/pogo_assets/strings.py:360
 msgctxt "profile_button_activity_log"
 msgid "Journal"
 msgstr "冒險筆記"
 
-#: trainerdex/pogo_assets/strings.py:354
+#: trainerdex/pogo_assets/strings.py:361
 msgctxt "profile_button_customize"
 msgid "Style"
 msgstr "換裝"
 
-#: trainerdex/pogo_assets/strings.py:356
+#: trainerdex/pogo_assets/strings.py:363
 msgctxt "profile_category_medals"
 msgid "Medals"
 msgstr "獎牌"
 
-#: trainerdex/pogo_assets/strings.py:357
+#: trainerdex/pogo_assets/strings.py:364
 msgctxt "profile_category_stats"
 msgid "Stats"
 msgstr "狀態"
 
-#: trainerdex/pogo_assets/strings.py:358
+#: trainerdex/pogo_assets/strings.py:365
 msgctxt "profile_category_total_fitness"
 msgid "TOTAL PROGRESS"
 msgstr "運動成果"
 
-#: trainerdex/pogo_assets/strings.py:359
+#: trainerdex/pogo_assets/strings.py:366
 msgctxt "profile_category_weekly_fitness"
 msgid "WEEKLY PROGRESS"
 msgstr "本週成果"
 
-#: trainerdex/pogo_assets/strings.py:360
+#: trainerdex/pogo_assets/strings.py:367
 msgctxt "profile_gymbadges_help"
 msgid "Learn more"
 msgstr "更多關於道館徽章的情報"
 
-#: trainerdex/pogo_assets/strings.py:361
+#: trainerdex/pogo_assets/strings.py:368
 msgctxt "profile_gymbadges_recently_visited"
 msgid "Recently Visited"
 msgstr "最近去過的道館"
 
-#: trainerdex/pogo_assets/strings.py:362
+#: trainerdex/pogo_assets/strings.py:369
 msgctxt "profile_no_gymbadges"
 msgid "You don't have any Gym Badges."
 msgstr "沒有任何道館徽章"
 
-#: trainerdex/pogo_assets/strings.py:363
+#: trainerdex/pogo_assets/strings.py:370
 msgctxt "profile_player_level"
 msgid "Level"
 msgstr "等級"
 
-#: trainerdex/pogo_assets/strings.py:366
+#: trainerdex/pogo_assets/strings.py:373
 msgctxt "profile_total_xp"
 msgid "Total XP"
 msgstr "總XP"
 
-#: trainerdex/pogo_assets/strings.py:368
+#: trainerdex/pogo_assets/strings.py:375
 msgctxt "screen_friends_title"
 msgid "friends"
 msgstr "朋友"
 
-#: trainerdex/pogo_assets/strings.py:369
+#: trainerdex/pogo_assets/strings.py:376
 msgctxt "screen_title_badge_collection"
 msgid "Gym Badges"
 msgstr "冒險筆記"
 
-#: trainerdex/pogo_assets/strings.py:370
+#: trainerdex/pogo_assets/strings.py:377
 msgctxt "screen_title_friend_requests"
 msgid "Friend Requests"
 msgstr "朋友申請"
 
-#: trainerdex/pogo_assets/strings.py:371
+#: trainerdex/pogo_assets/strings.py:378
 msgctxt "screen_title_news"
 msgid "News"
 msgstr "快訊"
 
-#: trainerdex/pogo_assets/strings.py:372
+#: trainerdex/pogo_assets/strings.py:379
 msgctxt "screen_title_notification"
 msgid "Notifications"
 msgstr "通知"
 
-#: trainerdex/pogo_assets/strings.py:373
+#: trainerdex/pogo_assets/strings.py:380
 msgctxt "screen_title_pokedex"
 msgid "POKÉDEX"
 msgstr "寶可夢圖鑑"
 
-#: trainerdex/pogo_assets/strings.py:374
+#: trainerdex/pogo_assets/strings.py:381
 msgctxt "screen_title_settings"
 msgid "SETTINGS"
 msgstr "設定"
