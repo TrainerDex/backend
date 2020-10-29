@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trainerdex\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-15 08:18+0000\n"
-"PO-Revision-Date: 2020-10-15 08:18\n"
+"PO-Revision-Date: 2020-10-29 08:20\n"
 "Last-Translator: \n"
 "Language-Team: German\n"
 "Language: de_DE\n"
@@ -1355,32 +1355,32 @@ msgstr "Verschiedene PokéStops"
 #: trainerdex/pogo_assets/strings.py:273
 msgctxt "battle_hub_stats_battles"
 msgid "Battles"
-msgstr ""
+msgstr "Kämpfe"
 
 #: trainerdex/pogo_assets/strings.py:274
 msgctxt "battle_hub_stats_friends"
 msgid "Friends Battled"
-msgstr ""
+msgstr "Freunde bekämpft"
 
 #: trainerdex/pogo_assets/strings.py:275
 msgctxt "battle_hub_stats_stardust"
 msgid "Stardust Earned"
-msgstr ""
+msgstr "Sternenstaub verdient"
 
 #: trainerdex/pogo_assets/strings.py:276
 msgctxt "battle_hub_stats_streak"
 msgid "Longest Streak"
-msgstr ""
+msgstr "Längste Serie"
 
 #: trainerdex/pogo_assets/strings.py:277
 msgctxt "battle_hub_stats_streak_abbrev"
 msgid "Streak"
-msgstr ""
+msgstr "Serie"
 
 #: trainerdex/pogo_assets/strings.py:278
 msgctxt "battle_hub_stats_wins"
 msgid "Wins"
-msgstr ""
+msgstr "Siege"
 
 #: trainerdex/pogo_assets/strings.py:280
 msgctxt "buddy_level_0"
@@ -1842,7 +1842,7 @@ msgstr ""
 #: trainerdex/validators.py:6
 msgctxt "codename__error"
 msgid "Only letters and numbers are allowed."
-msgstr ""
+msgstr "Es sind nur Buchstaben und Zahlen erlaubt."
 
 #: trainerdex/validators.py:14
 msgctxt "friend_code__error"
