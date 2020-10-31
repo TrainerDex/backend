@@ -1,42 +1,166 @@
-{% load static %}
-{% load analytical %}
 <!DOCTYPE html>
-<html lang="en" charset="utf-8">
-    <head>
-        {% analytical_head_top %}
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>TrainerDex</title>
-        <base href="/">
-        <meta name="description" content="Join TrainerDex">
+<html lang="en" prefix="og: http://ogp.me/ns#" charset="utf-8">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
-        <link rel="icon" href="/favicon.ico">
-        <meta property="og:site_name" content="TrainerDex" />
-        <meta name="fb:page_id" content="1683676791663912" />
-        <meta name="msvalidate.01" content="E7E20ABA1E037AC0B7E0116E01E3337A" />
+    {% load static %}
+    {% load i18n %}
+    {% load account %}
 
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic|Material+Icons">
-        {% analytical_head_bottom %}
-    </head>
-    <body>
-        {% block body %}
-        {% block page %}
-        <main>
-          {% block content %}
-          <div id="root" />
-          {% endblock %}
-        </main>
-        {% endblock %}
+    <title>{% block head_title %}{% endblock %} | TrainerDex</title>
+    <meta name="description" content="{% trans 'TrainerDex provides leaderboards and stats related to Pokemon Go. Join now!' context 'meta tag in head' %}">
+    <meta name="mobile-web-app-capable" content="yes">
 
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'img/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'img/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'img/site.webmanifest' %}">
+
+    <link rel="shortcut icon" href="{% static 'img/favicon.png' %}">
+    <link rel="icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon" />
+    <meta property="og:site_name" content="TrainerDex" />
+    <meta name="fb:page_id" content="1683676791663912" />
+    <meta name="msvalidate.01" content="E7E20ABA1E037AC0B7E0116E01E3337A" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,800&amp;subset=latin-ext" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.red-pink.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdl-ext@0.17.1/lib/mdl-ext.min.css">
+    <link rel="stylesheet" href="{% static 'css/mdl.css' %}">
+    <link rel="stylesheet" type="text/css" href="https://cdn.wpcc.io/lib/1.0.2/cookieconsent.min.css"/>
+    <script defer src="https://cdn.wpcc.io/lib/1.0.2/cookieconsent.min.js"></script>
+    <script>
+      window.addEventListener(
+        "load",
+        function(){
+          window.wpcc.init(
+            {
+              "corners":"small",
+              "colors":{
+                "popup":{
+                  "background":"#f2f2f2",
+                  "text":"#332e20",
+                  "border":"#ca3755"
+                },
+                "button":{
+                  "background":
+                  "#ca3755",
+                  "text":"#f2f2f2"
+                }
+              },
+              "border":"normal",
+              "transparency":"5",
+              "content":{
+                "href":"{% url 'privacy' %}",
+                "button":"{% trans "OK" context "general_ok" %}",
+                "link":"{% trans "Learn more" %}",
+                "message":"{% trans "This website uses cookies to ensure you get the best experience on our website." %}"
+              }
+            }
+          )
+        }
+      );
+    </script>
+
+
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-5522637786617178",
+        enable_page_level_ads: true
+      });
+    </script>
+
+    {% block extra_head %}
+    {% endblock %}
+  </head>
+  <body>
+    {% block body %}
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="trainerdex-header mdl-layout__header is-casting-shadow">
+        <div class="mdl-layout__header-row">
+          <span class="trainerdex-logo mdl-layout__title">
+            <img src="{% static 'svg/logo-text.svg' %}">
+          </span>
+          <div class="mdl-layout-spacer"></div>
+          {# Navigation #}
+          <div class="trainerdex-header-navigation-container">
+            <nav class="trainerdex-header-navigation mdl-navigation">
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="{% url 'trainerdex:leaderboard' %}">{% trans "Leaderboard" %}</a>
+              {% if user.trainer.leaderboard_country %}<a class="mdl-navigation__link mdl-typography--text-uppercase" href="{% url 'trainerdex:leaderboard' country=user.trainer.leaderboard_country.code %}">{{user.trainer.leaderboard_country.name}} {% trans "Leaderboard" %}</a>{% endif %}
+              {% if user.is_authenticated %}
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="{% url 'trainerdex:profile' %}">{% user_display user %}</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="{% url 'account_logout' %}">{% trans "Sign Out" context "general_sign_out" %}</a>
+              {% else %}
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="{% url 'account_login' %}">{% trans "Login" %}</a>
+              {% endif %}
+            </nav>
+          </div>
+        </div>
+      </header>
+      <div class="trainerdex-drawer mdl-layout__drawer mdl-color--primary-dark mdl-color-text--primary-contrast">
+        <nav class="trainerdex-navigation mdl-navigation mdl-color--primary mdl-color-text--primary-contrast">
+          {%if user.is_authenticated %}
+          <a class="mdl-navigation__link mdl-menu__item--full-bleed-divider" href="{% url 'trainerdex:profile' %}"><i class="material-icons">person</i>{% user_display user %}</a>
+          <a class="mdl-navigation__link" href="{% url 'account_settings' %}"><i class="material-icons" role="presentation">settings</i>{% trans "Settings" %}</a>
+          <a class="mdl-navigation__link mdl-menu__item--full-bleed-divider" href="{% url 'account_logout' %}"><i class="material-icons" role="presentation">close</i>{% trans "Sign Out" context "general_sign_out" %}</a>
+          {% else %}
+          <a class="mdl-navigation__link" href="{% url 'account_login' %}"><i class="material-icons" role="presentation">login</i>{% trans "Login" %}</a>
+          {% endif %}
+          <a class="mdl-navigation__link" href="{% url 'trainerdex:leaderboard' %}"><i class="material-icons" role="presentation">assessment</i>{% trans "Leaderboard" %}</a>
+          {% if user.trainer.leaderboard_country %}<a class="mdl-navigation__link" href="{% url 'trainerdex:leaderboard' country=user.trainer.leaderboard_country.code %}"><div class="material-icons" role="presentation">{{user.trainer.flag_emoji}}</div>{{user.trainer.leaderboard_country.name}}</a>{% endif %}
+          <div class="mdl-menu__item--full-bleed-divider"></div>
+          <div class="mdl-layout-spacer"></div>
+          {% if user.is_staff %}<a class="mdl-navigation__link mdl-menu__item--full-bleed-divider" href="{% url 'admin:index' %}">{% trans "Admin Panel" %}</a>{% endif %}
+          <a class="mdl-navigation__link" href="{% url 'privacy' %}">{% trans "Privacy Policy" %}</a>
+          <a class="mdl-navigation__link mdl-menu__item--full-bleed-divider" href="{% url 'terms' %}">{% trans 'Terms of Service' %}</a>
+          <a class="mdl-navigation__link mdl-menu__item--full-bleed-divider" href="http://discord.trainerdex.co.uk">Join our Discord server!</a>
+          <a class="mdl-navigation__link" href="https://github.com/TurnrDev">{% trans 'Author' %}: TurnrDev</a>
+          <a class="mdl-navigation__link">{% trans 'Version' %}: {{tdx_version}}</a>
+        </nav>
+      </div>
+
+      {% if messages %}{% for message in messages %}
+      <div id="trainerdex-toast-message" class="mdl-js-snackbar mdl-snackbar">
+        <div class="mdl-snackbar__text"></div>
+        <button class="mdl-snackbar__action" type="button"></button>
+      </div>
+      <script>
+      r(function(){
+          var snackbarContainer = document.querySelector('#trainerdex-toast-message');
+          var data = { message: '{{message}}'};
+          snackbarContainer.MaterialSnackbar.showSnackbar(data);
+      });
+      function r(f){ /in/.test(document.readyState)?setTimeout('r('+f+')',9):f()}
+      </script>
+      {% endfor %}{% endif %}
+
+      {% block page %}
+      <main class="mdl-layout__content mdl-color--grey-100" style="flex: 1 0 auto;">
+        {% block content %}
         {% endblock %}
-        {% block extra_body %}
-        {% endblock %}
-        <script src="{% static 'index-bundle.js' %}"></script>
-        {% analytical_body_top %}
-        {% analytical_body_bottom %}
-    </body>
+      </main>
+      {% endblock %}
+
+      {% endblock %}
+      {% block extra_body %}
+      {% endblock %}
+    </div>
+
+    {% block fab %}
+    {% if user.is_authenticated %}
+    <a id="trainerdex__fab" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--raised mdl-js-ripple-effect mdl-button--colored" href="{% url 'trainerdex:update_stats' %}"><i class="material-icons">add</i></a>
+    {% endif %}
+    {% endblock %}
+
+    {% if GOOGLE_ANALYTICS_PROPERTY_ID %}
+      {% include "ga.html" %}
+    {% endif %}
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mdl-ext@0.17.1/lib/mdl-ext.min.js"></script>
+  </body>
 </html>

@@ -1,0 +1,27 @@
+{% extends "account/base.html" %}
+
+{% load i18n %}
+
+{% block head_title %}{% trans "Sign Up Closed" %}{% endblock %}
+
+{% block content %}
+<div class="mdl-grid">
+  <div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--6-col mdl-cell--4-col-phone trainerdex-card__alert">
+    <div class="mdl-card__title">
+      <h2 class="mdl-card__title-text">{% trans "We are sorry, but registrations via the website are currently disabled." %}</h2>
+    </div>
+    <div class="mdl-card__supporting-text">
+      <strong>{% trans "This is preperation for transition to the NEW TrainerDex website. We apologise for the inconvenience." %}</strong>
+      <p> As always, you can still use our service on <a href="http://discord.trainerdex.co.uk">Discord</a></p>
+    </div>
+    <div class="mdl-card__actions mdl-card--border">
+      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="{% url 'trainerdex:leaderboard' %}">
+        {% trans 'Return to Leaderboard' %}
+      </a>
+      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="http://discord.trainerdex.co.uk">
+        {% trans 'Join Discord' %}
+      </a>
+    </div>
+  </div>
+</div>
+{% endblock %}

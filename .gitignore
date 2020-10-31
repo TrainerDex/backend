@@ -1,6 +1,6 @@
 
-# Created by https://www.toptal.com/developers/gitignore/api/django,react
-# Edit at https://www.toptal.com/developers/gitignore?templates=django,react
+# Created by https://www.toptal.com/developers/gitignore/api/django
+# Edit at https://www.toptal.com/developers/gitignore?templates=django
 
 ### Django ###
 *.log
@@ -124,6 +124,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+pythonenv*
 
 # Spyder project settings
 .spyderproject
@@ -146,21 +147,7 @@ dmypy.json
 # pytype static type analyzer
 .pytype/
 
-### react ###
-.DS_*
-logs
-**/*.backup.*
-**/*.back.*
+# profiling data
+.prof
 
-node_modules
-bower_components
-
-*.sublime*
-
-psd
-thumb
-sketch
-
-*-bundle.js
-
-# End of https://www.toptal.com/developers/gitignore/api/django,react
+# End of https://www.toptal.com/developers/gitignore/api/django

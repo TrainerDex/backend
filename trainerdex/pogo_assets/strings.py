@@ -4,7 +4,9 @@ and out of use within the codebase.
 """
 from django.utils.translation import pgettext, npgettext
 
-apk_job = 4005630
+apk_job = 4141883
+
+pgettext("alola_pokedex_header", "Alolan Form")
 
 pgettext("avatar_detail_battle_won", "Battles Won")
 pgettext("avatar_detail_pokemon_caught", "Pokémon Caught")
@@ -289,9 +291,7 @@ pgettext("codename_reassign_success", "You're now known as {0}.")
 pgettext("date_format", "MMM dd, yyyy")
 
 pgettext("encounter_score_total_exp", "{0} XP")
-pgettext("feedback_added_xp", "+{0} XP")
 
-npgettext("friend", "friend", "friends", 1)
 pgettext("friend_code_title", "Trainer Code")
 pgettext("friend_full_name", "{0} ({1})")
 pgettext("friends_list_level_format", "Lv {0}")
@@ -302,7 +302,6 @@ npgettext("friendship_level_2", "Great Friend", "Great Friends", 1)
 npgettext("friendship_level_3", "Ultra Friend", "Ultra Friends", 1)
 npgettext("friendship_level_4", "Best Friend", "Best Friends", 1)
 
-pgettext("alola_pokedex_header", "Alolan Form")
 pgettext("galarian_pokedex_header", "Galarian Form")
 
 pgettext("general_accept", "Accept")
@@ -327,6 +326,8 @@ pgettext("general_sign_out_confirm", "Are you sure you want to sign out?")
 pgettext("general_stamina", "HP")
 pgettext("general_xp", "XP")
 pgettext("general_yes", "Yes")
+
+pgettext("mega_energy", "Mega Energy")
 
 pgettext("onboard_name_fail", "An error has occurred. Try another name.")
 pgettext("onboard_name_invalid_characters_error", "Only letters and numbers are allowed.")
