@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trainerdex\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-31 10:50+0000\n"
-"PO-Revision-Date: 2020-11-05 08:14\n"
+"PO-Revision-Date: 2020-11-12 08:13\n"
 "Last-Translator: \n"
 "Language-Team: Spanish\n"
 "Language: es_ES\n"
@@ -1624,7 +1624,7 @@ msgstr ""
 #: trainerdex/pogo_assets/strings.py:330
 msgctxt "mega_energy"
 msgid "Mega Energy"
-msgstr "Mega Energía"
+msgstr "Mega Energy"
 
 #: trainerdex/pogo_assets/strings.py:332
 msgctxt "onboard_name_fail"
@@ -1855,7 +1855,7 @@ msgstr "Lo sentimos, no hemos podido encontrar la página que estás buscando. C
 #: trainerdex/templates/account/signup_closed.html:19
 #: trainerdex/templates/account/verification_sent.html:18
 msgid "Return to Leaderboard"
-msgstr "Volver a la Tabla de clasificación de Reputación"
+msgstr "Volver a la Tabla de clasificación"
 
 #: trainerdex/templates/404.html:22
 msgid "Visit our Discord"

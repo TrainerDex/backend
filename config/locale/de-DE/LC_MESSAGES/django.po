@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trainerdex\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-31 10:50+0000\n"
-"PO-Revision-Date: 2020-10-31 10:51\n"
+"PO-Revision-Date: 2020-11-12 08:13\n"
 "Last-Translator: \n"
 "Language-Team: German\n"
 "Language: de_DE\n"
@@ -1617,7 +1617,7 @@ msgstr "Ja"
 #: trainerdex/pogo_assets/strings.py:330
 msgctxt "mega_energy"
 msgid "Mega Energy"
-msgstr ""
+msgstr "Mega-Energie"
 
 #: trainerdex/pogo_assets/strings.py:332
 msgctxt "onboard_name_fail"
