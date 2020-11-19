@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trainerdex\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-31 10:50+0000\n"
-"PO-Revision-Date: 2020-11-12 08:13\n"
+"PO-Revision-Date: 2020-11-19 08:14\n"
 "Last-Translator: \n"
 "Language-Team: Thai\n"
 "Language: th_TH\n"
@@ -309,7 +309,7 @@ msgstr[0] ""
 #: trainerdex/templates/account/account_settings.html:110
 msgctxt "friend_code_title"
 msgid "Trainer Code"
-msgstr ""
+msgstr "รหัสเทรนเนอร์"
 
 #: trainerdex/models.py:321
 msgid "Trainer Code can be seen by users of groups they're in"
@@ -409,7 +409,7 @@ msgstr "บันทึกโปเกมอนที่ถูกค้นพบ
 #: trainerdex/models.py:515 trainerdex/pogo_assets/strings.py:115
 msgctxt "badge_pokedex_entries_gen4_title"
 msgid "Sinnoh"
-msgstr ""
+msgstr "ชินโอ"
 
 #: trainerdex/models.py:518 trainerdex/pogo_assets/strings.py:113
 #, python-brace-format
@@ -420,7 +420,7 @@ msgstr "บันทึกโปเกมอนที่ถูกค้นพบ
 #: trainerdex/models.py:530 trainerdex/pogo_assets/strings.py:121
 msgctxt "badge_pokedex_entries_gen5_title"
 msgid "Unova"
-msgstr ""
+msgstr "อิชชู"
 
 #: trainerdex/models.py:533 trainerdex/pogo_assets/strings.py:119
 #, python-brace-format
@@ -474,7 +474,7 @@ msgstr ""
 #: trainerdex/models.py:596 trainerdex/pogo_assets/strings.py:179
 msgctxt "badge_travel_km"
 msgid "Walk {0:0,g} km."
-msgstr ""
+msgstr "เดิน {0:0,g} กม."
 
 #: trainerdex/models.py:611 trainerdex/pogo_assets/strings.py:35
 msgctxt "badge_capture_total_title"
@@ -490,7 +490,7 @@ msgstr ""
 #, python-brace-format
 msgctxt "badge_capture_total"
 msgid "Catch {0} Pokémon."
-msgstr ""
+msgstr "จับโปเกมอน {0} ตัว"
 
 #: trainerdex/models.py:624 trainerdex/pogo_assets/strings.py:50
 msgctxt "badge_evolved_total_title"
@@ -528,7 +528,7 @@ msgstr ""
 #, python-brace-format
 msgctxt "badge_pokestops_visited"
 msgid "Visit {0} PokéStops."
-msgstr ""
+msgstr "หมุนเสาโปเกสต็อป {0} ครั้ง"
 
 #: trainerdex/models.py:660 trainerdex/pogo_assets/strings.py:29
 msgctxt "badge_big_magikarp_title"
@@ -550,7 +550,7 @@ msgstr "แบตเทิลเกิร์ล"
 #, python-brace-format
 msgctxt "badge_battle_attack_won"
 msgid "Win {0} Gym battles."
-msgstr ""
+msgstr "ชนะยิมแบตเทิล {0} ครั้ง"
 
 #: trainerdex/models.py:682 trainerdex/pogo_assets/strings.py:23
 msgctxt "badge_battle_training_won_title"
@@ -561,7 +561,7 @@ msgstr "เทรนเนอร์หัวกะทิ"
 #, python-brace-format
 msgctxt "badge_battle_training_won"
 msgid "Train {0} times."
-msgstr ""
+msgstr "ฝึกโปเกมอน {0} ครั้ง"
 
 #: trainerdex/models.py:693 trainerdex/pogo_assets/strings.py:170
 msgctxt "badge_small_rattata_title"
@@ -627,7 +627,7 @@ msgstr "ปรมาจารย์ด้านผลไม้"
 #, python-brace-format
 msgctxt "badge_berries_fed"
 msgid "Feed {0} Berries at Gyms."
-msgstr ""
+msgstr "ป้อนผลไม้ {0} ลูกที่ยิม"
 
 #: trainerdex/models.py:760 trainerdex/pogo_assets/strings.py:64
 msgctxt "badge_hours_defended_title"
@@ -638,7 +638,7 @@ msgstr "หัวหน้ายิม"
 #, python-brace-format
 msgctxt "badge_hours_defended"
 msgid "Defend Gyms for {0} hours."
-msgstr ""
+msgstr "ป้องกันยิมเป็นเวลา {0} ชั่วโมง"
 
 #: trainerdex/models.py:771 trainerdex/pogo_assets/strings.py:38
 msgctxt "badge_challenge_quests_title"
@@ -649,7 +649,7 @@ msgstr "จนท.พิทักษ์โปเกมอน"
 #, python-brace-format
 msgctxt "badge_challenge_quests"
 msgid "Complete {0} Field Research tasks."
-msgstr ""
+msgstr "งานวิจัยภาคสนามเสร็จสิ้น {0} ภารกิจ"
 
 #: trainerdex/models.py:782 trainerdex/pogo_assets/strings.py:83
 msgctxt "badge_max_level_friends_title"
@@ -672,7 +672,7 @@ msgstr "สุภาพบุรุษ"
 #, python-brace-format
 msgctxt "badge_trading"
 msgid "Trade {0} Pokémon."
-msgstr ""
+msgstr "แลกเปลี่ยนโปเกมอน {0} ตัว"
 
 #: trainerdex/models.py:809 trainerdex/pogo_assets/strings.py:176
 msgctxt "badge_trading_distance_title"
@@ -683,7 +683,7 @@ msgstr "นักบิน"
 #, python-brace-format
 msgctxt "badge_trading_distance"
 msgid "Earn {0} km across the distance of all Pokémon trades."
-msgstr ""
+msgstr "เก็บระยะห่างรวม {0} กม.จากการแลกเปลี่ยนโปเกมอน"
 
 #: trainerdex/models.py:822 trainerdex/pogo_assets/strings.py:58
 msgctxt "badge_great_league_title"
@@ -794,26 +794,26 @@ msgstr[0] "ได้รับความเห็นพ้องผู้เด
 #: trainerdex/models.py:955 trainerdex/pogo_assets/strings.py:265
 msgctxt "badge_total_mega_evos_title"
 msgid "Successor"
-msgstr ""
+msgstr "สืบทอด"
 
 #: trainerdex/models.py:958 trainerdex/pogo_assets/strings.py:261
 #, python-brace-format
 msgctxt "badge_total_mega_evos"
 msgid "Mega Evolve a Pokémon {0} time."
 msgid_plural "Mega Evolve a Pokémon {0} times."
-msgstr[0] ""
+msgstr[0] "วิวัฒนาการเมก้าโปเกมอน {0} ครั้ง"
 
 #: trainerdex/models.py:971 trainerdex/pogo_assets/strings.py:273
 msgctxt "badge_unique_mega_evos_title"
 msgid "Mega Evolution Guru"
-msgstr ""
+msgstr "ผู้เชี่ยวชาญการวิวัฒนาการเมก้า"
 
 #: trainerdex/models.py:974 trainerdex/pogo_assets/strings.py:269
 #, python-brace-format
 msgctxt "badge_unique_mega_evos"
 msgid "Mega Evolve {0} Pokémon."
 msgid_plural "Mega Evolve {0} different species of Pokémon."
-msgstr[0] ""
+msgstr[0] "วิวัฒนาการเมก้าโปเกมอนไม่ซ้ำกัน {0} ตัว"
 
 #: trainerdex/models.py:988 trainerdex/pogo_assets/strings.py:220
 msgctxt "badge_type_normal_title"
@@ -906,7 +906,7 @@ msgstr "จับโปเกมอนประเภทผี {0} ตัว"
 #: trainerdex/models.py:1068 trainerdex/pogo_assets/strings.py:232
 msgctxt "badge_type_steel_title"
 msgid "Rail Staff"
-msgstr ""
+msgstr "พนักงานรถไฟ"
 
 #: trainerdex/models.py:1069 trainerdex/pogo_assets/strings.py:231
 #, python-brace-format
@@ -1025,7 +1025,7 @@ msgstr ""
 #: trainerdex/models.py:1184 trainerdex/pogo_assets/strings.py:339
 msgctxt "pokemon_info_stardust_label"
 msgid "Stardust"
-msgstr ""
+msgstr "สตาร์ดัสต์"
 
 #: trainerdex/models.py:1218
 msgid "You must fill in at least one field"
@@ -1173,7 +1173,7 @@ msgstr ""
 #, python-brace-format
 msgctxt "badge_legendary_battle_won"
 msgid "Win {0} Legendary raids."
-msgstr ""
+msgstr "ชนะการตีบอสในตำนาน {0} ครั้ง"
 
 #: trainerdex/pogo_assets/strings.py:103
 msgctxt "badge_pokedex_entries_gen2_title"
@@ -1211,7 +1211,7 @@ msgstr ""
 #, python-brace-format
 msgctxt "badge_raid_battle_won"
 msgid "Win {0} raids."
-msgstr ""
+msgstr "ชนะการตีบอส {0} ครั้ง"
 
 #: trainerdex/pogo_assets/strings.py:164
 msgctxt "badge_rocket_giovanni_defeated_title"
@@ -1345,32 +1345,32 @@ msgstr ""
 #: trainerdex/pogo_assets/strings.py:275
 msgctxt "battle_hub_stats_battles"
 msgid "Battles"
-msgstr ""
+msgstr "แบตเทิล"
 
 #: trainerdex/pogo_assets/strings.py:276
 msgctxt "battle_hub_stats_friends"
 msgid "Friends Battled"
-msgstr ""
+msgstr "เพื่อนที่แบตเทิล"
 
 #: trainerdex/pogo_assets/strings.py:277
 msgctxt "battle_hub_stats_stardust"
 msgid "Stardust Earned"
-msgstr ""
+msgstr "สตาร์ดัสต์ที่ได้รับ"
 
 #: trainerdex/pogo_assets/strings.py:278
 msgctxt "battle_hub_stats_streak"
 msgid "Longest Streak"
-msgstr ""
+msgstr "ชนะต่อเนื่องสูงสุด"
 
 #: trainerdex/pogo_assets/strings.py:279
 msgctxt "battle_hub_stats_streak_abbrev"
 msgid "Streak"
-msgstr ""
+msgstr "ความต่อเนื่อง"
 
 #: trainerdex/pogo_assets/strings.py:280
 msgctxt "battle_hub_stats_wins"
 msgid "Wins"
-msgstr ""
+msgstr "ชนะ"
 
 #: trainerdex/pogo_assets/strings.py:282
 msgctxt "buddy_level_0"
@@ -1599,7 +1599,7 @@ msgstr ""
 #: trainerdex/pogo_assets/strings.py:333
 msgctxt "onboard_name_invalid_characters_error"
 msgid "Only letters and numbers are allowed."
-msgstr ""
+msgstr "สามารถใช้ได้แค่ตัวอักษรและตัวเลขเท่านั้น"
 
 #: trainerdex/pogo_assets/strings.py:334
 msgctxt "onboard_name_not_available"
@@ -1699,7 +1699,7 @@ msgstr ""
 #: trainerdex/pogo_assets/strings.py:356
 msgctxt "pokemon_type_psychic"
 msgid "Psychic"
-msgstr ""
+msgstr "พลังจิต"
 
 #: trainerdex/pogo_assets/strings.py:357
 msgctxt "pokemon_type_rock"
@@ -1734,7 +1734,7 @@ msgstr "เหรียญรางวัล"
 #: trainerdex/pogo_assets/strings.py:365
 msgctxt "profile_category_stats"
 msgid "Stats"
-msgstr ""
+msgstr "ค่าพลัง"
 
 #: trainerdex/pogo_assets/strings.py:366
 msgctxt "profile_category_total_fitness"
@@ -1764,12 +1764,12 @@ msgstr ""
 #: trainerdex/pogo_assets/strings.py:371
 msgctxt "profile_player_level"
 msgid "Level"
-msgstr ""
+msgstr "เลเวล"
 
 #: trainerdex/pogo_assets/strings.py:374
 msgctxt "profile_total_xp"
 msgid "Total XP"
-msgstr ""
+msgstr "XP ทั้งหมด"
 
 #: trainerdex/pogo_assets/strings.py:376
 msgctxt "screen_friends_title"
@@ -2408,7 +2408,7 @@ msgstr ""
 #: trainerdex/validators.py:6
 msgctxt "codename__error"
 msgid "Only letters and numbers are allowed."
-msgstr ""
+msgstr "สามารถใช้ได้แค่ตัวอักษรและตัวเลขเท่านั้น"
 
 #: trainerdex/validators.py:14
 msgctxt "friend_code__error"
