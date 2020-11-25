@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trainerdex\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-31 10:50+0000\n"
-"PO-Revision-Date: 2020-11-12 08:13\n"
+"PO-Revision-Date: 2020-11-19 08:14\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "Language: ja_JP\n"
@@ -409,24 +409,24 @@ msgstr "ジョウト地方で発見されたポケモンを{0}匹ポケモン図
 #: trainerdex/models.py:515 trainerdex/pogo_assets/strings.py:115
 msgctxt "badge_pokedex_entries_gen4_title"
 msgid "Sinnoh"
-msgstr ""
+msgstr "シンオウ"
 
 #: trainerdex/models.py:518 trainerdex/pogo_assets/strings.py:113
 #, python-brace-format
 msgctxt "badge_pokedex_entries_gen4"
 msgid "Register {0} Pokémon first discovered in the Sinnoh region to the Pokédex."
-msgstr ""
+msgstr "シンオウ地方で発見されたポケモンを{0}匹ポケモン図鑑に登録できた！"
 
 #: trainerdex/models.py:530 trainerdex/pogo_assets/strings.py:121
 msgctxt "badge_pokedex_entries_gen5_title"
 msgid "Unova"
-msgstr ""
+msgstr "イッシュ"
 
 #: trainerdex/models.py:533 trainerdex/pogo_assets/strings.py:119
 #, python-brace-format
 msgctxt "badge_pokedex_entries_gen5"
 msgid "Register {0} Pokémon first discovered in the Unova region to the Pokédex."
-msgstr ""
+msgstr "イッシュ地方で発見されたポケモンを{0}匹ポケモン図鑑に登録できた！"
 
 #: trainerdex/models.py:545 trainerdex/pogo_assets/strings.py:127
 msgctxt "badge_pokedex_entries_gen6_title"
@@ -474,7 +474,7 @@ msgstr ""
 #: trainerdex/models.py:596 trainerdex/pogo_assets/strings.py:179
 msgctxt "badge_travel_km"
 msgid "Walk {0:0,g} km."
-msgstr ""
+msgstr "{0:0,g} km 歩いた！"
 
 #: trainerdex/models.py:611 trainerdex/pogo_assets/strings.py:35
 msgctxt "badge_capture_total_title"
@@ -490,7 +490,7 @@ msgstr ""
 #, python-brace-format
 msgctxt "badge_capture_total"
 msgid "Catch {0} Pokémon."
-msgstr ""
+msgstr "ポケモンを {0} 匹捕まえた！"
 
 #: trainerdex/models.py:624 trainerdex/pogo_assets/strings.py:50
 msgctxt "badge_evolved_total_title"
@@ -528,7 +528,7 @@ msgstr ""
 #, python-brace-format
 msgctxt "badge_pokestops_visited"
 msgid "Visit {0} PokéStops."
-msgstr ""
+msgstr "ポケストップを{0}回訪れた！"
 
 #: trainerdex/models.py:660 trainerdex/pogo_assets/strings.py:29
 msgctxt "badge_big_magikarp_title"
@@ -550,7 +550,7 @@ msgstr "バトルガール"
 #, python-brace-format
 msgctxt "badge_battle_attack_won"
 msgid "Win {0} Gym battles."
-msgstr ""
+msgstr "ジムで{0}回バトルに勝った！"
 
 #: trainerdex/models.py:682 trainerdex/pogo_assets/strings.py:23
 msgctxt "badge_battle_training_won_title"
@@ -561,7 +561,7 @@ msgstr "エリートトレーナー"
 #, python-brace-format
 msgctxt "badge_battle_training_won"
 msgid "Train {0} times."
-msgstr ""
+msgstr "{0}回トレーニングした！"
 
 #: trainerdex/models.py:693 trainerdex/pogo_assets/strings.py:170
 msgctxt "badge_small_rattata_title"
@@ -627,7 +627,7 @@ msgstr "きのみ名人"
 #, python-brace-format
 msgctxt "badge_berries_fed"
 msgid "Feed {0} Berries at Gyms."
-msgstr ""
+msgstr "ポケモンに {0} 個きのみをあげた！"
 
 #: trainerdex/models.py:760 trainerdex/pogo_assets/strings.py:64
 msgctxt "badge_hours_defended_title"
@@ -638,7 +638,7 @@ msgstr "ジムリーダー"
 #, python-brace-format
 msgctxt "badge_hours_defended"
 msgid "Defend Gyms for {0} hours."
-msgstr ""
+msgstr "ジムを {0} 時間防衛した！"
 
 #: trainerdex/models.py:771 trainerdex/pogo_assets/strings.py:38
 msgctxt "badge_challenge_quests_title"
@@ -649,7 +649,7 @@ msgstr "ポケモンレンジャー"
 #, python-brace-format
 msgctxt "badge_challenge_quests"
 msgid "Complete {0} Field Research tasks."
-msgstr ""
+msgstr "フィールドリサーチを{0}回達成した！"
 
 #: trainerdex/models.py:782 trainerdex/pogo_assets/strings.py:83
 msgctxt "badge_max_level_friends_title"
@@ -661,7 +661,7 @@ msgstr "アイドル"
 msgctxt "badge_max_level_friends"
 msgid "Become Best Friends with {0} Trainer."
 msgid_plural "Become Best Friends with {0} Trainers."
-msgstr[0] ""
+msgstr[0] "トレーナー{0}人と「大親友」になれた！"
 
 #: trainerdex/models.py:798 trainerdex/pogo_assets/strings.py:173
 msgctxt "badge_trading_title"
@@ -672,7 +672,7 @@ msgstr "ジェントルマン"
 #, python-brace-format
 msgctxt "badge_trading"
 msgid "Trade {0} Pokémon."
-msgstr ""
+msgstr "{0}匹交換できた！"
 
 #: trainerdex/models.py:809 trainerdex/pogo_assets/strings.py:176
 msgctxt "badge_trading_distance_title"
@@ -683,71 +683,71 @@ msgstr "パイロット"
 #, python-brace-format
 msgctxt "badge_trading_distance"
 msgid "Earn {0} km across the distance of all Pokémon trades."
-msgstr ""
+msgstr "交換したポケモン同士の距離が累計{0} km になった！"
 
 #: trainerdex/models.py:822 trainerdex/pogo_assets/strings.py:58
 msgctxt "badge_great_league_title"
 msgid "Great League Veteran"
-msgstr ""
+msgstr "スーパーリーグベテラン"
 
 #: trainerdex/models.py:825 trainerdex/pogo_assets/strings.py:54
 #, python-brace-format
 msgctxt "badge_great_league"
 msgid "Win a Trainer Battle in the Great League."
 msgid_plural "Win {0} Trainer Battles in the Great League."
-msgstr[0] ""
+msgstr[0] "スーパーリーグで{0}回勝った！"
 
 #: trainerdex/models.py:838 trainerdex/pogo_assets/strings.py:243
 msgctxt "badge_ultra_league_title"
 msgid "Ultra League Veteran"
-msgstr ""
+msgstr "ハイパーリーグベテラン"
 
 #: trainerdex/models.py:841 trainerdex/pogo_assets/strings.py:239
 #, python-brace-format
 msgctxt "badge_ultra_league"
 msgid "Win a Trainer Battle in the Ultra League."
 msgid_plural "Win {0} Trainer Battles in the Ultra League."
-msgstr[0] ""
+msgstr[0] "ハイパーリーグで{0}回勝った！"
 
 #: trainerdex/models.py:854 trainerdex/pogo_assets/strings.py:75
 msgctxt "badge_master_league_title"
 msgid "Master League Veteran"
-msgstr ""
+msgstr "マスターリーグベテラン"
 
 #: trainerdex/models.py:857 trainerdex/pogo_assets/strings.py:71
 #, python-brace-format
 msgctxt "badge_master_league"
 msgid "Win a Trainer Battle in the Master League."
 msgid_plural "Win {0} Trainer Battles in the Master League."
-msgstr[0] ""
+msgstr[0] "マスターリーグで{0}回勝った！"
 
 #: trainerdex/models.py:870 trainerdex/pogo_assets/strings.py:91
 msgctxt "badge_photobomb_title"
 msgid "Cameraman"
-msgstr ""
+msgstr "カメラマン"
 
 #: trainerdex/models.py:873 trainerdex/pogo_assets/strings.py:87
 #, python-brace-format
 msgctxt "badge_photobomb"
 msgid "Have {0} surprise encounter in GO Snapshot."
 msgid_plural "Have {0} surprise encounters in GO Snapshot."
-msgstr[0] ""
+msgstr[0] "{0}回GO Snapshot でサプライズがおきた！"
 
 #: trainerdex/models.py:886 trainerdex/pogo_assets/strings.py:144
 msgctxt "badge_pokemon_purified_title"
 msgid "Purifier"
-msgstr ""
+msgstr "リトレーナー"
 
 #: trainerdex/models.py:887 trainerdex/pogo_assets/strings.py:143
 #, python-brace-format
 msgctxt "badge_pokemon_purified"
 msgid "Purify {0} Shadow Pokémon."
-msgstr ""
+msgstr "シャドウポケモンを{0}匹リトレーンした！"
 
 #: trainerdex/models.py:897 trainerdex/pogo_assets/strings.py:167
 msgctxt "badge_rocket_grunts_defeated_title"
 msgid "Hero"
-msgstr ""
+msgstr "ヒーロー"
 
 #: trainerdex/models.py:899
 #, python-brace-format
@@ -765,55 +765,55 @@ msgstr ""
 msgctxt "badge_rocket_giovanni_defeated"
 msgid "Defeat the Team GO Rocket Boss."
 msgid_plural "Defeat the Team GO Rocket Boss {0} times. "
-msgstr[0] ""
+msgstr[0] "GOロケット団のボスに{0}回勝った！"
 
 #: trainerdex/models.py:926 trainerdex/pogo_assets/strings.py:32
 msgctxt "badge_buddy_best_title"
 msgid "Best Buddy"
-msgstr ""
+msgstr "ベストバディ"
 
 #: trainerdex/models.py:928 trainerdex/pogo_assets/strings.py:31
 #, python-brace-format
 msgctxt "badge_buddy_best"
 msgid "Have 1 Best Buddy."
 msgid_plural "Have {0} Best Buddies."
-msgstr[0] ""
+msgstr[0] "{0}匹のポケモンと最高の相棒になれた！"
 
 #: trainerdex/models.py:939 trainerdex/pogo_assets/strings.py:257
 msgctxt "badge_wayfarer_title"
 msgid "Wayfarer"
-msgstr ""
+msgstr "Wayfarer"
 
 #: trainerdex/models.py:942 trainerdex/pogo_assets/strings.py:253
 #, python-brace-format
 msgctxt "badge_wayfarer"
 msgid "Earn a Wayfarer Agreement"
 msgid_plural "Earn {0} Wayfarer Agreements"
-msgstr[0] ""
+msgstr[0] "Wayfarerで{0}Agreementsを受け取ることができた！"
 
 #: trainerdex/models.py:955 trainerdex/pogo_assets/strings.py:265
 msgctxt "badge_total_mega_evos_title"
 msgid "Successor"
-msgstr ""
+msgstr "けいしょうしゃ"
 
 #: trainerdex/models.py:958 trainerdex/pogo_assets/strings.py:261
 #, python-brace-format
 msgctxt "badge_total_mega_evos"
 msgid "Mega Evolve a Pokémon {0} time."
 msgid_plural "Mega Evolve a Pokémon {0} times."
-msgstr[0] ""
+msgstr[0] "ポケモンを{0}回メガシンカできた！"
 
 #: trainerdex/models.py:971 trainerdex/pogo_assets/strings.py:273
 msgctxt "badge_unique_mega_evos_title"
 msgid "Mega Evolution Guru"
-msgstr ""
+msgstr "メガシンカおやじ"
 
 #: trainerdex/models.py:974 trainerdex/pogo_assets/strings.py:269
 #, python-brace-format
 msgctxt "badge_unique_mega_evos"
 msgid "Mega Evolve {0} Pokémon."
 msgid_plural "Mega Evolve {0} different species of Pokémon."
-msgstr[0] ""
+msgstr[0] "ポケモンを{0}種類メガシンカできた！"
 
 #: trainerdex/models.py:988 trainerdex/pogo_assets/strings.py:220
 msgctxt "badge_type_normal_title"
@@ -906,7 +906,7 @@ msgstr "ゴーストタイプのポケモンを {0} 匹捕まえた！"
 #: trainerdex/models.py:1068 trainerdex/pogo_assets/strings.py:232
 msgctxt "badge_type_steel_title"
 msgid "Rail Staff"
-msgstr ""
+msgstr "てつどういん"
 
 #: trainerdex/models.py:1069 trainerdex/pogo_assets/strings.py:231
 #, python-brace-format
@@ -1173,7 +1173,7 @@ msgstr ""
 #, python-brace-format
 msgctxt "badge_legendary_battle_won"
 msgid "Win {0} Legendary raids."
-msgstr ""
+msgstr "ジムで{0}回伝説レイドバトルに勝った！"
 
 #: trainerdex/pogo_assets/strings.py:103
 msgctxt "badge_pokedex_entries_gen2_title"
@@ -1211,12 +1211,12 @@ msgstr ""
 #, python-brace-format
 msgctxt "badge_raid_battle_won"
 msgid "Win {0} raids."
-msgstr ""
+msgstr "レイドバトルで{0}回勝利した!"
 
 #: trainerdex/pogo_assets/strings.py:164
 msgctxt "badge_rocket_giovanni_defeated_title"
 msgid "Ultra Hero"
-msgstr ""
+msgstr "ハイパーヒーロー"
 
 #: trainerdex/pogo_assets/strings.py:166
 #, python-brace-format
@@ -1345,32 +1345,32 @@ msgstr ""
 #: trainerdex/pogo_assets/strings.py:275
 msgctxt "battle_hub_stats_battles"
 msgid "Battles"
-msgstr ""
+msgstr "対戦数"
 
 #: trainerdex/pogo_assets/strings.py:276
 msgctxt "battle_hub_stats_friends"
 msgid "Friends Battled"
-msgstr ""
+msgstr "対戦したフレンド"
 
 #: trainerdex/pogo_assets/strings.py:277
 msgctxt "battle_hub_stats_stardust"
 msgid "Stardust Earned"
-msgstr ""
+msgstr "ほしのすな獲得"
 
 #: trainerdex/pogo_assets/strings.py:278
 msgctxt "battle_hub_stats_streak"
 msgid "Longest Streak"
-msgstr ""
+msgstr "連勝記録"
 
 #: trainerdex/pogo_assets/strings.py:279
 msgctxt "battle_hub_stats_streak_abbrev"
 msgid "Streak"
-msgstr ""
+msgstr "連勝数"
 
 #: trainerdex/pogo_assets/strings.py:280
 msgctxt "battle_hub_stats_wins"
 msgid "Wins"
-msgstr ""
+msgstr "勝利数"
 
 #: trainerdex/pogo_assets/strings.py:282
 msgctxt "buddy_level_0"
@@ -1599,7 +1599,7 @@ msgstr ""
 #: trainerdex/pogo_assets/strings.py:333
 msgctxt "onboard_name_invalid_characters_error"
 msgid "Only letters and numbers are allowed."
-msgstr ""
+msgstr "アルファベットと数字しか使えません"
 
 #: trainerdex/pogo_assets/strings.py:334
 msgctxt "onboard_name_not_available"
@@ -1699,7 +1699,7 @@ msgstr ""
 #: trainerdex/pogo_assets/strings.py:356
 msgctxt "pokemon_type_psychic"
 msgid "Psychic"
-msgstr ""
+msgstr "エスパー"
 
 #: trainerdex/pogo_assets/strings.py:357
 msgctxt "pokemon_type_rock"
@@ -1734,7 +1734,7 @@ msgstr "メダル"
 #: trainerdex/pogo_assets/strings.py:365
 msgctxt "profile_category_stats"
 msgid "Stats"
-msgstr ""
+msgstr "データ"
 
 #: trainerdex/pogo_assets/strings.py:366
 msgctxt "profile_category_total_fitness"
@@ -1764,12 +1764,12 @@ msgstr ""
 #: trainerdex/pogo_assets/strings.py:371
 msgctxt "profile_player_level"
 msgid "Level"
-msgstr ""
+msgstr "レベル"
 
 #: trainerdex/pogo_assets/strings.py:374
 msgctxt "profile_total_xp"
 msgid "Total XP"
-msgstr ""
+msgstr "トータルXP"
 
 #: trainerdex/pogo_assets/strings.py:376
 msgctxt "screen_friends_title"
@@ -2414,7 +2414,7 @@ msgstr ""
 #: trainerdex/validators.py:6
 msgctxt "codename__error"
 msgid "Only letters and numbers are allowed."
-msgstr ""
+msgstr "アルファベットと数字しか使えません"
 
 #: trainerdex/validators.py:14
 msgctxt "friend_code__error"
