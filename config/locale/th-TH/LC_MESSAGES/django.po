@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trainerdex\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-31 10:50+0000\n"
-"PO-Revision-Date: 2020-11-19 08:14\n"
+"PO-Revision-Date: 2020-11-26 08:15\n"
 "Last-Translator: \n"
 "Language-Team: Thai\n"
 "Language: th_TH\n"
@@ -382,7 +382,7 @@ msgstr "คันโต"
 #, python-brace-format
 msgctxt "badge_pokedex_entries"
 msgid "Register {0} Kanto region Pokémon in the Pokédex."
-msgstr "บันทึกโปเกมอนจากเขตคันโตลงในโปเกเด็กซ์ {0} ตัว"
+msgstr "บันทึกโปเกมอนจากภูมิภาคคันโตลงในโปเกเด็กซ์ {0} ตัว"
 
 #: trainerdex/models.py:485
 msgctxt "badge_pokedex_entries_title"
@@ -393,7 +393,7 @@ msgstr "โจโตะ"
 #, python-brace-format
 msgctxt "badge_pokedex_entries_gen2"
 msgid "Register {0} Pokémon first discovered in the Johto region to the Pokédex."
-msgstr "บันทึกโปเกมอนที่ถูกค้นพบครั้งแรกในเขตโจโตะจำนวน {0} ตัวลงในโปเกเด็กซ"
+msgstr "บันทึกโปเกมอนที่ถูกค้นพบครั้งแรกในภูมิภาคโจโตะจำนวน {0} ตัวลงในโปเกเด็กซ์"
 
 #: trainerdex/models.py:500 trainerdex/pogo_assets/strings.py:109
 msgctxt "badge_pokedex_entries_gen3_title"
@@ -404,7 +404,7 @@ msgstr "โฮเอ็น"
 #, python-brace-format
 msgctxt "badge_pokedex_entries_gen3"
 msgid "Register {0} Pokémon first discovered in the Hoenn region to the Pokédex."
-msgstr "บันทึกโปเกมอนที่ถูกค้นพบครั้งแรกในเขตโฮเอ็นจำนวน {0} ตัวลงในโปเกเด็กซ์"
+msgstr "บันทึกโปเกมอนที่ถูกค้นพบครั้งแรกในภูมิภาคโฮเอ็นจำนวน {0} ตัวลงในโปเกเด็กซ"
 
 #: trainerdex/models.py:515 trainerdex/pogo_assets/strings.py:115
 msgctxt "badge_pokedex_entries_gen4_title"
@@ -415,7 +415,7 @@ msgstr "ชินโอ"
 #, python-brace-format
 msgctxt "badge_pokedex_entries_gen4"
 msgid "Register {0} Pokémon first discovered in the Sinnoh region to the Pokédex."
-msgstr "บันทึกโปเกมอนที่ถูกค้นพบครั้งแรกในเขตชินโอจำนวน {0} ตัวลงในโปเกเด็กซ์"
+msgstr "บันทึกโปเกมอนที่ถูกค้นพบครั้งแรกในภูมิภาคชินโอจำนวน {0} ตัวลงในโปเกเด็กซ์\""
 
 #: trainerdex/models.py:530 trainerdex/pogo_assets/strings.py:121
 msgctxt "badge_pokedex_entries_gen5_title"
@@ -426,7 +426,7 @@ msgstr "อิชชู"
 #, python-brace-format
 msgctxt "badge_pokedex_entries_gen5"
 msgid "Register {0} Pokémon first discovered in the Unova region to the Pokédex."
-msgstr "บันทึกโปเกมอนที่ถูกค้นพบครั้งแรกในเขตอิชชูจำนวน {0} ตัวลงในโปเกเด็กซ์"
+msgstr "บันทึกโปเกมอนที่ถูกค้นพบครั้งแรกในภูมิภาคอิชชูจำนวน {0} ตัวลงในโปเกเด็กซ์"
 
 #: trainerdex/models.py:545 trainerdex/pogo_assets/strings.py:127
 msgctxt "badge_pokedex_entries_gen6_title"
@@ -437,7 +437,7 @@ msgstr ""
 #, python-brace-format
 msgctxt "badge_pokedex_entries_gen6"
 msgid "Register {0} Pokémon first discovered in the Kalos region to the Pokédex."
-msgstr ""
+msgstr "บันทึกโปเกมอนที่ถูกค้นพบครั้งแรกในภูมิภาคคาลอสจำนวน {0} ตัวลงในโปเกเด็กซ"
 
 #: trainerdex/models.py:559 trainerdex/pogo_assets/strings.py:133
 msgctxt "badge_pokedex_entries_gen7_title"
@@ -448,7 +448,7 @@ msgstr ""
 #, python-brace-format
 msgctxt "badge_pokedex_entries_gen7"
 msgid "Register {0} Pokémon first discovered in the Alola region to the Pokédex."
-msgstr ""
+msgstr "บันทึกโปเกมอนที่ถูกค้นพบครั้งแรกในภูมิภาคอโลลาจำนวน {0} ตัวลงในโปเกเด็กซ์"
 
 #: trainerdex/models.py:573 trainerdex/pogo_assets/strings.py:139
 msgctxt "badge_pokedex_entries_gen8_title"
@@ -459,7 +459,7 @@ msgstr ""
 #, python-brace-format
 msgctxt "badge_pokedex_entries_gen8"
 msgid "Register {0} Pokémon first discovered in the Galar region to the Pokédex."
-msgstr ""
+msgstr "บันทึกโปเกมอนที่ถูกค้นพบครั้งแรกในภูมิภาคกาลาร์จำนวน {0} ตัวลงในโปเกเด็กซ์"
 
 #: trainerdex/models.py:593 trainerdex/pogo_assets/strings.py:181
 msgctxt "badge_travel_km_title"
