@@ -1,5 +1,5 @@
 django~=3.1.0
-django-allauth~=0.43
+django-allauth~=0.44
 django-analytical~=3.0.0
 django-cors-headers~=3.5.0
 django-cors-middleware~=1.5
