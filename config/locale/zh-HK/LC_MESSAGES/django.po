@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trainerdex\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-31 10:50+0000\n"
-"PO-Revision-Date: 2020-11-26 08:15\n"
+"PO-Revision-Date: 2021-04-29 08:06\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Traditional, Hong Kong\n"
 "Language: zh_HK\n"
@@ -19,120 +19,124 @@ msgstr ""
 
 #: community/admin.py:18 community/admin.py:26
 msgid "Details"
-msgstr ""
+msgstr "細節"
 
 #: community/admin.py:21
 msgid "Members"
-msgstr ""
+msgstr "成員"
 
 #: community/models.py:14
 msgctxt "community__handle__title"
 msgid "Handle"
-msgstr ""
+msgstr "處理"
 
 #: community/models.py:17
 msgctxt "community__handle__help"
 msgid "Once you set this, it cannot be changed. Pick carefully as this will be the identifier to find your community leaderboard."
-msgstr ""
+msgstr "設置後，將無法更改。請仔細選擇，因為這將是找到您的社區排行榜的標識符。"
 
 #: community/models.py:24
 msgid "language"
-msgstr ""
+msgstr "语言"
 
 #: community/models.py:26
 msgid "timezone"
-msgstr ""
+msgstr "時區"
 
 #: community/models.py:30
 msgctxt "community__country__title"
 msgid "country"
-msgstr ""
+msgstr "國家/地區"
 
 #: community/models.py:31
 msgctxt "community__country__help"
 msgid "Where your community is based"
-msgstr ""
+msgstr "您的社區所在地"
 
 #: community/models.py:36
 msgctxt "community__name__title"
 msgid "name"
-msgstr ""
+msgstr "名稱"
 
 #: community/models.py:37
 msgctxt "community__name__help"
 msgid "Max 70 characters"
-msgstr ""
+msgstr "最多70個字符"
 
 #: community/models.py:42
 msgctxt "community__description__title"
 msgid "description"
-msgstr ""
+msgstr "描述"
 
 #: community/models.py:45
 msgctxt "community__description__help"
 msgid "What makes your community unique? What are you about?"
-msgstr ""
+msgstr "是什麼讓您的社區與眾不同？你在說什麼?"
 
 #: community/models.py:51
 msgctxt "community__can_see__title"
 msgid "Publicly Viewable"
-msgstr ""
+msgstr "公開可見"
 
 #: community/models.py:54
 msgctxt "community__can_see__help"
 msgid "Default: False\n"
 "Turn this on to share your community with the world."
-msgstr ""
+msgstr "默認值：錯誤\n"
+"啟用此功能可以與世界分享您的社區。"
 
 #: community/models.py:59
 msgctxt "community__can_join__title"
 msgid "Publicly Joinable"
-msgstr ""
+msgstr "\n"
+"可公開加入"
 
 #: community/models.py:62
 msgctxt "community__can_join__title"
 msgid "Default: False\n"
 "Turn this on to make your community free to join. No invites required."
-msgstr ""
+msgstr "\n"
+"默認值：錯誤\n"
+"啟用此選項可以使您的社區自由加入。無需邀請。"
 
 #: community/models.py:84 community/models.py:85
 msgctxt "community__title"
 msgid "community"
 msgid_plural "communities"
-msgstr[0] ""
+msgstr[0] "社區"
 
 #: trainerdex/abstract.py:18
 msgctxt "codename"
 msgid "nickname"
-msgstr ""
+msgstr "外號"
 
 #: trainerdex/abstract.py:30
 msgid "A user with that username already exists."
-msgstr ""
+msgstr "該用戶名的用戶已經存在。"
 
 #: trainerdex/abstract.py:36
 msgctxt "last_modified"
 msgid "last modified"
-msgstr ""
+msgstr "最後修改"
 
 #: trainerdex/abstract.py:42
 msgctxt "country"
 msgid "country"
-msgstr ""
+msgstr "國家/地區"
 
 #: trainerdex/abstract.py:45
 msgctxt "country__help"
 msgid "Where this account plays the most. Used to place in localized leaderboards"
-msgstr ""
+msgstr "此帳戶發揮最大作用的地方。用於放置在本地化的排行榜中"
 
 #: trainerdex/abstract.py:51
 msgctxt "is_banned"
 msgid "banned"
-msgstr ""
+msgstr "已封鎖"
 
 #: trainerdex/admin.py:111
 msgid "Basic Info"
-msgstr ""
+msgstr "基礎信息"
 
 #: trainerdex/admin.py:115
 msgid "Medals"
@@ -140,31 +144,31 @@ msgstr "獎牌"
 
 #: trainerdex/admin.py:146
 msgid "Type Medals"
-msgstr ""
+msgstr "類型獎牌"
 
 #: trainerdex/admin.py:171
 msgid "Pokédex"
-msgstr ""
+msgstr "Pokédex"
 
 #: trainerdex/admin.py:233
 msgid "Authentication"
-msgstr ""
+msgstr "驗證"
 
 #: trainerdex/admin.py:235
 msgid "Trainer info"
-msgstr ""
+msgstr "培訓師信息"
 
 #: trainerdex/admin.py:239
 msgid "Permissions"
-msgstr ""
+msgstr "權限"
 
 #: trainerdex/admin.py:253
 msgid "Important dates"
-msgstr ""
+msgstr "重要的日子"
 
 #: trainerdex/admin.py:317 trainerdex/admin.py:326
 msgid "Object"
-msgstr ""
+msgstr "對象"
 
 #: trainerdex/fields.py:13 trainerdex/fields.py:36 trainerdex/models.py:478
 #: trainerdex/models.py:493 trainerdex/models.py:508 trainerdex/models.py:523
@@ -180,7 +184,7 @@ msgstr ""
 #: trainerdex/models.py:932 trainerdex/models.py:948 trainerdex/models.py:964
 #: trainerdex/models.py:980
 msgid "Bronze"
-msgstr ""
+msgstr "銅"
 
 #: trainerdex/fields.py:14 trainerdex/fields.py:37 trainerdex/models.py:478
 #: trainerdex/models.py:493 trainerdex/models.py:508 trainerdex/models.py:523
@@ -196,7 +200,7 @@ msgstr ""
 #: trainerdex/models.py:932 trainerdex/models.py:948 trainerdex/models.py:964
 #: trainerdex/models.py:980
 msgid "Silver"
-msgstr ""
+msgstr "銀"
 
 #: trainerdex/fields.py:15 trainerdex/fields.py:38 trainerdex/models.py:478
 #: trainerdex/models.py:493 trainerdex/models.py:508 trainerdex/models.py:523
@@ -212,12 +216,12 @@ msgstr ""
 #: trainerdex/models.py:932 trainerdex/models.py:948 trainerdex/models.py:964
 #: trainerdex/models.py:980
 msgid "Gold"
-msgstr ""
+msgstr "金"
 
 #: trainerdex/models.py:55 trainerdex/models.py:68
 msgctxt "team_name_team0_abbr"
 msgid "Teamless"
-msgstr ""
+msgstr "無團隊"
 
 #: trainerdex/models.py:56 trainerdex/models.py:69
 msgctxt "team_name_team1_abbr"
@@ -258,7 +262,7 @@ msgstr "靈犀隊"
 msgctxt "faction"
 msgid "team"
 msgid_plural "teams"
-msgstr[0] ""
+msgstr[0] "團隊"
 
 #: trainerdex/models.py:154
 msgctxt "tid"
@@ -274,35 +278,35 @@ msgstr "開始日"
 #: trainerdex/models.py:171
 msgctxt "start_date__help"
 msgid "Creation date of the Pokémon Go profile."
-msgstr ""
+msgstr "神奇寶貝Go的創建日期。"
 
 #: trainerdex/models.py:177
 msgctxt "faction__help"
 msgid "The team of the Pokémon Go profile."
-msgstr ""
+msgstr "神奇寶貝Go個人資料的團隊。"
 
 #: trainerdex/models.py:183
 msgctxt "is_verified"
 msgid "Verified"
-msgstr ""
+msgstr "驗證完畢"
 
 #: trainerdex/models.py:186
 msgctxt "is_verified__help"
 msgid "Designates whether this user should be treated as verified."
-msgstr ""
+msgstr "指定是否應將此用戶視為已驗證。"
 
 #: trainerdex/models.py:243 trainerdex/models.py:244
 msgctxt "trainer"
 msgid "trainer"
 msgid_plural "trainers"
-msgstr[0] ""
+msgstr[0] "培訓師"
 
 #: trainerdex/models.py:259 trainerdex/models.py:275 trainerdex/models.py:276
 #: trainerdex/templates/account/account_settings.html:75
 msgctxt "codename"
 msgid "Nickname"
 msgid_plural "Nicknames"
-msgstr[0] ""
+msgstr[0] "外號"
 
 #: trainerdex/models.py:306 trainerdex/models.py:317
 #: trainerdex/pogo_assets/strings.py:295
@@ -313,40 +317,40 @@ msgstr "複製訓練家代碼"
 
 #: trainerdex/models.py:321
 msgid "Trainer Code can be seen by users of groups they're in"
-msgstr ""
+msgstr "培訓師代碼可以被使用者所在的組的用戶看到"
 
 #: trainerdex/models.py:325
 msgid "Trainer Code can be seen on the web, publicly"
-msgstr ""
+msgstr "培訓師代碼可以在公開網上看到"
 
 #: trainerdex/models.py:329
 msgid "Trainer Code can be on the API"
-msgstr ""
+msgstr "培訓師代碼可以放在API上"
 
 #: trainerdex/models.py:368
 msgctxt "update_time"
 msgid "Time Updated"
-msgstr ""
+msgstr "更新時間完畢"
 
 #: trainerdex/models.py:372
 msgctxt "submission_date"
 msgid "Date Submitted"
-msgstr ""
+msgstr "日期提交了"
 
 #: trainerdex/models.py:376
 msgctxt "last_modified"
 msgid "Last Modified"
-msgstr ""
+msgstr "最後修改"
 
 #: trainerdex/models.py:381
 msgctxt "comment"
 msgid "Comment"
-msgstr ""
+msgstr "留言 / 評論"
 
 #: trainerdex/models.py:387
 msgctxt "metadata"
 msgid "Metadata"
-msgstr ""
+msgstr "元數據"
 
 #: trainerdex/models.py:390
 msgctxt "metadata__help"
@@ -356,7 +360,12 @@ msgid "This is a JSON dictionary allowing for as much metadata as you please.\n"
 "            `ocr`: boolean\n"
 "            `image_url`: string\n\n"
 "            "
-msgstr ""
+msgstr "這是JSON字典，可根據需要提供盡可能多的元數據。\n"
+"            但是，應具有以下屬性：\n\n"
+"            `provider`: string\n"
+"            `ocr`: boolean\n"
+"            `image_url`: string\n\n"
+"            "
 
 #: trainerdex/models.py:405
 msgctxt "total_xp"
@@ -366,12 +375,12 @@ msgstr "總XP"
 #: trainerdex/models.py:455
 msgctxt "pokedex_total_caught"
 msgid "Unique Species Caught"
-msgstr ""
+msgstr "捕獲獨特物種"
 
 #: trainerdex/models.py:463
 msgctxt "pokedex_total_seen"
 msgid "Unique Species Seen"
-msgstr ""
+msgstr "看到獨特物種"
 
 #: trainerdex/models.py:471 trainerdex/pogo_assets/strings.py:97
 msgctxt "badge_pokedex_entries_title"
@@ -605,7 +614,7 @@ msgstr "冠軍"
 #, python-brace-format
 msgctxt "badge_raid_battle_won"
 msgid "Win {0} Raids."
-msgstr ""
+msgstr "贏得{0}次突襲。"
 
 #: trainerdex/models.py:738 trainerdex/pogo_assets/strings.py:67
 msgctxt "badge_legendary_battle_won_title"
@@ -616,7 +625,8 @@ msgstr "對戰傳奇"
 #, python-brace-format
 msgctxt "badge_legendary_battle_won"
 msgid "Win {0} Legendary Raids."
-msgstr ""
+msgstr "\n"
+"贏得{0}傳奇突襲。"
 
 #: trainerdex/models.py:749 trainerdex/pogo_assets/strings.py:26
 msgctxt "badge_berries_fed_title"
@@ -753,12 +763,12 @@ msgstr "英雄"
 #, python-brace-format
 msgctxt "badge_rocket_grunts_defeated"
 msgid "Defeat {0} Team GO Rocket Grunts."
-msgstr ""
+msgstr "打敗 {0} 個GO火箭隊成員"
 
 #: trainerdex/models.py:910
 msgctxt "badge_rocket_giovanni_defeated_title"
 msgid "Ulta Hero"
-msgstr ""
+msgstr "烏爾塔英雄"
 
 #: trainerdex/models.py:913 trainerdex/pogo_assets/strings.py:160
 #, python-brace-format
@@ -1020,7 +1030,7 @@ msgstr "冒險筆記"
 
 #: trainerdex/models.py:1177
 msgid "Gold Gym Badges"
-msgstr ""
+msgstr "金牌體育館徽章"
 
 #: trainerdex/models.py:1184 trainerdex/pogo_assets/strings.py:339
 msgctxt "pokemon_info_stardust_label"
@@ -1029,80 +1039,81 @@ msgstr "星星沙子"
 
 #: trainerdex/models.py:1218
 msgid "You must fill in at least one field"
-msgstr ""
+msgstr "您必須至少填寫一個字段"
 
 #: trainerdex/models.py:1263
 #, python-brace-format
 msgid "This is required since you provided data for {badge}."
-msgstr ""
+msgstr "這是必需的，因為您提供了{badge}的數據。"
 
 #: trainerdex/models.py:1510 trainerdex/models.py:1548
 #, python-brace-format
 msgid "You must fill in {other_badge} if filling in {this_badge}."
-msgstr ""
+msgstr "如果填寫{this_badge}，你則必須填寫{other_badge}。"
 
 #: trainerdex/models.py:1563 trainerdex/models.py:1564
 msgctxt "update"
 msgid "update"
 msgid_plural "updates"
-msgstr[0] ""
+msgstr[0] "更新"
 
 #: trainerdex/models.py:1617
 #, python-brace-format
 msgid "Evidence for {evidence_type} and {trainer}"
-msgstr ""
+msgstr "\n"
+"證據給{evidence_type}和{trainer}"
 
 #: trainerdex/models.py:1626
 msgid "Content Field doesn't match Content Object"
-msgstr ""
+msgstr "內容字段與內容對像不匹配"
 
 #: trainerdex/models.py:1636 trainerdex/models.py:1637
 msgctxt "evidence"
 msgid "evidence"
 msgid_plural "evidence"
-msgstr[0] ""
+msgstr[0] "證據"
 
 #: trainerdex/models.py:1669
 msgid "name"
-msgstr ""
+msgstr "名稱"
 
 #: trainerdex/models.py:1687
 msgctxt "stat"
 msgid "stat"
-msgstr ""
+msgstr "統計"
 
 #: trainerdex/models.py:1691 trainerdex/models.py:1724
 #: trainerdex/models.py:1725
 msgctxt "target"
 msgid "target"
 msgid_plural "targets"
-msgstr[0] ""
+msgstr[0] "目標"
 
 #: trainerdex/models.py:1738
 msgctxt "has_reached"
 msgid "reached"
-msgstr ""
+msgstr "已達成"
 
 #: trainerdex/models.py:1741
 msgctxt "has_reached__help"
 msgid "Designates whether this target has been reached."
-msgstr ""
+msgstr "指定是否已達到此目標。"
 
 #: trainerdex/models.py:1747
 msgctxt "date_reached__name"
 msgid "date reached"
-msgstr ""
+msgstr "到達日期"
 
 #: trainerdex/models.py:1749
 msgctxt "date_reached__help"
 msgid "The date the target was reached, if known."
-msgstr ""
+msgstr "達到目標的日期, 如果知道。"
 
 #: trainerdex/models.py:1816 trainerdex/models.py:1817
 msgctxt "target"
 msgid "target group"
 msgid_plural "target groups"
-msgstr[0] ""
+msgstr[0] "目標組"
 
 #: trainerdex/pogo_assets/strings.py:9
 msgctxt "alola_pokedex_header"
@@ -1808,11 +1819,11 @@ msgstr "設定"
 
 #: trainerdex/templates/404.html:6 trainerdex/templates/404.html:12
 msgid "404 Not Found"
-msgstr ""
+msgstr "404 無法找到網頁"
 
 #: trainerdex/templates/404.html:15
 msgid "Sorry, we couldn't find the page you're looking for. Double check the URL or reach out to us on Discord."
-msgstr ""
+msgstr "抱歉，我們找不到您要查找的頁面。請仔細檢查網址，或在Discord上與我們聯繫。"
 
 #: trainerdex/templates/404.html:19
 #: trainerdex/templates/account/password_reset_done.html:20
@@ -1820,79 +1831,81 @@ msgstr ""
 #: trainerdex/templates/account/signup_closed.html:19
 #: trainerdex/templates/account/verification_sent.html:18
 msgid "Return to Leaderboard"
-msgstr ""
+msgstr "返回排行榜"
 
 #: trainerdex/templates/404.html:22
 msgid "Visit our Discord"
-msgstr ""
+msgstr "拜訪我們的Discord"
 
 #: trainerdex/templates/account/account_inactive.html:5
 #: trainerdex/templates/account/account_inactive.html:11
 msgid "Account Inactive"
-msgstr ""
+msgstr "帳戶無效"
 
 #: trainerdex/templates/account/account_inactive.html:14
 msgid "This account is inactive. Please contact us on Discord or Twitter for help."
-msgstr ""
+msgstr "這個賬號未激活。請通過Discord或Twitter與我們聯繫以獲取幫助。"
 
 #: trainerdex/templates/account/account_inactive.html:18
 msgid "Discord Server"
-msgstr ""
+msgstr "Discord 服務器"
 
 #: trainerdex/templates/account/account_inactive.html:21
 msgid "@TrainerDexApp on Twitter"
-msgstr ""
+msgstr "@TrainerDexApp 的 Twitter"
 
 #: trainerdex/templates/account/account_settings.html:6
 msgid "Account Settings"
-msgstr ""
+msgstr "帳戶設定"
 
 #: trainerdex/templates/account/account_settings.html:12
 msgid "User Info"
-msgstr ""
+msgstr "用戶資訊"
 
 #: trainerdex/templates/account/account_settings.html:17
 msgid "Username"
-msgstr ""
+msgstr "用戶名稱"
 
 #: trainerdex/templates/account/account_settings.html:24
 msgid "Password"
-msgstr ""
+msgstr "密碼"
 
 #: trainerdex/templates/account/account_settings.html:28
 #: trainerdex/templates/account/password_change.html:6
 #: trainerdex/templates/account/password_change.html:12
 #: trainerdex/templates/account/password_change.html:42
 msgid "Change Password"
-msgstr ""
+msgstr "更改密碼"
 
 #: trainerdex/templates/account/account_settings.html:34
 msgid "Name"
-msgstr ""
+msgstr "名稱"
 
 #: trainerdex/templates/account/account_settings.html:41
 msgid "Primary Email address"
-msgstr ""
+msgstr "主要電子郵件地址"
 
 #: trainerdex/templates/account/account_settings.html:45
 msgid "Email Management"
-msgstr ""
+msgstr "郵件管理"
 
 #: trainerdex/templates/account/account_settings.html:51
 msgid "Last Login"
-msgstr ""
+msgstr "\n"
+"上次登錄"
 
 #: trainerdex/templates/account/account_settings.html:58
 msgid "Date Registered"
-msgstr ""
+msgstr "已登記日期了"
 
 #: trainerdex/templates/account/account_settings.html:64
 msgid "Manage Social Network Connections"
-msgstr ""
+msgstr "\n"
+"管理社交網絡連接"
 
 #: trainerdex/templates/account/account_settings.html:70
 msgid "Trainer Info"
-msgstr ""
+msgstr "培訓師信息"
 
 #: trainerdex/templates/account/account_settings.html:82
 #: trainerdex/templates/profile.html:9 trainerdex/templates/profile.html:19
@@ -1908,205 +1921,215 @@ msgstr "隊"
 
 #: trainerdex/templates/account/account_settings.html:103
 msgid "Publicly Visible"
-msgstr ""
+msgstr "\n"
+"公開可見"
 
 #: trainerdex/templates/account/account_settings.html:117
 msgid "Country"
-msgstr ""
+msgstr "國家/地區"
 
 #: trainerdex/templates/account/account_settings.html:124
 msgid "Last Modified"
-msgstr ""
+msgstr "最後修改"
 
 #: trainerdex/templates/account/account_settings.html:131
 msgid "Banned?"
-msgstr ""
+msgstr "已封鎖?"
 
 #: trainerdex/templates/account/account_settings.html:138
 msgid "Verification Status"
-msgstr ""
+msgstr "確認狀態"
 
 #: trainerdex/templates/account/account_settings.html:145
 msgid "Posts"
-msgstr ""
+msgstr "文章"
 
 #: trainerdex/templates/account/account_settings.html:152
 msgid "Nicknames"
-msgstr ""
+msgstr "外號"
 
 #: trainerdex/templates/account/email.html:6
 msgid "Account"
-msgstr ""
+msgstr "帳戶"
 
 #: trainerdex/templates/account/email.html:12
 msgid "E-mail Addresses"
-msgstr ""
+msgstr "電子郵件地址"
 
 #: trainerdex/templates/account/email.html:19
 msgid "The following e-mail addresses are associated with your account:"
-msgstr ""
+msgstr "以下電子郵件地址與您的帳戶相關聯："
 
 #: trainerdex/templates/account/email.html:27
 msgid "Primary"
-msgstr ""
+msgstr "主要"
 
 #: trainerdex/templates/account/email.html:39
 msgid "Set Primary"
-msgstr ""
+msgstr "设为主要"
 
 #: trainerdex/templates/account/email.html:40
 msgid "Re-send Verification"
-msgstr ""
+msgstr "重新發送驗證"
 
 #: trainerdex/templates/account/email.html:41
 #: trainerdex/templates/socialaccount/connections.html:46
 msgid "Remove"
-msgstr ""
+msgstr "拆除"
 
 #: trainerdex/templates/account/email.html:51
 msgid "Warning:"
-msgstr ""
+msgstr "警告:"
 
 #: trainerdex/templates/account/email.html:51
 msgid "You currently do not have any e-mail address set up. You should really add an e-mail address so you can receive notifications, reset your password, etc."
-msgstr ""
+msgstr "您當前沒有設置任何電子郵件地址。您實際上應該添加一個電子郵件地址，以便可以接收通知，重設密碼等。"
 
 #: trainerdex/templates/account/email.html:57
 msgid "Add E-mail Address"
-msgstr ""
+msgstr "\n"
+"添加電子郵件地址"
 
 #: trainerdex/templates/account/email.html:61
 msgid "Add an email address to your account to get back in if you forget your password. Also, your primary email is used for gravatar generation."
-msgstr ""
+msgstr "如果您忘記密碼，請在您的帳戶中添加一個電子郵件地址以重新登錄。另外，您的主電子郵件用於生成圖形表達。"
 
 #: trainerdex/templates/account/email.html:69
 msgid "Add E-mail"
-msgstr ""
+msgstr "添加電子郵件"
 
 #: trainerdex/templates/account/email.html:80
 msgid "Do you really want to remove the selected e-mail address?"
-msgstr ""
+msgstr "您是否真的要刪除所選的電子郵件地址？"
 
 #: trainerdex/templates/account/email/email_confirmation_message.txt:5
 #, python-format
 msgid "Hello from %(site_name)s!\n\n"
 "You're receiving this e-mail because user %(user_display)s has connected this e-mail address to their account. If this is not you, just ignore this email.\n\n"
 "To confirm this is correct, go to %(activate_url)s\n"
-msgstr ""
+msgstr "您好，%(site_name)s!\n\n"
+"您收到此電子郵件是因為用戶%(user_display)s已將此電子郵件地址連接到他們的帳戶。如果不是您，請忽略此電子郵件。\n\n"
+"要確認這是正確的，請轉到%(activate_url)s\n"
 
 #: trainerdex/templates/account/email/email_confirmation_message.txt:12
 #, python-format
 msgid "Thank you from %(site_name)s!\n"
 "%(site_domain)s\n"
-msgstr ""
+msgstr "感謝您%(site_name)s!\n"
+"%(site_domain)s\n"
 
 #: trainerdex/templates/account/email/email_confirmation_subject.txt:3
 msgid "Please confirm your E-mail Address"
-msgstr ""
+msgstr "請確認您的電子郵件地址"
 
 #: trainerdex/templates/account/email/password_reset_key_message.txt:1
 #, python-format
 msgid "Hello from %(site_name)s!\n\n"
 "You're receiving this e-mail because you or someone else has requested a password for your user account.\n"
 "It can be safely ignored if you did not request a password reset. Click the link below to reset your password."
-msgstr ""
+msgstr "\n"
+"您好，%(site_name)s!\n\n"
+"您收到此電子郵件的原因是您或其他人已請求您的用戶帳戶密碼。\n"
+"如果您不要求重設密碼，可以安全地忽略它。點擊下面的鏈接以重置密碼。"
 
 #: trainerdex/templates/account/email/password_reset_key_message.txt:8
 #, python-format
 msgid "In case you forgot, your username is %(username)s."
-msgstr ""
+msgstr "\n"
+"萬一您忘記了，您的用戶名是 %(username)s."
 
 #: trainerdex/templates/account/email/password_reset_key_message.txt:10
 #, python-format
 msgid "Thank you for using %(site_name)s!\n"
 "%(site_domain)s"
-msgstr ""
+msgstr "感謝您使用%(site_name)s!\n"
+"%(site_domain)s"
 
 #: trainerdex/templates/account/email/password_reset_key_subject.txt:3
 msgid "Password Reset E-mail"
-msgstr ""
+msgstr "密碼重置電子郵件"
 
 #: trainerdex/templates/account/email_confirm.html:6
 #: trainerdex/templates/account/email_confirm.html:12
 msgid "Confirm E-mail Address"
-msgstr ""
+msgstr "確認電郵地址"
 
 #: trainerdex/templates/account/email_confirm.html:17
 #, python-format
 msgid "Please confirm that <a href=\"mailto:%(email)s\">%(email)s</a> is an e-mail address for user %(user_display)s."
-msgstr ""
+msgstr "請確認<a href=\"mailto:%(email)s\">%(email)s</a>是用戶%(user_display)s."
 
 #: trainerdex/templates/account/email_confirm.html:22
 msgid "Confirm"
-msgstr ""
+msgstr "確認"
 
 #: trainerdex/templates/account/email_confirm.html:28
 msgid "This e-mail confirmation link expired or is invalid."
-msgstr ""
+msgstr "該電子郵件確認鏈接已過期或無效。"
 
 #: trainerdex/templates/account/email_confirm.html:32
 msgid "Resend confirmation email"
-msgstr ""
+msgstr "重新发送确认邮件"
 
 #: trainerdex/templates/account/login.html:7
 #: trainerdex/templates/account/login.html:15
 #: trainerdex/templates/account/login.html:51 trainerdex/templates/base.html:99
 #: trainerdex/templates/base.html:112
 msgid "Login"
-msgstr ""
+msgstr "登入"
 
 #: trainerdex/templates/account/login.html:20
 msgid "If you already have an account, you can login below or via a third party account."
-msgstr ""
+msgstr "如果您已經有一個帳戶，則可以在下面登錄或通過第三方帳戶登錄。"
 
 #: trainerdex/templates/account/login.html:56
 msgid "Forget/Reset Password"
-msgstr ""
+msgstr "忘記/重置密碼"
 
 #: trainerdex/templates/account/messages/cannot_delete_primary_email.txt:2
 #, python-format
 msgid "You cannot remove your primary e-mail address (%(email)s)."
-msgstr ""
+msgstr "您不能刪除您的主要電子郵件地址(%(email)s)。"
 
 #: trainerdex/templates/account/messages/email_confirmation_sent.txt:2
 #, python-format
 msgid "Confirmation e-mail sent to %(email)s."
-msgstr ""
+msgstr "驗證連結傳送到%(email)s."
 
 #: trainerdex/templates/account/messages/email_confirmed.txt:2
 #, python-format
 msgid "You have confirmed %(email)s."
-msgstr ""
+msgstr "您已確認 %(email)s."
 
 #: trainerdex/templates/account/messages/email_deleted.txt:2
 #, python-format
 msgid "Removed e-mail address %(email)s."
-msgstr ""
+msgstr "已刪除電子郵件地址%(email)s."
 
 #: trainerdex/templates/account/messages/logged_in.txt:4
 #, python-format
 msgid "Successfully signed in as %(name)s."
-msgstr ""
+msgstr "成功登錄身份以 %(name)s."
 
 #: trainerdex/templates/account/messages/logged_out.txt:2
 msgid "You have signed out."
-msgstr ""
+msgstr "您已登出了。"
 
 #: trainerdex/templates/account/messages/password_changed.txt:2
 msgid "Password successfully changed."
-msgstr ""
+msgstr "密碼修改成功。"
 
 #: trainerdex/templates/account/messages/password_set.txt:2
 msgid "Password successfully set."
-msgstr ""
+msgstr "密碼設置成功。"
 
 #: trainerdex/templates/account/messages/primary_email_set.txt:2
 msgid "Primary e-mail address set."
-msgstr ""
+msgstr "主要子郵件地址集。"
 
 #: trainerdex/templates/account/messages/unverified_primary_email.txt:2
 msgid "Your primary e-mail address must be verified."
-msgstr ""
+msgstr "您的主要電子郵件地址必須經過驗證。"
 
 #: trainerdex/templates/account/password_reset.html:7
 #: trainerdex/templates/account/password_reset.html:13
@@ -2115,122 +2138,123 @@ msgstr ""
 #: trainerdex/templates/account/password_reset_from_key.html:6
 #: trainerdex/templates/account/password_reset_from_key.html:12
 msgid "Password Reset"
-msgstr ""
+msgstr "重設密碼"
 
 #: trainerdex/templates/account/password_reset.html:19
 msgid "Forgotten your password? Enter your e-mail address below, and we'll send you an e-mail allowing you to reset it."
-msgstr ""
+msgstr "忘記密碼了？在下面輸入您的電子郵件地址，我們將向您發送一封電子郵件，讓您重置它。"
 
 #: trainerdex/templates/account/password_reset.html:20
 msgid "Please contact us if you have any trouble resetting your password."
-msgstr ""
+msgstr "如果您在重置密碼時遇到任何麻煩，請與我們聯繫。"
 
 #: trainerdex/templates/account/password_reset.html:27
 msgid "Reset My Password"
-msgstr ""
+msgstr "重設我的密碼"
 
 #: trainerdex/templates/account/password_reset_done.html:16
 msgid "If that email is valid, we have sent you an e-mail. Please follow the instructions in the email to continue."
-msgstr ""
+msgstr "如果該電子郵件有效，我們已經向您發送了一封電子郵件。請按照電子郵件中的說明繼續。"
 
 #: trainerdex/templates/account/password_reset_from_key.html:6
 #: trainerdex/templates/account/password_reset_from_key.html:12
 msgid "Bad Token"
-msgstr ""
+msgstr "壞令牌"
 
 #: trainerdex/templates/account/password_reset_from_key.html:17
 msgid "The password reset link was invalid, possibly because it has already been used."
-msgstr ""
+msgstr "密碼重置鏈接無效，可能是因為該鏈接已被使用。"
 
 #: trainerdex/templates/account/password_reset_from_key.html:21
 msgid "New password reset key"
-msgstr ""
+msgstr "新密碼重置密鑰"
 
 #: trainerdex/templates/account/password_reset_from_key.html:47
 msgid "change password"
-msgstr ""
+msgstr "更改密碼"
 
 #: trainerdex/templates/account/password_reset_from_key.html:52
 msgid "Your password has now been changed."
-msgstr ""
+msgstr "您的密碼現已更改。"
 
 #: trainerdex/templates/account/password_reset_from_key.html:56
 #: trainerdex/templates/socialaccount/authentication_error.html:18
 #: trainerdex/templates/socialaccount/login_cancelled.html:18
 msgid "Return to login page"
-msgstr ""
+msgstr "返回登錄頁面"
 
 #: trainerdex/templates/account/password_reset_from_key_done.html:4
 #: trainerdex/templates/account/password_reset_from_key_done.html:10
 msgid "Password Changed"
-msgstr ""
+msgstr "密碼已被更改"
 
 #: trainerdex/templates/account/password_reset_from_key_done.html:13
 msgid "Your password is now changed."
-msgstr ""
+msgstr "您的密碼已被更改。"
 
 #: trainerdex/templates/account/password_set.html:6
 #: trainerdex/templates/account/password_set.html:12
 #: trainerdex/templates/account/password_set.html:37
 msgid "Set Password"
-msgstr ""
+msgstr "設定密碼"
 
 #: trainerdex/templates/account/password_set.html:17
 msgid "Please set a password."
-msgstr ""
+msgstr "請提供一個密碼。"
 
 #: trainerdex/templates/account/signup_closed.html:5
 msgid "Sign Up Closed"
-msgstr ""
+msgstr "報名已關閉"
 
 #: trainerdex/templates/account/signup_closed.html:11
 msgid "We are sorry, but registrations via the website are currently disabled."
-msgstr ""
+msgstr "我們非常抱歉，目前無法通過該網站進行註冊。"
 
 #: trainerdex/templates/account/signup_closed.html:14
 msgid "This is preperation for transition to the NEW TrainerDex website. We apologise for the inconvenience."
-msgstr ""
+msgstr "這是過渡到新的 TrainerDex網站的準備工作。不便之處，我們敬請原諒。"
 
 #: trainerdex/templates/account/signup_closed.html:22
 msgid "Join Discord"
-msgstr ""
+msgstr "\n"
+"加入Discord"
 
 #: trainerdex/templates/account/snippets/already_logged_in.html:5
 #, python-format
 msgid "You are already logged in as %(user_display)s."
-msgstr ""
+msgstr "您已經以 %(user_display)s身份登錄。"
 
 #: trainerdex/templates/account/verification_sent.html:5
 #: trainerdex/templates/account/verification_sent.html:11
 #: trainerdex/templates/account/verified_email_required.html:5
 #: trainerdex/templates/account/verified_email_required.html:11
 msgid "Verify Your E-mail Address"
-msgstr ""
+msgstr "請驗證您的郵箱地址"
 
 #: trainerdex/templates/account/verification_sent.html:14
 msgid "We have sent an e-mail to you for verification. Follow the link provided to finalize the signup process. Please contact us if you do not receive it within a few minutes."
-msgstr ""
+msgstr "我們已經發送了一封電子郵件給您進行驗證。按照提供的鏈接完成註冊過程。如果您在幾分鐘之內仍未收到，請與我們聯繫。"
 
 #: trainerdex/templates/account/verified_email_required.html:15
 msgid "This part of the site requires us to verify that you are who you claim to be. For this purpose, we require that you verify ownership of your e-mail address."
-msgstr ""
+msgstr "網站的這一部分要求我們驗證您是否是您聲稱的身份。為此，我們要求您驗證電子郵件地址的所有權。"
 
 #: trainerdex/templates/account/verified_email_required.html:16
 msgid "We have sent an e-mail to you for verification. Please click on the link inside this e-mail. Please contact us if you do not receive it within a few minutes."
-msgstr ""
+msgstr "我們已經發送了一封電子郵件給您進行驗證。請單擊此電子郵件中的鏈接。如果您在幾分鐘之內仍未收到，請與我們聯繫。"
 
 #: trainerdex/templates/base.html:13
 msgctxt "meta tag in head"
 msgid "TrainerDex provides leaderboards and stats related to Pokemon Go. Join now!"
-msgstr ""
+msgstr "TrainerDex提供與神奇宝可梦Go相關的排行榜和統計數據。立即加入！"
 
 #: trainerdex/templates/base.html:59
 msgid "Learn more"
-msgstr ""
+msgstr "了解更多"
 
 #: trainerdex/templates/base.html:60
 msgid "This website uses cookies to ensure you get the best experience on our website."
-msgstr ""
+msgstr "本網站使用Cookie來確保您在我們的網站上獲得最佳體驗。"
 
 #: trainerdex/templates/base.html:93 trainerdex/templates/base.html:94
 #: trainerdex/templates/base.html:114 trainerdex/templates/leaderboard.html:28
@@ -2239,66 +2263,66 @@ msgstr "排行榜"
 
 #: trainerdex/templates/base.html:109
 msgid "Settings"
-msgstr ""
+msgstr "設置"
 
 #: trainerdex/templates/base.html:118
 msgid "Admin Panel"
-msgstr ""
+msgstr "管理面板"
 
 #: trainerdex/templates/base.html:119 trainerdex/templates/privacy.html:6
 msgid "Privacy Policy"
-msgstr ""
+msgstr "隱私權政策"
 
 #: trainerdex/templates/base.html:120 trainerdex/templates/terms.html:6
 #: trainerdex/templates/terms.html:12
 msgid "Terms of Service"
-msgstr ""
+msgstr "服务条款"
 
 #: trainerdex/templates/base.html:122
 msgid "Author"
-msgstr ""
+msgstr "作者"
 
 #: trainerdex/templates/base.html:123
 msgid "Version"
-msgstr ""
+msgstr "版本"
 
 #: trainerdex/templates/create_update.html:8
 msgid "Update Stats"
-msgstr ""
+msgstr "更新統計"
 
 #: trainerdex/templates/create_update.html:19
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: trainerdex/templates/create_update.html:21
 msgid "Welcome to the TrainerDex. Please be honest and truthful, if caught intentionally providing false information, you may be banned."
-msgstr ""
+msgstr "歡迎來到TrainerDex。請誠實誠實，如果故意提供虛假信息而被捕，您可能會被禁止。"
 
 #: trainerdex/templates/create_update.html:22
 msgid "All the questions relate to a section in the game and examples are provided to help if you get stuck."
-msgstr ""
+msgstr "所有問題都與遊戲的某個部分相關，如果遇到問題，將提供示例以幫助您。"
 
 #: trainerdex/templates/create_update.html:23
 #, python-format
 msgid "All fields marked with an asterix&nbsp;(%(required)s) are required."
-msgstr ""
+msgstr "所有標有星號的字段 &nbsp;(%(required)s) 都是必填項。"
 
 #: trainerdex/templates/create_update.html:110
 msgid "More info..."
-msgstr ""
+msgstr "更多資訊..."
 
 #: trainerdex/templates/create_update.html:121
 msgid "Submit"
-msgstr ""
+msgstr "提交"
 
 #: trainerdex/templates/edit_profile.html:7
 #: trainerdex/templates/edit_profile.html:13
 msgid "Edit Profile"
-msgstr ""
+msgstr "編輯個人資料"
 
 #: trainerdex/templates/edit_profile.html:78
 msgid "Save Changes"
-msgstr ""
+msgstr "儲存更改"
 
 #: trainerdex/templates/leaderboard.html:7
 #: trainerdex/templates/leaderboard.html:12
@@ -2319,7 +2343,7 @@ msgstr "總XP"
 
 #: trainerdex/templates/leaderboard.html:40
 msgid "Trainers Considered"
-msgstr ""
+msgstr "培訓師考慮完畢"
 
 #: trainerdex/templates/leaderboard.html:49
 msgctxt "onboard_enter_name_hint"
@@ -2329,81 +2353,82 @@ msgstr "暱稱"
 #: trainerdex/templates/leaderboard.html:49
 msgctxt "Short form of Trainer Level"
 msgid "TL"
-msgstr ""
+msgstr "TL"
 
 #: trainerdex/templates/leaderboard.html:57
 msgid "Last Updated"
-msgstr ""
+msgstr "最後更新"
 
 #: trainerdex/templates/leaderboard.html:79
 msgid "There is no information to include in this leaderboard. Why not be the first?"
-msgstr ""
+msgstr "沒有任何信息可包含在此排行榜中。為什麼不成為第一個？"
 
 #: trainerdex/templates/privacy.html:15 trainerdex/templates/terms.html:15
 msgid "For various reasons, this document is only available in English."
-msgstr ""
+msgstr "由於各種原因，本文檔僅提供英文版本。"
 
 #: trainerdex/templates/profile.html:66
 msgctxt "profile_category_history"
 msgid "History"
-msgstr ""
+msgstr "歷史"
 
 #: trainerdex/templates/profile.html:128
 msgid "It seems this trainer hasn't shared any of their medals."
-msgstr ""
+msgstr "\n"
+"看來這位教練沒有分享過他們的任何獎牌。"
 
 #: trainerdex/templates/socialaccount/authentication_error.html:5
 #: trainerdex/templates/socialaccount/authentication_error.html:11
 #: trainerdex/templates/socialaccount/login_cancelled.html:5
 msgid "Social Network Login Failure"
-msgstr ""
+msgstr "社交網絡登錄失敗"
 
 #: trainerdex/templates/socialaccount/authentication_error.html:14
 msgid "An error occurred while attempting to login via your social network account."
-msgstr ""
+msgstr "嘗試通過您的社交網絡帳戶登錄時發生錯誤。"
 
 #: trainerdex/templates/socialaccount/connections.html:5
 #: trainerdex/templates/socialaccount/connections.html:25
 msgid "Account Connections"
-msgstr ""
+msgstr "帳戶連接"
 
 #: trainerdex/templates/socialaccount/connections.html:11
 msgid "Connect Social Media"
-msgstr ""
+msgstr "連接社交媒體"
 
 #: trainerdex/templates/socialaccount/connections.html:14
 msgid "You can connect any of these social media networks."
-msgstr ""
+msgstr "您可以連接任何這些社交媒體網絡。"
 
 #: trainerdex/templates/socialaccount/connections.html:28
 msgid "You can sign in to your account using any of the following third party accounts:"
-msgstr ""
+msgstr "您可以使用以下任何第三方帳戶登錄到您的帳戶："
 
 #: trainerdex/templates/socialaccount/login_cancelled.html:11
 msgid "Login Cancelled"
-msgstr ""
+msgstr "登錄已取消"
 
 #: trainerdex/templates/socialaccount/login_cancelled.html:14
 msgid "Login was cancelled."
-msgstr ""
+msgstr "登錄已取消了。"
 
 #: trainerdex/templates/socialaccount/messages/account_connected.txt:2
 msgid "The social account has been connected."
-msgstr ""
+msgstr "該社交帳戶已連接了。"
 
 #: trainerdex/templates/socialaccount/messages/account_connected_other.txt:2
 msgid "The social account is already connected to a different account."
-msgstr ""
+msgstr "該社交帳戶已經連接到其他帳戶。"
 
 #: trainerdex/templates/socialaccount/messages/account_disconnected.txt:2
 msgid "The social account has been disconnected."
-msgstr ""
+msgstr "你的賬戶連接已經被中斷了。"
 
 #: trainerdex/templates/socialaccount/snippets/provider_list.html:9
 #: trainerdex/templates/socialaccount/snippets/provider_list.html:12
 #, python-format
 msgid "Continue with %(provider)s"
-msgstr ""
+msgstr "繼續跟%(provider)s"
 
 #: trainerdex/validators.py:6
 msgctxt "codename__error"
@@ -2413,7 +2438,7 @@ msgstr "只能使用英文字母和數字"
 #: trainerdex/validators.py:14
 msgctxt "friend_code__error"
 msgid "Trainer Code must be 12 digits long and contain only numbers and whitespace."
-msgstr ""
+msgstr "培訓師代碼必須為12位數字，並且只能包含數字和空格。"
 
 #: config/settings.py:151
 msgid "German"
@@ -2449,7 +2474,7 @@ msgstr "巴西葡萄牙语"
 
 #: config/settings.py:159
 msgid "Thai"
-msgstr ""
+msgstr "泰國人"
 
 #: config/settings.py:160
 msgid "Traditional Chinese"
@@ -2457,25 +2482,26 @@ msgstr "中国传统"
 
 #: config/settings.py:207
 msgid "View your Trainer Codename, Team, Country and other standard information"
-msgstr ""
+msgstr "查看您的教練代號，團隊，國家和其他標准信息"
 
 #: config/settings.py:210
 msgid "Edit your Trainer Codename, Team, Country and other standard information"
-msgstr ""
+msgstr "\n"
+"編輯您的培訓師代號，團隊，國家和其他標准信息"
 
 #: config/settings.py:212
 msgid "View full set of Stats Updates"
-msgstr ""
+msgstr "查看完整的統計信息更新"
 
 #: config/settings.py:213
 msgid "Post Stats Updates"
-msgstr ""
+msgstr "統計信息更新"
 
 #: config/settings.py:214
 msgid "View your email address"
-msgstr ""
+msgstr "查看您的電子郵件地址"
 
 #: config/settings.py:215
 msgid "View your connected social accounts"
-msgstr ""
+msgstr "查看您關聯的社交帳戶"
 
